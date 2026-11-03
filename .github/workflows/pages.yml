@@ -3,6 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    tags: ['v*']
   workflow_dispatch:
 
 permissions:
@@ -22,6 +23,13 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Stamp version
+        run: |
+          version=$(git describe --tags --always)
+          sed -i "s|href=\"https://github.com/D-SENG-TECH/official-website\" data-build>dev<|href=\"https://github.com/D-SENG-TECH/official-website/commit/${GITHUB_SHA}\" data-build>${version}<|" public/index.html
+          grep -q "data-build>${version}<" public/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

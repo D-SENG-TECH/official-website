@@ -293,6 +293,19 @@ address a { color: #ffc79a; }
   color: #a9c6e2;
   font-size: 14px;
 }
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 24px;
+}
+.build {
+  color: #6f8aa5;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 12px;
+  text-decoration: none;
+}
+.build:hover { color: #a9c6e2; }
 
 @media (max-width: 860px) {
   .hero__inner { grid-template-columns: 1fr; gap: 36px; padding-block: 48px; }
