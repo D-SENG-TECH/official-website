@@ -23,7 +23,7 @@ python3 -m http.server 8000 -d public
 git tag -a v1.1.0 -m "v1.1.0" && git push origin v1.1.0
 ```
 
-推 `v*` tag 也會觸發重新部署，頁尾就會換成新版號。
+Pages 只從 `main` 部署，推 tag 不會觸發部署。打完 tag 後執行 `gh workflow run pages.yml`（或到 Actions 手動執行），頁尾就會換成新版號。
 
 ## 內容原則
 
