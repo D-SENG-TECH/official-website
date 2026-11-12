@@ -68,14 +68,17 @@
 .pf-toc ol { display: flex; gap: 8px 28px; }
 .pf-toc a { display: inline-flex; align-items: baseline; gap: 8px; text-decoration: none; white-space: nowrap; font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
 .pf-toc a b { font-size: 12px; color: var(--pf-gold-ink); font-weight: 700; }
-.pf-toc a:hover { border-bottom-color: var(--pf-gold); }
+.pf-toc a:hover, .pf-toc a[aria-current] { border-bottom-color: var(--pf-gold); }
+.pf-toc a[aria-current] { color: var(--pf-navy); font-weight: 700; }
 .pf-toc__print {
   margin-left: auto; flex-shrink: 0;
   font: inherit; font-size: 14px; font-weight: 700; cursor: pointer;
   border: 0; border-radius: 999px; padding: 9px 18px; min-height: 40px;
   background: var(--pf-navy); color: #fff;
+  display: inline-flex; align-items: center; gap: 8px;
   transition: background .15s;
 }
+.pf-toc__print-short { display: none; }
 .pf-toc__print:hover { background: var(--pf-deep); }
 .pf-toc__print:focus-visible { outline: 3px solid var(--pf-gold); outline-offset: 2px; }
 .profile .pf-section { scroll-margin-top: 64px; }
@@ -220,9 +223,16 @@
   /* Phone: one compact sticky row — scrollable section links, print button pinned right */
   .pf-toc__inner { gap: 12px; padding-block: 8px; overflow: visible; }
   .pf-toc__label { display: none; }
-  .pf-toc ol { flex: 1; min-width: 0; overflow-x: auto; gap: 18px; scrollbar-width: none; }
+  .pf-toc ol {
+    flex: 1; min-width: 0; overflow-x: auto; gap: 18px; scrollbar-width: none; padding-right: 24px;
+    /* fade the right edge so it reads as "more to swipe" */
+    -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 32px), transparent);
+            mask-image: linear-gradient(90deg, #000 calc(100% - 32px), transparent);
+  }
   .pf-toc ol::-webkit-scrollbar { display: none; }
-  .pf-toc__print { font-size: 13px; padding: 8px 14px; min-height: 36px; }
+  .pf-toc__print { font-size: 13px; padding: 8px 12px; min-height: 40px; gap: 6px; }
+  .pf-toc__print-long { display: none; }
+  .pf-toc__print-short { display: inline; }
   .pf-contact__list div { grid-template-columns: 1fr; gap: 2px; }
 }
 @media (prefers-reduced-motion: reduce) {
