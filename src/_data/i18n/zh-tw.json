@@ -518,7 +518,7 @@
         "summary": "與英格索蘭合作，提供 Class 0 無油螺桿式空壓機、空氣處理設備與空壓機房規劃。",
         "body": [
           "壓縮空氣（CDA）是半導體與電子廠的基礎公用系統，用於氣動閥件、儀錶控制與製程設備驅動，空氣中若含油分、水氣或微粒，便可能影響製程與下游設備。智聖科技與英格索蘭 Ingersoll Rand 合作，提供無油螺桿式空壓機及乾燥、過濾等空氣處理設備，協助客戶取得穩定且潔淨的壓縮空氣。",
-          "英格索蘭擁有超過 165 年歷史，其無油螺桿式空壓機經 TÜV 認證符合 ISO 8573-1 Class 0 無油空氣等級。產品線涵蓋 37 kW 至 500 kW 的無油螺桿機型，提供定頻與變頻（VSD）、氣冷與水冷等配置，可依用氣量變化與廠區條件選配。",
+          "英格索蘭擁有超過 165 年歷史，其無油螺桿式空壓機經 TÜV 認證符合 ISO 8573-1 Class 0 無油空氣等級。產品線涵蓋 37 kW 至 355 kW 的無油螺桿機型，提供定頻與變頻（VSD）、氣冷與水冷等配置，可依用氣量變化與廠區條件選配。",
           "除了設備本身，我們也從整體系統角度協助客戶評估用氣需求、壓力設定與機台組合，規劃空壓機房的配置、乾燥過濾與管路，並結合原廠零件與定期保養，降低空壓系統在整個生命週期中的能耗與停機風險。"
         ],
         "sections": [
@@ -527,17 +527,13 @@
             "text": "依功率與運轉需求，提供英格索蘭多個系列的無油螺桿式空壓機，皆可選擇定頻或變頻機型，以及氣冷或水冷配置。",
             "list": [
               "Nirvana 37–75 kW：混合式永磁馬達變頻機型",
-              "Nirvana／Sierra 90–160 kW：新一代機型",
               "E 系列 90–160 kW：IE5 超高效變頻馬達",
-              "E 系列 185–355 kW：模組化主機，大風量設計",
-              "E 系列 355–500 kW：兩段式雙變頻壓縮"
+              "E 系列 185–355 kW：模組化主機，大風量設計"
             ],
             "links": [
               "https://www.ingersollrand.com/zh-apac/products/air-compressors/oil-free-air-compressors/nirvana-37-45-kw-50-60-hp/",
-              "https://www.ingersollrand.com/zh-apac/products/air-compressors/oil-free-air-compressors/",
               "https://www.ingersollrand.com/zh-apac/products/air-compressors/oil-free-air-compressors/e-series-90-160-kw/",
-              "https://www.ingersollrand.com/zh-apac/products/air-compressors/oil-free-air-compressors/e-series-185-355-kw/",
-              "https://www.ingersollrand.com/zh-apac/products/air-compressors/oil-free-air-compressors/"
+              "https://www.ingersollrand.com/zh-apac/products/air-compressors/oil-free-air-compressors/e-series-185-355-kw/"
             ]
           },
           {
@@ -577,7 +573,7 @@
         ],
         "points": [
           "Class 0 無油壓縮空氣",
-          "37–500 kW 無油螺桿機型",
+          "37–355 kW 無油螺桿機型",
           "定頻與變頻、氣冷與水冷可選",
           "乾燥、過濾等空氣處理設備",
           "空壓機房配置規劃",

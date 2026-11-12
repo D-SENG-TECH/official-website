@@ -518,7 +518,7 @@
         "summary": "In partnership with Ingersoll Rand, we provide Class 0 oil-free rotary screw compressors, air treatment equipment, and compressor room planning.",
         "body": [
           "Compressed dry air (CDA) is a fundamental utility in semiconductor and electronics fabs, used for pneumatic valves, instrument control, and driving process equipment. Oil, moisture, or particles in the air can affect processes and downstream equipment. D-SENG Technology partners with Ingersoll Rand to provide oil-free rotary screw compressors along with air treatment equipment such as dryers and filters, helping customers obtain stable, clean compressed air.",
-          "With a history of more than 165 years, Ingersoll Rand offers oil-free rotary screw compressors that are TÜV-certified to ISO 8573-1 Class 0 oil-free air. The product line covers oil-free rotary screw models from 37 kW to 500 kW, available in fixed-speed and variable speed drive (VSD), air-cooled and water-cooled configurations, to suit varying air demand and site conditions.",
+          "With a history of more than 165 years, Ingersoll Rand offers oil-free rotary screw compressors that are TÜV-certified to ISO 8573-1 Class 0 oil-free air. The product line covers oil-free rotary screw models from 37 kW to 355 kW, available in fixed-speed and variable speed drive (VSD), air-cooled and water-cooled configurations, to suit varying air demand and site conditions.",
           "Beyond the equipment itself, we take a system-level approach to help customers evaluate air demand, pressure settings, and compressor combinations, plan compressor room layout, drying, filtration, and piping, and combine genuine parts with regular maintenance to reduce energy consumption and downtime risk across the compressed air system's life cycle."
         ],
         "sections": [
@@ -527,17 +527,13 @@
             "text": "We offer multiple series of Ingersoll Rand oil-free rotary screw compressors by power rating and operating requirements, each available as fixed-speed or VSD models with air-cooled or water-cooled configurations.",
             "list": [
               "Nirvana 37–75 kW: hybrid permanent magnet motor VSD models",
-              "Nirvana / Sierra 90–160 kW: new-generation models",
               "E-Series 90–160 kW: IE5 ultra-premium efficiency VSD motor",
-              "E-Series 185–355 kW: modular airend, high-flow design",
-              "E-Series 355–500 kW: two-stage compression with dual VSD"
+              "E-Series 185–355 kW: modular airend, high-flow design"
             ],
             "links": [
               "https://www.ingersollrand.com/en-apac/products/air-compressors/oil-free-air-compressors/nirvana-37-45-kw-50-60-hp/",
-              "https://www.ingersollrand.com/en-apac/products/air-compressors/oil-free-air-compressors/",
               "https://www.ingersollrand.com/en-apac/products/air-compressors/oil-free-air-compressors/e-series-90-160-kw/",
-              "https://www.ingersollrand.com/en-apac/products/air-compressors/oil-free-air-compressors/e-series-185-355-kw/",
-              "https://www.ingersollrand.com/en-apac/products/air-compressors/oil-free-air-compressors/"
+              "https://www.ingersollrand.com/en-apac/products/air-compressors/oil-free-air-compressors/e-series-185-355-kw/"
             ]
           },
           {
@@ -577,7 +573,7 @@
         ],
         "points": [
           "Class 0 oil-free compressed air",
-          "37–500 kW oil-free rotary screw models",
+          "37–355 kW oil-free rotary screw models",
           "Fixed-speed or VSD, air- or water-cooled",
           "Air treatment equipment including dryers and filters",
           "Compressor room layout planning",

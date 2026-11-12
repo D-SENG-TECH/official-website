@@ -518,7 +518,7 @@
         "summary": "インガソール・ランド（Ingersoll Rand）と提携し、Class 0 オイルフリースクリュー圧縮機、空気処理設備、コンプレッサー室の計画をご提供します。",
         "body": [
           "圧縮空気（CDA）は半導体・電子工場の基盤となるユーティリティで、空圧バルブ、計装制御、製造装置の駆動などに使用されます。空気中に油分、水分、微粒子が含まれていると、製造プロセスや下流の設備に影響を及ぼすおそれがあります。智聖科技はインガソール・ランド（Ingersoll Rand）と提携し、オイルフリースクリュー圧縮機やドライヤ・フィルタなどの空気処理設備を提供して、安定したクリーンな圧縮空気の確保を支援します。",
-          "インガソール・ランドは 165 年以上の歴史を持ち、同社のオイルフリースクリュー圧縮機は ISO 8573-1 Class 0 のオイルフリー空気等級に適合することが TÜV により認証されています。製品ラインは 37 kW から 500 kW までのオイルフリースクリュー機種をカバーし、定速機とインバータ（VSD）機、空冷式と水冷式などの構成を、使用空気量の変動や工場条件に応じて選択できます。",
+          "インガソール・ランドは 165 年以上の歴史を持ち、同社のオイルフリースクリュー圧縮機は ISO 8573-1 Class 0 のオイルフリー空気等級に適合することが TÜV により認証されています。製品ラインは 37 kW から 355 kW までのオイルフリースクリュー機種をカバーし、定速機とインバータ（VSD）機、空冷式と水冷式などの構成を、使用空気量の変動や工場条件に応じて選択できます。",
           "設備単体にとどまらず、システム全体の観点から使用空気量、圧力設定、機台構成の評価を支援し、コンプレッサー室のレイアウト、乾燥・ろ過、配管を計画します。純正部品と定期保守を組み合わせることで、エアシステムのライフサイクル全体にわたるエネルギー消費と停止リスクを低減します。"
         ],
         "sections": [
@@ -527,17 +527,13 @@
             "text": "出力と運転条件に応じて、インガソール・ランドの複数シリーズのオイルフリースクリュー圧縮機をご提供します。いずれも定速機またはインバータ機、空冷式または水冷式を選択できます。",
             "list": [
               "Nirvana 37–75 kW：ハイブリッド永久磁石モーター搭載のインバータ機",
-              "Nirvana／Sierra 90–160 kW：新世代機種",
               "E シリーズ 90–160 kW：IE5 超高効率インバータモーター",
-              "E シリーズ 185–355 kW：モジュール式本体、大風量設計",
-              "E シリーズ 355–500 kW：2 段圧縮・デュアルインバータ"
+              "E シリーズ 185–355 kW：モジュール式本体、大風量設計"
             ],
             "links": [
               "https://www.ingersollrand.com/en-apac/products/air-compressors/oil-free-air-compressors/nirvana-37-45-kw-50-60-hp/",
-              "https://www.ingersollrand.com/en-apac/products/air-compressors/oil-free-air-compressors/",
               "https://www.ingersollrand.com/en-apac/products/air-compressors/oil-free-air-compressors/e-series-90-160-kw/",
-              "https://www.ingersollrand.com/en-apac/products/air-compressors/oil-free-air-compressors/e-series-185-355-kw/",
-              "https://www.ingersollrand.com/en-apac/products/air-compressors/oil-free-air-compressors/"
+              "https://www.ingersollrand.com/en-apac/products/air-compressors/oil-free-air-compressors/e-series-185-355-kw/"
             ]
           },
           {
@@ -577,7 +573,7 @@
         ],
         "points": [
           "Class 0 オイルフリー圧縮空気",
-          "37–500 kW のオイルフリースクリュー機種",
+          "37–355 kW のオイルフリースクリュー機種",
           "定速機／インバータ機、空冷式／水冷式を選択可能",
           "ドライヤ・フィルタなどの空気処理設備",
           "コンプレッサー室のレイアウト計画",

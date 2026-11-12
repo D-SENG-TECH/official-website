@@ -518,7 +518,7 @@
         "summary": "与英格索兰合作，提供 Class 0 无油螺杆式空压机、空气处理设备与空压站规划。",
         "body": [
           "压缩空气（CDA）是半导体与电子厂的基础公用系统，用于气动阀门、仪表控制与工艺设备驱动；空气中若含有油分、水汽或颗粒，就可能影响工艺与下游设备。智圣科技与英格索兰 Ingersoll Rand 合作，提供无油螺杆式空压机及干燥、过滤等空气处理设备，帮助客户获得稳定、洁净的压缩空气。",
-          "英格索兰拥有超过 165 年历史，其无油螺杆式空压机经 TÜV 认证符合 ISO 8573-1 Class 0 无油空气等级。产品线涵盖 37 kW 至 500 kW 的无油螺杆机型，提供定频与变频（VSD）、风冷与水冷等配置，可根据用气量变化与厂区条件选配。",
+          "英格索兰拥有超过 165 年历史，其无油螺杆式空压机经 TÜV 认证符合 ISO 8573-1 Class 0 无油空气等级。产品线涵盖 37 kW 至 355 kW 的无油螺杆机型，提供定频与变频（VSD）、风冷与水冷等配置，可根据用气量变化与厂区条件选配。",
           "除设备本身外，我们也从系统整体角度帮助客户评估用气需求、压力设定与机组组合，规划空压站的布置、干燥过滤与管路，并结合原厂零件与定期保养，降低空压系统在整个生命周期内的能耗与停机风险。"
         ],
         "sections": [
@@ -527,17 +527,13 @@
             "text": "根据功率与运行需求，提供英格索兰多个系列的无油螺杆式空压机，均可选择定频或变频机型，以及风冷或水冷配置。",
             "list": [
               "Nirvana 37–75 kW：混合式永磁电机变频机型",
-              "Nirvana／Sierra 90–160 kW：新一代机型",
               "E 系列 90–160 kW：IE5 超高效变频电机",
-              "E 系列 185–355 kW：模块化主机，大风量设计",
-              "E 系列 355–500 kW：两级双变频压缩"
+              "E 系列 185–355 kW：模块化主机，大风量设计"
             ],
             "links": [
               "https://www.ingersollrand.com/zh-apac/products/air-compressors/oil-free-air-compressors/nirvana-37-45-kw-50-60-hp/",
-              "https://www.ingersollrand.com/zh-apac/products/air-compressors/oil-free-air-compressors/",
               "https://www.ingersollrand.com/zh-apac/products/air-compressors/oil-free-air-compressors/e-series-90-160-kw/",
-              "https://www.ingersollrand.com/zh-apac/products/air-compressors/oil-free-air-compressors/e-series-185-355-kw/",
-              "https://www.ingersollrand.com/zh-apac/products/air-compressors/oil-free-air-compressors/"
+              "https://www.ingersollrand.com/zh-apac/products/air-compressors/oil-free-air-compressors/e-series-185-355-kw/"
             ]
           },
           {
@@ -577,7 +573,7 @@
         ],
         "points": [
           "Class 0 无油压缩空气",
-          "37–500 kW 无油螺杆机型",
+          "37–355 kW 无油螺杆机型",
           "定频与变频、风冷与水冷可选",
           "干燥、过滤等空气处理设备",
           "空压站布置规划",
