@@ -71,3 +71,8 @@
 - **決策**：不做 PDF 檔，做成一頁式網頁，依載體顯示：桌機多欄、手機單欄、`@media print` + `@page A4` 時切成 5 頁（封面／關於＋價值／事業／關係企業／聯絡），每節 `break-before: page`、卡片 `break-inside: avoid`、`print-color-adjust: exact` 讓深藍封面印得出來；頁面上「列印／另存 PDF」按鈕就是 `window.print()`。下載專區改成連到這頁。
 - **派工**：先鎖 `t.profile` 文案契約（zh-tw 主稿）再平行——一個 agent 只寫 `profile.njk` / `profile.css`，一個 agent 只改 zh-cn/en/ja JSON；整合時統一建置、跑 check-i18n、四語各產一份 A4 PDF 逐頁檢查。
 - **整合時修的**：日文與英文文案較長，原本核心價值被擠到下一頁、事業卡片拆兩頁；列印時價值改 4 欄且整區不拆頁、事業卡片隱藏圖片（列印時只剩細條，資訊量低）、主要產品改 5 欄，四語都固定 5 頁。`.profile img` 的權重蓋掉 `.pf-card__img`，改用 `.profile .pf-card__img`。
+
+## 14:30 — 公司簡介補組織架構與完整事業內容；列印封面改白底
+
+- **決策**：業主認為事業項目太簡略，改成每項事業完整呈現（summary、body、points、品牌、圖片／相片集縮圖、所有 sections），內容與各事業頁同源；AI 監測另以 `profile-aimon.njk` 帶入 AI 監測頁的六步驟、痛點表、訊號／解法、八個畫面、甜蜜點與四張圖，資料都來自 `_data/aimon`，不另寫一份。新增「組織架構」章節，沿用 about 的 org 資料與 `.tree` 樣式。
+- **列印**：事業不再每項強制換頁（短的項目會留下大半空白頁），改為連續排版、標題 `break-after: avoid`、每個細節卡片 `break-inside: avoid`。組織圖原本在 A4 寬度落進 1240px 以下的「縮排清單」版型，把該 media query 改成 `screen and`，列印維持樹狀並以 `zoom` 縮到 A4 寬。封面依業主要求列印時改白底（深藍字、金色副標、白底版 logo），螢幕維持深藍。

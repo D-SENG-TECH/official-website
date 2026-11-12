@@ -6,12 +6,23 @@ page_path: profile/
 {%- set p = t.profile -%}
 {%- set aff = t.about.affiliates[0] -%}
 {%- set local_fmt = (lang.code == "zh-tw") -%}
+{%- macro org_node(node) -%}
+<li>
+  <div class="node{% if node.k %} node--{{ node.k | replace('_', '-') }}{% endif %}"><b>{{ node.t }}</b>{% if node.s %}<small>{{ node.s }}</small>{% endif %}{% if node.n %}<span>{{ node.n }}</span>{% endif %}</div>
+  {%- if node.c %}
+  <ul>
+    {%- for child in node.c %}{{ org_node(child) }}{% endfor %}
+  </ul>
+  {%- endif %}
+</li>
+{%- endmacro -%}
 <link rel="stylesheet" href="/assets/profile.css">
 
 <div class="profile">
   <header class="pf-cover">
     <div class="pf-cover__inner">
-      <img class="pf-cover__logo" src="/assets/logo-dark.svg" width="2246" height="512" alt="{{ t.common.company_name }}">
+      <img class="pf-cover__logo pf-cover__logo--screen" src="/assets/logo-dark.svg" width="2246" height="512" alt="{{ t.common.company_name }}">
+      <img class="pf-cover__logo pf-cover__logo--print" src="/assets/logo.svg" width="2246" height="512" alt="">
       <div class="pf-cover__main">
         <p class="pf-eyebrow">{{ p.cover_eyebrow }}</p>
         <h1 class="pf-cover__title"><span>{{ t.home.headline_a | replace("・", "") }}</span><span class="pf-gold">{{ t.home.headline_b }}</span></h1>
@@ -34,8 +45,8 @@ page_path: profile/
     <div class="wrap pf-toc__inner">
       <span class="pf-toc__label">{{ p.contents }}</span>
       <ol>
-        {%- for key in ["about", "values", "business", "affiliate", "contact"] %}
-        <li><a href="#pf-{{ key }}"><b>{{ loop.index }}</b>{{ p.sections[key] }}</a></li>
+        {%- for key in ["about", "values", "org", "business", "affiliate", "contact"] %}
+        <li><a href="#pf-{{ key }}"><b>{{ loop.index }}</b>{{ t.about.org_title if key == "org" else p.sections[key] }}</a></li>
         {%- endfor %}
       </ol>
     </div>
@@ -72,36 +83,94 @@ page_path: profile/
     </div>
   </section>
 
-  <section class="pf-section pf-business" id="pf-business">
+  <section class="pf-section pf-org" id="pf-org">
     <div class="wrap">
       <p class="pf-kicker">03</p>
+      <h2>{{ t.about.org_title }}</h2>
+    </div>
+    <div class="wrap wrap--wide">
+      <div class="tree pf-tree">
+        <ul>{{ org_node(t.about.org) }}</ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="pf-section pf-business" id="pf-business">
+    <div class="wrap">
+      <p class="pf-kicker">04</p>
       <h2>{{ p.sections.business }}</h2>
       <p class="pf-lead">{{ p.business_lead }}</p>
-      <ol class="pf-cards">
+      <ol class="pf-index">
         {%- for item in t.business.items %}
-        <li class="pf-card{% if item.image %} pf-card--img{% endif %}">
-          {%- if item.image %}
-          <img class="pf-card__img" src="/assets/business/{{ item.image }}" alt="{{ item.image_alt }}">
-          {%- endif %}
-          <div class="pf-card__body">
-            <span class="pf-card__no">{{ "0" + loop.index }}</span>
-            <h3><a href="{{ lang.prefix }}business/{{ item.id | replace('_','-') }}/">{{ item.title }}</a></h3>
-            <p>{{ item.summary }}</p>
-            {%- if item.points %}
-            <ul>
-              {%- for pt in item.points %}{% if loop.index0 < 3 %}<li>{{ pt }}</li>{% endif %}{% endfor %}
-            </ul>
-            {%- endif %}
-          </div>
-        </li>
+        <li><a href="#pf-biz-{{ item.id | replace('_','-') }}"><b>{{ "0" + loop.index }}</b>{{ item.title }}</a></li>
         {%- endfor %}
       </ol>
     </div>
+    {%- for item in t.business.items %}
+    {%- set slug = item.id | replace('_','-') %}
+    <article class="pf-biz" id="pf-biz-{{ slug }}">
+      <div class="wrap">
+        <header class="pf-biz__head">
+          <span class="pf-biz__no">{{ "0" + loop.index }}</span>
+          <h3><a href="{{ lang.prefix }}business/{{ slug }}/">{{ item.title }}</a></h3>
+          <p class="pf-biz__summary">{{ item.summary }}</p>
+        </header>
+        {%- set is_ai = item.id == "ai_monitoring" %}
+        <div class="pf-biz__main{% if not item.image and not item.gallery.length and not is_ai %} pf-biz__main--text{% endif %}">
+          <div class="pf-biz__text">
+            {%- for para in item.body %}<p>{{ para }}</p>{% endfor %}
+            {%- if item.points.length %}
+            <ul class="pf-points">
+              {%- for pt in item.points %}<li>{{ pt }}</li>{% endfor %}
+            </ul>
+            {%- endif %}
+            {%- if item.brands.length %}
+            <p class="pf-brands"><span>{{ t.business.brands_label }}</span>{{ item.brands | join("・") }}</p>
+            {%- endif %}
+          </div>
+          {%- if is_ai %}
+          <div class="pf-biz__media">
+            <img class="pf-biz__img" src="/assets/aimon/hero-bg-poster.jpg" alt="{{ aimon.answer[lang.code].img_alt }}">
+          </div>
+          {%- elif item.image or item.gallery.length %}
+          <div class="pf-biz__media">
+            {%- if item.image %}
+            <img class="pf-biz__img" src="/assets/business/{{ item.image }}" alt="{{ item.image_alt }}">
+            {%- endif %}
+            {%- if item.gallery.length %}
+            <ul class="pf-biz__thumbs">
+              {%- for g in item.gallery %}{% if loop.index0 < 3 %}
+              <li><img src="/assets/{{ g.src }}.jpg" alt="{{ g.caption }}"></li>
+              {%- endif %}{% endfor %}
+            </ul>
+            {%- endif %}
+          </div>
+          {%- endif %}
+        </div>
+        {%- if is_ai %}{% include "profile-aimon.njk" %}{% endif %}
+        {%- if item.sections.length %}
+        <div class="pf-biz__secs">
+          {%- for sec in item.sections %}
+          <div class="pf-biz__sec">
+            <h4>{{ sec.title }}</h4>
+            {%- if sec.text %}<p>{{ sec.text }}</p>{% endif %}
+            {%- if sec.list.length %}
+            <ul class="pf-points">
+              {%- for li in sec.list %}<li>{{ li }}</li>{% endfor %}
+            </ul>
+            {%- endif %}
+          </div>
+          {%- endfor %}
+        </div>
+        {%- endif %}
+      </div>
+    </article>
+    {%- endfor %}
   </section>
 
   <section class="pf-section pf-affiliate" id="pf-affiliate">
     <div class="wrap">
-      <p class="pf-kicker">04</p>
+      <p class="pf-kicker">05</p>
       <h2>{{ p.sections.affiliate }}</h2>
       <h3 class="pf-aff__name">{{ aff.name_full }}</h3>
       <p class="pf-lead">{{ aff.text }}</p>
@@ -125,7 +194,7 @@ page_path: profile/
   <section class="pf-section pf-contact" id="pf-contact">
     <div class="wrap pf-contact__grid">
       <div>
-        <p class="pf-kicker">05</p>
+        <p class="pf-kicker">06</p>
         <h2>{{ p.sections.contact }}</h2>
         <p class="pf-lead">{{ p.contact_lead }}</p>
         <dl class="pf-contact__list">

@@ -505,7 +505,7 @@ a { color: inherit; }
 .node--partner { background: #fbeee0; border-color: var(--orange-ink); }
 .node--partner-unit { background: #fef8f1; border-color: #e0bd97; }
 
-@media (max-width: 1240px) {
+@media screen and (max-width: 1240px) {
   /* Below this width the tree no longer fits: it becomes an indented list */
   .tree ul { display: block; }
   .tree li > ul { padding-top: 0; }

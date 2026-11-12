@@ -1,0 +1,81 @@
+{#- Company profile: full AI monitoring content, drawn from the same data as the AI monitoring page. -#}
+{%- set hero = aimon.hero[lang.code] -%}
+{%- set problem = aimon.problem[lang.code] -%}
+{%- set signal = aimon.signal[lang.code] -%}
+{%- set answer = aimon.answer[lang.code] -%}
+{%- set screens = aimon.screens[lang.code] -%}
+{%- set sweet = aimon.sweetspot[lang.code] -%}
+<div class="pf-ai">
+  <div class="pf-ai__block">
+    <p class="pf-ai__eyebrow">{{ hero.eyebrow }}</p>
+    <h4>{{ hero.h1a }}{{ hero.h1b }}</h4>
+    <p class="pf-ai__lead">{{ hero.desc }}</p>
+    <ol class="pf-ai__steps">
+      {%- for s in hero.steps %}
+      <li><b>{{ s.n }}</b><strong>{{ s.head }}</strong><span>{{ s.body }}</span></li>
+      {%- endfor %}
+    </ol>
+  </div>
+
+  <div class="pf-ai__block">
+    <p class="pf-ai__eyebrow">{{ problem.eyebrow }}</p>
+    <h4>{{ problem.title }}</h4>
+    <table class="pf-ai__table">
+      <thead><tr><th>{{ problem.head_now }}</th><th>{{ problem.head_pain }}</th></tr></thead>
+      <tbody>
+        {%- for r in problem.rows %}
+        <tr><td>{{ r.now }}</td><td>{{ r.pain }}</td></tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+    <p class="pf-ai__note">{{ problem.closing }}</p>
+  </div>
+
+  <div class="pf-ai__block pf-ai__split">
+    <div>
+      <p class="pf-ai__eyebrow">{{ signal.eyebrow }}</p>
+      <h4>{{ signal.title }}</h4>
+      <p class="pf-ai__lead">{{ signal.sub }}</p>
+      <p class="pf-ai__quote"><span>{{ signal.card_tag }}</span>{{ signal.card_body }}</p>
+    </div>
+    <div>
+      <p class="pf-ai__eyebrow">{{ answer.eyebrow }}</p>
+      <h4>{{ answer.title }}</h4>
+      <ol class="pf-ai__flow">
+        {%- for f in answer.flow %}<li>{{ f }}</li>{% endfor %}
+      </ol>
+      <img class="pf-ai__img" src="/assets/aimon/answer-plant.jpg" width="1860" height="800" alt="{{ answer.img_alt }}">
+    </div>
+  </div>
+
+  <div class="pf-ai__block">
+    <h4>{{ screens.title }}</h4>
+    <p class="pf-ai__lead">{{ screens.sub }}</p>
+    <div class="pf-ai__screens">
+      <img class="pf-ai__img" src="/assets/aimon/screens-plant-thumb.jpg" width="860" height="694" alt="{{ screens.img_alt }}">
+      <ol class="pf-ai__grid">
+        {%- for k in ["c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8"] %}
+        {%- set c = screens[k] %}
+        <li><b>{{ loop.index }}</b><strong>{{ c.t }}</strong><span>{{ c.cap }}</span></li>
+        {%- endfor %}
+      </ol>
+    </div>
+  </div>
+
+  <div class="pf-ai__block">
+    <p class="pf-ai__eyebrow">{{ sweet.eyebrow }}</p>
+    <h4>{{ sweet.title | safe }}</h4>
+    <div class="pf-ai__screens pf-ai__screens--sweet">
+      <img class="pf-ai__img" src="/assets/aimon/sweetspot-fan.jpg" width="1324" height="890" alt="{{ sweet.fan_alt }}">
+      <div>
+        <p class="pf-ai__lead">{{ sweet.lead | safe }}</p>
+        <ul class="pf-ai__cards">
+          {%- for c in sweet.cards %}
+          <li><strong>{{ c.k }}</strong><span>{{ c.html | safe }}</span></li>
+          {%- endfor %}
+        </ul>
+        <p class="pf-ai__note">{{ sweet.foot | safe }}</p>
+      </div>
+    </div>
+  </div>
+</div>
