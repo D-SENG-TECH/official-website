@@ -54,3 +54,9 @@
 - **JSON-LD**：每頁一份 Organization（地址拆成 PostalAddress、座標、電話、傳真、email、512px 方形 logo）；事業細頁與彰京產品頁加 BreadcrumbList。字串一律經 Nunjucks `dump`，避免多語文字破壞 JSON。
 - **sitemap.xml**：13 個路徑 × 4 語言，每筆帶 xhtml:link hreflang 與 x-default。**robots.txt**：正式站允許全部並指向 sitemap；預覽站沿用部署流程覆寫成 Disallow。
 - **og:image 指向正式網域**：預覽站分享時會抓不到圖，直到正式站上線——刻意如此，canonical 本來就指向正式站。
+
+## 12:20 — OG 圖改版：拿掉照片，改成品牌圖形
+
+- **決策**：業主看到分享預覽後認為太老派、照片縮小後看不出招牌。改成深色漸層 + 細點陣底、logo 的 S 圖形放大切出右側（金色漸層、深藍部分改半透明）、兩行大標題（第二行金色漸層）、一行副標，拿掉照片與事業標籤。
+- **檔名改成 `share-<lang>.jpg`**：Facebook／LINE 依圖片網址快取，換檔名才會抓新圖。
+- **替代方案**：保留照片改大圖滿版——招牌在 1200×630 的縮圖裡仍然太小，文字也難壓在照片上。
