@@ -71,8 +71,29 @@ page_path: profile/
         <li><a href="#pf-{{ key }}"><b>{{ loop.index }}</b>{{ t.about.org_title if key == "org" else p.sections[key] }}</a></li>
         {%- endfor %}
       </ol>
+      <button type="button" class="pf-toc__print" onclick="window.print()" tabindex="-1">{{ p.print }}</button>
     </div>
   </nav>
+  <script>
+  (() => {
+    /* Keep the ToC bar under the sticky site header, and show its print button once the
+       cover's own button has scrolled out of view. */
+    const root = document.currentScript.closest(".profile");
+    const header = document.querySelector(".site-header");
+    const setTop = () => root.style.setProperty("--pf-top",
+      (header && getComputedStyle(header).position === "sticky" ? header.offsetHeight : 0) + "px");
+    setTop();
+    addEventListener("resize", setTop);
+    const cover = root.querySelector(".pf-actions");
+    const btn = root.querySelector(".pf-toc__print");
+    if (!cover || !("IntersectionObserver" in window)) { btn.classList.add("is-shown"); btn.tabIndex = 0; return; }
+    new IntersectionObserver(([e]) => {
+      const show = !e.isIntersecting && e.boundingClientRect.top < 0;
+      btn.classList.toggle("is-shown", show);
+      btn.tabIndex = show ? 0 : -1;
+    }).observe(cover);
+  })();
+  </script>
 
   <section class="pf-section pf-about" id="pf-about">
     <div class="wrap pf-about__grid">
