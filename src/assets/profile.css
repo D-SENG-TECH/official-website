@@ -52,7 +52,8 @@
 .pf-print:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 .pf-hint { font-size: 13px; color: rgba(255,255,255,.65); }
 
-.pf-qr { margin: 0; display: grid; justify-items: center; gap: 6px; }
+/* QR code is for paper only: on screen the visitor is already on the site */
+.pf-qr { margin: 0; display: none; justify-items: center; gap: 6px; }
 .pf-qr img { width: 96px; height: 96px; padding: 8px; background: #fff; border-radius: 10px; }
 .pf-qr figcaption { font-size: 12px; letter-spacing: .08em; color: rgba(255,255,255,.75); }
 .pf-contact__logo .pf-qr { margin-top: 28px; }
@@ -271,6 +272,7 @@
   .pf-printtoc__list ol { grid-column: 2; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2mm 8mm; margin-top: 3.5mm; }
   .pf-printtoc__list ol li { font-size: 10.5pt; font-weight: 500; color: var(--pf-ink); }
   .pf-printtoc__list ol b { display: inline-block; width: 8mm; color: var(--pf-gold-ink); font-size: 9pt; }
+  .pf-qr { display: grid; }
   .pf-qr img { width: 24mm; height: 24mm; padding: 0; border-radius: 0; }
   .pf-qr figcaption { color: var(--pf-muted) !important; font-size: 8.5pt; }
   .pf-contact__logo .pf-qr img { border: 0; }
