@@ -110,13 +110,18 @@
         <img class="brand__logo" src="/assets/logo.svg" width="2246" height="512" alt="{{ t.common.company_name }}">
         <span class="visually-hidden">{{ t.nav.home }}</span>
       </a>
-      <nav class="site-nav" aria-label="{{ t.common.menu }}">
+      <button type="button" class="nav-toggle" aria-controls="site-nav" aria-expanded="false">
+        <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="visually-hidden">{{ t.common.menu }}</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="{{ t.common.menu }}">
         {%- for key in ["about", "business", "careers", "downloads", "contact"] %}
         {%- set path = key + "/" %}
         {%- if key == "business" %}
+        <span class="site-nav__label" aria-hidden="true">{{ t.nav.business }}</span>
         {%- for item in t.business.items %}
         {%- set item_path = path + (item.id | replace("_", "-")) + "/" %}
-        <a href="{{ lang.prefix }}{{ item_path }}"{% if page_path == item_path %} aria-current="page"{% endif %}>{{ item.nav }}</a>
+        <a class="site-nav__sub" href="{{ lang.prefix }}{{ item_path }}"{% if page_path == item_path %} aria-current="page"{% endif %}>{{ item.nav }}</a>
         {%- endfor %}
         {%- else %}
         <a href="{{ lang.prefix }}{{ path }}"{% if page_path == path %} aria-current="page"{% elif page_path.startsWith(path) %} aria-current="true"{% endif %}>{{ t.nav[key] }}</a>
@@ -133,6 +138,25 @@
       </details>
     </div>
   </header>
+  <script>
+  (() => {
+    /* Mobile menu: the hamburger toggles the nav panel under the header */
+    const header = document.querySelector(".site-header");
+    const btn = header.querySelector(".nav-toggle");
+    const nav = header.querySelector(".site-nav");
+    const mq = matchMedia("(max-width: 1000px)");
+    const setOpen = (open) => {
+      header.classList.toggle("is-open", open);
+      btn.setAttribute("aria-expanded", open);
+      document.documentElement.classList.toggle("nav-open", open);
+    };
+    btn.addEventListener("click", () => setOpen(!header.classList.contains("is-open")));
+    nav.addEventListener("click", (e) => { if (e.target.closest("a")) setOpen(false); });
+    addEventListener("keydown", (e) => { if (e.key === "Escape" && header.classList.contains("is-open")) { setOpen(false); btn.focus(); } });
+    document.addEventListener("click", (e) => { if (header.classList.contains("is-open") && !header.contains(e.target)) setOpen(false); });
+    mq.addEventListener("change", () => setOpen(false));
+  })();
+  </script>
 
   <main id="main">
     {{ content | safe }}
