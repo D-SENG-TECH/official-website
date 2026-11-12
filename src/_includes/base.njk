@@ -21,7 +21,7 @@
   {%- set page_url = site.url + lang.prefix + page_path %}
   {%- set og_title = (t.common.company_name + " | " + t.common.company_name_en) if page_key == "home" else (page_title + " | " + t.common.company_short) %}
   {%- set og_description = t.meta.og_description if page_key == "home" else page_description %}
-  {%- set og_image = site.url + "/assets/og/share-" + lang.code + ".jpg" %}
+  {%- set og_image = site.url + "/assets/og/brand-" + lang.code + ".jpg" %}
   <meta name="theme-color" content="#14284b">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ t.common.company_short }}">
