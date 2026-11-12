@@ -144,6 +144,62 @@ a { color: inherit; }
 .hero h1 em { display: inline-block; color: var(--orange); font-style: normal; white-space: nowrap; }
 .hero__lead { margin-top: 20px; color: #dbe6f0; font-size: 20px; }
 .hero__image { width: 100%; border-radius: 8px; }
+
+/* Home hero, 3D showroom: full-bleed under the sticky header. Idle = headline + Play; playing = product captions. */
+.hero--3d { position: relative; height: calc(100svh - var(--hero3d-top, 64px)); min-height: 560px; overflow: hidden; background: #061426; }
+.hero3d__stage { position: absolute; inset: 0; z-index: 1; }
+.hero3d__stage canvas { display: block; width: 100%; height: 100%; opacity: 0; transition: opacity 1.2s; }
+.hero--3d.is-ready .hero3d__stage canvas { opacity: 1; }
+.hero3d__fallback { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; transition: opacity 1.2s; }
+.hero--3d.is-ready .hero3d__fallback { opacity: 0; }
+.hero3d__shade { position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: linear-gradient(90deg, rgb(6 20 38 / .75) 0%, rgb(6 20 38 / .25) 38%, transparent 58%),
+              linear-gradient(0deg, rgb(6 20 38 / .75) 0%, transparent 32%); }
+.hero3d__intro, .hero3d__caption, .hero3d__ctrl { position: absolute; z-index: 3; left: max(24px, 6vw); }
+.hero3d__intro { bottom: calc(96px + 5vh); max-width: 720px; transition: opacity .6s, transform .6s; }
+.hero--3d h1 { font-size: clamp(38px, 5.4vw, 72px); line-height: 1.1; }
+.hero--3d .hero__lead { margin-top: 18px; font-size: clamp(16px, 1.5vw, 21px); line-height: 1.7; }
+.hero3d__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; margin-top: 30px; }
+.hero3d__actions .button { margin-top: 0; padding: 13px 24px; border: 1px solid rgb(255 255 255 / .55); border-radius: 999px; background: rgb(6 20 38 / .3);
+  color: #fff; backdrop-filter: blur(6px); }
+.hero3d__actions .button:hover { border-color: var(--orange); color: var(--orange); background: rgb(6 20 38 / .3); }
+.hero3d__play { display: inline-flex; align-items: center; gap: 14px; padding: 8px 24px 8px 8px; border: 0; border-radius: 999px; background: var(--orange);
+  color: #0b1d31; font: inherit; font-size: 17px; font-weight: 700; letter-spacing: .06em; cursor: pointer;
+  box-shadow: 0 10px 30px rgb(240 149 74 / .35); transition: transform .2s, box-shadow .2s; }
+.hero3d__play:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgb(240 149 74 / .45); }
+.hero3d__play-icon { width: 40px; height: 40px; border-radius: 50%; background: #0b1d31; display: grid; place-items: center; }
+.hero3d__play-icon::before { content: ""; margin-left: 4px; border-left: 13px solid var(--orange); border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
+.hero3d__hint { margin-top: 16px; color: #a9c6e2; font-size: 13px; letter-spacing: .12em; }
+.hero--3d.is-playing .hero3d__intro { opacity: 0; transform: translateY(16px); pointer-events: none; visibility: hidden; transition: opacity .6s, transform .6s, visibility 0s .6s; }
+.hero3d__caption { bottom: calc(96px + 5vh); max-width: 460px; opacity: 0; pointer-events: none; }
+.hero3d__no { color: var(--orange); font-size: 14px; font-weight: 700; letter-spacing: .2em; }
+.hero3d__caption h2 { margin-top: 10px; color: #fff; font-size: clamp(28px, 3.4vw, 48px); line-height: 1.18; }
+.hero3d__caption p:last-child { margin-top: 14px; color: #dbe6f0; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.75; }
+.hero3d__ctrl { right: max(24px, 6vw); bottom: 32px; display: flex; align-items: flex-end; gap: 18px; }
+.hero3d__ctrl[hidden] { display: none; }
+.hero3d__pause { flex: none; width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgb(255 255 255 / .45); background: rgb(6 20 38 / .35);
+  backdrop-filter: blur(6px); cursor: pointer; display: grid; place-items: center; transition: opacity .4s; }
+.hero3d__pause::before { content: ""; width: 10px; height: 12px; border-left: 3px solid #fff; border-right: 3px solid #fff; }
+.hero3d__pause[aria-pressed="true"]::before { width: 0; height: 0; border-right: 0; border-left: 11px solid #fff; border-top: 7px solid transparent; border-bottom: 7px solid transparent; margin-left: 3px; }
+.hero--3d:not(.is-playing) .hero3d__pause { opacity: 0; pointer-events: none; }
+.hero3d__segs { flex: 1; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; max-width: 900px; margin: 0; padding: 0; list-style: none; }
+.hero3d__seg { width: 100%; padding: 10px 0 4px; border: 0; background: none; font: inherit; cursor: pointer; text-align: left; }
+.hero3d__seg-label { display: block; margin-bottom: 9px; color: rgb(219 230 240 / .7); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: color .3s; }
+.hero3d__seg-bar { display: block; height: 3px; border-radius: 2px; background: rgb(255 255 255 / .22); overflow: hidden; }
+.hero3d__seg-fill { display: block; height: 100%; background: var(--orange); transform-origin: left; transform: scaleX(0); }
+.hero3d__seg[aria-current="true"] .hero3d__seg-label, .hero3d__seg:hover .hero3d__seg-label { color: #fff; }
+@media (max-width: 700px) {
+  .hero--3d { min-height: 600px; }
+  .hero3d__shade { background: linear-gradient(0deg, rgb(6 20 38 / .94) 0%, rgb(6 20 38 / .6) 40%, transparent 64%); }
+  .hero3d__intro, .hero3d__caption { left: 22px; right: 22px; bottom: 84px; }
+  .hero--3d h1 { font-size: 36px; }
+  .hero--3d .hero__lead { font-size: 16px; }
+  .hero3d__actions { margin-top: 22px; }
+  .hero3d__ctrl { left: 22px; right: 22px; bottom: 26px; gap: 12px; }
+  .hero3d__segs { gap: 6px; }
+  .hero3d__seg-label { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .hero3d__intro, .hero3d__stage canvas, .hero3d__fallback { transition: none; } }
 .button {
   display: inline-block;
   margin-top: 32px;
@@ -677,4 +733,39 @@ a { color: inherit; }
   .contact-card dt { font-size: 11.5px; }
   .contact-map .contact-card .contact-card__route { margin-top: 8px; padding: 6px 11px; font-size: 12px; }
   .contact-map__lead { font-size: 15px; }
+}
+
+/* Product animation page: one sticky 3D canvas under the site header; five full-height panels scroll over it. */
+.showcase { --showcase-h: calc(100svh - var(--showcase-top, 64px)); position: relative; background: #061426; color: #fff; }
+.showcase__stage { position: sticky; top: var(--showcase-top, 64px); height: var(--showcase-h); overflow: hidden; background: #061426; }
+.showcase__stage canvas { display: block; width: 100%; height: 100%; transition: opacity .35s; }
+.showcase__stage.is-switching canvas { opacity: 0; }
+.showcase__stage::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgb(6 20 38 / .75) 0%, rgb(6 20 38 / .25) 38%, transparent 60%),
+              linear-gradient(0deg, rgb(6 20 38 / .6) 0%, transparent 30%); }
+.showcase__panels { margin-top: calc(-1 * var(--showcase-h)); position: relative; z-index: 1; pointer-events: none; }
+.showcase__panel { height: var(--showcase-h); display: flex; align-items: center; padding: 0 max(24px, 6vw);
+  /* html already has scroll-padding-top: 80px; cancel the difference so a jump lands exactly under the header */
+  scroll-margin-top: calc(var(--showcase-top, 64px) - 80px); }
+.showcase__text { max-width: 460px; pointer-events: auto; }
+.showcase__panel--intro .showcase__text { max-width: 760px; }
+.showcase__eyebrow, .showcase__no { margin: 0; color: var(--orange); font-size: 14px; font-weight: 700; letter-spacing: .2em; }
+.showcase h1 { margin: 10px 0 0; font-size: clamp(34px, 5.4vw, 72px); line-height: 1.1; color: #fff; }
+.showcase h1 em { color: var(--orange); font-style: normal; }
+.showcase h2 { margin: 10px 0 0; font-size: clamp(30px, 4.2vw, 56px); line-height: 1.15; color: #fff; }
+.showcase__lead { margin: 16px 0 0; color: #dbe6f0; font-size: clamp(15px, 1.3vw, 19px); line-height: 1.7; }
+.showcase__more { display: inline-block; margin-top: 24px; padding: 11px 22px; border: 1px solid rgb(255 255 255 / .5); border-radius: 999px;
+  color: #fff; text-decoration: none; font-size: 15px; backdrop-filter: blur(6px); background: rgb(6 20 38 / .3); }
+.showcase__more:hover, .showcase__more:focus-visible { border-color: var(--orange); color: var(--orange); }
+.showcase__hint { margin-top: 28px; color: #a9c6e2; font-size: 13px; letter-spacing: .1em; }
+.showcase__nav { position: fixed; right: max(16px, 2vw); top: 50%; transform: translateY(-50%); z-index: 2;
+  display: flex; flex-direction: column; gap: 12px; transition: opacity .3s; }
+.showcase__nav.is-hidden { opacity: 0; pointer-events: none; }
+.showcase__nav.is-hidden a { pointer-events: none; }
+.showcase__nav a { width: 8px; height: 8px; border-radius: 50%; background: rgb(255 255 255 / .35); pointer-events: auto; }
+.showcase__nav a[aria-current="true"] { background: var(--orange); height: 26px; border-radius: 4px; }
+@media (max-width: 700px) {
+  /* Portrait phones: text at the bottom, the model gets the upper part of the screen. */
+  .showcase__panel { align-items: flex-end; padding-bottom: 56px; }
+  .showcase__stage::after { background: linear-gradient(0deg, rgb(6 20 38 / .9) 0%, rgb(6 20 38 / .5) 35%, transparent 60%); }
 }

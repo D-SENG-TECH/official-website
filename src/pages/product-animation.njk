@@ -1,0 +1,60 @@
+---
+page_key: product_animation
+page_path: product-animation/
+---
+{%- set t = i18n[lang.code] -%}
+{%- set pa = t.product_animation -%}
+{#- One sticky full-screen 3D canvas; five full-height panels scroll over it and pick the scene. -#}
+<section class="showcase" aria-label="{{ pa.title }}">
+  <div class="showcase__stage" id="showcase-stage"></div>
+  <div class="showcase__panels" id="showcase-panels">
+    {%- for s in pa.scenes %}
+    <section class="showcase__panel{% if loop.first %} showcase__panel--intro{% endif %}" id="{{ s.id }}" data-scene="{{ s.id }}">
+      <div class="showcase__text">
+        {%- if loop.first %}
+        <p class="showcase__eyebrow">{{ pa.eyebrow }}</p>
+        <h1>{{ pa.heading }}<em>{{ pa.heading_em }}</em></h1>
+        <p class="showcase__lead"><b>{{ "0" + loop.index }}　{{ s.title }}</b><br>{{ s.text }}</p>
+        {%- else %}
+        <p class="showcase__no">{{ "0" + loop.index }}</p>
+        <h2>{{ s.title }}</h2>
+        <p class="showcase__lead">{{ s.text }}</p>
+        {%- endif %}
+        <a class="showcase__more" href="{{ lang.prefix }}business/{{ s.business }}/">{{ pa.more }} →</a>
+        {%- if loop.first %}<p class="showcase__hint">{{ pa.hint }}</p>{% endif %}
+      </div>
+    </section>
+    {%- endfor %}
+  </div>
+  <nav class="showcase__nav" id="showcase-nav" aria-label="{{ pa.title }}">
+    {%- for s in pa.scenes %}<a href="#{{ s.id }}" aria-label="{{ s.title }}"></a>{% endfor %}
+  </nav>
+</section>
+<noscript><p class="wrap small-note">{{ pa.noscript }}</p></noscript>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+<script type="module">
+  import { startHero } from "/assets/product-animation/main.js";
+  const root = document.documentElement;
+  const header = document.querySelector(".site-header");
+  const setHeader = () => root.style.setProperty("--showcase-top", (header?.offsetHeight ?? 0) + "px");
+  setHeader();
+  addEventListener("resize", setHeader);
+  const panels = [...document.querySelectorAll(".showcase__panel")];
+  const dots = [...document.querySelectorAll("#showcase-nav a")];
+  const hero = await startHero(document.getElementById("showcase-stage"), panels.map((p) => p.dataset.scene), {
+    base: "/assets/product-animation/",
+    auto: false,
+    // desktop: subject right of the text column; portrait phone: subject above the text
+    shift: (aspect) => (aspect >= 1.2 ? [0.17, 0] : aspect < 0.8 ? [0, 0.2] : [0, 0.1]),
+    onScene: (id, i) => dots.forEach((a, j) => a.setAttribute("aria-current", String(i === j))),
+  });
+  // The panel covering the middle of the viewport decides which scene plays.
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) if (e.isIntersecting) hero.show(panels.indexOf(e.target));
+  }, { rootMargin: "-50% 0px -50% 0px" });
+  panels.forEach((p) => io.observe(p));
+  // The dot nav is fixed; hide it once the showcase has scrolled away (footer).
+  const nav = document.getElementById("showcase-nav");
+  new IntersectionObserver(([e]) => nav.classList.toggle("is-hidden", !e.isIntersecting))
+    .observe(document.getElementById("showcase-panels"));
+</script>

@@ -69,7 +69,12 @@
     "affiliate_text": "1981 年，彰京开发从半导体与光电厂的管路材料起步。四十五年来，从一根不锈钢管、一个阀门到一整套气体与化学系统配管，彰京凭借完整的产品线与充足的库存，陪伴厂务团队走过一次次建厂与紧急抢修。如今，彰京在竹北启用新的仓储中心，也与智圣并肩，把对厂务现场的理解延伸到设备服务与新材料。",
     "affiliate_more": "了解彰京开发",
     "contact_title": "有设备或项目需求？",
-    "contact_text": "欢迎联系我们，专人为您解答。"
+    "contact_text": "欢迎联系我们，专人为您解答。",
+    "play": "播放产品介绍",
+    "pause": "暂停",
+    "resume": "继续播放",
+    "drag_hint": "拖拽可旋转视角",
+    "stage_label": "产品 3D 展示"
   },
   "about": {
     "title": "关于我们",
@@ -950,5 +955,47 @@
   },
   "footer": {
     "rights": "版权所有"
+  },
+  "product_animation": {
+    "title": "产品动画",
+    "description": "以实时 3D 动画介绍智圣科技的 AI 监测系统、无油螺杆式空压机、智能追焦焊接、包覆式丁基橡胶风管垫片与纳米超晶体。",
+    "eyebrow": "智圣科技 D-SENG",
+    "heading": "智慧驱动・",
+    "heading_em": "创新未来",
+    "more": "了解更多",
+    "hint": "向下滚动 ↓ ・ 拖拽可旋转视角",
+    "noscript": "本页的 3D 动画需要启用 JavaScript。",
+    "scenes": [
+      {
+        "id": "aimon",
+        "business": "ai-monitoring",
+        "title": "AI 监测系统",
+        "text": "振动传感器全天候监看风机，AI 在异常扩大前发出预警，维修从事后抢修变成事前排程。"
+      },
+      {
+        "id": "compressor",
+        "business": "air-compressor",
+        "title": "无油螺杆式空压机",
+        "text": "两级压缩、中间冷却，无油运转提供洁净压缩空气，适用于半导体等高洁净制程。"
+      },
+      {
+        "id": "welding",
+        "business": "smart-welding",
+        "title": "智能追焦焊接",
+        "text": "视觉相机实时追踪焊道，机械臂自动完成管件相贯焊接与风管环缝焊接，质量稳定一致。"
+      },
+      {
+        "id": "gasket",
+        "business": "materials",
+        "title": "包覆式丁基橡胶风管垫片",
+        "text": "外缘唇边包覆法兰，锁紧后橡胶填平法兰面的凹凸，风管接缝气密不泄漏。"
+      },
+      {
+        "id": "nano",
+        "business": "materials",
+        "title": "纳米超晶体",
+        "text": "涂布于配电盘的铜排与端子接点，纳米晶体填补金属表面的微小空隙，降低接触电阻与发热。"
+      }
+    ]
   }
 }

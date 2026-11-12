@@ -69,7 +69,12 @@
     "affiliate_text": "In 1981, Gold Stone Development began by supplying piping materials to semiconductor and optoelectronics fabs. Over the past 45 years, from a single stainless steel tube or valve to complete gas and chemical system piping, Gold Stone has supported facility teams through fab construction projects and emergency repairs with a complete product line and ample inventory. Today, Gold Stone has opened a new warehouse center in Zhubei and works alongside D-SENG to extend its understanding of fab facility operations into equipment services and new materials.",
     "affiliate_more": "About Gold Stone",
     "contact_title": "Have an equipment or project need?",
-    "contact_text": "Get in touch and our team will walk you through it."
+    "contact_text": "Get in touch and our team will walk you through it.",
+    "play": "Play product tour",
+    "pause": "Pause",
+    "resume": "Resume",
+    "drag_hint": "Drag to rotate the view",
+    "stage_label": "3D product showcase"
   },
   "about": {
     "title": "About Us",
@@ -950,5 +955,47 @@
   },
   "footer": {
     "rights": "All rights reserved"
+  },
+  "product_animation": {
+    "title": "Product Animations",
+    "description": "Real-time 3D animations of D-SENG's AI monitoring system, oil-free rotary screw air compressor, smart seam-tracking welding, wrap-around butyl rubber duct gasket and nano super-crystal coating.",
+    "eyebrow": "D-SENG TECHNOLOGY",
+    "heading": "Smart-Driven, ",
+    "heading_em": "Innovating the Future",
+    "more": "Learn more",
+    "hint": "Scroll down ↓ · Drag to rotate the view",
+    "noscript": "The 3D animations on this page require JavaScript.",
+    "scenes": [
+      {
+        "id": "aimon",
+        "business": "ai-monitoring",
+        "title": "AI Monitoring System",
+        "text": "Vibration sensors watch the fan around the clock, and AI warns before a fault grows, turning emergency repairs into planned maintenance."
+      },
+      {
+        "id": "compressor",
+        "business": "air-compressor",
+        "title": "Oil-Free Rotary Screw Air Compressor",
+        "text": "Two-stage compression with intercooling and oil-free operation delivers clean compressed air for semiconductor and other high-purity processes."
+      },
+      {
+        "id": "welding",
+        "business": "smart-welding",
+        "title": "Smart Seam-Tracking Welding",
+        "text": "A vision camera tracks the seam in real time while the robot welds pipe branch joints and duct girth seams with consistent quality."
+      },
+      {
+        "id": "gasket",
+        "business": "materials",
+        "title": "Wrap-Around Butyl Rubber Duct Gasket",
+        "text": "The outer lip wraps the flange; when tightened, the rubber fills the unevenness of the flange faces so the duct joint stays airtight."
+      },
+      {
+        "id": "nano",
+        "business": "materials",
+        "title": "Nano Super-Crystal Coating",
+        "text": "Applied to busbar joints and terminals in switchboards, nano crystals fill the microscopic voids in metal surfaces, reducing contact resistance and heat."
+      }
+    ]
   }
 }
