@@ -1,0 +1,46 @@
+/* AI monitoring showcase — design tokens.
+ * Ported from the monitoring intro deck (cc-* tokens). Variable names are
+ * kept so section styles can be carried over as-is; the green brand family
+ * is remapped to D-SENG navy/blue and the accent to D-SENG orange-red. */
+.aimon {
+  --cc-green:       #1c5f9e;
+  --cc-green-ink:   #133f68;
+  --cc-green-deep:  #0b2239;
+  --cc-green-soft:  #e6eef6;
+  --cc-green-line:  #c3d3e2;
+  --cc-red:         #e2572b;
+  --cc-red-ink:     #a83a17;
+
+  --cc-ink:         #1a1f26;
+  --cc-ink-2:       #333a44;
+  --cc-ink-3:       #5a6270;
+  --cc-ink-4:       #8a919c;
+  --cc-line:        #d9dee5;
+  --cc-line-soft:   #eaeef2;
+  --cc-surface:     #f4f6f8;
+  --cc-surface-2:   #fafbfc;
+  --cc-white:       #ffffff;
+
+  --cc-ok:          #2e7d4f;
+  --cc-warn:        #c87a0a;
+  --cc-alert:       #c8321f;
+  --cc-info:        #2d5a87;
+  --cc-ok-soft:     #e2ece6;
+  --cc-warn-soft:   #f6ebd6;
+  --cc-alert-soft:  #f5deda;
+  --cc-info-soft:   #dfe6ed;
+
+  --cc-font-sans: inherit;
+  --cc-font-mono: 'SF Mono', 'Menlo', 'Consolas', 'Noto Sans Mono', monospace;
+
+  --cc-radius-sm: 2px;
+  --cc-radius-md: 4px;
+  --cc-radius-lg: 6px;
+  --cc-container-max: 1440px;
+
+  /* rgb triplets for translucent overlays (was green-deep 31,53,38) */
+  --am-deep-rgb: 11, 34, 57;
+  --am-blue-rgb: 28, 95, 158;
+}
+.aimon .cc-mono { font-family: var(--cc-font-mono); }
+.aimon .cc-container { width: min(var(--cc-container-max), 100% - 2 * clamp(20px, 4vw, 56px)); margin-inline: auto; }

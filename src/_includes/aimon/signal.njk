@@ -1,0 +1,33 @@
+{#- THE SIGNAL: vibration trace + "unread" / "interpreted" annotations. Path is precomputed (ported buildSignal). -#}
+<section id="signal" class="am-signal" data-am-signal>
+  <div class="cc-container am-signal-inner">
+    <div class="am-signal-reveal am-signal-d1 am-signal-head">
+      <div class="am-signal-eyebrow">{{ am.eyebrow }}</div>
+      <div class="am-signal-rule"></div>
+    </div>
+    <h2 class="am-signal-reveal am-signal-d1 am-signal-title">{{ am.title }}</h2>
+    <p class="am-signal-reveal am-signal-d1 am-signal-sub">{{ am.sub }}</p>
+
+    <div class="am-signal-panel am-signal-reveal am-signal-d2">
+      <div class="am-signal-chart">
+        <div class="am-signal-svgbox">
+          <svg viewBox="0 0 1000 220" preserveAspectRatio="none" class="am-signal-svg" role="img" aria-label="{{ am.chart_label }}">
+            <path class="am-signal-path" d="M0.0 150.0 L5.0 146.3 L10.0 143.0 L15.0 140.5 L20.0 139.1 L25.0 138.7 L30.0 139.3 L35.0 140.6 L40.0 142.4 L45.0 144.2 L50.0 145.9 L55.0 147.2 L60.0 148.1 L65.0 148.7 L70.0 149.0 L75.0 149.3 L80.0 149.6 L85.0 150.0 L90.0 150.4 L95.0 150.7 L100.0 150.8 L105.0 150.5 L110.0 149.6 L115.0 148.2 L120.0 146.4 L125.0 144.5 L130.0 142.8 L135.0 141.6 L140.0 141.3 L145.0 142.1 L150.0 143.9 L155.0 146.6 L160.0 150.0 L165.0 153.6 L170.0 157.1 L175.0 159.9 L180.0 161.9 L185.0 162.8 L190.0 162.6 L195.0 161.7 L200.0 160.1 L205.0 158.3 L210.0 156.4 L215.0 154.7 L220.0 153.4 L225.0 152.3 L230.0 151.4 L235.0 150.5 L240.0 149.6 L245.0 148.6 L250.0 147.5 L255.0 146.5 L260.0 145.8 L265.0 145.6 L270.0 146.0 L275.0 147.1 L280.0 148.7 L285.0 150.8 L290.0 152.9 L295.0 154.7 L300.0 155.8 L305.0 156.0 L310.0 155.2 L315.0 153.3 L320.0 150.5 L325.0 147.3 L330.0 144.1 L335.0 141.2 L340.0 139.0 L345.0 137.7 L350.0 137.4 L355.0 138.1 L360.0 139.4 L365.0 141.1 L370.0 143.0 L375.0 144.8 L380.0 146.4 L385.0 147.8 L390.0 149.1 L395.0 150.4 L400.0 151.7 L405.0 153.2 L410.0 154.7 L415.0 156.2 L420.0 157.4 L425.0 158.2 L430.0 158.2 L435.0 157.5 L440.0 156.0 L445.0 153.8 L450.0 151.3 L455.0 148.9 L460.0 146.9 L465.0 145.7 L470.0 145.4 L475.0 146.3 L480.0 148.1 L485.0 150.6 L490.0 153.4 L495.0 156.1 L500.0 158.4 L505.0 159.8 L510.0 160.4 L515.0 160.1 L520.0 159.1 L525.0 157.5 L530.0 155.6 L535.0 153.6 L540.0 151.7 L545.0 149.7 L550.0 147.7 L555.0 145.5 L560.0 142.9 L565.0 139.8 L570.0 136.1 L575.0 131.9 L580.0 127.4 L585.0 122.7 L590.0 118.1 L595.0 113.6 L600.0 109.5 L605.0 105.6 L610.0 101.8 L615.0 97.8 L620.0 93.4 L625.0 88.5 L630.0 82.9 L635.0 76.7 L640.0 70.3 L645.0 63.9 L650.0 58.2 L655.0 53.6 L660.0 50.7 L665.0 49.8 L670.0 51.1 L675.0 54.4 L680.0 59.7 L685.0 66.4 L690.0 74.2 L695.0 82.5 L700.0 91.0 L705.0 99.4 L710.0 107.5 L715.0 115.3 L720.0 122.6 L725.0 129.7 L730.0 136.3 L735.0 142.3 L740.0 147.6 L745.0 152.0 L750.0 155.2 L755.0 157.1 L760.0 157.5 L765.0 156.6 L770.0 154.6 L775.0 152.0 L780.0 149.0 L785.0 146.3 L790.0 144.2 L795.0 143.1 L800.0 143.0 L805.0 143.8 L810.0 145.4 L815.0 147.4 L820.0 149.4 L825.0 151.2 L830.0 152.4 L835.0 153.0 L840.0 153.0 L845.0 152.6 L850.0 151.8 L855.0 151.0 L860.0 150.2 L865.0 149.4 L870.0 148.7 L875.0 148.0 L880.0 147.1 L885.0 145.9 L890.0 144.4 L895.0 142.6 L900.0 140.7 L905.0 139.1 L910.0 137.9 L915.0 137.5 L920.0 138.2 L925.0 139.8 L930.0 142.5 L935.0 145.9 L940.0 149.6 L945.0 153.2 L950.0 156.2 L955.0 158.4 L960.0 159.5 L965.0 159.5 L970.0 158.6 L975.0 157.1 L980.0 155.2 L985.0 153.4 L990.0 151.9 L995.0 150.8 L1000.0 150.2"/>
+          </svg>
+          <div class="am-signal-dot" aria-hidden="true"><span class="am-signal-dot-pulse"></span></div>
+          <div class="am-signal-tag">{{ am.tag_unread }}</div>
+        </div>
+        <div class="am-signal-card">
+          <div class="am-signal-card-tag">{{ am.card_tag }}</div>
+          <div class="am-signal-card-body">{{ am.card_body }}</div>
+        </div>
+      </div>
+      <div class="am-signal-foot">
+        <div class="am-signal-caption">{{ am.caption }}<b>{{ am.caption_bold }}</b></div>
+      </div>
+    </div>
+
+    <div class="am-signal-reveal am-signal-d3 am-signal-closing">{{ am.closing }}</div>
+  </div>
+</section>
+<script src="/assets/aimon/signal.js" defer></script>

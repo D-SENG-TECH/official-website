@@ -24,14 +24,25 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Stamp version
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check-i18n
+      - name: Build
+        env:
+          GOOGLE_MAPS_API_KEY: ${{ vars.GOOGLE_MAPS_API_KEY }}
         run: |
-          version=$(git describe --tags --always)
-          sed -i "s|href=\"https://github.com/D-SENG-TECH/official-website\" data-build>dev<|href=\"https://github.com/D-SENG-TECH/official-website/commit/${GITHUB_SHA}\" data-build>${version}<|" public/index.html
-          grep -q "data-build>${version}<" public/index.html
+          export BUILD_VERSION=$(git describe --tags --always)
+          export BUILD_COMMIT=$GITHUB_SHA
+          # The -dev mirror repo serves the preview site
+          if [[ "$GITHUB_REPOSITORY" == *-dev ]]; then export SITE_ENV=dev; fi
+          npm run build
+          if [[ "$SITE_ENV" == dev ]]; then printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt; fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4

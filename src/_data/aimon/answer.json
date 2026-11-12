@@ -1,0 +1,30 @@
+{
+  "zh-tw": {
+    "eyebrow": "解法 · THE ANSWER",
+    "note": "數位廠房 · 3D 示意",
+    "title": "讓每一台風機，自動向辛苦廠務報告。",
+    "flow": ["收到訊號", "異常來源分析", "提供解決方案", "開立工單處理"],
+    "img_alt": "3D 數位廠房畫面：多台風機並排，氣流以彩色流線呈現，每台上方浮現即時狀態面板"
+  },
+  "zh-cn": {
+    "eyebrow": "解法 · THE ANSWER",
+    "note": "数字厂房 · 3D 示意",
+    "title": "让每一台风机，自动向辛苦的厂务汇报。",
+    "flow": ["收到信号", "异常来源分析", "提供解决方案", "开立工单处理"],
+    "img_alt": "3D 数字厂房画面：多台风机并排，气流以彩色流线呈现，每台上方浮现实时状态面板"
+  },
+  "en": {
+    "eyebrow": "The answer",
+    "note": "Digital plant · 3D preview",
+    "title": "Every fan reports to your facilities team, on its own.",
+    "flow": ["Signal received", "Source analysis", "Solution provided", "Work order issued"],
+    "img_alt": "3D digital plant view: a row of fans with airflow shown as colored streamlines and a status panel above each unit"
+  },
+  "ja": {
+    "eyebrow": "解決 · THE ANSWER",
+    "note": "デジタル工場 · 3Dイメージ",
+    "title": "すべての送風機が、設備担当へ自動で報告します。",
+    "flow": ["シグナルを受信", "異常要因の分析", "解決策のご提案", "作業指示書の発行"],
+    "img_alt": "3Dデジタル工場の画面。複数の送風機が並び、気流がカラーの流線で表示され、各機の上にステータスパネルが浮かぶ"
+  }
+}

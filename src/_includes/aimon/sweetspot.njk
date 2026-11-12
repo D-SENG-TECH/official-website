@@ -1,0 +1,89 @@
+<section class="am-sweetspot" id="sweet-spot" data-am-sweetspot>
+  <div class="cc-container">
+    <div class="am-sweetspot-top am-sweetspot-reveal">
+      <div class="am-sweetspot-eyebrow">{{ am.eyebrow }}</div>
+      <div class="am-sweetspot-rule"></div>
+      <div class="am-sweetspot-subline">{{ am.subline }}</div>
+    </div>
+
+    <h2 class="am-sweetspot-h2 am-sweetspot-reveal am-sweetspot-d1">{{ am.title | safe }}</h2>
+    <p class="am-sweetspot-sub am-sweetspot-reveal am-sweetspot-d1">{{ am.lead | safe }}</p>
+
+    <div class="am-sweetspot-body am-sweetspot-reveal am-sweetspot-d2">
+      <div class="am-sweetspot-sim">
+        <div class="am-sweetspot-fan3d">
+          <img src="/assets/aimon/sweetspot-fan.jpg" alt="{{ am.fan_alt }}" width="1324" height="890" loading="lazy" decoding="async" data-ss-fan>
+        </div>
+        <p class="am-sweetspot-chart-foot">{{ am.fan_foot | safe }}</p>
+      </div>
+
+      <div class="am-sweetspot-chart">
+        <div class="am-sweetspot-chart-head">
+          <span class="am-sweetspot-chart-title">{{ am.chart_title }}</span>
+          <span class="am-sweetspot-badges">
+            <span class="am-sweetspot-margin am-sweetspot-margin--bep">{{ am.to_bep }}<b data-ss-bep>−18</b>%</span>
+            <span class="am-sweetspot-margin" data-ss-margin-badge>{{ am.margin }}<b data-ss-margin>12</b>%</span>
+          </span>
+        </div>
+
+        <div class="am-sweetspot-legend-row">
+          <span class="am-sweetspot-legend-item"><svg width="18" height="4" aria-hidden="true"><line x1="0" y1="2" x2="18" y2="2" stroke="#F8F9F4" stroke-width="3"/></svg>{{ am.legend_pressure }}</span>
+          <span class="am-sweetspot-legend-item"><svg width="18" height="4" aria-hidden="true"><line x1="0" y1="2" x2="18" y2="2" stroke="#8fd19e" stroke-width="1.6" stroke-dasharray="5,4"/></svg>{{ am.legend_eff }}</span>
+          <span class="am-sweetspot-legend-item"><svg width="18" height="4" aria-hidden="true"><line x1="0" y1="2" x2="18" y2="2" stroke="#E8B4AA" stroke-width="1.6" stroke-dasharray="2,4"/></svg>{{ am.legend_vib }}</span>
+        </div>
+
+        <svg class="am-sweetspot-svg" viewBox="0 0 640 390" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <text x="58" y="380" class="am-sweetspot-axis" font-size="10.5" fill="#8F9C95">{{ am.spec }}</text>
+
+          <rect x="52" y="6" width="128" height="348" class="am-sweetspot-z-surge"/>
+          <rect x="180" y="6" width="408" height="348" fill="rgba(110,177,136,.04)"/>
+          <rect x="212" y="6" width="84" height="348" fill="rgba(110,177,136,.16)"/>
+          <rect x="330" y="6" width="258" height="348" fill="rgba(245,158,11,.07)"/>
+          <line x1="180" y1="6" x2="180" y2="354" class="am-sweetspot-surge-line" stroke-width="2" stroke-dasharray="6,4"/>
+          <line x1="330" y1="6" x2="330" y2="354" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="4,5" opacity=".7"/>
+          <text x="116" y="44" class="am-sweetspot-zone am-sweetspot-zone--bad" text-anchor="middle">{{ am.zone_surge }}</text>
+          <text x="254" y="44" class="am-sweetspot-zone am-sweetspot-zone--good" text-anchor="middle">{{ am.zone_sweet }}</text>
+          <text x="459" y="44" class="am-sweetspot-zone am-sweetspot-zone--over" text-anchor="middle">{{ am.zone_over }}</text>
+
+          <path d="M 72 322 C 150 306, 206 168, 250 158 C 294 168, 380 262, 470 306 C 520 326, 552 336, 576 342" fill="none" stroke="#8fd19e" stroke-width="1.6" stroke-dasharray="5,4" opacity=".85"/>
+          <path d="M 84 48 C 150 96, 216 236, 250 246 C 284 236, 380 178, 470 132 C 520 110, 552 96, 576 86" fill="none" stroke="#E8B4AA" stroke-width="1.6" stroke-dasharray="2,4" opacity=".85"/>
+          <text x="490" y="192" class="am-sweetspot-axis" text-anchor="middle" fill="#8fd19e">{{ am.eff_label }}</text>
+          <text x="256" y="264" class="am-sweetspot-axis" text-anchor="middle" fill="#E8B4AA">{{ am.vib_label }}</text>
+
+          <line x1="52" y1="354" x2="588" y2="354" stroke="rgba(255,255,255,.25)"/>
+          <line x1="52" y1="6" x2="52" y2="354" stroke="rgba(255,255,255,.25)"/>
+          <text x="586" y="369" class="am-sweetspot-axis" text-anchor="end">{{ am.axis_flow }}</text>
+          <text x="62" y="26" class="am-sweetspot-axis" text-anchor="start">{{ am.axis_pressure }}</text>
+
+          <path data-ss-curve d="M 72 162 C 90 181, 104 193, 122 193 C 152 193, 210 97, 250 97 C 290 97, 332 140, 384 196 C 448 253, 516 296, 576 330" fill="none" stroke="#F8F9F4" stroke-width="3" stroke-linecap="round" class="am-sweetspot-curve"/>
+
+          <circle cx="250" cy="97" r="4.5" fill="#6EB188"/>
+          <text x="250" y="81" class="am-sweetspot-axis" text-anchor="middle" fill="#6EB188">{{ am.bep_label }}</text>
+
+          <line data-ss-margin-line x1="180" y1="112" x2="268" y2="112" stroke="#E8B4AA" stroke-width="1.6" stroke-dasharray="3,3"/>
+
+          <circle data-ss-dot cx="268" cy="112" r="7" class="am-sweetspot-op"/>
+          <circle data-ss-ring cx="268" cy="112" r="7" fill="none" stroke-width="2" opacity=".5" class="am-sweetspot-op-ring"/>
+          <rect data-ss-chip1 x="277" y="101" width="150" height="15" rx="3" fill="#0d1320" opacity=".82"/>
+          <rect data-ss-chip2 x="277" y="119" width="150" height="15" rx="3" fill="#0d1320" opacity=".82"/>
+          <text data-ss-label x="282" y="127" class="am-sweetspot-axis" fill="#F8F9F4">{{ am.op_label }}</text>
+          <text data-ss-read x="282" y="145" class="am-sweetspot-axis" fill="#E8B4AA">η 74% · 4.2 mm/s</text>
+        </svg>
+
+        <p class="am-sweetspot-caption">{{ am.caption }}</p>
+      </div>
+    </div>
+
+    <div class="am-sweetspot-cards am-sweetspot-reveal am-sweetspot-d3">
+      {%- for c in am.cards %}
+      <div class="am-sweetspot-card{% if c.money %} am-sweetspot-card--money{% endif %}">
+        <div class="am-sweetspot-card-k">{{ c.k }}</div>
+        <p>{{ c.html | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+
+    <p class="am-sweetspot-foot am-sweetspot-reveal am-sweetspot-dlate">{{ am.foot | safe }}</p>
+  </div>
+</section>
+<script src="/assets/aimon/sweetspot.js" defer></script>

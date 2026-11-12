@@ -1,0 +1,41 @@
+---
+page_key: downloads
+page_path: downloads/
+---
+{%- set t = i18n[lang.code] -%}
+{% include "page-head.njk" %}
+
+<section class="section">
+  <div class="wrap">
+    <h2>{{ t.downloads.company_title }}</h2>
+    <ul class="file-list">
+      {%- for f in t.downloads.files %}
+      <li>
+        <span class="file-list__type">{{ f.format }}</span>
+        <span class="file-list__title">{{ f.title }}</span>
+        {%- if f.file %}
+        <a class="button button--small" href="/downloads/{{ f.file }}" download>↓</a>
+        {%- else %}
+        <span class="file-list__status">{{ t.common.coming_soon }}</span>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="wrap">
+    <h2>{{ t.downloads.brands_title }}</h2>
+    <p class="lead">{{ t.downloads.brands_text }}</p>
+    <ul class="file-list">
+      {%- for b in t.business.brand_links %}
+      <li>
+        <span class="file-list__type">LINK</span>
+        <span class="file-list__title">{{ b.name }}<small>{{ b.note }}</small></span>
+        <a class="button button--small" href="{{ b.url }}" rel="noopener" target="_blank">↗<span class="visually-hidden">{{ t.common.external_link }}</span></a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

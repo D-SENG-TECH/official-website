@@ -1,0 +1,83 @@
+---
+page_key: home
+page_path: ""
+---
+{%- set t = i18n[lang.code] -%}
+<section class="hero">
+  <div class="wrap hero__inner">
+    <div>
+      <p class="hero__eyebrow">{{ t.home.eyebrow }}</p>
+      <h1>{{ t.home.headline_a }}<em>{{ t.home.headline_b }}</em></h1>
+      <p class="hero__lead">{{ t.home.lead | safe }}</p>
+      <a class="button" href="{{ lang.prefix }}business/">{{ t.home.cta }}</a>
+    </div>
+    <img class="hero__image" src="/assets/equipment.jpg" width="683" height="452" alt="{{ t.home.image_alt }}">
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>{{ t.home.intro_title }}</h2>
+    <p class="lead">{{ t.home.intro }}</p>
+    <ul class="values">
+      {%- for v in t.home.values %}
+      <li><h3>{{ v.title }}</h3><p>{{ v.text }}</p></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="wrap">
+    <h2>{{ t.home.business_title }}</h2>
+    <div class="cards">
+      {%- for item in t.business.items %}
+      <a class="card card--link" href="{{ lang.prefix }}business/{{ item.id | replace('_', '-') }}/">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.summary }}</p>
+      </a>
+      {%- endfor %}
+    </div>
+    <p class="more"><a href="{{ lang.prefix }}business/">{{ t.home.business_more }} →</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <h2>{{ t.home.story_title }}</h2>
+      <p class="lead">{{ t.home.story_teaser }}</p>
+      <p class="more"><a href="{{ lang.prefix }}about/">{{ t.home.story_more }} →</a></p>
+    </div>
+    {%- if t.about.story.length > 1 %}
+    <ol class="mini-timeline">
+      {%- for ch in t.about.story %}
+      <li><span>{{ ch.year or "—" }}</span>{{ ch.title }}</li>
+      {%- endfor %}
+    </ol>
+    {%- endif %}
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="wrap split">
+    <div>
+      <p class="hero__eyebrow eyebrow--ink">{{ t.home.affiliate_eyebrow }}</p>
+      <h2>{{ t.home.affiliate_title }}</h2>
+    </div>
+    <div>
+      <p class="lead">{{ t.home.affiliate_text }}</p>
+      <p class="more"><a href="{{ lang.prefix }}about/#affiliates">{{ t.home.affiliate_more }} →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="wrap cta-band">
+    <div>
+      <h2>{{ t.home.contact_title }}</h2>
+      <p>{{ t.home.contact_text }}</p>
+    </div>
+    <a class="button" href="{{ lang.prefix }}contact/">{{ t.common.contact_us }}</a>
+  </div>
+</section>

@@ -1,0 +1,81 @@
+/* FINALE — ported from LiveDemoFinale.tsx: white card over the plant scene, QR first, tour second. */
+.aimon .am-finale {
+  position: relative;
+  overflow: hidden;
+  background: var(--cc-surface);
+  color: var(--cc-ink);
+  min-height: calc(100svh - var(--am-header, 80px));
+  display: flex;
+  align-items: center;
+}
+.aimon .am-finale-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 70% center; display: block;
+}
+.aimon .am-finale-veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(244, 247, 250, 0.55) 0%, rgba(244, 247, 250, 0.15) 55%, rgba(244, 247, 250, 0) 100%);
+  pointer-events: none;
+}
+.aimon .am-finale-slide { position: relative; z-index: 1; padding-block: clamp(28px, 5vh, 64px); }
+.aimon .am-finale-card {
+  width: min(560px, 100%);
+  padding: clamp(24px, 3vw, 40px);
+  background: var(--cc-white);
+  border: 1px solid var(--cc-line);
+  border-radius: var(--cc-radius-lg);
+  box-shadow: 0 24px 60px rgba(var(--am-deep-rgb), 0.18);
+}
+.aimon .am-finale-head { display: flex; align-items: center; gap: 16px; }
+.aimon .am-finale-eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--cc-ink); white-space: nowrap;
+}
+.aimon .am-finale-rule { flex: 1; height: 1px; background: var(--cc-line); }
+.aimon .am-finale-title {
+  margin: 14px 0 0;
+  font-size: clamp(26px, 2.6vw, 40px); line-height: 1.2; font-weight: 800; letter-spacing: -0.01em;
+  color: var(--cc-ink);
+}
+.aimon .am-finale-title span { color: var(--cc-green-ink); }
+.aimon .am-finale-desc { margin: 14px 0 0; max-width: 520px; font-size: 16px; line-height: 1.7; color: var(--cc-ink-3); }
+.aimon .am-finale-qr-row {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  margin-top: clamp(16px, 2.4vh, 26px); text-align: center;
+}
+.aimon .am-finale-qr {
+  width: clamp(150px, 22vh, 220px); height: auto;
+  padding: 14px; background: #fff;
+  border: 1px solid var(--cc-line); border-radius: var(--cc-radius-md);
+  box-shadow: 0 4px 14px rgba(var(--am-deep-rgb), 0.08);
+}
+.aimon .am-finale-qr-caption { font-size: 14px; color: var(--cc-ink-3); }
+.aimon .am-finale-actions {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  margin-top: clamp(14px, 2vh, 22px);
+}
+.aimon .am-finale-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 26px; border-radius: var(--cc-radius-sm);
+  background: var(--cc-red); color: #fff;
+  font-size: 17px; font-weight: 700; text-decoration: none;
+  box-shadow: 0 8px 22px rgba(220, 38, 38, 0.28);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.aimon .am-finale-cta:hover { transform: translateY(-1px); box-shadow: 0 12px 26px rgba(220, 38, 38, 0.34); }
+.aimon .am-finale-cta:focus-visible { outline: 3px solid var(--cc-info); outline-offset: 3px; }
+.aimon .am-finale-contact { margin-top: clamp(18px, 2.6vh, 28px); padding-top: 16px; border-top: 1px solid var(--cc-line); }
+.aimon .am-finale-contact-title { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cc-ink); }
+.aimon .am-finale-contact dl { display: flex; flex-wrap: wrap; gap: 8px 32px; margin: 10px 0 0; }
+.aimon .am-finale-contact dt { font-size: 12px; font-weight: 600; color: var(--cc-ink-3); }
+.aimon .am-finale-contact dd { margin: 2px 0 0; font-size: 15px; }
+.aimon .am-finale-contact a { color: var(--cc-ink); }
+
+
+@media (max-width: 860px) {
+  .aimon .am-finale { min-height: 0; display: block; }
+  .aimon .am-finale-bg { position: relative; height: 220px; }
+  .aimon .am-finale-veil { display: none; }
+  .aimon .am-finale-slide { margin-top: -48px; }
+  .aimon .am-finale-card { margin-inline: auto; }
+}

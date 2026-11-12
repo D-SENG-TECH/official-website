@@ -1,0 +1,92 @@
+---
+page_key: about
+page_path: about/
+---
+{%- set t = i18n[lang.code] -%}
+{%- macro org_node(node) -%}
+<li>
+  <div class="node{% if node.k %} node--{{ node.k | replace('_', '-') }}{% endif %}"><b>{{ node.t }}</b>{% if node.s %}<small>{{ node.s }}</small>{% endif %}{% if node.n %}<span>{{ node.n }}</span>{% endif %}</div>
+  {%- if node.c %}
+  <ul>
+    {%- for child in node.c %}{{ org_node(child) }}{% endfor %}
+  </ul>
+  {%- endif %}
+</li>
+{%- endmacro -%}
+{% include "page-head.njk" %}
+
+<section class="section">
+  <div class="wrap story">
+    <div>
+    <h2>{{ t.about.story_title }}</h2>
+    <ol class="timeline">
+      {%- for ch in t.about.story %}
+      <li class="timeline__item">
+        <p class="timeline__year">{{ ch.year or "" }}</p>
+        <div>
+          <h3>{{ ch.title }}</h3>
+          <p>{{ ch.text }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+    </div>
+    <figure class="story__photo">
+      <img src="/assets/office.jpg" width="896" height="1200" alt="{{ t.about.office_alt }}">
+      <figcaption>{{ t.about.office_caption }}</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="wrap">
+    <h2 id="affiliates">{{ t.about.affiliates_title }}</h2>
+    {%- for a in t.about.affiliates %}
+    <article class="affiliate">
+      <h3>{{ a.name_full }}</h3>
+      <p class="lead">{{ a.text }}</p>
+      {%- if a.url %}
+      <p class="card__link"><a href="{{ a.url }}" rel="noopener" target="_blank">{{ a.url | replace("https://", "") | replace("www.", "") }}<span class="visually-hidden">{{ t.common.external_link }}</span></a></p>
+      {%- endif %}
+      <ol class="timeline timeline--compact">
+        {%- for ch in a.story %}
+        <li class="timeline__item">
+          <p class="timeline__year">{{ ch.year or "" }}</p>
+          <div>
+            <h4>{{ ch.title }}</h4>
+            <p>{{ ch.text }}</p>
+          </div>
+        </li>
+        {%- endfor %}
+      </ol>
+      <h4 class="affiliate__sub">{{ t.gold_stone.more }}</h4>
+      <ul class="gs-strip">
+        {%- for g in t.gold_stone.groups %}
+        <li>
+          <a href="{{ lang.prefix }}about/gold-stone/#p{{ loop.index }}">
+            <img src="/assets/gold-stone/{{ gs_media[loop.index0].cover }}" alt="" loading="lazy">
+            <span class="gs-strip__title">{{ g.title }}</span>
+            <span class="gs-strip__brands">{{ g.brands | join(" · ") }}</span>
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+      <p class="affiliate__more"><a href="{{ lang.prefix }}about/gold-stone/">{{ t.gold_stone.more }} →</a></p>
+      <dl class="facts">
+        {%- for f in a.facts %}
+        <div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>
+        {%- endfor %}
+      </dl>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+<section id="org" class="section">
+  <div class="wrap"><h2>{{ t.about.org_title }}</h2></div>
+  <div class="wrap wrap--wide">
+    <div class="tree">
+      <ul>{{ org_node(t.about.org) }}</ul>
+    </div>
+  </div>
+</section>

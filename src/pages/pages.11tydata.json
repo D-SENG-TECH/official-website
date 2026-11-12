@@ -1,0 +1,5 @@
+{
+  "layout": "base.njk",
+  "pagination": { "data": "site.langs", "size": 1, "alias": "lang" },
+  "permalink": "{{ lang.prefix }}{{ page_path }}index.html"
+}

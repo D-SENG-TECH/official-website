@@ -1,0 +1,638 @@
+{
+ "zh-tw": {
+  "aria": "八個畫面",
+  "title": "廠務可以監測的八個畫面（AI 智能預警系統）",
+  "sub": "整廠俯瞰 → RMS振動總量連續監測 → 振動值的時間序列分析 → 警報通知 → 維修工單 → 生產履歷 → 零件庫存 → 預算分析。",
+  "img_alt": "虛擬廠房示意：樓頂風機系統 FAN-01 至 FAN-07",
+  "c1": {
+   "t": "整廠俯瞰",
+   "chip": "廠區·總覽",
+   "cap": "您廠裡每一台風機都在系統裡"
+  },
+  "c2": {
+   "t": "RMS振動總量連續監測",
+   "chip": "全廠·連續",
+   "cap": "看板式連續監測每一台風機",
+   "eyebrow": "LIVE · 全廠看板",
+   "live": "● 連續監測"
+  },
+  "c3": {
+   "t": "振動值的時間序列分析",
+   "chip": "30日·演變",
+   "cap": "ISO 10816-3 三區門檻自動標示",
+   "eyebrow": "30 DAY TREND · RMS mm/s",
+   "warn": "↗ Zone B 接近",
+   "ago": "30 日前",
+   "today": "今日"
+  },
+  "c4": {
+   "t": "警報通知",
+   "chip": "自動·推播",
+   "cap": "Email / Line / SMS 多管道通知值班",
+   "open": "3 件未處理",
+   "faults": [
+    "軸承異常",
+    "皮帶鬆動",
+    "葉輪不平衡"
+   ],
+   "ages": [
+    "3 分鐘前",
+    "27 分鐘前",
+    "1 小時前"
+   ]
+  },
+  "c5": {
+   "t": "維修工單",
+   "chip": "派工·記錄",
+   "cap": "團隊 / 預定日 / 故障描述全部帶入",
+   "ticket": "維修工單 · WO-2026-0001",
+   "pill": "派工中",
+   "fault": "軸承異常",
+   "desc": "馬達端 V 軸 0.5×、1× 倍頻能量集中，疑為內圈剝落早期徵兆。",
+   "l_team": "團隊",
+   "v_team": "值班工程師",
+   "l_date": "預定",
+   "l_prio": "優先度",
+   "l_est": "預估",
+   "v_est": "6 小時"
+  },
+  "c6": {
+   "t": "生產履歷",
+   "chip": "履歷·全週期",
+   "cap": "出廠 / 安裝 / 保養 / 故障 / 換件",
+   "eyebrow": "FAN-03 · 8 年履歷",
+   "eyebrow2": "12 次保養 · 2 次故障",
+   "ev": [
+    {
+     "head": "出廠 · SN-T1-003",
+     "body": "型號 M412425-110-3"
+    },
+    {
+     "head": "現場安裝",
+     "body": "排氣 4 號線"
+    },
+    {
+     "head": "皮帶更換",
+     "body": "工單 WO-2022-0112"
+    },
+    {
+     "head": "軸承異常 · 待維修",
+     "body": "工單 WO-2026-0001"
+    }
+   ]
+  },
+  "c7": {
+   "t": "零件庫存",
+   "chip": "備品·連結",
+   "cap": "缺料觸發警示、發料自動扣帳",
+   "eyebrow": "備品 · 庫存連動",
+   "items": [
+    "馬達端軸承",
+    "皮帶 B-86",
+    "風葉輪"
+   ]
+  },
+  "c8": {
+   "t": "預算分析",
+   "chip": "ROI·12月",
+   "cap": "12 月預算曲線、ROI 計算",
+   "eyebrow": "12 個月支出趨勢",
+   "l_month": "本月",
+   "l_saved": "累計節省"
+  },
+  "js": {
+   "now": "剛剛",
+   "min": " 分鐘前",
+   "hr": " 小時前",
+   "ticket": "維修工單 · ",
+   "alerts": [
+    "軸承異常",
+    "皮帶鬆動",
+    "葉輪不平衡",
+    "溫度偏高",
+    "振動突波",
+    "軸承異常",
+    "皮帶鬆動"
+   ],
+   "tickets": [
+    {
+     "id": "WO-2026-0001",
+     "fault": "軸承異常",
+     "desc": "馬達端 V 軸 0.5×、1× 倍頻能量集中，疑為內圈剝落早期徵兆。",
+     "est": "6 小時"
+    },
+    {
+     "id": "WO-2026-0002",
+     "fault": "皮帶鬆動",
+     "desc": "B 軸皮帶張力下降，滑轉異音明顯，建議更換張力器。",
+     "est": "3 小時"
+    },
+    {
+     "id": "WO-2026-0003",
+     "fault": "溫度偏高",
+     "desc": "軸承溫度持續上升至 68°C，潤滑脂疑似劣化。",
+     "est": "4 小時"
+    }
+   ],
+   "tl": [
+    {
+     "head": "備件到貨",
+     "body": "SKF 6310-2RS ×2"
+    },
+    {
+     "head": "停機檢修",
+     "body": "排氣 4 號線 · 預計 6 hr"
+    },
+    {
+     "head": "軸承更換完成",
+     "body": "工單 WO-2026-0001 結案"
+    },
+    {
+     "head": "試運轉通過",
+     "body": "RMS 2.1 mm/s · 恢復正常"
+    },
+    {
+     "head": "例行保養",
+     "body": "潤滑 + 皮帶張力校正"
+    }
+   ]
+  }
+ },
+ "zh-cn": {
+  "aria": "八个画面",
+  "title": "厂务可以监测的八个画面（AI 智能预警系统）",
+  "sub": "整厂俯瞰 → RMS振动总量连续监测 → 振动值的时间序列分析 → 报警通知 → 维修工单 → 生产履历 → 零件库存 → 预算分析。",
+  "img_alt": "虚拟厂房示意：楼顶风机系统 FAN-01 至 FAN-07",
+  "c1": {
+   "t": "整厂俯瞰",
+   "chip": "厂区·总览",
+   "cap": "您厂里每一台风机都在系统里"
+  },
+  "c2": {
+   "t": "RMS振动总量连续监测",
+   "chip": "全厂·连续",
+   "cap": "看板式连续监测每一台风机",
+   "eyebrow": "LIVE · 全厂看板",
+   "live": "● 连续监测"
+  },
+  "c3": {
+   "t": "振动值的时间序列分析",
+   "chip": "30日·演变",
+   "cap": "ISO 10816-3 三区阈值自动标示",
+   "eyebrow": "30 DAY TREND · RMS mm/s",
+   "warn": "↗ Zone B 接近",
+   "ago": "30 日前",
+   "today": "今日"
+  },
+  "c4": {
+   "t": "报警通知",
+   "chip": "自动·推送",
+   "cap": "Email / Line / SMS 多渠道通知值班",
+   "open": "3 件未处理",
+   "faults": [
+    "轴承异常",
+    "皮带松动",
+    "叶轮不平衡"
+   ],
+   "ages": [
+    "3 分钟前",
+    "27 分钟前",
+    "1 小时前"
+   ]
+  },
+  "c5": {
+   "t": "维修工单",
+   "chip": "派工·记录",
+   "cap": "团队 / 预定日 / 故障描述全部带入",
+   "ticket": "维修工单 · WO-2026-0001",
+   "pill": "派工中",
+   "fault": "轴承异常",
+   "desc": "电机端 V 轴 0.5×、1× 倍频能量集中，疑为内圈剥落早期征兆。",
+   "l_team": "团队",
+   "v_team": "值班工程师",
+   "l_date": "预定",
+   "l_prio": "优先级",
+   "l_est": "预估",
+   "v_est": "6 小时"
+  },
+  "c6": {
+   "t": "生产履历",
+   "chip": "履历·全周期",
+   "cap": "出厂 / 安装 / 保养 / 故障 / 换件",
+   "eyebrow": "FAN-03 · 8 年履历",
+   "eyebrow2": "12 次保养 · 2 次故障",
+   "ev": [
+    {
+     "head": "出厂 · SN-T1-003",
+     "body": "型号 M412425-110-3"
+    },
+    {
+     "head": "现场安装",
+     "body": "排气 4 号线"
+    },
+    {
+     "head": "皮带更换",
+     "body": "工单 WO-2022-0112"
+    },
+    {
+     "head": "轴承异常 · 待维修",
+     "body": "工单 WO-2026-0001"
+    }
+   ]
+  },
+  "c7": {
+   "t": "零件库存",
+   "chip": "备件·联动",
+   "cap": "缺料触发预警、发料自动扣账",
+   "eyebrow": "备件 · 库存联动",
+   "items": [
+    "电机端轴承",
+    "皮带 B-86",
+    "风叶轮"
+   ]
+  },
+  "c8": {
+   "t": "预算分析",
+   "chip": "ROI·12月",
+   "cap": "12 月预算曲线、ROI 计算",
+   "eyebrow": "12 个月支出趋势",
+   "l_month": "本月",
+   "l_saved": "累计节省"
+  },
+  "js": {
+   "now": "刚刚",
+   "min": " 分钟前",
+   "hr": " 小时前",
+   "ticket": "维修工单 · ",
+   "alerts": [
+    "轴承异常",
+    "皮带松动",
+    "叶轮不平衡",
+    "温度偏高",
+    "振动突波",
+    "轴承异常",
+    "皮带松动"
+   ],
+   "tickets": [
+    {
+     "id": "WO-2026-0001",
+     "fault": "轴承异常",
+     "desc": "电机端 V 轴 0.5×、1× 倍频能量集中，疑为内圈剥落早期征兆。",
+     "est": "6 小时"
+    },
+    {
+     "id": "WO-2026-0002",
+     "fault": "皮带松动",
+     "desc": "B 轴皮带张力下降，打滑异响明显，建议更换张紧器。",
+     "est": "3 小时"
+    },
+    {
+     "id": "WO-2026-0003",
+     "fault": "温度偏高",
+     "desc": "轴承温度持续上升至 68°C，润滑脂疑似劣化。",
+     "est": "4 小时"
+    }
+   ],
+   "tl": [
+    {
+     "head": "备件到货",
+     "body": "SKF 6310-2RS ×2"
+    },
+    {
+     "head": "停机检修",
+     "body": "排气 4 号线 · 预计 6 hr"
+    },
+    {
+     "head": "轴承更换完成",
+     "body": "工单 WO-2026-0001 结案"
+    },
+    {
+     "head": "试运转通过",
+     "body": "RMS 2.1 mm/s · 恢复正常"
+    },
+    {
+     "head": "例行保养",
+     "body": "润滑 + 皮带张力校正"
+    }
+   ]
+  }
+ },
+ "en": {
+  "aria": "Eight views",
+  "title": "The eight views plant ops can monitor (AI Predictive-Warning System)",
+  "sub": "Plant overview → continuous RMS monitoring → vibration time-series → alerts → work orders → lifetime history → parts inventory → budget analysis.",
+  "img_alt": "Illustrative virtual plant: rooftop fan system FAN-01 to FAN-07",
+  "c1": {
+   "t": "Plant overview",
+   "chip": "Plant·overview",
+   "cap": "Every fan in your plant lives in the system"
+  },
+  "c2": {
+   "t": "RMS monitoring",
+   "chip": "Fleet·continuous",
+   "cap": "A live board for every fan",
+   "eyebrow": "LIVE · Plant board",
+   "live": "● Continuous"
+  },
+  "c3": {
+   "t": "Vibration time-series",
+   "chip": "30 days·trend",
+   "cap": "ISO 10816-3 zones marked automatically",
+   "eyebrow": "30 DAY TREND · RMS mm/s",
+   "warn": "↗ Nearing Zone B",
+   "ago": "30 days ago",
+   "today": "today"
+  },
+  "c4": {
+   "t": "Alert notifications",
+   "chip": "Auto·push",
+   "cap": "Email / Line / SMS reach the on-call crew",
+   "open": "3 open",
+   "faults": [
+    "Bearing fault",
+    "Belt looseness",
+    "Impeller imbalance"
+   ],
+   "ages": [
+    "3 min ago",
+    "27 min ago",
+    "1 hr ago"
+   ]
+  },
+  "c5": {
+   "t": "Work orders",
+   "chip": "Dispatch·record",
+   "cap": "Crew, date and fault all prefilled",
+   "ticket": "Work order · WO-2026-0001",
+   "pill": "Dispatched",
+   "fault": "Bearing fault",
+   "desc": "Energy concentrated at 0.5× and 1× on the motor-end V axis — early inner-race spalling suspected.",
+   "l_team": "Crew",
+   "v_team": "On-duty engineer",
+   "l_date": "Scheduled",
+   "l_prio": "Priority",
+   "l_est": "Est.",
+   "v_est": "6 hrs"
+  },
+  "c6": {
+   "t": "Lifetime history",
+   "chip": "History·full cycle",
+   "cap": "Build / install / service / faults / parts",
+   "eyebrow": "FAN-03 · 8 yrs",
+   "eyebrow2": "12 svc · 2 faults",
+   "ev": [
+    {
+     "head": "Shipped · SN-T1-003",
+     "body": "Model M412425-110-3"
+    },
+    {
+     "head": "Installed on site",
+     "body": "Exhaust line 4"
+    },
+    {
+     "head": "Belt replaced",
+     "body": "Work order WO-2022-0112"
+    },
+    {
+     "head": "Bearing fault · pending",
+     "body": "Work order WO-2026-0001"
+    }
+   ]
+  },
+  "c7": {
+   "t": "Parts inventory",
+   "chip": "Spares·linked",
+   "cap": "Low-stock alerts, auto-debit on issue",
+   "eyebrow": "Spares · linked stock",
+   "items": [
+    "Motor-end bearing",
+    "Belt B-86",
+    "Impeller"
+   ]
+  },
+  "c8": {
+   "t": "Budget analysis",
+   "chip": "ROI·12 mo",
+   "cap": "12-month budget curve and ROI",
+   "eyebrow": "12-month spend trend",
+   "l_month": "This month",
+   "l_saved": "Saved to date"
+  },
+  "js": {
+   "now": "just now",
+   "min": " min ago",
+   "hr": " hr ago",
+   "ticket": "Work order · ",
+   "alerts": [
+    "Bearing fault",
+    "Belt looseness",
+    "Impeller imbalance",
+    "High temperature",
+    "Vibration spike",
+    "Bearing fault",
+    "Belt looseness"
+   ],
+   "tickets": [
+    {
+     "id": "WO-2026-0001",
+     "fault": "Bearing fault",
+     "desc": "Energy concentrated at 0.5× and 1× on the motor-end V axis — early inner-race spalling suspected.",
+     "est": "6 hrs"
+    },
+    {
+     "id": "WO-2026-0002",
+     "fault": "Belt looseness",
+     "desc": "Belt tension on the B axis is dropping with audible slip; replace the tensioner.",
+     "est": "3 hrs"
+    },
+    {
+     "id": "WO-2026-0003",
+     "fault": "High temperature",
+     "desc": "Bearing temperature keeps rising to 68 °C; grease likely degraded.",
+     "est": "4 hrs"
+    }
+   ],
+   "tl": [
+    {
+     "head": "Spare parts arrived",
+     "body": "SKF 6310-2RS ×2"
+    },
+    {
+     "head": "Shutdown inspection",
+     "body": "Exhaust line 4 · est. 6 hr"
+    },
+    {
+     "head": "Bearing replaced",
+     "body": "Work order WO-2026-0001 closed"
+    },
+    {
+     "head": "Test run passed",
+     "body": "RMS 2.1 mm/s · back to normal"
+    },
+    {
+     "head": "Routine service",
+     "body": "Lubrication + belt tension check"
+    }
+   ]
+  }
+ },
+ "ja": {
+  "aria": "8つの画面",
+  "title": "設備管理で監視できる8つの画面（AI 予兆警報システム）",
+  "sub": "全体俯瞰 → RMS振動総量の常時監視 → 振動値の時系列分析 → 警報通知 → 保全指示書 → 設備履歴 → 部品在庫 → 予算分析。",
+  "img_alt": "仮想プラントのイメージ：屋上ファン設備 FAN-01〜FAN-07",
+  "c1": {
+   "t": "全体俯瞰",
+   "chip": "プラント·全景",
+   "cap": "プラント内のすべてのファンがシステムに登録されています"
+  },
+  "c2": {
+   "t": "RMS振動総量の常時監視",
+   "chip": "全体·常時",
+   "cap": "ボード形式ですべてのファンを常時監視",
+   "eyebrow": "LIVE · 全体ボード",
+   "live": "● 常時監視"
+  },
+  "c3": {
+   "t": "振動値の時系列分析",
+   "chip": "30日·推移",
+   "cap": "ISO 10816-3 の3ゾーンしきい値を自動表示",
+   "eyebrow": "30 DAY TREND · RMS mm/s",
+   "warn": "↗ Zone B に接近",
+   "ago": "30 日前",
+   "today": "本日"
+  },
+  "c4": {
+   "t": "警報通知",
+   "chip": "自動·プッシュ",
+   "cap": "Email / LINE / SMS で当番者へ複数経路で通知",
+   "open": "未対応 3 件",
+   "faults": [
+    "軸受の異常",
+    "ベルトの緩み",
+    "羽根車のアンバランス"
+   ],
+   "ages": [
+    "3 分前",
+    "27 分前",
+    "1 時間前"
+   ]
+  },
+  "c5": {
+   "t": "保全指示書",
+   "chip": "手配·記録",
+   "cap": "担当・予定日・故障内容をすべて自動入力",
+   "ticket": "保全指示書 · WO-2026-0001",
+   "pill": "手配中",
+   "fault": "軸受の異常",
+   "desc": "モーター側 V 軸で 0.5×・1× 成分にエネルギーが集中。内輪剥離の初期兆候の疑い。",
+   "l_team": "担当",
+   "v_team": "当番エンジニア",
+   "l_date": "予定",
+   "l_prio": "優先度",
+   "l_est": "見積",
+   "v_est": "6 時間"
+  },
+  "c6": {
+   "t": "設備履歴",
+   "chip": "履歴·全期間",
+   "cap": "出荷 / 設置 / 保守 / 故障 / 部品交換",
+   "eyebrow": "FAN-03 · 8 年の履歴",
+   "eyebrow2": "保守 12 回 · 故障 2 回",
+   "ev": [
+    {
+     "head": "出荷 · SN-T1-003",
+     "body": "型式 M412425-110-3"
+    },
+    {
+     "head": "現地設置",
+     "body": "排気 4 号ライン"
+    },
+    {
+     "head": "ベルト交換",
+     "body": "指示書 WO-2022-0112"
+    },
+    {
+     "head": "軸受の異常 · 修理待ち",
+     "body": "指示書 WO-2026-0001"
+    }
+   ]
+  },
+  "c7": {
+   "t": "部品在庫",
+   "chip": "予備品·連携",
+   "cap": "欠品でアラート、払い出しで自動引当",
+   "eyebrow": "予備品 · 在庫連携",
+   "items": [
+    "モーター側軸受",
+    "ベルト B-86",
+    "羽根車"
+   ]
+  },
+  "c8": {
+   "t": "予算分析",
+   "chip": "ROI·12か月",
+   "cap": "12 か月の予算推移と ROI を算出",
+   "eyebrow": "12 か月の支出推移",
+   "l_month": "今月",
+   "l_saved": "累計削減"
+  },
+  "js": {
+   "now": "たった今",
+   "min": " 分前",
+   "hr": " 時間前",
+   "ticket": "保全指示書 · ",
+   "alerts": [
+    "軸受の異常",
+    "ベルトの緩み",
+    "羽根車のアンバランス",
+    "温度の上昇",
+    "振動の急上昇",
+    "軸受の異常",
+    "ベルトの緩み"
+   ],
+   "tickets": [
+    {
+     "id": "WO-2026-0001",
+     "fault": "軸受の異常",
+     "desc": "モーター側 V 軸で 0.5×・1× 成分にエネルギーが集中。内輪剥離の初期兆候の疑い。",
+     "est": "6 時間"
+    },
+    {
+     "id": "WO-2026-0002",
+     "fault": "ベルトの緩み",
+     "desc": "B 軸のベルト張力が低下し、滑り音が顕著。テンショナーの交換を推奨。",
+     "est": "3 時間"
+    },
+    {
+     "id": "WO-2026-0003",
+     "fault": "温度の上昇",
+     "desc": "軸受温度が 68°C まで上昇し続けており、グリース劣化の疑い。",
+     "est": "4 時間"
+    }
+   ],
+   "tl": [
+    {
+     "head": "部品が入荷",
+     "body": "SKF 6310-2RS ×2"
+    },
+    {
+     "head": "停止点検",
+     "body": "排気 4 号ライン · 約 6 hr"
+    },
+    {
+     "head": "軸受交換完了",
+     "body": "指示書 WO-2026-0001 完了"
+    },
+    {
+     "head": "試運転合格",
+     "body": "RMS 2.1 mm/s · 正常に復帰"
+    },
+    {
+     "head": "定期保守",
+     "body": "給脂 + ベルト張力調整"
+    }
+   ]
+  }
+ }
+}

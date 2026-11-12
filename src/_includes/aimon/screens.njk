@@ -1,0 +1,221 @@
+{#- 08 screens: ported from DeckEightViews (eight live dashboard cards). -#}
+{%- set am_lm = [
+  {n:"01", z:"A", c:"#22c55e", cls:"ok",    w:"96.7", v:"2.8", d:"0"},
+  {n:"02", z:"A", c:"#22c55e", cls:"ok",    w:"93.3", v:"2.5", d:"0.15"},
+  {n:"03", z:"D", c:"#ef4444", cls:"alert", w:"53.3", v:"9.2", d:"0.3"},
+  {n:"04", z:"B", c:"#22c55e", cls:"ok",    w:"83.3", v:"5.5", d:"0.45"},
+  {n:"05", z:"A", c:"#22c55e", cls:"ok",    w:"98.3", v:"3.1", d:"0.6"},
+  {n:"06", z:"B", c:"#f59e0b", cls:"warn",  w:"73.3", v:"5.8", d:"0.75"},
+  {n:"07", z:"A", c:"#22c55e", cls:"ok",    w:"95.0", v:"2.9", d:"0.9"}
+] -%}
+{%- set am_cost = ["67.9","39.3","73.2","48.2","33.9","62.5","100.0","85.7","55.4","51.8","78.6","75.0"] -%}
+{%- set am_months = ["7","8","9","10","11","12","1","2","3","4","5","6"] -%}
+<section class="am-screens" id="am-screens" aria-label="{{ am.aria }}">
+  <div class="cc-container">
+    <div class="sc-head am-rv">
+      <h2>{{ am.title }}</h2>
+      <p>{{ am.sub }}</p>
+    </div>
+    <div class="dgrid am-rv d1">
+      <div class="dcard">
+        <div class="dc-head"><span class="dc-n">01</span><span class="dc-t">{{ am.c1.t }}</span><span class="dc-chip">{{ am.c1.chip }}</span></div>
+        <div class="dc-viz"><img class="gex3d" src="/assets/aimon/screens-plant-thumb.jpg" width="860" height="694" loading="lazy" alt="{{ am.img_alt }}"></div>
+        <div class="dc-cap">{{ am.c1.cap }}</div>
+      </div>
+
+      <div class="dcard">
+        <div class="dc-head"><span class="dc-n">02</span><span class="dc-t">{{ am.c2.t }}</span><span class="dc-chip live">{{ am.c2.chip }}</span></div>
+        <div class="dc-viz">
+          <div class="pv-frame">
+            <div class="pv-row-between">
+              <span class="pv-eyebrow">{{ am.c2.eyebrow }}</span>
+              <span class="pv-eyebrow pv-eyebrow--green pv-pulse-livedot" id="lmLiveDot">{{ am.c2.live }}</span>
+            </div>
+            <div class="pv-lm-list" style="gap:4px">
+              {%- for r in am_lm %}
+              <div class="pv-lm-row pv-lm-row--{{ r.cls }}" style="padding:4px 8px;gap:8px">
+                <span class="pv-lm-label">FAN-{{ r.n }}</span>
+                <span class="pv-lm-zone" style="color:{{ r.c }}">{{ r.z }}</span>
+                <div class="pv-lm-bar"><div class="pv-lm-bar-fill pv-flux" id="hzBar{{ loop.index }}" style="width:{{ r.w }}%;background:{{ r.c }};animation-delay:{{ r.d }}s"></div></div>
+                <span class="pv-lm-hz" id="hz{{ loop.index }}">{{ r.v }} mm/s</span>
+              </div>
+              {%- endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="dc-cap">{{ am.c2.cap }}</div>
+      </div>
+
+      <div class="dcard">
+        <div class="dc-head"><span class="dc-n">03</span><span class="dc-t">{{ am.c3.t }}</span><span class="dc-chip">{{ am.c3.chip }}</span></div>
+        <div class="dc-viz">
+          <div class="pv-frame">
+            <div class="pv-row-between">
+              <span class="pv-eyebrow">{{ am.c3.eyebrow }}</span>
+              <span class="pv-eyebrow pv-eyebrow--amber">{{ am.c3.warn }}</span>
+            </div>
+            <svg viewBox="0 0 360 220" preserveAspectRatio="xMidYMid meet" class="pv-trend-svg" aria-hidden="true">
+              <rect x="30" y="134.0" width="320" height="62.0" fill="rgba(34,197,94,0.10)"></rect>
+              <rect x="30" y="96.4" width="320" height="37.6" fill="rgba(245,158,11,0.10)"></rect>
+              <rect x="30" y="38.9" width="320" height="57.5" fill="rgba(239,68,68,0.10)"></rect>
+              <g>
+                <line x1="30" x2="350" y1="134.0" y2="134.0" stroke="rgba(255,255,255,0.18)" stroke-width="0.5" stroke-dasharray="3 3"></line>
+                <text x="26" y="137.0" fill="rgba(255,255,255,0.45)" font-family="monospace" font-size="9" text-anchor="end">2.8</text>
+              </g>
+              <g>
+                <line x1="30" x2="350" y1="96.4" y2="96.4" stroke="rgba(255,255,255,0.18)" stroke-width="0.5" stroke-dasharray="3 3"></line>
+                <text x="26" y="99.4" fill="rgba(255,255,255,0.45)" font-family="monospace" font-size="9" text-anchor="end">4.5</text>
+              </g>
+              <g>
+                <line x1="30" x2="350" y1="38.9" y2="38.9" stroke="rgba(255,255,255,0.18)" stroke-width="0.5" stroke-dasharray="3 3"></line>
+                <text x="26" y="41.9" fill="rgba(255,255,255,0.45)" font-family="monospace" font-size="9" text-anchor="end">7.1</text>
+              </g>
+              <polyline id="trendLine" points="30.0,147.3 41.0,140.0 52.1,145.1 63.1,154.3 74.1,152.8 85.2,142.4 96.2,137.2 107.2,140.5 118.3,140.1 129.3,130.6 140.3,123.5 151.4,128.9 162.4,137.9 173.4,136.1 184.5,125.7 195.5,120.8 206.6,124.2 217.6,123.6 228.6,113.9 239.7,107.0 250.7,112.7 261.7,121.6 272.8,119.5 283.8,109.0 294.8,104.4 305.9,107.8 316.9,107.0 327.9,97.2 339.0,90.6 350.0,96.5" fill="none" stroke="#60a5fa" stroke-width="1.5"></polyline>
+              <circle id="trendDot" cx="350.0" cy="96.5" r="3" fill="#60a5fa"></circle>
+              <text x="30" y="214" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="9">{{ am.c3.ago }}</text>
+              <text x="350" y="214" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="9" text-anchor="end">{{ am.c3.today }}</text>
+            </svg>
+          </div>
+        </div>
+        <div class="dc-cap">{{ am.c3.cap }}</div>
+      </div>
+
+      <div class="dcard">
+        <div class="dc-head"><span class="dc-n">04</span><span class="dc-t">{{ am.c4.t }}</span><span class="dc-chip alarm">{{ am.c4.chip }}</span></div>
+        <div class="dc-viz">
+          <div class="pv-frame">
+            <div class="pv-row-between pv-row-center">
+              <div class="pv-row-gap8">
+                <svg class="pv-icon" viewBox="0 0 24 24" fill="none" stroke="#fdba74" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+                <span class="pv-eyebrow pv-eyebrow--orange pv-pulse-text" id="alertCount">{{ am.c4.open }}</span>
+              </div>
+              <span class="pv-eyebrow">EMAIL · LINE · SMS</span>
+            </div>
+            <div class="pv-al-list">
+              {%- set am_al = [{fan:"FAN-03", sev:"high", col:"#ef4444", pulse:" pv-pulse-row"}, {fan:"FAN-07", sev:"medium", col:"#f59e0b", pulse:""}, {fan:"FAN-02", sev:"medium", col:"#f59e0b", pulse:""}] %}
+              {%- for a in am_al %}
+              <div class="pv-al-row pv-al-row--{{ a.sev }}{{ a.pulse }}"{% if loop.first %} id="alertRow1"{% endif %}>
+                <svg class="pv-icon" viewBox="0 0 24 24" fill="none" stroke="{{ a.col }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                <span class="pv-al-fan">{{ a.fan }}</span>
+                <span class="pv-al-fault">{{ am.c4.faults[loop.index0] }}</span>
+                <span class="pv-al-age">{{ am.c4.ages[loop.index0] }}</span>
+              </div>
+              {%- endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="dc-cap">{{ am.c4.cap }}</div>
+      </div>
+
+      <div class="dcard">
+        <div class="dc-head"><span class="dc-n">05</span><span class="dc-t">{{ am.c5.t }}</span><span class="dc-chip">{{ am.c5.chip }}</span></div>
+        <div class="dc-viz">
+          <div class="pv-frame">
+            <div class="pv-row-between pv-row-center">
+              <span class="pv-eyebrow pv-eyebrow--orange">{{ am.c5.ticket }}</span>
+              <span class="pv-wo-pill pv-pulse-pill" id="woPill">{{ am.c5.pill }}</span>
+            </div>
+            <div class="pv-wo-box">
+              <div class="pv-wo-title">FAN-03 <span class="pv-wo-fault">{{ am.c5.fault }}</span></div>
+              <div class="pv-wo-desc">{{ am.c5.desc }}</div>
+            </div>
+            <div class="pv-field-grid pv-field-grid--push">
+              <div class="pv-field"><span class="pv-field-label">{{ am.c5.l_team }}</span><span class="pv-field-value">{{ am.c5.v_team }}</span></div>
+              <div class="pv-field"><span class="pv-field-label">{{ am.c5.l_date }}</span><span class="pv-field-value">2026-05-09</span></div>
+              <div class="pv-field"><span class="pv-field-label">{{ am.c5.l_prio }}</span><span class="pv-field-value pv-field-value--hi">Level 1</span></div>
+              <div class="pv-field"><span class="pv-field-label">{{ am.c5.l_est }}</span><span class="pv-field-value">{{ am.c5.v_est }}</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="dc-cap">{{ am.c5.cap }}</div>
+      </div>
+
+      <div class="dcard">
+        <div class="dc-head"><span class="dc-n">06</span><span class="dc-t">{{ am.c6.t }}</span><span class="dc-chip">{{ am.c6.chip }}</span></div>
+        <div class="dc-viz">
+          <div class="pv-frame">
+            <div class="pv-row-between">
+              <span class="pv-eyebrow">{{ am.c6.eyebrow }}</span>
+              <span class="pv-eyebrow pv-eyebrow--blue">{{ am.c6.eyebrow2 }}</span>
+            </div>
+            <div class="pv-tl-wrap">
+              <div class="pv-tl-line"></div>
+              {%- set am_dates = ["2018.04","2018.06","2022.11","2026.05"] %}
+              {%- for e in am.c6.ev %}
+              {%- if loop.last %}
+              <div class="pv-tl-event pv-tl-event--last">
+                <span class="pv-tl-dot pv-tl-dot--last pv-pulse-dot" id="tlLastDot"></span>
+                <div class="pv-tl-date" style="color:#fb923c">{{ am_dates[loop.index0] }}</div>
+              {%- else %}
+              <div class="pv-tl-event">
+                <span class="pv-tl-dot" style="background:#60a5fa"></span>
+                <div class="pv-tl-date" style="color:rgba(96,165,250,0.85)">{{ am_dates[loop.index0] }}</div>
+              {%- endif %}
+                <div class="pv-tl-head">{{ e.head }}</div>
+                <div class="pv-tl-body">{{ e.body }}</div>
+              </div>
+              {%- endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="dc-cap">{{ am.c6.cap }}</div>
+      </div>
+
+      <div class="dcard">
+        <div class="dc-head"><span class="dc-n">07</span><span class="dc-t">{{ am.c7.t }}</span><span class="dc-chip">{{ am.c7.chip }}</span></div>
+        <div class="dc-viz">
+          <div class="pv-frame">
+            <div class="pv-row-between pv-row-center">
+              <div class="pv-row-gap8">
+                <svg class="pv-icon" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="1.5"></rect><path d="M3 10h18"></path><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><circle cx="16.5" cy="15" r="2.2"></circle><path d="m19.5 18 1.8 1.8"></path></svg>
+                <span class="pv-eyebrow pv-eyebrow--emerald">{{ am.c7.eyebrow }}</span>
+              </div>
+              <span class="pv-eyebrow">3 / 36 SKU</span>
+            </div>
+            <div class="pv-inv-list">
+              {%- set am_inv = [{sku:"SKF 6310-2RS", n:"4", min:"2", cls:"ok", col:"#34d399", id:""}, {sku:"VEE-B-86", n:"2", min:"4", cls:"low", col:"#f59e0b", id:' id="invLowStock"'}, {sku:"IMP-412-110", n:"1", min:"1", cls:"ok", col:"#34d399", id:""}] %}
+              {%- for it in am_inv %}
+              <div class="pv-inv-row pv-inv-row--{{ it.cls }}">
+                <div class="pv-inv-info">
+                  <div class="pv-inv-name">{{ am.c7.items[loop.index0] }}</div>
+                  <div class="pv-inv-sku">{{ it.sku }}</div>
+                </div>
+                <span class="pv-inv-stock{% if it.cls == 'low' %} pv-pulse-amber{% endif %}"{{ it.id | safe }} style="color:{{ it.col }}">{{ it.n }}</span>
+                <span class="pv-inv-min">/ min {{ it.min }}</span>
+              </div>
+              {%- endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="dc-cap">{{ am.c7.cap }}</div>
+      </div>
+
+      <div class="dcard">
+        <div class="dc-head"><span class="dc-n">08</span><span class="dc-t">{{ am.c8.t }}</span><span class="dc-chip">{{ am.c8.chip }}</span></div>
+        <div class="dc-viz">
+          <div class="pv-frame">
+            <div class="pv-row-between">
+              <span class="pv-eyebrow">{{ am.c8.eyebrow }}</span>
+              <span class="pv-eyebrow pv-eyebrow--green">ROI 93%</span>
+            </div>
+            <div class="pv-cost-bars" id="costBars">
+              {%- for h in am_cost %}
+              <div class="pv-cost-col">
+                <div class="pv-cost-bar-wrap"><div class="pv-cost-bar{% if loop.last %} pv-cost-bar--current pv-pulse-bar{% endif %}" data-height="{{ h }}" style="height:0%"></div></div>
+                <span class="pv-cost-month">{{ am_months[loop.index0] }}</span>
+              </div>
+              {%- endfor %}
+            </div>
+            <div class="pv-field-grid">
+              <div class="pv-field"><span class="pv-field-label">{{ am.c8.l_month }}</span><span class="pv-field-value">—</span></div>
+              <div class="pv-field"><span class="pv-field-label">{{ am.c8.l_saved }}</span><span class="pv-field-value">↓ 65%</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="dc-cap">{{ am.c8.cap }}</div>
+      </div>
+    </div>
+  </div>
+  <script type="application/json" class="am-screens-i18n">{{ am.js | dump | safe }}</script>
+</section>
+<script src="/assets/aimon/screens.js" defer></script>

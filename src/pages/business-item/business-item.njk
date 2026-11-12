@@ -1,0 +1,128 @@
+{%- set t = i18n[lang.code] -%}
+{%- set item = bp.item -%}
+<section class="page-head">
+  <div class="wrap">
+    <p class="page-head__eyebrow"><a href="{{ lang.prefix }}business/">{{ t.business.title }}</a> / {{ "0" + (bp.index + 1) }}</p>
+    <h1>{{ item.title }}</h1>
+    <p class="page-head__lead">{{ item.summary }}</p>
+  </div>
+</section>
+
+{%- if item.id == "ai_monitoring" %}
+{% include "aimon/showcase.njk" %}
+{%- endif %}
+
+<section class="section">
+  <div class="wrap biz__inner{% if not item.image %} biz__inner--text{% endif %}">
+    <div class="biz__text">
+      {%- for para in item.body %}
+      <p>{{ para }}</p>
+      {%- endfor %}
+      {%- if item.points.length %}
+      <ul class="points">
+        {%- for pt in item.points %}<li>{{ pt }}</li>{% endfor %}
+      </ul>
+      {%- endif %}
+      {%- if item.brands.length %}
+      <p class="brands"><span>{{ t.business.brands_label }}</span>{{ item.brands | join("・") }}</p>
+      {%- endif %}
+    </div>
+    {%- if item.image %}
+    <img class="biz__image" src="/assets/business/{{ item.image }}" alt="{{ item.image_alt }}">
+    {%- endif %}
+  </div>
+</section>
+
+{%- if item.gallery.length %}
+<section class="section section--rule">
+  <div class="wrap">
+    <h2>{{ t.business.gallery_title }}</h2>
+    <ul class="gallery">
+      {%- for g in item.gallery %}
+      <li>
+        <figure>
+          <img src="/assets/{{ g.src }}.jpg" alt="{{ g.caption }}" loading="lazy">
+          <figcaption>{{ g.caption }}</figcaption>
+        </figure>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+
+{%- if item.flow %}
+<section class="section section--dark flow" aria-labelledby="flow-title">
+  <div class="wrap flow__inner">
+    <div class="flow__head">
+      <h2 id="flow-title">{{ item.flow.title }}<span class="flow__rule" aria-hidden="true"></span></h2>
+      <p>{{ item.flow.lead }}</p>
+    </div>
+    <ol class="flow__steps">
+      {%- for step in item.flow.steps %}
+      <li class="flow__step">
+        <span class="flow__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{{ flow_icons[loop.index0] | safe }}</svg></span>
+        <div>
+          <p class="flow__label"><span>STEP {{ "0" + loop.index }}</span>{{ step.t }}</p>
+          <p class="flow__text">{{ step.d }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+<script>
+(() => {
+  const list = document.querySelector(".flow__steps");
+  if (!list || !("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  list.classList.add("is-animated");
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+  }, { rootMargin: "0px 0px -15% 0px" });
+  list.querySelectorAll(".flow__step").forEach((li) => io.observe(li));
+})();
+</script>
+{%- endif %}
+
+{%- if item.sections.length %}
+<section class="section section--rule">
+  <div class="wrap detail-grid">
+    {%- for sec in item.sections %}
+    <article class="detail">
+      <h2>{{ sec.title }}</h2>
+      {%- if sec.text %}<p>{{ sec.text }}</p>{% endif %}
+      {%- if sec.list.length %}
+      <ul class="points">
+        {%- for li in sec.list %}<li>{{ li }}</li>{% endfor %}
+      </ul>
+      {%- endif %}
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}
+
+<section class="section section--tint">
+  <div class="wrap">
+    <h2>{{ t.business.others_title }}</h2>
+    <div class="cards">
+      {%- for other in bp.others %}
+      <a class="card card--link" href="{{ lang.prefix }}business/{{ other.id | replace('_', '-') }}/">
+        <h3>{{ other.title }}</h3>
+        <p>{{ other.summary }}</p>
+      </a>
+      {%- endfor %}
+    </div>
+    <p class="more"><a href="{{ lang.prefix }}business/">← {{ t.business.back }}</a></p>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="wrap cta-band">
+    <div>
+      <h2>{{ t.home.contact_title }}</h2>
+      <p>{{ t.home.contact_text }}</p>
+    </div>
+    <a class="button" href="{{ lang.prefix }}contact/">{{ t.common.contact_us }}</a>
+  </div>
+</section>

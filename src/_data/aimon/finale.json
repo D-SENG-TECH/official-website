@@ -1,0 +1,58 @@
+{
+  "zh-tw": {
+    "eyebrow": "結尾 · NOW IT MAKES SENSE",
+    "title_a": "智聖科技提供",
+    "title_b": "AI 智能預警系統",
+    "desc": "除了數字（振動值）的顯示，智聖科技讓廠務更能分析數字代表的意義——透過連續監測與自動推播，在異常還只是徵兆時就先示警。",
+    "qr_alt": "掃描進入 3D 互動版",
+    "qr_caption": "掃描進入 3D 互動版",
+    "cta": "開始導覽",
+    "contact": "聯繫我們 · CONTACT",
+    "email": "電子郵件",
+    "phone": "聯繫電話",
+    "img_alt": "3D 數位廠房畫面：一排風機上方浮現即時狀態面板，氣流以彩色流線呈現",
+    "demo_locale": "zh-TW"
+  },
+  "zh-cn": {
+    "eyebrow": "结尾 · NOW IT MAKES SENSE",
+    "title_a": "智圣科技提供",
+    "title_b": "AI 智能预警系统",
+    "desc": "除了数字（振动值）的显示，智圣科技让厂务更能分析数字代表的意义——通过连续监测与自动推送，在异常还只是征兆时就先预警。",
+    "qr_alt": "扫描进入 3D 互动版",
+    "qr_caption": "扫描进入 3D 互动版",
+    "cta": "开始导览",
+    "contact": "联系我们 · CONTACT",
+    "email": "电子邮件",
+    "phone": "联系电话",
+    "img_alt": "3D 数字厂房画面：一排风机上方浮现实时状态面板，气流以彩色流线呈现",
+    "demo_locale": "zh-CN"
+  },
+  "en": {
+    "eyebrow": "Closing · Now it makes sense",
+    "title_a": "From D-SENG Technology —",
+    "title_b": "the AI Predictive-Warning System",
+    "desc": "Beyond displaying a number — the vibration reading — D-SENG helps your team understand what it means: continuous monitoring with automatic alerts that flag a problem while it is still only a sign of one.",
+    "qr_alt": "Scan to open the 3D interactive tour",
+    "qr_caption": "Scan for the 3D interactive tour",
+    "cta": "Start the Tour",
+    "contact": "Contact us",
+    "email": "Email",
+    "phone": "Phone",
+    "img_alt": "3D digital plant view: a row of fans with live status panels above them and airflow shown as colored streamlines",
+    "demo_locale": "en"
+  },
+  "ja": {
+    "eyebrow": "まとめ · NOW IT MAKES SENSE",
+    "title_a": "智聖科技がお届けする",
+    "title_b": "AI 予兆警報システム",
+    "desc": "数値（振動値）を表示するだけでなく、その数値が何を意味するのかを設備担当者が読み解けるようにします。連続監視と自動通知で、異常がまだ兆候の段階のうちに警告します。",
+    "qr_alt": "スキャンして 3D インタラクティブ版を開く",
+    "qr_caption": "スキャンして 3D インタラクティブ版へ",
+    "cta": "ツアーを開始",
+    "contact": "お問い合わせ · CONTACT",
+    "email": "メール",
+    "phone": "電話",
+    "img_alt": "3Dデジタル工場の画面。並んだ送風機の上にリアルタイムのステータスパネルが浮かび、気流がカラーの流線で表示される",
+    "demo_locale": "en"
+  }
+}

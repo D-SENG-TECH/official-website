@@ -1,0 +1,178 @@
+{
+  "zh-tw": {
+    "aria": "從讀懂振動到守護風機",
+    "top": "AI Vibration Monitoring · 2026",
+    "eyebrow": "AI 智能預警系統",
+    "h1a": "從讀懂振動",
+    "h1b": "到守護風機",
+    "sub": "AI 智能預警系統 · 風機全生命週期管理方案",
+    "desc": "結合振動感測、AI 診斷與現場維修經驗，從偵測、診斷到派工與複測一條龍。風機、泵浦、壓縮機等 24 小時運轉的轉動設備都適用。",
+    "bottom": "AI-DRIVEN MONITORING · D-SENG TECHNOLOGY",
+    "cue": "繼續閱讀",
+    "step": "STEP",
+    "steps": [
+      {
+        "n": "01",
+        "head": "感測與監測",
+        "body": "感測器連續監測振動與溫度，資料不間斷記錄"
+      },
+      {
+        "n": "02",
+        "head": "專家診斷",
+        "body": "系統判讀異常，再由工程師復核根本原因"
+      },
+      {
+        "n": "03",
+        "head": "自動開單",
+        "body": "帶入設備保養履歷，列出建議更換的備品"
+      },
+      {
+        "n": "04",
+        "head": "備品確認",
+        "body": "確認所需零件與庫存，必要時安排整機備品"
+      },
+      {
+        "n": "05",
+        "head": "派工維修",
+        "body": "依狀況安排計畫性或緊急維修，工程團隊進場"
+      },
+      {
+        "n": "06",
+        "head": "複測驗收",
+        "body": "維修後振動複測合格，回填履歷並結案"
+      }
+    ]
+  },
+  "zh-cn": {
+    "aria": "从读懂振动到守护风机",
+    "top": "AI Vibration Monitoring · 2026",
+    "eyebrow": "AI 智能预警系统",
+    "h1a": "从读懂振动",
+    "h1b": "到守护风机",
+    "sub": "AI 智能预警系统 · 风机全生命周期管理方案",
+    "desc": "结合振动传感、AI 诊断与现场维修经验，从检测、诊断到派工与复测一条龙。风机、泵、压缩机等 24 小时运转的旋转设备都适用。",
+    "bottom": "AI-DRIVEN MONITORING · D-SENG TECHNOLOGY",
+    "cue": "继续阅读",
+    "step": "STEP",
+    "steps": [
+      {
+        "n": "01",
+        "head": "感知与监测",
+        "body": "传感器连续监测振动与温度，数据不间断记录"
+      },
+      {
+        "n": "02",
+        "head": "专家诊断",
+        "body": "系统判读异常，再由工程师复核根本原因"
+      },
+      {
+        "n": "03",
+        "head": "自动开单",
+        "body": "带入设备保养履历，列出建议更换的备件"
+      },
+      {
+        "n": "04",
+        "head": "备件确认",
+        "body": "确认所需零件与库存，必要时安排整机备件"
+      },
+      {
+        "n": "05",
+        "head": "派工维修",
+        "body": "按实际情况安排计划性或紧急维修，工程团队进场"
+      },
+      {
+        "n": "06",
+        "head": "复测验收",
+        "body": "维修后振动复测合格，回填履历并结案"
+      }
+    ]
+  },
+  "en": {
+    "aria": "From reading vibration to guarding fans",
+    "top": "AI Vibration Monitoring · 2026",
+    "eyebrow": "AI Predictive Warning System",
+    "h1a": "From reading vibration",
+    "h1b": "to guarding fans",
+    "sub": "AI Predictive Warning System · Full-lifecycle fan management",
+    "desc": "Combining vibration sensing, AI diagnosis and field maintenance experience, we cover detection, diagnosis, dispatch and recheck end to end. Fans, pumps, compressors and any other rotating equipment that runs 24/7.",
+    "bottom": "AI-DRIVEN MONITORING · D-SENG TECHNOLOGY",
+    "cue": "Keep reading",
+    "step": "STEP",
+    "steps": [
+      {
+        "n": "01",
+        "head": "Sense & monitor",
+        "body": "Sensors continuously monitor vibration and temperature, with uninterrupted logging"
+      },
+      {
+        "n": "02",
+        "head": "Expert diagnosis",
+        "body": "The system flags anomalies, then engineers confirm the root cause"
+      },
+      {
+        "n": "03",
+        "head": "Auto work order",
+        "body": "Pulls in the service history and lists recommended spare parts"
+      },
+      {
+        "n": "04",
+        "head": "Parts check",
+        "body": "Confirms required parts and stock, arranging a whole-unit spare if needed"
+      },
+      {
+        "n": "05",
+        "head": "Dispatch & repair",
+        "body": "Planned or emergency repair as needed, engineering crew on site"
+      },
+      {
+        "n": "06",
+        "head": "Verify & close",
+        "body": "Vibration rechecked after repair, history updated, ticket closed"
+      }
+    ]
+  },
+  "ja": {
+    "aria": "振動を読み解くことからファンを守ることまで",
+    "top": "AI Vibration Monitoring · 2026",
+    "eyebrow": "AI 予兆警報システム",
+    "h1a": "振動を読み解くことから",
+    "h1b": "ファンを守ることまで",
+    "sub": "AI 予兆警報システム · ファン全ライフサイクル管理ソリューション",
+    "desc": "振動センシング、AI診断、現場の保全ノウハウを組み合わせ、検知・診断から作業手配、再測定までを一貫して対応。ファン、ポンプ、コンプレッサーなど24時間稼働の回転機器に対応します。",
+    "bottom": "AI-DRIVEN MONITORING · D-SENG TECHNOLOGY",
+    "cue": "続きを読む",
+    "step": "STEP",
+    "steps": [
+      {
+        "n": "01",
+        "head": "計測・監視",
+        "body": "センサーが振動と温度を連続監視し、データを途切れなく記録"
+      },
+      {
+        "n": "02",
+        "head": "専門家診断",
+        "body": "システムが異常を判定し、エンジニアが根本原因を確認"
+      },
+      {
+        "n": "03",
+        "head": "自動起票",
+        "body": "設備の保全履歴を引き継ぎ、交換推奨部品を一覧化"
+      },
+      {
+        "n": "04",
+        "head": "部品確認",
+        "body": "必要な部品と在庫を確認し、必要に応じて本体ごとの予備機を手配"
+      },
+      {
+        "n": "05",
+        "head": "手配・修理",
+        "body": "状況に応じて計画修理または緊急修理を手配し、エンジニアが現場へ"
+      },
+      {
+        "n": "06",
+        "head": "再測定・検収",
+        "body": "修理後に振動を再測定して合格を確認、履歴を更新して完了"
+      }
+    ]
+  }
+}

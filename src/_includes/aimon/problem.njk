@@ -1,0 +1,40 @@
+{#- problem: pain-point comparison table, ported from CustomerProblem.tsx -#}
+<section class="am-problem" aria-labelledby="am-problem-title">
+  <div class="cc-container am-problem-inner">
+    <div class="am-problem-reveal am-problem-r1 am-problem-head">
+      <div class="cc-mono am-problem-eyebrow">{{ am.eyebrow }}</div>
+      <div class="am-problem-rule"></div>
+      <div class="am-problem-aside">{{ am.aside }}</div>
+    </div>
+
+    <h2 id="am-problem-title" class="am-problem-reveal am-problem-r1 am-problem-title">{{ am.title }}</h2>
+    {%- if am.subtitle %}
+    <div class="am-problem-reveal am-problem-r1 am-problem-subtitle">{{ am.subtitle }}</div>
+    {%- endif %}
+
+    <div class="am-problem-reveal am-problem-r2 am-problem-table" role="table">
+      <div class="am-problem-row am-problem-row-head" role="row">
+        <div class="cc-mono am-problem-th" role="columnheader">{{ am.head_now }}</div>
+        <div class="am-problem-sp"></div>
+        <div class="cc-mono am-problem-th am-problem-th-pain" role="columnheader">{{ am.head_pain }}</div>
+      </div>
+      {%- for r in am.rows %}
+      <div class="am-problem-row" role="row">
+        <div class="am-problem-cell" role="cell">
+          <div class="am-problem-main">{{ r.now }}</div>
+          {%- if r.now_en %}<div class="cc-mono am-problem-gloss">{{ r.now_en }}</div>{% endif %}
+        </div>
+        <div class="am-problem-arrow" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </div>
+        <div class="am-problem-cell am-problem-cell-pain" role="cell">
+          <div class="am-problem-main am-problem-main-pain">{{ r.pain }}</div>
+          {%- if r.pain_en %}<div class="cc-mono am-problem-gloss am-problem-gloss-pain">{{ r.pain_en }}</div>{% endif %}
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+
+    <div class="am-problem-reveal am-problem-r3 am-problem-closing">{{ am.closing }}</div>
+  </div>
+</section>

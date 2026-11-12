@@ -1,0 +1,149 @@
+/* THE SIGNAL — dark full-bleed band. Ported from SignalUnread.tsx. */
+.aimon .am-signal {
+  background: rgb(var(--am-deep-rgb));
+  padding: clamp(40px, 7vh, 72px) 0;
+  min-height: calc(100svh - var(--am-header, 80px));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #f4f7fa;
+}
+.aimon .am-signal-inner { width: min(var(--cc-container-max), 100% - 2 * clamp(20px, 3vw, 56px)); }
+.aimon .am-signal-head { display: flex; align-items: baseline; gap: 20px; }
+.aimon .am-signal-eyebrow {
+  font-family: var(--cc-font-mono);
+  font-size: 12px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; line-height: 1; color: #7db7ec;
+}
+.aimon .am-signal-rule { flex: 1; height: 1px; background: rgba(244, 247, 250, 0.16); }
+.aimon .am-signal-title {
+  margin: clamp(8px, 1.6vh, 16px) 0 0;
+  max-width: 900px;
+  font-size: clamp(22px, 3.2vw, 36px);
+  font-weight: 600; line-height: 1.15; letter-spacing: -0.015em;
+  color: #f4f7fa;
+}
+.aimon .am-signal-sub {
+  margin: clamp(3px, 0.8vh, 8px) 0 0;
+  max-width: 820px;
+  font-size: clamp(13px, 1.3vw, 16px);
+  color: var(--cc-green-line);
+}
+
+/* reveal (only armed when JS can run, so no-JS shows everything) */
+@media (scripting: enabled) {
+  .aimon .am-signal-reveal {
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .aimon .am-signal.is-in .am-signal-reveal { opacity: 1; transform: none; }
+  .aimon .am-signal.is-in .am-signal-d1 { transition-delay: 0.12s; }
+  .aimon .am-signal.is-in .am-signal-d2 { transition-delay: 0.26s; }
+  .aimon .am-signal.is-in .am-signal-d3 { transition-delay: 0.42s; }
+}
+
+.aimon .am-signal-panel {
+  margin-top: clamp(14px, 2.2vh, 24px);
+  padding: clamp(10px, 2vh, 22px) 0 clamp(8px, 1.4vh, 16px);
+}
+.aimon .am-signal-chart { position: relative; width: 100%; height: clamp(170px, 26vh, 300px); }
+.aimon .am-signal-svgbox { position: absolute; inset: 0; }
+.aimon .am-signal-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; overflow: visible; }
+.aimon .am-signal-path {
+  fill: none; stroke: #6f8fb0; stroke-width: 2.4;
+  stroke-dasharray: 1500; stroke-dashoffset: 0;
+  transition: stroke-dashoffset 2.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (scripting: enabled) {
+  .aimon .am-signal:not(.is-draw) .am-signal-path { stroke-dashoffset: 1500; }
+}
+/* peak position = precomputed from the trace (x 66.5%, y 22.64%) */
+.aimon .am-signal-dot,
+.aimon .am-signal-tag,
+.aimon .am-signal-card { left: 66.5%; top: 22.64%; }
+
+.aimon .am-signal-dot {
+  position: absolute; width: 13px; height: 13px; margin: -6.5px 0 0 -6.5px;
+  border-radius: 50%; background: var(--cc-red);
+  box-shadow: 0 0 0 1.5px rgb(var(--am-deep-rgb));
+  transition: opacity 0.4s ease; pointer-events: none;
+}
+.aimon .am-signal-dot-pulse {
+  position: absolute; inset: 0; border-radius: 50%;
+  background: var(--cc-red); opacity: 0.55;
+  animation: am-signal-pulse 2s ease-out infinite;
+}
+@keyframes am-signal-pulse {
+  0% { transform: scale(1); opacity: 0.55; }
+  100% { transform: scale(3.2); opacity: 0; }
+}
+.aimon .am-signal-tag {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 16px));
+  max-width: 150px; text-align: center;
+  font-size: clamp(11px, 1.1vw, 13px); font-weight: 700; line-height: 1.35;
+  color: #f7c0ac;
+  transition: opacity 0.4s ease; pointer-events: none;
+}
+.aimon .am-signal-tag::after {
+  content: ""; position: absolute; left: 50%; bottom: -14px;
+  width: 1px; height: 14px;
+  background: rgba(226, 87, 43, 0.6); transform: translateX(-50%);
+}
+.aimon .am-signal-card {
+  position: absolute;
+  transform: translate(-100%, 34px);
+  width: clamp(190px, 22vw, 250px);
+  background: rgba(var(--am-blue-rgb), 0.22);
+  border: 1px solid #3c82c4;
+  border-left: 3px solid #4d9be0;
+  border-radius: var(--cc-radius-md);
+  padding: 10px 12px;
+  transition: opacity 0.5s ease; pointer-events: none;
+}
+.aimon .am-signal-card-tag {
+  font-family: var(--cc-font-mono);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+  color: #8fc9f5; margin-bottom: 4px;
+}
+.aimon .am-signal-card-body {
+  font-size: clamp(12px, 1.15vw, 13.5px); line-height: 1.5; color: #eaf3fb;
+}
+@media (scripting: enabled) {
+  .aimon .am-signal:not(.is-unread) .am-signal-dot,
+  .aimon .am-signal:not(.is-unread) .am-signal-tag { opacity: 0; }
+  .aimon .am-signal:not(.is-read) .am-signal-card { opacity: 0; }
+}
+
+.aimon .am-signal-foot {
+  margin-top: clamp(10px, 1.8vh, 20px);
+  padding-top: clamp(8px, 1.4vh, 14px);
+  border-top: 1px solid rgba(244, 247, 250, 0.14);
+}
+.aimon .am-signal-caption { font-size: clamp(13px, 1.2vw, 16px); color: var(--cc-green-line); }
+.aimon .am-signal-caption b { color: #f4f7fa; font-weight: 700; }
+.aimon .am-signal-closing {
+  margin-top: clamp(10px, 1.6vh, 18px);
+  padding: clamp(6px, 1vh, 10px) 0 clamp(6px, 1vh, 10px) clamp(12px, 1.2vw, 18px);
+  border-left: 3px solid #4d9be0;
+  color: #eaf3fb;
+  font-size: clamp(13px, 1.2vw, 16px); font-weight: 600; line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .aimon .am-signal-chart { height: auto; }
+  .aimon .am-signal-svgbox { position: relative; width: 100%; height: clamp(140px, 22vh, 220px); }
+  .aimon .am-signal-card {
+    position: static; transform: none; width: 100%;
+    margin-top: clamp(20px, 4vh, 32px);
+  }
+  .aimon .am-signal-tag { max-width: 130px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aimon .am-signal-path,
+  .aimon .am-signal-tag,
+  .aimon .am-signal-card,
+  .aimon .am-signal-dot,
+  .aimon .am-signal-reveal { transition: none !important; }
+  .aimon .am-signal-dot-pulse { animation: none !important; opacity: 0 !important; }
+}

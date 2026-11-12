@@ -1,0 +1,39 @@
+---
+page_key: gold_stone
+page_path: about/gold-stone/
+---
+{%- set t = i18n[lang.code] -%}
+{%- set gs = t.gold_stone -%}
+<section class="page-head">
+  <div class="wrap">
+    <p class="page-head__eyebrow"><a href="{{ lang.prefix }}about/#affiliates">{{ t.about.affiliates_title }}</a> / {{ t.about.affiliates[0].name }}</p>
+    <h1>{{ gs.title }}</h1>
+    <p class="page-head__lead">{{ gs.lead }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap products">
+    {%- for g in gs.groups %}
+    {%- set media = gs_media[loop.index0] %}
+    <article id="p{{ loop.index }}" class="product{% if loop.index <= 2 %} product--main{% endif %}">
+      <ul class="product__photos product__photos--{{ media.photos.length }}">
+        {%- for ph in media.photos %}
+        <li><figure><img src="/assets/gold-stone/{{ ph.src }}" alt="{{ g.title }}{% if ph.label %} — {{ ph.label }}{% endif %}" loading="lazy"{% if ph.fit %} class="is-{{ ph.fit }}"{% endif %}>{% if ph.label %}<figcaption>{{ ph.label }}</figcaption>{% endif %}</figure></li>
+        {%- endfor %}
+      </ul>
+      <p class="product__index">{{ "0" + loop.index }}</p>
+      <h2>{{ g.title }}</h2>
+      <p class="product__text">{{ g.text }}</p>
+      <ul class="points">
+        {%- for li in g.items %}<li>{{ li }}</li>{% endfor %}
+      </ul>
+      <p class="product__brands"><span class="visually-hidden">{{ gs.brands_label }}：</span>{% for b in g.brands %}<span class="chip">{{ b }}</span>{% endfor %}</p>
+    </article>
+    {%- endfor %}
+  </div>
+  <div class="wrap">
+    <p class="small-note">{{ gs.note }}</p>
+    <p class="more"><a href="{{ lang.prefix }}about/#affiliates">← {{ gs.back }}</a></p>
+  </div>
+</section>

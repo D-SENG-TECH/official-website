@@ -1,0 +1,142 @@
+{
+  "zh-tw": {
+    "eyebrow": "客戶痛點",
+    "aside": "The problem we solve",
+    "title": "風機維護的硬骨頭，不在偵測 — 而在偵測之後。",
+    "subtitle": "The hard part isn't detection — it's what happens next.",
+    "head_now": "Current practice · 現狀",
+    "head_pain": "Pain point · 痛點",
+    "rows": [
+      {
+        "now": "定期巡檢（人工量測）",
+        "now_en": "Scheduled human inspection",
+        "pain": "頻率太低，異常容易漏掉",
+        "pain_en": "Too infrequent — anomalies slip through"
+      },
+      {
+        "now": "事後維修（壞了才修）",
+        "now_en": "Reactive repair",
+        "pain": "停機成本高，產線受衝擊",
+        "pain_en": "High downtime cost, production impact"
+      },
+      {
+        "now": "第三方監測系統",
+        "now_en": "Third-party monitoring",
+        "pain": "只告訴你「在抖」，不知道為什麼",
+        "pain_en": "“It is shaking” — but never why"
+      },
+      {
+        "now": "監測歸監測、維修歸維修",
+        "now_en": "Separated vendors",
+        "pain": "廠商銜接斷點，偵測後無下一步",
+        "pain_en": "Handoff gaps after detection"
+      }
+    ],
+    "closing": "智聖不只做監測 —— 從感測到派工、從備品到複測結案，所有環節由同一個團隊負責。"
+  },
+  "zh-cn": {
+    "eyebrow": "客户痛点",
+    "aside": "The problem we solve",
+    "title": "风机维护的难点，不在检测 — 而在检测之后。",
+    "subtitle": "The hard part isn't detection — it's what happens next.",
+    "head_now": "Current practice · 现状",
+    "head_pain": "Pain point · 痛点",
+    "rows": [
+      {
+        "now": "定期巡检（人工测量）",
+        "now_en": "Scheduled human inspection",
+        "pain": "频率太低，异常容易漏掉",
+        "pain_en": "Too infrequent — anomalies slip through"
+      },
+      {
+        "now": "事后维修（坏了才修）",
+        "now_en": "Reactive repair",
+        "pain": "停机成本高，产线受冲击",
+        "pain_en": "High downtime cost, production impact"
+      },
+      {
+        "now": "第三方监测系统",
+        "now_en": "Third-party monitoring",
+        "pain": "只告诉你“在抖”，不知道为什么",
+        "pain_en": "“It is shaking” — but never why"
+      },
+      {
+        "now": "监测归监测、维修归维修",
+        "now_en": "Separated vendors",
+        "pain": "厂商衔接断点，检测后没有下一步",
+        "pain_en": "Handoff gaps after detection"
+      }
+    ],
+    "closing": "智圣不只做监测 —— 从感测到派工、从备件到复测结案，所有环节由同一个团队负责。"
+  },
+  "en": {
+    "eyebrow": "THE PROBLEM",
+    "aside": "Why it matters",
+    "title": "The hard part of fan maintenance isn't detection — it's what happens next.",
+    "subtitle": "",
+    "head_now": "Current practice",
+    "head_pain": "Pain point",
+    "rows": [
+      {
+        "now": "Scheduled human inspection",
+        "now_en": "",
+        "pain": "Too infrequent — anomalies slip through",
+        "pain_en": ""
+      },
+      {
+        "now": "Reactive repair",
+        "now_en": "",
+        "pain": "High downtime cost, production impact",
+        "pain_en": ""
+      },
+      {
+        "now": "Third-party monitoring",
+        "now_en": "",
+        "pain": "“It is shaking” — but never why",
+        "pain_en": ""
+      },
+      {
+        "now": "Separated vendors",
+        "now_en": "",
+        "pain": "Handoff gaps after detection",
+        "pain_en": ""
+      }
+    ],
+    "closing": "D-SENG isn't just monitoring — from sensing to dispatch, from spare parts to recheck and close-out, one team owns every step."
+  },
+  "ja": {
+    "eyebrow": "お客様の課題",
+    "aside": "The problem we solve",
+    "title": "ファン保全の難所は、検知ではなく「検知のその後」にあります。",
+    "subtitle": "The hard part isn't detection — it's what happens next.",
+    "head_now": "Current practice · 現状",
+    "head_pain": "Pain point · 課題",
+    "rows": [
+      {
+        "now": "定期巡回（人手による測定）",
+        "now_en": "Scheduled human inspection",
+        "pain": "頻度が低く、異常を見逃しやすい",
+        "pain_en": "Too infrequent — anomalies slip through"
+      },
+      {
+        "now": "事後保全（壊れてから修理）",
+        "now_en": "Reactive repair",
+        "pain": "停止コストが高く、生産ラインに影響",
+        "pain_en": "High downtime cost, production impact"
+      },
+      {
+        "now": "第三者の監視システム",
+        "now_en": "Third-party monitoring",
+        "pain": "「揺れている」とは分かっても、理由が分からない",
+        "pain_en": "“It is shaking” — but never why"
+      },
+      {
+        "now": "監視と保全が別々のベンダー",
+        "now_en": "Separated vendors",
+        "pain": "ベンダー間の引き継ぎが途切れ、検知後の次の一手がない",
+        "pain_en": "Handoff gaps after detection"
+      }
+    ],
+    "closing": "智聖は監視だけではありません —— センシングから作業手配、部品確保から再測定・完了まで、すべての工程を同じチームが担当します。"
+  }
+}

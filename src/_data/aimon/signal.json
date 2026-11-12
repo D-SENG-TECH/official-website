@@ -1,0 +1,50 @@
+{
+  "zh-tw": {
+    "eyebrow": "訊號 · THE SIGNAL",
+    "title": "故障從來不是突然發生的。",
+    "sub": "訊號一直都在 —— 它就藏在一段沒人讀得懂的振動裡。",
+    "tag_unread": "沒人讀得懂的前兆",
+    "card_tag": "讀得懂了",
+    "card_body": "軸承內圈早期磨損 · 建議 3 週內安排更換 · 已備妥對應備品",
+    "caption": "前兆都在振動裡 — ",
+    "caption_bold": "直到有人讀得懂它。",
+    "closing": "智聖讀懂振動，也守護每一台風機。",
+    "chart_label": "振動趨勢曲線，在波峰處標示出軸承早期磨損的前兆"
+  },
+  "zh-cn": {
+    "eyebrow": "信号 · THE SIGNAL",
+    "title": "故障从来不是突然发生的。",
+    "sub": "信号一直都在 —— 它就藏在一段没人读得懂的振动里。",
+    "tag_unread": "没人读得懂的前兆",
+    "card_tag": "读懂了",
+    "card_body": "轴承内圈早期磨损 · 建议 3 周内安排更换 · 已备好对应备件",
+    "caption": "前兆都在振动里 — ",
+    "caption_bold": "直到有人读得懂它。",
+    "closing": "智圣读懂振动，也守护每一台风机。",
+    "chart_label": "振动趋势曲线，在波峰处标示出轴承早期磨损的前兆"
+  },
+  "en": {
+    "eyebrow": "THE SIGNAL",
+    "title": "Failures never happen suddenly.",
+    "sub": "The signal was always there — it's hiding inside a stretch of vibration nobody could read.",
+    "tag_unread": "The warning nobody could read",
+    "card_tag": "INTERPRETED",
+    "card_body": "Early inner-race bearing wear · replace within 3 weeks · spare part reserved",
+    "caption": "The precursor was always in the vibration — ",
+    "caption_bold": "until someone could read it.",
+    "closing": "D-SENG reads the vibration, and keeps every fan running.",
+    "chart_label": "Vibration trend with the early bearing-wear precursor marked at the peak"
+  },
+  "ja": {
+    "eyebrow": "シグナル · THE SIGNAL",
+    "title": "故障は、突然起きるわけではありません。",
+    "sub": "兆候はずっとそこにありました。誰にも読み解けない振動の中に隠れていたのです。",
+    "tag_unread": "誰にも読み解けなかった兆候",
+    "card_tag": "読み解けた",
+    "card_body": "ベアリング内輪の初期摩耗 · 3週間以内の交換を推奨 · 対応する予備品を手配済み",
+    "caption": "兆候は振動の中にありました — ",
+    "caption_bold": "それを読み解ける人が現れるまでは。",
+    "closing": "智聖(D-SENG)は振動を読み解き、すべての送風機を守ります。",
+    "chart_label": "振動トレンド曲線。ピーク位置にベアリング初期摩耗の兆候を表示"
+  }
+}

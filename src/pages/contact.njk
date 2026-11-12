@@ -1,0 +1,33 @@
+---
+page_key: contact
+page_path: contact/
+---
+{%- set t = i18n[lang.code] -%}
+{%- set maps_query = "https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E7%92%B0%E5%8C%97%E8%B7%AF%E4%B8%80%E6%AE%B5269%E5%B7%B768%E8%99%9F" %}
+<section class="contact-map" data-contact-map data-lat="{{ site.office.lat }}" data-lng="{{ site.office.lng }}" data-key="{{ site.maps_key }}" data-lang="{{ t.contact.map_lang }}">
+  <div class="contact-map__canvas" role="region" aria-label="{{ t.contact.map_title }}"></div>
+  <div class="wrap contact-map__head">
+    <p class="page-head__eyebrow">{{ t.common.company_name_en }}</p>
+    <h1>{{ t.contact.title }}</h1>
+    <p class="contact-map__lead">{{ t.contact.lead }}</p>
+  </div>
+  <div class="contact-pin" data-contact-pin>
+    <article class="contact-card">
+      <div class="contact-card__media"><img class="contact-card__photo" src="/assets/contact-office.jpg" width="810" height="624" alt="{{ t.contact.office_alt }}"></div>
+      <div class="contact-card__body">
+        <h2>{{ t.common.company_short }}</h2>
+        <dl>
+          <div><dt>{{ t.common.address_label }}</dt><dd>{{ t.common.address }}</dd></div>
+          <div><dt>{{ t.common.phone_label }}</dt><dd><a href="tel:{{ site.phone_tel }}">{% if lang.code == "zh-tw" %}{{ site.phone }}{% else %}{{ site.phone_intl }}{% endif %}</a></dd></div>
+          <div><dt>{{ t.common.fax_label }}</dt><dd>{% if lang.code == "zh-tw" %}{{ site.fax }}{% else %}{{ site.fax_intl }}{% endif %}</dd></div>
+          <div><dt>{{ t.common.email_label }}</dt><dd><a href="mailto:{{ site.email_info }}">{{ site.email_info }}</a></dd></div>
+        </dl>
+        <a class="contact-card__route" href="{{ maps_query }}" rel="noopener" target="_blank">{{ t.common.map_link }} ↗</a>
+      </div>
+    </article>
+    <span class="contact-pin__marker" aria-hidden="true">
+      <svg viewBox="0 0 40 52" width="40" height="52"><path d="M20 51C20 51 38 32.6 38 19.5 38 9.3 29.9 1 20 1S2 9.3 2 19.5C2 32.6 20 51 20 51Z" fill="#14284B" stroke="#fff" stroke-width="2"/><circle cx="20" cy="19.5" r="7" fill="#C5A15C"/></svg>
+    </span>
+  </div>
+</section>
+<script src="/assets/contact-map.js" defer></script>

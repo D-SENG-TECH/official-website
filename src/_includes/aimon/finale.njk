@@ -1,0 +1,35 @@
+{#- FINALE: closing card that sends visitors to the live 3D demo, ported from LiveDemoFinale.tsx.
+    The background is a static image; the tour opens the live demo in a new tab. -#}
+{%- set am_demo = "https://dev-air.chiuchau.com/#/" + am.demo_locale + "/guest?tour=1" %}
+<section id="live-demo" class="am-finale" data-am-finale>
+  <img class="am-finale-bg" src="/assets/aimon/finale-plant.jpg" alt="{{ am.img_alt }}" loading="lazy" decoding="async">
+  <div class="am-finale-veil" aria-hidden="true"></div>
+  <div class="cc-container am-finale-slide">
+    <div class="am-finale-card">
+      <div class="am-finale-head">
+        <span class="cc-mono am-finale-eyebrow">{{ am.eyebrow }}</span>
+        <span class="am-finale-rule" aria-hidden="true"></span>
+      </div>
+      <h2 class="am-finale-title">{{ am.title_a }}<br><span>{{ am.title_b }}</span></h2>
+      <p class="am-finale-desc">{{ am.desc }}</p>
+      <div class="am-finale-qr-row">
+        <img class="am-finale-qr" src="/assets/aimon/finale-qr.svg" width="370" height="370" alt="{{ am.qr_alt }}" loading="lazy">
+        <span class="am-finale-qr-caption">{{ am.qr_caption }}</span>
+      </div>
+      <div class="am-finale-actions">
+        <a class="am-finale-cta" href="{{ am_demo }}" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></svg>
+          {{ am.cta }}
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+      <div class="am-finale-contact">
+        <p class="cc-mono am-finale-contact-title">{{ am.contact }}</p>
+        <dl>
+          <div><dt>{{ am.email }}</dt><dd><a href="mailto:{{ site.email_info }}">{{ site.email_info }}</a></dd></div>
+          <div><dt>{{ am.phone }}</dt><dd><a href="tel:{{ site.phone_tel }}">{{ site.phone_intl }}</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,153 @@
+/* hero — ported from Hero.tsx. JS drives --am-expand/--am-fade/--am-ul-*, per-step --r. */
+.aimon .am-hero {
+  --am-header: 80px;
+  --am-expand: 0; --am-fade: 0; --am-ul-top: 0; --am-ul-bottom: 0;
+  position: relative;
+  height: 300vh;
+}
+.aimon .am-hero-stage {
+  position: sticky;
+  top: var(--am-header, 80px);
+  height: calc(100svh - var(--am-header, 80px));
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--cc-green-deep);
+  color: #f5f4f0;
+  font-family: var(--cc-font-sans);
+}
+.aimon .am-hero-video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  pointer-events: none;
+  filter: brightness(0.55) saturate(1.05);
+}
+.aimon .am-hero-shade {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(var(--am-deep-rgb), 0.55) 0%, rgba(var(--am-deep-rgb), 0.35) 35%, rgba(var(--am-deep-rgb), 0.78) 100%);
+}
+.aimon .am-hero-glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 75% 35%, rgba(var(--am-blue-rgb), 0.30), transparent 65%);
+}
+
+.aimon .am-hero-top { position: relative; z-index: 1; padding-top: 28px; padding-bottom: 8px; opacity: calc(1 - var(--am-fade)); }
+.aimon .am-hero-top-label {
+  text-align: right; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(245, 244, 240, 0.55);
+}
+
+.aimon .am-hero-main {
+  flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center;
+  position: relative; z-index: 1; padding-bottom: 12px;
+}
+.aimon .am-hero-col { width: 100%; }
+
+.aimon .am-hero-brand {
+  overflow: hidden;
+  opacity: calc(1 - var(--am-fade));
+  max-height: calc(220px * (1 - var(--am-fade)));
+  margin-bottom: calc(14px * (1 - var(--am-fade)));
+}
+.aimon .am-hero-eyebrow-row { display: flex; align-items: center; gap: 12px; }
+.aimon .am-hero-eyebrow-bar { height: 2px; width: 80px; background: var(--cc-red); flex-shrink: 0; }
+.aimon .am-hero-eyebrow { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245, 244, 240, 0.7); }
+
+.aimon .am-hero-h {
+  margin: 0;
+  font-size: clamp(30px, 6.4vw, 76px);
+  font-weight: 700; line-height: 1.04; letter-spacing: -0.02em;
+  color: inherit;
+}
+.aimon .am-hero-h-top { margin-top: calc(20px * (1 - var(--am-fade))); }
+.aimon .am-hero-h-inner { display: inline-block; }
+.aimon .am-hero-ul {
+  display: block; background: var(--cc-red); transform-origin: left;
+  height: calc(3px * var(--u)); margin-top: calc(14px * var(--u)); transform: scaleX(var(--u));
+}
+.aimon .am-hero-ul-top { --u: var(--am-ul-top); }
+.aimon .am-hero-ul-bottom { --u: var(--am-ul-bottom); }
+
+.aimon .am-hero-gap {
+  height: calc(46svh * var(--am-expand));
+  overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.aimon .am-hero-steps {
+  list-style: none; margin: 0; padding: 8px 0; max-width: 760px;
+  position: relative; display: flex; flex-direction: column; gap: clamp(6px, 1vh, 12px);
+}
+.aimon .am-hero-spine { position: absolute; left: 19px; top: 14px; bottom: 14px; width: 2px; background: rgba(195, 211, 226, 0.20); opacity: var(--am-expand); }
+.aimon .am-hero-step {
+  --r: 0;
+  position: relative; display: flex; align-items: center; gap: 14px;
+  opacity: var(--r); transform: translateY(calc((1 - var(--r)) * 12px));
+}
+.aimon .am-hero-node {
+  flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: rgb(calc(11 + 12 * var(--r)) calc(34 + 18 * var(--r)) calc(57 + 16 * var(--r)));
+  border: 1px solid rgba(195, 211, 226, calc(0.25 + 0.35 * var(--r)));
+  color: #e6eef6;
+}
+.aimon .am-hero-step-text { min-width: 0; }
+.aimon .am-hero-step-line { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.aimon .am-hero-step-n { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--cc-green-line); }
+.aimon .am-hero-step-head { font-size: clamp(15px, 1.5vw, 19px); font-weight: 600; line-height: 1.2; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35); }
+.aimon .am-hero-step-body { margin-top: 1px; font-size: clamp(12px, 1vw, 13px); color: rgba(245, 244, 240, 0.78); line-height: 1.4; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35); }
+
+.aimon .am-hero-support {
+  overflow: hidden;
+  opacity: calc(1 - var(--am-fade));
+  max-height: calc(300px * (1 - var(--am-fade)));
+  margin-top: calc(24px * (1 - var(--am-fade)));
+}
+.aimon .am-hero-stage[data-faded="1"] .am-hero-support,
+.aimon .am-hero-stage[data-faded="1"] .am-hero-brand,
+.aimon .am-hero-stage[data-faded="1"] .am-hero-bottom { pointer-events: none; }
+.aimon .am-hero-sub { font-size: clamp(18px, 2vw, 28px); color: var(--cc-green-line); font-weight: 400; line-height: 1.35; max-width: 880px; }
+.aimon .am-hero-desc { margin: 24px 0 0; font-size: clamp(14px, 1.2vw, 18px); color: rgba(245, 244, 240, 0.75); line-height: 1.6; max-width: 760px; font-weight: 300; }
+
+.aimon .am-hero-bottom { position: relative; z-index: 1; padding-bottom: 28px; opacity: calc(1 - var(--am-fade)); }
+.aimon .am-hero-bottom-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.aimon .am-hero-bottom-label { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245, 244, 240, 0.55); }
+.aimon .am-hero-cue {
+  background: transparent; border: 1px solid rgba(245, 244, 240, 0.25); color: rgba(245, 244, 240, 0.85);
+  padding: 10px 18px; border-radius: 999px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--cc-font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  transition: background 180ms cubic-bezier(0.2, 0, 0, 1);
+}
+.aimon .am-hero-cue:hover { background: rgba(245, 244, 240, 0.08); }
+.aimon .am-hero-cue:focus-visible { outline: 2px solid #f5f4f0; outline-offset: 3px; }
+.aimon .am-hero-chev { animation: am-hero-bob 1.6s ease-in-out infinite; }
+@keyframes am-hero-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
+
+/* phones: tighter chrome so the 6-step flow fits the stage */
+@media (max-width: 600px) {
+  .aimon .am-hero-top { padding-top: 16px; }
+  .aimon .am-hero-top-label { font-size: 11px; }
+  .aimon .am-hero-bottom { padding-bottom: 16px; }
+  .aimon .am-hero-bottom-label { display: none; }
+  .aimon .am-hero-bottom-row { justify-content: flex-end; }
+  .aimon .am-hero-gap { height: calc(54svh * var(--am-expand)); }
+  .aimon .am-hero-steps { gap: 4px; padding: 4px 0; }
+  .aimon .am-hero-node { width: 34px; height: 34px; }
+  .aimon .am-hero-node svg { width: 16px; height: 16px; }
+  .aimon .am-hero-spine { left: 16px; }
+  .aimon .am-hero-step { gap: 10px; }
+  .aimon .am-hero-step-body { font-size: 12px; line-height: 1.3; }
+}
+
+/* reduced motion: final state, no scrubbing */
+.aimon .am-hero.is-static { height: auto; --am-expand: 1; --am-fade: 0; --am-ul-top: 1; --am-ul-bottom: 1; }
+.aimon .am-hero.is-static .am-hero-stage { position: relative; top: auto; height: auto; min-height: calc(100svh - var(--am-header, 80px)); }
+.aimon .am-hero.is-static .am-hero-gap { height: auto; }
+.aimon .am-hero.is-static .am-hero-step { --r: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .aimon .am-hero { height: auto; --am-expand: 1; --am-fade: 0; --am-ul-top: 1; --am-ul-bottom: 1; }
+  .aimon .am-hero-stage { position: relative; top: auto; height: auto; min-height: calc(100svh - var(--am-header, 80px)); }
+  .aimon .am-hero-gap { height: auto; }
+  .aimon .am-hero-step { --r: 1; }
+  .aimon .am-hero-chev { animation: none; }
+}

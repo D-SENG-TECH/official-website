@@ -1,0 +1,21 @@
+{#- THE ANSWER: flow capsule over a static 3D digital-plant image. No external embed. -#}
+<section id="answer" class="am-answer" data-am-answer>
+  <img class="am-answer-bg" src="/assets/aimon/answer-plant.jpg" alt="{{ am.img_alt }}" loading="lazy" decoding="async">
+  <div class="am-answer-shade" aria-hidden="true"></div>
+  <div class="am-answer-narr">
+    <div class="cc-container">
+      <div class="am-answer-reveal am-answer-head">
+        <div class="am-answer-eyebrow">{{ am.eyebrow }}</div>
+        <div class="am-answer-rule"></div>
+        <div class="cc-mono am-answer-note">{{ am.note }}</div>
+      </div>
+      <h2 class="am-answer-reveal am-answer-d1 am-answer-title">{{ am.title }}</h2>
+      <div class="am-answer-reveal am-answer-d2 am-answer-flow">
+        {%- for f in am.flow %}
+        <span class="am-answer-item">{{ f }}{% if not loop.last %}<i class="am-answer-arrow">→</i>{% endif %}</span>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<script src="/assets/aimon/answer.js" defer></script>

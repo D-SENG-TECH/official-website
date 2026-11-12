@@ -1,0 +1,79 @@
+/* THE ANSWER — ported from TheAnswer.tsx (static image instead of live embed). */
+.aimon .am-answer {
+  position: relative;
+  overflow: hidden;
+  background: rgb(var(--am-deep-rgb));
+  height: calc(100svh - var(--am-header, 80px));
+  min-height: 520px;
+  max-height: 900px;
+}
+.aimon .am-answer-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center; display: block;
+}
+.aimon .am-answer-shade {
+  position: absolute; inset: 0 0 auto 0;
+  height: clamp(180px, 34vh, 340px);
+  background: linear-gradient(180deg,
+    rgba(var(--am-deep-rgb), 0.94) 0%,
+    rgba(var(--am-deep-rgb), 0.78) 46%,
+    rgba(var(--am-deep-rgb), 0) 100%);
+  pointer-events: none;
+}
+.aimon .am-answer-narr {
+  position: relative; z-index: 1;
+  padding: clamp(22px, 3.4vh, 44px) 0 0;
+}
+.aimon .am-answer-head { display: flex; align-items: baseline; gap: 20px; }
+.aimon .am-answer-eyebrow {
+  font-family: var(--cc-font-mono);
+  font-size: 12px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; line-height: 1; color: #8fc9f5;
+}
+.aimon .am-answer-rule { flex: 1; height: 1px; background: rgba(244, 247, 250, 0.18); }
+.aimon .am-answer-note { font-size: 12px; color: rgba(244, 247, 250, 0.6); letter-spacing: 0.08em; }
+.aimon .am-answer-title {
+  margin: clamp(8px, 1.4vh, 16px) 0 0;
+  max-width: 1180px;
+  font-size: clamp(26px, 3.1vw, 48px);
+  line-height: 1.18; font-weight: 700; letter-spacing: -0.01em;
+  color: #f4f7fa;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
+}
+.aimon .am-answer-flow {
+  margin-top: clamp(10px, 1.8vh, 20px);
+  display: inline-flex; flex-wrap: wrap; align-items: center;
+  gap: clamp(8px, 1vw, 16px);
+  padding: clamp(8px, 1.2vh, 13px) clamp(14px, 1.6vw, 22px);
+  border-radius: 999px;
+  background: rgba(244, 247, 250, 0.1);
+  border: 1px solid rgba(244, 247, 250, 0.22);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.aimon .am-answer-item {
+  display: inline-flex; align-items: center;
+  gap: clamp(8px, 1vw, 16px);
+  font-size: clamp(13px, 1.25vw, 17px); font-weight: 600;
+  color: #f4f7fa; white-space: nowrap;
+}
+.aimon .am-answer-arrow { font-style: normal; color: #8fc9f5; }
+
+@media (scripting: enabled) {
+  .aimon .am-answer-reveal {
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .aimon .am-answer.is-in .am-answer-reveal { opacity: 1; transform: none; }
+  .aimon .am-answer.is-in .am-answer-d1 { transition-delay: 0.12s; }
+  .aimon .am-answer.is-in .am-answer-d2 { transition-delay: 0.26s; }
+}
+
+@media (max-width: 860px) {
+  .aimon .am-answer { min-height: 480px; }
+  .aimon .am-answer-note { display: none; }
+  .aimon .am-answer-flow { display: flex; gap: 6px 8px; padding: 10px 14px; border-radius: 16px; }
+  .aimon .am-answer-item { font-size: 12.5px; gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aimon .am-answer-reveal { transition: none !important; }
+}

@@ -1,0 +1,30 @@
+---
+page_key: business
+page_path: business/
+---
+{%- set t = i18n[lang.code] -%}
+{% include "page-head.njk" %}
+
+<section class="section">
+  <div class="wrap">
+    <div class="cards">
+      {%- for item in t.business.items %}
+      <a class="card card--link card--biz" href="{{ lang.prefix }}business/{{ item.id | replace('_', '-') }}/">
+        <p class="biz__index">{{ "0" + loop.index }}</p>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.summary }}</p>
+        <p class="card__more">{{ t.common.learn_more }} →</p>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="wrap">
+    <h2>{{ t.business.ops_title }}</h2>
+    <ol class="ops">
+      {%- for op in t.business.ops %}<li>{{ op }}</li>{% endfor %}
+    </ol>
+  </div>
+</section>

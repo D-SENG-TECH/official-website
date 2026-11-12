@@ -1,0 +1,29 @@
+{#- AI monitoring showcase, ported from the monitoring intro deck.
+    Each section owns src/_includes/aimon/<key>.njk, src/assets/aimon/<key>.css,
+    optional src/assets/aimon/<key>.js, and copy in src/_data/aimon/<key>.json
+    keyed by language code. -#}
+{%- set am_sections = ["hero", "problem", "signal", "answer", "screens", "sweetspot", "finale"] %}
+<link rel="stylesheet" href="/assets/aimon/tokens.css">
+{%- for key in am_sections %}
+<link rel="stylesheet" href="/assets/aimon/{{ key }}.css">
+{%- endfor %}
+<div class="aimon">
+  <script>
+  (() => {
+    /* Sticky stages sit under the site header; its height varies by breakpoint
+       and it stops being sticky on small screens. */
+    const root = document.currentScript.parentElement;
+    const header = document.querySelector(".site-header");
+    const update = () => {
+      const sticky = header && getComputedStyle(header).position === "sticky";
+      root.style.setProperty("--am-header", (sticky ? header.offsetHeight : 0) + "px");
+    };
+    update();
+    addEventListener("resize", update);
+  })();
+  </script>
+  {%- for key in am_sections %}
+  {%- set am = aimon[key][lang.code] %}
+  {% include "aimon/" + key + ".njk" %}
+  {%- endfor %}
+</div>

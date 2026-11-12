@@ -1,0 +1,21 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+{%- set paths = site.pages.concat(["about/gold-stone/"]) -%}
+{%- for item in i18n["zh-tw"].business.items %}{% set paths = (paths.push("business/" + (item.id | replace("_", "-")) + "/"), paths) %}{% endfor -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for path in paths %}
+{%- for lang in site.langs %}
+  <url>
+    <loc>{{ site.url }}{{ lang.prefix }}{{ path }}</loc>
+    {%- for l in site.langs %}
+    <xhtml:link rel="alternate" hreflang="{{ l.html }}" href="{{ site.url }}{{ l.prefix }}{{ path }}"/>
+    {%- endfor %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/{{ path }}"/>
+    <priority>{% if path == "" %}1.0{% elif path.startsWith("business/") %}0.8{% else %}0.6{% endif %}</priority>
+  </url>
+{%- endfor %}
+{%- endfor %}
+</urlset>
