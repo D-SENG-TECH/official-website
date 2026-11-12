@@ -137,6 +137,7 @@
 .pf-biz__sec h4 { font-size: 18px; color: var(--pf-navy); margin: 0 0 8px; }
 .pf-biz__sec p { color: var(--pf-muted); line-height: 1.75; font-size: 15px; margin-bottom: 12px; }
 .pf-biz__sec .pf-points li { font-size: 15px; }
+.pf-ext { color: var(--pf-navy); text-decoration: underline; text-decoration-color: var(--pf-gold); text-underline-offset: 3px; }
 
 .pf-org .tree { margin-top: 24px; }
 
@@ -256,6 +257,7 @@
   .profile .wrap { width: 100%; margin: 0; }
   .profile a { text-decoration: none !important; color: inherit; }
   .profile a[href]::after { content: none !important; }
+  .pf-ext span { display: none; }
   .profile img { break-inside: avoid; }
 
   .pf-cover { break-after: page; height: 266mm; overflow: hidden; background: #fff !important; color: var(--pf-navy); border-top: 2.5mm solid var(--pf-navy); }

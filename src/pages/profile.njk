@@ -210,7 +210,7 @@ page_path: profile/
             {%- if sec.text %}<p>{{ sec.text }}</p>{% endif %}
             {%- if sec.list.length %}
             <ul class="pf-points">
-              {%- for li in sec.list %}<li>{{ li }}</li>{% endfor %}
+              {%- for li in sec.list %}<li>{% if sec.links and sec.links[loop.index0] %}<a class="pf-ext" href="{{ sec.links[loop.index0] }}" rel="noopener" target="_blank">{{ li }}<span aria-hidden="true"> ↗</span></a>{% else %}{{ li }}{% endif %}</li>{% endfor %}
             </ul>
             {%- endif %}
           </div>

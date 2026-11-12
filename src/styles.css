@@ -91,6 +91,8 @@ a { color: inherit; }
 .site-nav a:hover { color: var(--blue); }
 .site-nav > a[aria-current] { color: var(--blue); border-bottom-color: var(--blue); }
 .site-nav__label { display: none; }
+.ext-link { color: var(--blue); text-decoration: underline; text-decoration-color: rgb(30 79 140 / 0.35); text-underline-offset: 3px; }
+.ext-link:hover { text-decoration-color: currentColor; }
 .nav-toggle { display: none; }
 
 .lang-switch { position: relative; font-size: 14px; }
