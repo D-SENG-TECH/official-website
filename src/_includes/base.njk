@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page_key == "home" %}{{ t.common.company_name }} | {{ t.common.company_name_en }}{% else %}{{ page_title }} | {{ t.common.company_short }}{% endif %}</title>
   <meta name="description" content="{{ page_description }}">
-  {%- if site.env == "dev" %}
+  {%- if site.env == "dev" or noindex %}
   <meta name="robots" content="noindex, nofollow">
   {%- endif %}
   <link rel="canonical" href="{{ site.url }}{{ lang.prefix }}{{ page_path }}">

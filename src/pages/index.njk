@@ -3,92 +3,17 @@ page_key: home
 page_path: ""
 ---
 {%- set t = i18n[lang.code] -%}
-{#- Full-bleed 3D showroom: all five products in one scene. Idle shows the headline and a Play button;
-    playing hides them and shows a caption per product. Without WebGL the photo stays as the backdrop. -#}
-{%- set pa = t.product_animation -%}
-<section class="hero hero--3d" id="hero3d" aria-label="{{ t.home.stage_label }}">
-  <div class="hero3d__stage" id="hero3d-stage"></div>
-  <img class="hero3d__fallback" src="/assets/equipment.jpg" width="683" height="452" alt="{{ t.home.image_alt }}">
-  <div class="hero3d__shade"></div>
-  <div class="hero3d__intro">
-    <p class="hero__eyebrow">{{ t.home.eyebrow }}</p>
-    <h1>{{ t.home.headline_a }}<em>{{ t.home.headline_b }}</em></h1>
-    <p class="hero__lead">{{ t.home.lead | safe }}</p>
-    <div class="hero3d__actions">
-      <button class="hero3d__play" id="hero3d-play" type="button" hidden><span class="hero3d__play-icon" aria-hidden="true"></span>{{ t.home.play }}</button>
+<section class="hero">
+  <div class="wrap hero__inner">
+    <div>
+      <p class="hero__eyebrow">{{ t.home.eyebrow }}</p>
+      <h1>{{ t.home.headline_a }}<em>{{ t.home.headline_b }}</em></h1>
+      <p class="hero__lead">{{ t.home.lead | safe }}</p>
       <a class="button" href="{{ lang.prefix }}business/">{{ t.home.cta }}</a>
     </div>
-    <p class="hero3d__hint" hidden>{{ t.home.drag_hint }}</p>
-  </div>
-  <div class="hero3d__caption" id="hero3d-caption" aria-live="polite"><p class="hero3d__no"></p><h2></h2><p></p></div>
-  <div class="hero3d__ctrl" hidden>
-    <button class="hero3d__pause" id="hero3d-pause" type="button" aria-pressed="false" aria-label="{{ t.home.pause }}"></button>
-    <button class="hero3d__mute" id="hero3d-mute" type="button" aria-pressed="false" aria-label="{{ t.home.mute }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="#fff" stroke="none"/><path class="w" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/><path class="x" d="M16 9.5l5 5M21 9.5l-5 5"/></svg></button>
-    <ol class="hero3d__segs">
-      {%- for s in pa.scenes %}
-      <li><button class="hero3d__seg" type="button" data-i="{{ loop.index0 }}"><span class="hero3d__seg-label">{{ s.title }}</span><span class="hero3d__seg-bar"><span class="hero3d__seg-fill"></span></span></button></li>
-      {%- endfor %}
-    </ol>
+    <img class="hero__image" src="/assets/equipment.jpg" width="683" height="452" alt="{{ t.home.image_alt }}">
   </div>
 </section>
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
-<script type="module">
-  const el = document.getElementById("hero3d");
-  const products = {{ pa.scenes | dump | safe }};
-  const L = {{ { "pause": t.home.pause, "resume": t.home.resume, "mute": t.home.mute, "unmute": t.home.unmute } | dump | safe }};
-  const header = document.querySelector(".site-header");
-  const setTop = () => document.documentElement.style.setProperty("--hero3d-top", (header?.getBoundingClientRect().bottom ?? 0) + "px");
-  setTop();
-  addEventListener("resize", setTop);
-  const gl = (() => { try { return !!document.createElement("canvas").getContext("webgl2"); } catch { return false; } })();
-  if (gl) {
-    try {
-      const { startShowroom } = await import("/assets/product-animation/showroom.js");
-      const { createNarration } = await import("/assets/product-animation/narration.js");
-      const narr = createNarration({ base: "/assets/product-animation/narration/", lang: "{{ lang.code }}", ids: products.map((p) => p.id),
-        button: document.getElementById("hero3d-mute"), labels: L });
-      const cap = document.getElementById("hero3d-caption");
-      const pauseBtn = document.getElementById("hero3d-pause");
-      const segBtns = [...el.querySelectorAll(".hero3d__seg")];
-      const fills = segBtns.map((b) => b.querySelector(".hero3d__seg-fill"));
-      let shown = -2, lastPlaying = null, lastPaused = null;
-      const onUI = (s) => {
-        narr.onUI(s);
-        if (s.playing !== lastPlaying) { el.classList.toggle("is-playing", s.playing); lastPlaying = s.playing; }
-        if (s.paused !== lastPaused) { pauseBtn.setAttribute("aria-pressed", String(s.paused)); pauseBtn.setAttribute("aria-label", s.paused ? L.resume : L.pause); lastPaused = s.paused; }
-        if (s.index !== shown) {
-          shown = s.index;
-          if (s.index >= 0) {
-            const p = products[s.index];
-            cap.children[0].textContent = `${String(s.index + 1).padStart(2, "0")} / ${String(products.length).padStart(2, "0")}`;
-            cap.children[1].textContent = p.title;
-            cap.children[2].textContent = p.text;
-          }
-          segBtns.forEach((b, j) => b.setAttribute("aria-current", String(j === s.index)));
-        }
-        cap.style.opacity = s.captionK.toFixed(3);
-        cap.style.transform = `translateY(${((1 - s.captionK) * 12).toFixed(1)}px)`;
-        const active = s.mode !== "idle";
-        fills.forEach((f, j) => { f.style.transform = `scaleX(${!active ? 0 : j < s.index ? 1 : j === s.index ? s.prog : 0})`; });
-      };
-      const hero = await startShowroom(document.getElementById("hero3d-stage"), products, {
-        base: "/assets/product-animation/",
-        floor: "mirror",
-        onUI,
-        // keep the subject clear of the text: desktop -> right of the text column, portrait -> above the text
-        shift: (aspect, playing) => (aspect >= 1.2 ? [0.17 - 0.03 * playing, 0.12 - 0.1 * playing] : aspect < 0.8 ? [0, 0.27 - 0.11 * playing] : [0, 0.14]),
-      });
-      el.classList.add("is-ready");
-      el.querySelectorAll("[hidden]").forEach((n) => (n.hidden = false));
-      document.getElementById("hero3d-play").addEventListener("click", () => { narr.start(); hero.play(); });
-      pauseBtn.addEventListener("click", () => hero.toggle());
-      segBtns.forEach((b, i) => b.addEventListener("click", () => { narr.cut(i); hero.jump(i); }));
-      document.getElementById("hero3d-mute").addEventListener("click", () => narr.toggleMute());
-    } catch (err) {
-      console.warn("3D hero unavailable", err);
-    }
-  }
-</script>
 
 <section class="section">
   <div class="wrap">
