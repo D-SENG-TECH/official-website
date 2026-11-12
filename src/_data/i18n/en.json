@@ -74,7 +74,9 @@
     "pause": "Pause",
     "resume": "Resume",
     "drag_hint": "Drag to rotate the view",
-    "stage_label": "3D product showcase"
+    "stage_label": "3D product showcase",
+    "mute": "Mute narration",
+    "unmute": "Unmute narration"
   },
   "about": {
     "title": "About Us",

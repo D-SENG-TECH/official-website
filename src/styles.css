@@ -181,7 +181,12 @@ a { color: inherit; }
   backdrop-filter: blur(6px); cursor: pointer; display: grid; place-items: center; transition: opacity .4s; }
 .hero3d__pause::before { content: ""; width: 10px; height: 12px; border-left: 3px solid #fff; border-right: 3px solid #fff; }
 .hero3d__pause[aria-pressed="true"]::before { width: 0; height: 0; border-right: 0; border-left: 11px solid #fff; border-top: 7px solid transparent; border-bottom: 7px solid transparent; margin-left: 3px; }
-.hero--3d:not(.is-playing) .hero3d__pause { opacity: 0; pointer-events: none; }
+.hero3d__mute { flex: none; width: 38px; height: 38px; margin-left: -8px; border-radius: 50%; border: 1px solid rgb(255 255 255 / .45); background: rgb(6 20 38 / .35);
+  backdrop-filter: blur(6px); cursor: pointer; display: grid; place-items: center; transition: opacity .4s; }
+.hero3d__mute svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.hero3d__mute .x, .hero3d__mute[aria-pressed="true"] .w { display: none; }
+.hero3d__mute[aria-pressed="true"] .x { display: inline; }
+.hero--3d:not(.is-playing) .hero3d__pause, .hero--3d:not(.is-playing) .hero3d__mute { opacity: 0; pointer-events: none; }
 .hero3d__segs { flex: 1; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; max-width: 900px; margin: 0; padding: 0; list-style: none; }
 .hero3d__seg { width: 100%; padding: 10px 0 4px; border: 0; background: none; font: inherit; cursor: pointer; text-align: left; }
 .hero3d__seg-label { display: block; margin-bottom: 9px; color: rgb(219 230 240 / .7); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: color .3s; }

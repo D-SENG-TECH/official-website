@@ -74,7 +74,9 @@
     "pause": "一時停止",
     "resume": "再生を続ける",
     "drag_hint": "ドラッグで視点を回転",
-    "stage_label": "製品3Dショーケース"
+    "stage_label": "製品3Dショーケース",
+    "mute": "ナレーションをオフ",
+    "unmute": "ナレーションをオン"
   },
   "about": {
     "title": "会社概要",

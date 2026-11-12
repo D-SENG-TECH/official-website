@@ -74,7 +74,9 @@
     "pause": "暂停",
     "resume": "继续播放",
     "drag_hint": "拖拽可旋转视角",
-    "stage_label": "产品 3D 展示"
+    "stage_label": "产品 3D 展示",
+    "mute": "关闭旁白",
+    "unmute": "开启旁白"
   },
   "about": {
     "title": "关于我们",

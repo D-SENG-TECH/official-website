@@ -218,7 +218,7 @@ export async function startShowroom(el, items, { base = "./", tier: forceTier, o
       mirror.getRenderTarget().setSize(rw, rh);
       mU.uTexel.value.set(1 / rw, 1 / rh);
     }
-    for (const p of products) { p.cam.aspect = camera.aspect; p.cam.updateProjectionMatrix(); }
+    for (const p of products) if (p) { p.cam.aspect = camera.aspect; p.cam.updateProjectionMatrix(); }
   }
   const applyTier = () => { bokeh.enabled = tier === "high"; resize(); };
   new ResizeObserver(resize).observe(el);
