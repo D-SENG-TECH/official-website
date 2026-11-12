@@ -60,3 +60,8 @@
 - **決策**：業主看到分享預覽後認為太老派、照片縮小後看不出招牌。改成深色漸層 + 細點陣底、logo 的 S 圖形放大切出右側（金色漸層、深藍部分改半透明）、兩行大標題（第二行金色漸層）、一行副標，拿掉照片與事業標籤。
 - **logo 圖形改成端正完整**（業主不喜歡傾斜裁切），配色同深底版 logo（白＋金）；最後改用業主提供的直式 logo 放左側、右側只放文字，整張圖只出現一次品牌。檔名再改成 `brand-<lang>.jpg`：Facebook／LINE 依圖片網址快取，換檔名才會抓新圖。
 - **替代方案**：保留照片改大圖滿版——招牌在 1200×630 的縮圖裡仍然太小，文字也難壓在照片上。
+
+## 13:10 — LINE 不顯示分享縮圖：改回 baseline JPEG
+
+- **原因**：分享圖用 `-interlace JPEG` 輸出成 progressive JPEG；Facebook 讀得到，但 LINE 的預覽爬蟲不顯示。舊版 equipment.jpg 是 baseline，LINE 一直正常。頁面與圖片本身用 LINE 的 UA 抓都是 200、og:image 在 HTML 前 2KB 內，排除存取問題。
+- **決策**：分享圖一律 baseline JPEG（`-interlace none`），檔名改 `d-seng-<lang>.jpg` 讓各平台重抓；加 `og:image:type`。網站內一般照片維持 progressive，不影響分享。
