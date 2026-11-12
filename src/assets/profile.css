@@ -52,6 +52,14 @@
 .pf-print:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 .pf-hint { font-size: 13px; color: rgba(255,255,255,.65); }
 
+.pf-qr { margin: 0; display: grid; justify-items: center; gap: 6px; }
+.pf-qr img { width: 96px; height: 96px; padding: 8px; background: #fff; border-radius: 10px; }
+.pf-qr figcaption { font-size: 12px; letter-spacing: .08em; color: rgba(255,255,255,.75); }
+.pf-contact__logo .pf-qr { margin-top: 28px; }
+.pf-contact__logo .pf-qr img { border: 1px solid var(--pf-line); }
+.pf-contact__logo .pf-qr figcaption { color: var(--pf-muted); }
+.pf-printtoc { display: none; }
+
 /* ToC */
 .pf-toc { position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--pf-line); }
 .pf-toc__inner { display: flex; align-items: center; gap: 24px; padding-block: 12px; overflow-x: auto; }
@@ -255,6 +263,19 @@
   .pf-values__list p { font-size: 9pt; line-height: 1.5; }
 
   .pf-org .tree { zoom: .6; margin-top: 8mm; }
+  .pf-printtoc { display: block; break-after: page; padding-top: 6mm; }
+  .pf-printtoc h2 { font-size: 26pt; }
+  .pf-printtoc__list { margin-top: 10mm; display: grid; gap: 0; }
+  .pf-printtoc__list > li { display: grid; grid-template-columns: 14mm 1fr; padding: 4.5mm 0; border-bottom: 0.3mm solid var(--pf-line); font-size: 15pt; font-weight: 700; color: var(--pf-navy); }
+  .pf-printtoc__list > li > b { color: var(--pf-gold); font-size: 15pt; }
+  .pf-printtoc__list ol { grid-column: 2; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2mm 8mm; margin-top: 3.5mm; }
+  .pf-printtoc__list ol li { font-size: 10.5pt; font-weight: 500; color: var(--pf-ink); }
+  .pf-printtoc__list ol b { display: inline-block; width: 8mm; color: var(--pf-gold-ink); font-size: 9pt; }
+  .pf-qr img { width: 24mm; height: 24mm; padding: 0; border-radius: 0; }
+  .pf-qr figcaption { color: var(--pf-muted) !important; font-size: 8.5pt; }
+  .pf-contact__logo .pf-qr img { border: 0; }
+  .pf-business { break-before: auto; margin-top: 12mm; }
+
   .pf-org .node { box-shadow: none !important; }
 
   .pf-index { grid-template-columns: repeat(2, 1fr); gap: 2.5mm; margin-top: 6mm; }

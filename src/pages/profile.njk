@@ -33,6 +33,7 @@ page_path: profile/
           <strong>{{ t.common.company_name }}</strong>
           <span>{{ t.common.company_name_en }}</span>
         </div>
+        <figure class="pf-qr"><img src="/assets/qr-d-seng.svg" width="290" height="290" alt="QR code: {{ site.url }}"><figcaption>{{ site.url | replace("https://", "") }}</figcaption></figure>
         <div class="pf-actions">
           <button type="button" class="pf-print" onclick="window.print()">{{ p.print }}</button>
           <span class="pf-hint">{{ p.print_hint }}</span>
@@ -40,6 +41,23 @@ page_path: profile/
       </div>
     </div>
   </header>
+
+  <section class="pf-printtoc" aria-hidden="true">
+    <p class="pf-kicker">{{ p.cover_eyebrow }}</p>
+    <h2>{{ p.contents }}</h2>
+    <ol class="pf-printtoc__list">
+      {%- for key in ["about", "values", "org", "business", "affiliate", "contact"] %}
+      <li>
+        <b>{{ "0" + loop.index }}</b><span>{{ t.about.org_title if key == "org" else p.sections[key] }}</span>
+        {%- if key == "business" %}
+        <ol>
+          {%- for item in t.business.items %}<li><b>{{ "0" + loop.index }}</b>{{ item.title }}</li>{% endfor %}
+        </ol>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
 
   <nav class="pf-toc" aria-label="{{ p.contents }}">
     <div class="wrap pf-toc__inner">
@@ -206,6 +224,7 @@ page_path: profile/
       </div>
       <div class="pf-contact__logo">
         <img src="/assets/logo-vertical.svg" width="954" height="1271" alt="{{ t.common.company_name }}">
+        <figure class="pf-qr"><img src="/assets/qr-d-seng.svg" width="290" height="290" alt="QR code: {{ site.url }}"><figcaption>{{ site.url | replace("https://", "") }}</figcaption></figure>
       </div>
     </div>
     <div class="wrap">
