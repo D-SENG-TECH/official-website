@@ -269,9 +269,14 @@
   .pf-values__list p { font-size: 9pt; line-height: 1.5; }
 
   .pf-org .tree { zoom: .58; margin-top: 8mm; }
-  .pf-org .node { white-space: normal; min-width: 0; max-width: 132px; word-break: keep-all; overflow-wrap: normal; }
-  :is(.lang-en) .pf-org .tree { zoom: .5; }
-  :is(.lang-en) .pf-org .node { max-width: 150px; word-break: normal; }
+  /* Wrap long labels: English between words, Chinese/Japanese between characters */
+  .pf-org .node { white-space: normal; width: max-content; min-width: 0; max-width: 132px; word-break: normal; overflow-wrap: normal; line-break: strict; }
+  /* English and Japanese labels run longer: smaller chart, wider boxes so short words stay whole */
+  .lang-ja .pf-org .tree { zoom: .45; }
+  .lang-ja .pf-org .node { max-width: 168px; }
+  /* English has spaces to wrap at, so narrow boxes keep the chart inside A4 without splitting words */
+  .lang-en .pf-org .tree { zoom: .5; }
+  .lang-en .pf-org .node { width: auto; max-width: 150px; }
   .pf-printtoc { display: block; break-after: page; padding-top: 6mm; }
   .pf-printtoc h2 { font-size: 26pt; }
   .pf-printtoc__list { margin-top: 10mm; display: grid; gap: 0; }
