@@ -81,3 +81,10 @@
 
 - **漢堡選單**：≤1000px 時 header 只留 logo、語言切換與漢堡鈕，選單改成 header 下方展開的直式面板（事業六項歸在「事業項目」小標下）；Esc、點外面、點連結、跨過斷點都會收合，開啟時鎖住頁面捲動。header 在手機也改回 sticky，隨時叫得出選單。原本 ≤1360px 讓選單橫向捲動的做法在手機上很難用（業主回報）。
 - **公司簡介**：列印時封面後加一頁目錄（六章，事業項目列出六個子項；Chrome 不支援 `target-counter`，所以不列頁碼）；組織架構與事業項目總覽排在同一頁；封面與聯絡頁加 QR code（segno 產生、解碼驗證過，指向 https://d-seng.com.tw/），螢幕版放在白底小方塊裡才掃得到。
+
+## 16:00 — 公司簡介目錄頁碼：每個語言各自量測、每次部署重算
+
+- **限制**：瀏覽器原生列印做不到目錄頁碼（Chrome／Safari 不支援 `target-counter`）。
+- **決策**：`scripts/profile-toc.mjs` 在建置後用 headless Chrome 把四個語言的 /profile/ 各印成 A4 PDF，從 PDF 的具名目的地（`pdfinfo -dests`，Chrome 會為頁內錨點產生）讀出每個章節與事業項目的頁碼，寫入 `profile_toc.json`，再建置一次填進目錄。英文比中文長，頁碼本來就不同，所以一定要逐語言量。部署流程固定跑 build → 量測 → build，避免版面改了頁碼卻沒跟著動（業主就遇到英文版頁碼過期）。腳本只用 Node 內建模組 + 系統 Chrome + poppler，CI 不需裝 npm 套件。
+- **替代方案**：Paged.js 之類的分頁 polyfill——會接管整個列印排版，和現有 grid／zoom 版型衝突，維護成本高；頁尾「n / N」則用 `@page` margin box（Chrome 131+）。
+- **一併修**：英文組織圖在 A4 超出版面——列印時節點允許整字換行並限寬，英文版再縮小；事業主文改成可跨頁（原本整塊 `break-inside: avoid`，英文長文會整塊跳頁留下半頁空白）。

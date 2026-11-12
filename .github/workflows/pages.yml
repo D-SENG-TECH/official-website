@@ -30,6 +30,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check-i18n
+      # pdfinfo reads the printed profile's page numbers (scripts/profile-toc.mjs); Chrome is preinstalled
+      - run: sudo apt-get install -y --no-install-recommends poppler-utils
       - name: Build
         env:
           GOOGLE_MAPS_API_KEY: ${{ vars.GOOGLE_MAPS_API_KEY }}
@@ -38,6 +40,9 @@ jobs:
           export BUILD_COMMIT=$GITHUB_SHA
           # The -dev mirror repo serves the preview site
           if [[ "$GITHUB_REPOSITORY" == *-dev ]]; then export SITE_ENV=dev; fi
+          npm run build
+          # Measure each language's printed profile pages, then rebuild with the TOC page numbers
+          node scripts/profile-toc.mjs
           npm run build
           if [[ "$SITE_ENV" == dev ]]; then printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt; fi
       - uses: actions/configure-pages@v5
