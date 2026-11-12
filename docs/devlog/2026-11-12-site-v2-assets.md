@@ -65,3 +65,9 @@
 
 - **原因**：分享圖用 `-interlace JPEG` 輸出成 progressive JPEG；Facebook 讀得到，但 LINE 的預覽爬蟲不顯示。舊版 equipment.jpg 是 baseline，LINE 一直正常。頁面與圖片本身用 LINE 的 UA 抓都是 200、og:image 在 HTML 前 2KB 內，排除存取問題。
 - **決策**：分享圖一律 baseline JPEG（`-interlace none`），檔名改 `d-seng-<lang>.jpg` 讓各平台重抓；加 `og:image:type`。網站內一般照片維持 progressive，不影響分享。
+
+## 13:40 — 公司簡介改成網頁版（/profile/），列印套 A4
+
+- **決策**：不做 PDF 檔，做成一頁式網頁，依載體顯示：桌機多欄、手機單欄、`@media print` + `@page A4` 時切成 5 頁（封面／關於＋價值／事業／關係企業／聯絡），每節 `break-before: page`、卡片 `break-inside: avoid`、`print-color-adjust: exact` 讓深藍封面印得出來；頁面上「列印／另存 PDF」按鈕就是 `window.print()`。下載專區改成連到這頁。
+- **派工**：先鎖 `t.profile` 文案契約（zh-tw 主稿）再平行——一個 agent 只寫 `profile.njk` / `profile.css`，一個 agent 只改 zh-cn/en/ja JSON；整合時統一建置、跑 check-i18n、四語各產一份 A4 PDF 逐頁檢查。
+- **整合時修的**：日文與英文文案較長，原本核心價值被擠到下一頁、事業卡片拆兩頁；列印時價值改 4 欄且整區不拆頁、事業卡片隱藏圖片（列印時只剩細條，資訊量低）、主要產品改 5 欄，四語都固定 5 頁。`.profile img` 的權重蓋掉 `.pf-card__img`，改用 `.profile .pf-card__img`。

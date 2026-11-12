@@ -854,7 +854,7 @@
     "brand_links": [
       {
         "name": "Ingersoll Rand",
-        "url": "https://www.ingersollrand.com/",
+        "url": "https://www.ingersollrand.com/zh-apac/",
         "note": "Ingersoll Rand's official product website, covering air compressors, blowers, vacuum pumps, and air treatment equipment."
       },
       {
@@ -904,18 +904,38 @@
   },
   "downloads": {
     "title": "Downloads",
-    "description": "Download the D-SENG Technology company profile and find links to partner-brand product information.",
-    "lead": "Company profile and product information downloads. For the latest partner-brand catalogs, please visit the manufacturers' websites.",
+    "description": "View the D-SENG Technology company profile and find links to partner-brand product information.",
+    "lead": "The company profile can be viewed online or printed directly. For the latest partner-brand catalogs, please visit the manufacturers' websites.",
     "company_title": "Company Information",
     "files": [
       {
         "title": "D-SENG Technology Company Profile",
-        "format": "PDF",
-        "file": null
+        "format": "WEB",
+        "page": "profile/",
+        "note": "View online; print or save as PDF"
       }
     ],
     "brands_title": "Partner Brand Information",
     "brands_text": "The links below open the manufacturers' official websites; their latest versions take precedence."
+  },
+  "profile": {
+    "title": "Company Profile",
+    "description": "D-SENG Technology company profile: about us, core values, six business areas, affiliated companies, and contact information. Ready to print or save as PDF.",
+    "cover_eyebrow": "COMPANY PROFILE 2026",
+    "print": "Print / Save as PDF",
+    "print_hint": "A4 layout is applied automatically when printing",
+    "contents": "Contents",
+    "sections": {
+      "about": "About D-SENG",
+      "values": "Core Values",
+      "business": "Business",
+      "affiliate": "Affiliated Companies",
+      "contact": "Contact Us"
+    },
+    "business_lead": "Six business areas covering facility equipment maintenance, monitoring and early warning, compressed air systems, smart welding, and semiconductor materials and engineering.",
+    "affiliate_products": "Main products",
+    "contact_lead": "If you have equipment or project needs, please get in touch and one of our specialists will walk you through the details.",
+    "web_note": "For the latest version, visit"
   },
   "contact": {
     "title": "Contact Us",

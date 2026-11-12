@@ -854,7 +854,7 @@
     "brand_links": [
       {
         "name": "Ingersoll Rand",
-        "url": "https://www.ingersollrand.com/",
+        "url": "https://www.ingersollrand.com/zh-apac/",
         "note": "英格索兰官方产品网站，涵盖空压机、鼓风机、真空泵与空气处理设备。"
       },
       {
@@ -904,18 +904,38 @@
   },
   "downloads": {
     "title": "下载中心",
-    "description": "下载智圣科技公司简介，以及代理品牌的产品资料链接。",
-    "lead": "公司简介与产品资料下载。代理品牌的最新产品目录请前往原厂网站查阅。",
+    "description": "浏览智圣科技公司简介，以及代理品牌的产品资料链接。",
+    "lead": "公司简介可在线浏览或直接打印；代理品牌的最新产品目录请前往原厂网站查阅。",
     "company_title": "公司资料",
     "files": [
       {
         "title": "智圣科技公司简介",
-        "format": "PDF",
-        "file": null
+        "format": "WEB",
+        "page": "profile/",
+        "note": "在线浏览，可打印或另存为 PDF"
       }
     ],
     "brands_title": "代理品牌资料",
     "brands_text": "以下链接将打开原厂官方网站，资料以原厂最新版本为准。"
+  },
+  "profile": {
+    "title": "公司简介",
+    "description": "智圣科技公司简介：关于我们、核心价值、六大业务领域、关联企业与联系方式，可直接打印或另存为 PDF。",
+    "cover_eyebrow": "COMPANY PROFILE 2026",
+    "print": "打印／另存为 PDF",
+    "print_hint": "打印时自动采用 A4 版面",
+    "contents": "目录",
+    "sections": {
+      "about": "关于智圣",
+      "values": "核心价值",
+      "business": "业务领域",
+      "affiliate": "关联企业",
+      "contact": "联系我们"
+    },
+    "business_lead": "六大业务，涵盖厂务设备的维修保养、监测预警、空压系统、智能焊接，以及半导体材料与工程。",
+    "affiliate_products": "主要产品",
+    "contact_lead": "如有设备或项目需求，欢迎与我们联系，将由专人为您详细说明。",
+    "web_note": "最新版本请见"
   },
   "contact": {
     "title": "联系我们",

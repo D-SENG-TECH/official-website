@@ -854,7 +854,7 @@
     "brand_links": [
       {
         "name": "Ingersoll Rand",
-        "url": "https://www.ingersollrand.com/",
+        "url": "https://www.ingersollrand.com/zh-apac/",
         "note": "インガソール・ランドの公式製品サイト。エアコンプレッサー、ブロワー、真空ポンプ、空気処理設備を掲載しています。"
       },
       {
@@ -904,18 +904,38 @@
   },
   "downloads": {
     "title": "ダウンロード",
-    "description": "智聖科技の会社案内、および取扱ブランドの製品資料へのリンクをご用意しています。",
-    "lead": "会社案内と製品資料のダウンロード。取扱ブランドの最新カタログはメーカーのウェブサイトでご確認ください。",
+    "description": "智聖科技の会社案内、および取扱ブランドの製品資料へのリンクをご覧いただけます。",
+    "lead": "会社案内はオンラインで閲覧、またはそのまま印刷いただけます。取扱ブランドの最新カタログはメーカーのウェブサイトでご確認ください。",
     "company_title": "会社資料",
     "files": [
       {
         "title": "智聖科技 会社案内",
-        "format": "PDF",
-        "file": null
+        "format": "WEB",
+        "page": "profile/",
+        "note": "オンラインで閲覧、印刷・PDF保存も可能"
       }
     ],
     "brands_title": "取扱ブランド資料",
     "brands_text": "以下のリンクからメーカーの公式ウェブサイトが開きます。資料はメーカーの最新版が優先されます。"
+  },
+  "profile": {
+    "title": "会社案内",
+    "description": "智聖科技の会社案内：会社概要、コアバリュー、6 つの事業、関連企業、お問い合わせ先をまとめています。そのまま印刷または PDF 保存いただけます。",
+    "cover_eyebrow": "COMPANY PROFILE 2026",
+    "print": "印刷／PDF保存",
+    "print_hint": "印刷時は A4 レイアウトが自動で適用されます",
+    "contents": "目次",
+    "sections": {
+      "about": "智聖について",
+      "values": "コアバリュー",
+      "business": "事業内容",
+      "affiliate": "関連企業",
+      "contact": "お問い合わせ"
+    },
+    "business_lead": "工場設備の保守メンテナンス、予兆監視、圧縮空気システム、スマート溶接、そして半導体材料・エンジニアリングにわたる 6 つの事業を展開しています。",
+    "affiliate_products": "主要製品",
+    "contact_lead": "設備やプロジェクトに関するご相談は、お気軽にお問い合わせください。担当者よりご説明いたします。",
+    "web_note": "最新版はこちら"
   },
   "contact": {
     "title": "お問い合わせ",

@@ -24,7 +24,7 @@ export default {
   // Set by the deploy workflow; local builds show "dev"
   build_version: process.env.BUILD_VERSION || "dev",
   build_commit: process.env.BUILD_COMMIT || "",
-  pages: ["", "about/", "business/", "careers/", "downloads/", "contact/"],
+  pages: ["", "about/", "business/", "careers/", "downloads/", "contact/", "profile/"],
   langs: [
     { code: "zh-tw", og_locale: "zh_TW", html: "zh-Hant-TW", label: "繁體中文", prefix: "/", font: "Noto+Sans+TC" },
     { code: "zh-cn", og_locale: "zh_CN", html: "zh-Hans-CN", label: "简体中文", prefix: "/zh-cn/", font: "Noto+Sans+SC" },

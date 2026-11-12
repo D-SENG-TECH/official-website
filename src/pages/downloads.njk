@@ -12,8 +12,10 @@ page_path: downloads/
       {%- for f in t.downloads.files %}
       <li>
         <span class="file-list__type">{{ f.format }}</span>
-        <span class="file-list__title">{{ f.title }}</span>
-        {%- if f.file %}
+        <span class="file-list__title">{{ f.title }}{% if f.note %}<small>{{ f.note }}</small>{% endif %}</span>
+        {%- if f.page %}
+        <a class="button button--small" href="{{ lang.prefix }}{{ f.page }}">→<span class="visually-hidden">{{ f.title }}</span></a>
+        {%- elif f.file %}
         <a class="button button--small" href="/downloads/{{ f.file }}" download>↓</a>
         {%- else %}
         <span class="file-list__status">{{ t.common.coming_soon }}</span>

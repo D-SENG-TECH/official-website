@@ -1,0 +1,146 @@
+---
+page_key: profile
+page_path: profile/
+---
+{%- set t = i18n[lang.code] -%}
+{%- set p = t.profile -%}
+{%- set aff = t.about.affiliates[0] -%}
+{%- set local_fmt = (lang.code == "zh-tw") -%}
+<link rel="stylesheet" href="/assets/profile.css">
+
+<div class="profile">
+  <header class="pf-cover">
+    <div class="pf-cover__inner">
+      <img class="pf-cover__logo" src="/assets/logo-dark.svg" width="2246" height="512" alt="{{ t.common.company_name }}">
+      <div class="pf-cover__main">
+        <p class="pf-eyebrow">{{ p.cover_eyebrow }}</p>
+        <h1 class="pf-cover__title"><span>{{ t.home.headline_a | replace("・", "") }}</span><span class="pf-gold">{{ t.home.headline_b }}</span></h1>
+        <p class="pf-cover__desc">{{ t.meta.og_description }}</p>
+      </div>
+      <div class="pf-cover__foot">
+        <div class="pf-cover__names">
+          <strong>{{ t.common.company_name }}</strong>
+          <span>{{ t.common.company_name_en }}</span>
+        </div>
+        <div class="pf-actions">
+          <button type="button" class="pf-print" onclick="window.print()">{{ p.print }}</button>
+          <span class="pf-hint">{{ p.print_hint }}</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="pf-toc" aria-label="{{ p.contents }}">
+    <div class="wrap pf-toc__inner">
+      <span class="pf-toc__label">{{ p.contents }}</span>
+      <ol>
+        {%- for key in ["about", "values", "business", "affiliate", "contact"] %}
+        <li><a href="#pf-{{ key }}"><b>{{ loop.index }}</b>{{ p.sections[key] }}</a></li>
+        {%- endfor %}
+      </ol>
+    </div>
+  </nav>
+
+  <section class="pf-section pf-about" id="pf-about">
+    <div class="wrap pf-about__grid">
+      <div class="pf-about__text">
+        <p class="pf-kicker">01</p>
+        <h2>{{ p.sections.about }}</h2>
+        <p class="pf-lead">{{ t.home.intro }}</p>
+        {%- set ch = t.about.story[0] %}
+        <div class="pf-story">
+          <p class="pf-story__year">{{ ch.year or "2026" }}</p>
+          <h3>{{ ch.title }}</h3>
+          <p>{{ ch.text }}</p>
+        </div>
+      </div>
+      <figure class="pf-photo">
+        <img src="/assets/office.jpg" width="896" height="1200" alt="{{ t.about.office_alt }}">
+      </figure>
+    </div>
+  </section>
+
+  <section class="pf-section pf-values" id="pf-values">
+    <div class="wrap">
+      <p class="pf-kicker">02</p>
+      <h2>{{ p.sections.values }}</h2>
+      <ul class="pf-values__list">
+        {%- for v in t.home.values %}
+        <li><span class="pf-values__no">{{ loop.index }}</span><h3>{{ v.title }}</h3><p>{{ v.text }}</p></li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="pf-section pf-business" id="pf-business">
+    <div class="wrap">
+      <p class="pf-kicker">03</p>
+      <h2>{{ p.sections.business }}</h2>
+      <p class="pf-lead">{{ p.business_lead }}</p>
+      <ol class="pf-cards">
+        {%- for item in t.business.items %}
+        <li class="pf-card{% if item.image %} pf-card--img{% endif %}">
+          {%- if item.image %}
+          <img class="pf-card__img" src="/assets/business/{{ item.image }}" alt="{{ item.image_alt }}">
+          {%- endif %}
+          <div class="pf-card__body">
+            <span class="pf-card__no">{{ "0" + loop.index }}</span>
+            <h3><a href="{{ lang.prefix }}business/{{ item.id | replace('_','-') }}/">{{ item.title }}</a></h3>
+            <p>{{ item.summary }}</p>
+            {%- if item.points %}
+            <ul>
+              {%- for pt in item.points %}{% if loop.index0 < 3 %}<li>{{ pt }}</li>{% endif %}{% endfor %}
+            </ul>
+            {%- endif %}
+          </div>
+        </li>
+        {%- endfor %}
+      </ol>
+    </div>
+  </section>
+
+  <section class="pf-section pf-affiliate" id="pf-affiliate">
+    <div class="wrap">
+      <p class="pf-kicker">04</p>
+      <h2>{{ p.sections.affiliate }}</h2>
+      <h3 class="pf-aff__name">{{ aff.name_full }}</h3>
+      <p class="pf-lead">{{ aff.text }}</p>
+      <dl class="pf-facts">
+        {%- for f in aff.facts %}
+        <div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>
+        {%- endfor %}
+      </dl>
+      <h3 class="pf-sub">{{ p.affiliate_products }}</h3>
+      <ul class="pf-gs">
+        {%- for g in t.gold_stone.groups %}
+        <li>
+          <img src="/assets/gold-stone/{{ gs_media[loop.index0].cover }}" alt="">
+          <div><strong>{{ g.title }}</strong><span>{{ g.brands | join(" · ") }}</span></div>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="pf-section pf-contact" id="pf-contact">
+    <div class="wrap pf-contact__grid">
+      <div>
+        <p class="pf-kicker">05</p>
+        <h2>{{ p.sections.contact }}</h2>
+        <p class="pf-lead">{{ p.contact_lead }}</p>
+        <dl class="pf-contact__list">
+          <div><dt>{{ t.common.address_label }}</dt><dd>{{ t.common.address }}</dd></div>
+          <div><dt>{{ t.common.phone_label }}</dt><dd><a href="tel:{{ site.phone_tel }}">{% if local_fmt %}{{ site.phone }}{% else %}{{ site.phone_intl }}{% endif %}</a></dd></div>
+          <div><dt>{{ t.common.fax_label }}</dt><dd>{% if local_fmt %}{{ site.fax }}{% else %}{{ site.fax_intl }}{% endif %}</dd></div>
+          <div><dt>{{ t.common.email_label }}</dt><dd><a href="mailto:{{ site.email_info }}">{{ site.email_info }}</a></dd></div>
+        </dl>
+      </div>
+      <div class="pf-contact__logo">
+        <img src="/assets/logo-vertical.svg" width="954" height="1271" alt="{{ t.common.company_name }}">
+      </div>
+    </div>
+    <div class="wrap">
+      <p class="pf-webnote">{{ p.web_note }} <a href="{{ lang.prefix }}profile/">{{ site.url }}{{ lang.prefix }}profile/</a></p>
+    </div>
+  </section>
+</div>
