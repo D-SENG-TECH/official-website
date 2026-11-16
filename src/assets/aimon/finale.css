@@ -39,17 +39,6 @@
 }
 .aimon .am-finale-title span { color: var(--cc-green-ink); }
 .aimon .am-finale-desc { margin: 14px 0 0; max-width: 520px; font-size: 16px; line-height: 1.7; color: var(--cc-ink-3); }
-.aimon .am-finale-qr-row {
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-  margin-top: clamp(16px, 2.4vh, 26px); text-align: center;
-}
-.aimon .am-finale-qr {
-  width: clamp(150px, 22vh, 220px); height: auto;
-  padding: 14px; background: #fff;
-  border: 1px solid var(--cc-line); border-radius: var(--cc-radius-md);
-  box-shadow: 0 4px 14px rgba(var(--am-deep-rgb), 0.08);
-}
-.aimon .am-finale-qr-caption { font-size: 14px; color: var(--cc-ink-3); }
 .aimon .am-finale-actions {
   display: flex; flex-direction: column; align-items: center; gap: 10px;
   margin-top: clamp(14px, 2vh, 22px);
