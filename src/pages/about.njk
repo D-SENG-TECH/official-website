@@ -38,32 +38,26 @@ page_path: about/
   </div>
 </section>
 
-<section class="section section--tint">
+{#- Affiliate showcase: intro, then the 3D line film edge to edge (viewport height minus the header),
+    then the product families, the story and the facts. -#}
+<section class="section section--tint affiliates">
   <div class="wrap">
     <h2 id="affiliates">{{ t.about.affiliates_title }}</h2>
-    {%- for a in t.about.affiliates %}
-    <article class="affiliate">
+  </div>
+  {%- for a in t.about.affiliates %}
+  <article class="affiliate-show">
+    <div class="wrap affiliate-show__head">
       <h3>{{ a.name_full }}</h3>
       <p class="lead">{{ a.text }}</p>
       {%- if a.url %}
       <p class="card__link"><a href="{{ a.url }}" rel="noopener" target="_blank">{{ a.url | replace("https://", "") | replace("www.", "") }}<span class="visually-hidden">{{ t.common.external_link }}</span></a></p>
       {%- endif %}
-      <ol class="timeline timeline--compact">
-        {%- for ch in a.story %}
-        <li class="timeline__item">
-          <p class="timeline__year">{{ ch.year or "" }}</p>
-          <div>
-            <h4>{{ ch.title }}</h4>
-            <p>{{ ch.text }}</p>
-          </div>
-        </li>
-        {%- endfor %}
-      </ol>
+    </div>
+    {%- if loop.first %}
+    <div class="line-film line-film--bleed" id="line-film" aria-label="{{ t.gold_stone.title }}"></div>
+    {%- endif %}
+    <div class="wrap affiliate-show__body">
       <h4 class="affiliate__sub">{{ t.gold_stone.more }}</h4>
-      {%- if loop.first %}
-      {#- 20 s self-running 3D film of a gas line and a chemical line; every labelled part is a product family below. -#}
-      <div class="line-film line-film--inline" id="line-film" aria-label="{{ t.gold_stone.title }}"></div>
-      {%- endif %}
       <ul class="gs-strip">
         {%- for g in t.gold_stone.groups %}
         <li>
@@ -76,14 +70,27 @@ page_path: about/
         {%- endfor %}
       </ul>
       <p class="affiliate__more"><a href="{{ lang.prefix }}about/gold-stone/">{{ t.gold_stone.more }} →</a></p>
-      <dl class="facts">
-        {%- for f in a.facts %}
-        <div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>
-        {%- endfor %}
-      </dl>
-    </article>
-    {%- endfor %}
-  </div>
+      <div class="affiliate-show__cols">
+        <ol class="timeline timeline--compact">
+          {%- for ch in a.story %}
+          <li class="timeline__item">
+            <p class="timeline__year">{{ ch.year or "" }}</p>
+            <div>
+              <h4>{{ ch.title }}</h4>
+              <p>{{ ch.text }}</p>
+            </div>
+          </li>
+          {%- endfor %}
+        </ol>
+        <dl class="facts">
+          {%- for f in a.facts %}
+          <div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>
+          {%- endfor %}
+        </dl>
+      </div>
+    </div>
+  </article>
+  {%- endfor %}
 </section>
 
 <section id="org" class="section">
@@ -96,12 +103,4 @@ page_path: about/
 </section>
 
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
-<script type="module">
-  const el = document.getElementById("line-film");
-  try {
-    const { mountLineFilm } = await import("/assets/gold-stone/line-film/line.js");
-    await mountLineFilm(el, { lang: "{{ lang.code }}" });
-  } catch (err) {
-    el.hidden = true; // no WebGL / module support: the product strip below still tells the story
-  }
-</script>
+<script type="module" src="/assets/gold-stone/line-film/mount.js" data-lang="{{ lang.code }}"></script>

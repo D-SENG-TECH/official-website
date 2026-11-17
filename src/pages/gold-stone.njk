@@ -13,11 +13,7 @@ page_path: about/gold-stone/
 </section>
 
 {#- 20 s self-running 3D film: one gas line and one chemical line, every labelled part is a product family below. -#}
-<section class="line-film-band" aria-label="{{ gs.title }}">
-  <div class="wrap">
-    <div class="line-film" id="line-film"></div>
-  </div>
-</section>
+<div class="line-film line-film--bleed" id="line-film" aria-label="{{ gs.title }}"></div>
 
 <section class="section">
   <div class="wrap products">
@@ -46,12 +42,4 @@ page_path: about/gold-stone/
 </section>
 
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
-<script type="module">
-  const el = document.getElementById("line-film");
-  try {
-    const { mountLineFilm } = await import("/assets/gold-stone/line-film/line.js");
-    await mountLineFilm(el, { lang: "{{ lang.code }}" });
-  } catch (err) {
-    el.closest(".line-film-band").hidden = true; // no WebGL / module support: the product list below still tells the story
-  }
-</script>
+<script type="module" src="/assets/gold-stone/line-film/mount.js" data-lang="{{ lang.code }}"></script>

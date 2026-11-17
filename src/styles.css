@@ -783,8 +783,30 @@ a { color: inherit; }
 .gate__form .button { margin-top: 4px; border: 0; cursor: pointer; font: inherit; font-weight: 700; }
 .gate__error { color: #b42318; font-size: 14px; }
 
-/* gold-stone page: self-running 3D line film */
-.line-film-band { padding: 28px 0 8px; }
-.line-film { width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--line, #e1e6ec); border-radius: 10px; overflow: hidden; background: #f4f6f8; }
-@media (max-width: 640px) { .line-film { aspect-ratio: 9 / 16; } }
-.line-film--inline { margin: 12px 0 20px; }
+/* self-running 3D line film: edge to edge, as tall as the viewport below the sticky header */
+.line-film { background: #f4f6f8; overflow: hidden; }
+.line-film--bleed {
+  width: 100%;
+  height: min(calc(100svh - var(--line-film-top, 72px)), 56.25vw);
+  min-height: 420px;
+  scroll-margin-top: var(--line-film-top, 72px);
+  border-block: 1px solid var(--line);
+}
+@media (max-width: 640px) {
+  .line-film--bleed { height: calc(100svh - var(--line-film-top, 60px)); min-height: 520px; }
+}
+.line-film[hidden] { display: none; }
+
+/* about page: affiliate showcase (replaces the boxed card) */
+.affiliates { padding-bottom: 72px; }
+.affiliate-show { margin-top: 24px; }
+.affiliate-show__head { padding-bottom: 32px; }
+.affiliate-show__head h3 { font-size: clamp(24px, 2.4vw, 34px); color: var(--navy); }
+.affiliate-show__head .lead { margin-top: 12px; max-width: 72ch; }
+.affiliate-show__body { padding-top: 12px; }
+.affiliate-show__cols { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 48px; margin-top: 48px; align-items: start; }
+.affiliate-show__cols .timeline--compact { margin-top: 0; }
+.affiliate-show__cols .facts { grid-template-columns: 1fr; padding: 24px 28px; background: #fff; border: 1px solid var(--line); border-radius: 8px; }
+@media (max-width: 900px) {
+  .affiliate-show__cols { grid-template-columns: 1fr; gap: 28px; margin-top: 36px; }
+}
