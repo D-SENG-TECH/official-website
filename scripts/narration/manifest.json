@@ -1,0 +1,34 @@
+{
+ "zh-tw": {
+  "intro": 1.73,
+  "aimon": 8.11,
+  "compressor": 10.15,
+  "welding": 12.17,
+  "gasket": 10.73,
+  "nano": 8.66
+ },
+ "zh-cn": {
+  "intro": 1.75,
+  "aimon": 8.42,
+  "compressor": 10.01,
+  "welding": 11.71,
+  "gasket": 10.68,
+  "nano": 9.12
+ },
+ "en": {
+  "intro": 1.34,
+  "aimon": 6.53,
+  "compressor": 7.61,
+  "welding": 11.04,
+  "gasket": 9.29,
+  "nano": 8.9
+ },
+ "ja": {
+  "intro": 1.54,
+  "aimon": 7.75,
+  "compressor": 8.74,
+  "welding": 12.41,
+  "gasket": 9.86,
+  "nano": 9.77
+ }
+}

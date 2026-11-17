@@ -1,0 +1,61 @@
+{
+  "note": "Narration for the showroom hero. One clip per product + a short intro on Play. Each clip must end before its product's caption fades (budget_s).",
+  "budget_s": {
+    "intro": 2.2,
+    "aimon": 9.0,
+    "compressor": 11.0,
+    "welding": 16.5,
+    "gasket": 14.0,
+    "nano": 11.0
+  },
+  "langs": {
+    "zh-tw": {
+      "voice": "zh-TW-HsiaoChenNeural",
+      "rate": "+8%",
+      "clips": {
+        "intro": "歡迎來到智聖科技。",
+        "aimon": "AI 監測系統，用振動感測器全天候看著風機，異常還沒擴大就先預警，維修從搶修變成排程。",
+        "compressor": "無油螺桿式空壓機，兩級壓縮、中間冷卻。全程無油運轉，提供潔淨的壓縮空氣，適合半導體等高潔淨製程。",
+        "welding": "智能追焦焊接。視覺相機即時追蹤焊道，機械手臂自動完成管件的相貫焊接，還有風管的環縫焊接。每一道焊縫，品質都穩定一致。",
+        "gasket": "包覆式丁基橡膠風管墊片。外緣唇邊直接包住法蘭，鎖緊之後，橡膠會填平法蘭面的凹凸，讓風管接縫氣密、不洩漏。",
+        "nano": "奈米超晶體，塗佈在配電盤的銅排與端子接點，填補金屬表面的微小空隙，降低接觸電阻，也減少發熱。"
+      }
+    },
+    "zh-cn": {
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "+8%",
+      "clips": {
+        "intro": "欢迎来到智圣科技。",
+        "aimon": "AI 监测系统，用振动传感器全天候盯着风机，异常还没扩大就先预警，维修从抢修变成计划。",
+        "compressor": "无油螺杆式空压机，两级压缩、中间冷却。全程无油运行，提供洁净的压缩空气，适用于半导体等高洁净制程。",
+        "welding": "智能追焦焊接。视觉相机实时追踪焊道，机械臂自动完成管件的相贯焊接，以及风管的环缝焊接。每一道焊缝，质量都稳定一致。",
+        "gasket": "包覆式丁基橡胶风管垫片。外缘唇边直接包住法兰，锁紧之后，橡胶会填平法兰面的凹凸，让风管接缝气密、不泄漏。",
+        "nano": "纳米超晶体，涂布在配电柜的铜排与端子接点，填补金属表面的微小空隙，降低接触电阻，也减少发热。"
+      }
+    },
+    "en": {
+      "voice": "en-US-AvaNeural",
+      "rate": "+0%",
+      "clips": {
+        "intro": "Welcome to D-SENG.",
+        "aimon": "Our AI monitoring system listens to every fan, around the clock, and warns you before a fault grows.",
+        "compressor": "An oil-free rotary screw compressor. Two-stage compression with intercooling delivers clean air for high-purity processes.",
+        "welding": "Smart seam-tracking welding. A vision camera follows the seam in real time, while the robot welds pipe branch joints and duct girth seams, with the same quality every time.",
+        "gasket": "A wrap-around butyl rubber duct gasket. Its lip hugs the flange, and once tightened, the rubber fills every gap, keeping the joint airtight.",
+        "nano": "Nano super-crystal coating. On busbars and terminals, it fills tiny gaps in the metal, cutting contact resistance and heat."
+      }
+    },
+    "ja": {
+      "voice": "ja-JP-NanamiNeural",
+      "rate": "+5%",
+      "clips": {
+        "intro": "ディーセングへようこそ。",
+        "aimon": "AI監視システム。振動センサーがファンを24時間見守り、異常が広がる前に知らせます。",
+        "compressor": "オイルフリースクリューコンプレッサー。2段圧縮と中間冷却で、高清浄プロセスにクリーンな空気を届けます。",
+        "welding": "スマート溶接線追従溶接。カメラが溶接線をリアルタイムで追い、ロボットが配管とダクトの溶接を自動で行います。いつでも安定した品質です。",
+        "gasket": "包覆型ブチルゴムダクトガスケット。リップがフランジを包み込み、締め付けるとゴムが凹凸を埋めて、継手の気密を保ちます。",
+        "nano": "ナノ超結晶。配電盤のブスバーや端子に塗ると、金属表面の微細な隙間を埋め、接触抵抗と発熱を抑えます。"
+      }
+    }
+  }
+}
