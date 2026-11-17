@@ -782,3 +782,8 @@ a { color: inherit; }
 .gate__form input { padding: 12px 14px; border: 1px solid var(--line); border-radius: 6px; font: inherit; font-size: 18px; letter-spacing: .3em; }
 .gate__form .button { margin-top: 4px; border: 0; cursor: pointer; font: inherit; font-weight: 700; }
 .gate__error { color: #b42318; font-size: 14px; }
+
+/* gold-stone page: self-running 3D line film */
+.line-film-band { padding: 28px 0 8px; }
+.line-film { width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--line, #e1e6ec); border-radius: 10px; overflow: hidden; background: #f4f6f8; }
+@media (max-width: 640px) { .line-film { aspect-ratio: 9 / 16; } }
