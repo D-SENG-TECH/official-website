@@ -3,22 +3,26 @@
 // (title, closing line, offer, legends, control labels) are written here.
 
 // Labels in the order the camera reaches them. `row`: which line the part sits on. `at`: part anchors the leader
-// lines land on while the camera is close (ids defined in line.js). `near`: optional pixel offset (at 1080p) of the tag
-// from its first anchor. `wideAt`: the anchor the single callout leader uses in the closing wide shot.
+// lines land on while the camera is close (ids defined in line.js). `near`: optional offset (at 1080p) of the card from
+// its first anchor in the side layout (`under`: measured from the pipe below the part instead of from its top).
+// `pz`: which side of the part the card sits on in the stack (tall) layout.
+// `g`: reveal group along the gas line (0 connection, 1 valves, 2 regulation / gauging / filtration, 3 bellows valve and
+// face-seal fittings, 4 tube and weld fittings). `wideAt`: a different anchor for the callout in the closing wide shot;
+// without it the callout uses the `at` anchors, and a label with two of them gets a leader to each.
 export const LABELS = [
-  { id: "cyl", row: "gas", at: ["cyl_conn"] },
-  { id: "ball_check", row: "gas", at: ["purge", "purge_check"], near: [-215, 30] },
-  { id: "diaphragm", row: "gas", at: ["hp_valve"], near: [20, -260] },
-  { id: "regulator", row: "gas", at: ["regulator"], near: [0, -100] },
-  { id: "meter", row: "gas", at: ["gauge", "transducer"], near: [-110, -190] },
-  { id: "filter", row: "gas", at: ["filter"], near: [60, -120] },
-  { id: "bellows", row: "gas", at: ["bellows"], near: [0, -110] },
-  { id: "vcr", row: "gas", at: ["vcr"], near: [-20, 135] },
-  { id: "tube", row: "gas", at: ["tube"], near: [185, 70] },
-  { id: "bend", row: "gas", at: ["elbow", "tee"], near: [150, -95], wideAt: "tee" },
-  { id: "c_valve", row: "chem", at: ["c_valve"], wideAt: "c_valve_w" },
-  { id: "c_tube", row: "chem", at: ["c_tube"], wideAt: "c_tube_w" },
-  { id: "c_fit", row: "chem", at: ["c_fit"], wideAt: "c_union_w" },
+  { id: "cyl", row: "gas", g: 0, at: ["cyl_conn"], near: [-170, -30], pz: "down" },
+  { id: "ball_check", row: "gas", g: 1, at: ["purge", "purge_check"], near: [-215, 30], pz: "right" },
+  { id: "diaphragm", row: "gas", g: 1, at: ["hp_valve"], near: [20, -260], pz: "down" },
+  { id: "regulator", row: "gas", g: 2, at: ["regulator"], near: [0, 100], under: true, pz: "up" },
+  { id: "meter", row: "gas", g: 2, at: ["gauge", "transducer"], near: [-70, -190], pz: "down" },
+  { id: "filter", row: "gas", g: 2, at: ["filter"], near: [60, -120], pz: "up" },
+  { id: "bellows", row: "gas", g: 3, at: ["bellows"], near: [0, -110], pz: "up" },
+  { id: "vcr", row: "gas", g: 3, at: ["vcr"], near: [-20, 135], pz: "down" },
+  { id: "tube", row: "gas", g: 4, at: ["tube"], near: [185, 70], pz: "right", wideAt: "tube_w" },
+  { id: "bend", row: "gas", g: 4, at: ["elbow", "tee"], near: [150, -95], pz: "upR" },
+  { id: "c_valve", row: "chem", at: ["c_valve"], pz: "down", wideAt: "c_valve_w" },
+  { id: "c_tube", row: "chem", at: ["c_tube"], pz: "down2", wideAt: "c_tube_w" },
+  { id: "c_fit", row: "chem", at: ["c_fit"], pz: "down", wideAt: "c_union_w" },
 ];
 
 const BRANDS = {
