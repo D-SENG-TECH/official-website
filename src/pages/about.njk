@@ -60,6 +60,10 @@ page_path: about/
         {%- endfor %}
       </ol>
       <h4 class="affiliate__sub">{{ t.gold_stone.more }}</h4>
+      {%- if loop.first %}
+      {#- 20 s self-running 3D film of a gas line and a chemical line; every labelled part is a product family below. -#}
+      <div class="line-film line-film--inline" id="line-film" aria-label="{{ t.gold_stone.title }}"></div>
+      {%- endif %}
       <ul class="gs-strip">
         {%- for g in t.gold_stone.groups %}
         <li>
@@ -90,3 +94,14 @@ page_path: about/
     </div>
   </div>
 </section>
+
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+<script type="module">
+  const el = document.getElementById("line-film");
+  try {
+    const { mountLineFilm } = await import("/assets/gold-stone/line-film/line.js");
+    await mountLineFilm(el, { lang: "{{ lang.code }}" });
+  } catch (err) {
+    el.hidden = true; // no WebGL / module support: the product strip below still tells the story
+  }
+</script>

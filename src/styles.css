@@ -787,3 +787,4 @@ a { color: inherit; }
 .line-film-band { padding: 28px 0 8px; }
 .line-film { width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--line, #e1e6ec); border-radius: 10px; overflow: hidden; background: #f4f6f8; }
 @media (max-width: 640px) { .line-film { aspect-ratio: 9 / 16; } }
+.line-film--inline { margin: 12px 0 20px; }
