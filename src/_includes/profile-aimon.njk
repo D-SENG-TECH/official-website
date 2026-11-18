@@ -52,7 +52,8 @@
     <h4>{{ screens.title }}</h4>
     <p class="pf-ai__lead">{{ screens.sub }}</p>
     <div class="pf-ai__screens">
-      <img class="pf-ai__img" src="/assets/aimon/screens-plant-thumb.jpg" width="860" height="694" alt="{{ screens.img_alt }}">
+      {#- A still of the 3D fan at the moment of the alarm; the plant overview already appears in the block above. -#}
+      <img class="pf-ai__img" src="/assets/aimon/fan-alarm-3d.jpg" width="1100" height="887" alt="{{ sweet.fan_alt }}">
       <ol class="pf-ai__grid">
         {%- for k in ["c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8"] %}
         {%- set c = screens[k] %}
