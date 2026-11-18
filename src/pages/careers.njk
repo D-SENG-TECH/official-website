@@ -19,7 +19,28 @@ page_path: careers/
 <section class="section section--tint">
   <div class="wrap">
     <h2>{{ t.careers.openings_title }}</h2>
+    {%- if t.careers.openings.length %}
+    <div class="jobs">
+      {%- for job in t.careers.openings %}
+      <article class="job">
+        <header class="job__head">
+          <h3>{{ job.title }}</h3>
+          <p class="job__meta"><span class="chip">{{ job.count }}</span>{% if job.note %}<span class="chip">{{ job.note }}</span>{% endif %}</p>
+        </header>
+        <p class="job__label">{{ job.label }}</p>
+        <ul class="points">
+          {%- for li in job.items %}<li>{{ li }}</li>{% endfor %}
+        </ul>
+      </article>
+      {%- endfor %}
+    </div>
+    <div class="job-terms">
+      <h3>{{ t.careers.terms_title }}</h3>
+      <ul>{% for term in t.careers.terms %}<li>{{ term }}</li>{% endfor %}</ul>
+    </div>
+    {%- else %}
     <p class="notice">{{ t.careers.openings_empty }}</p>
+    {%- endif %}
   </div>
 </section>
 

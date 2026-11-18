@@ -28,7 +28,7 @@
         "intro": "欢迎来到智圣科技。",
         "aimon": "AI 监测系统，用振动传感器全天候盯着风机，异常还没扩大就先预警，维修从抢修变成计划。",
         "compressor": "无油螺杆式空压机，两级压缩、中间冷却。全程无油运行，提供洁净的压缩空气，适用于半导体等高洁净制程。",
-        "welding": "智能追焦焊接。视觉相机实时追踪焊道，机械臂自动完成管件的相贯焊接，以及风管的环缝焊接。每一道焊缝，质量都稳定一致。",
+        "welding": "智能视觉机械臂。视觉相机实时追踪焊道，机械臂自动完成管件的相贯焊接，以及风管的环缝焊接。每一道焊缝，质量都稳定一致。",
         "gasket": "包覆式丁基橡胶风管垫片。外缘唇边直接包住法兰，锁紧之后，橡胶会填平法兰面的凹凸，让风管接缝气密、不泄漏。",
         "nano": "纳米超晶体，涂布在配电柜的铜排与端子接点，填补金属表面的微小空隙，降低接触电阻，也减少发热。"
       }
@@ -40,7 +40,7 @@
         "intro": "Welcome to D-SENG.",
         "aimon": "Our AI monitoring system listens to every fan, around the clock, and warns you before a fault grows.",
         "compressor": "An oil-free rotary screw compressor. Two-stage compression with intercooling delivers clean air for high-purity processes.",
-        "welding": "Smart seam-tracking welding. A vision camera follows the seam in real time, while the robot welds pipe branch joints and duct girth seams, with the same quality every time.",
+        "welding": "Smart vision robotic arm. A vision camera follows the seam in real time, while the robot welds pipe branch joints and duct girth seams, with the same quality every time.",
         "gasket": "A wrap-around butyl rubber duct gasket. Its lip hugs the flange, and once tightened, the rubber fills every gap, keeping the joint airtight.",
         "nano": "Nano super-crystal coating. On busbars and terminals, it fills tiny gaps in the metal, cutting contact resistance and heat."
       }
@@ -52,7 +52,7 @@
         "intro": "ディーセングへようこそ。",
         "aimon": "AI監視システム。振動センサーがファンを24時間見守り、異常が広がる前に知らせます。",
         "compressor": "オイルフリースクリューコンプレッサー。2段圧縮と中間冷却で、高清浄プロセスにクリーンな空気を届けます。",
-        "welding": "スマート溶接線追従溶接。カメラが溶接線をリアルタイムで追い、ロボットが配管とダクトの溶接を自動で行います。いつでも安定した品質です。",
+        "welding": "スマートビジョンロボットアーム。カメラが溶接線をリアルタイムで追い、ロボットが配管とダクトの溶接を自動で行います。いつでも安定した品質です。",
         "gasket": "包覆型ブチルゴムダクトガスケット。リップがフランジを包み込み、締め付けるとゴムが凹凸を埋めて、継手の気密を保ちます。",
         "nano": "ナノ超結晶。配電盤のブスバーや端子に塗ると、金属表面の微細な隙間を埋め、接触抵抗と発熱を抑えます。"
       }

@@ -18,12 +18,13 @@
   },
   "c3": {
    "t": "頻譜時幅分析",
-   "chip": "FFT·波形",
-   "cap": "頻譜找出異常頻率，時域波形確認衝擊",
-   "eyebrow": "SPECTRUM · mm/s",
-   "warn": "↗ 軸承頻率升高",
-   "ago": "頻譜（Hz）",
-   "today": "時域波形（ms）"
+   "chip": "失油·四階段",
+   "cap": "時間序列頻譜，看出軸承失油走到哪一階段",
+   "eyebrow": "WATERFALL · mm/s",
+   "warn": "↗ 進入第 3 階段",
+   "ago": "頻率（Hz）",
+   "today": "時間 →",
+   "stages": ["① 油膜變薄", "② 潤滑不足", "③ 金屬接觸", "④ 嚴重磨損"]
   },
   "c4": {
    "t": "警報通知",
@@ -160,8 +161,8 @@
  },
  "zh-cn": {
   "aria": "八个画面",
-  "title": "厂务可以监测的八个画面（AI 智能预警系统）",
-  "sub": "整厂俯瞰 → RMS振动总量连续监测 → 振动值的时间序列分析 → 报警通知 → 维修工单 → 生产履历 → 零件库存 → 预算分析。",
+  "title": "原厂优势（AI 智能预警系统）",
+  "sub": "整厂俯瞰 → RMS 振动总量连续监测 → 频谱时域分析 → 报警通知（原厂初步判定损坏原因）→ 维修工单（原厂服务）→ 生产履历（原厂判定标准）→ 零件库存（原厂实时提供）→ 预算分析。",
   "img_alt": "虚拟厂房示意：楼顶风机系统 FAN-01 至 FAN-07",
   "c1": {
    "t": "整厂俯瞰",
@@ -169,7 +170,7 @@
    "cap": "您厂里每一台风机都在系统里"
   },
   "c2": {
-   "t": "RMS振动总量连续监测",
+   "t": "RMS 振动总量连续监测",
    "chip": "全厂·连续",
    "cap": "看板式连续监测每一台风机",
    "eyebrow": "LIVE · 全厂看板",
@@ -177,17 +178,18 @@
   },
   "c3": {
    "t": "频谱时域分析",
-   "chip": "FFT·波形",
-   "cap": "频谱找出异常频率，时域波形确认冲击",
-   "eyebrow": "SPECTRUM · mm/s",
-   "warn": "↗ 轴承频率升高",
-   "ago": "频谱（Hz）",
-   "today": "时域波形（ms）"
+   "chip": "失油·四阶段",
+   "cap": "时间序列频谱，看出轴承失油发展到哪一阶段",
+   "eyebrow": "WATERFALL · mm/s",
+   "warn": "↗ 进入第 3 阶段",
+   "ago": "频率（Hz）",
+   "today": "时间 →",
+   "stages": ["① 油膜变薄", "② 润滑不足", "③ 金属接触", "④ 严重磨损"]
   },
   "c4": {
    "t": "报警通知",
    "chip": "自动·推送",
-   "cap": "Email / Line / SMS 多渠道通知值班",
+   "cap": "Email、LINE、短信多渠道通知值班",
    "open": "3 件未处理",
    "faults": [
     "轴承异常",
@@ -203,7 +205,7 @@
   "c5": {
    "t": "维修工单",
    "chip": "派工·记录",
-   "cap": "团队 / 预定日 / 故障描述全部带入",
+   "cap": "团队、预定日、故障描述全部带入",
    "ticket": "维修工单 · WO-2026-0001",
    "pill": "派工中",
    "fault": "轴承异常",
@@ -218,7 +220,7 @@
   "c6": {
    "t": "生产履历",
    "chip": "履历·全周期",
-   "cap": "出厂 / 安装 / 保养 / 故障 / 换件",
+   "cap": "出厂、安装、保养、故障、换件",
    "eyebrow": "FAN-03 · 8 年履历",
    "eyebrow2": "12 次保养 · 2 次故障",
    "ev": [
@@ -248,13 +250,13 @@
    "items": [
     "电机端轴承",
     "皮带 B-86",
-    "风叶轮"
+    "叶轮"
    ]
   },
   "c8": {
    "t": "预算分析",
-   "chip": "ROI·12月",
-   "cap": "12 月预算曲线、ROI 计算",
+   "chip": "ROI·12 个月",
+   "cap": "12 个月预算曲线、ROI 计算",
    "eyebrow": "12 个月支出趋势",
    "l_month": "本月",
    "l_saved": "累计节省"
@@ -300,7 +302,7 @@
     },
     {
      "head": "停机检修",
-     "body": "排气 4 号线 · 预计 6 hr"
+     "body": "排气 4 号线 · 预计 6 小时"
     },
     {
      "head": "轴承更换完成",
@@ -319,8 +321,8 @@
  },
  "en": {
   "aria": "Eight views",
-  "title": "The eight views plant ops can monitor (AI Predictive-Warning System)",
-  "sub": "Plant overview → continuous RMS monitoring → vibration time-series → alerts → work orders → lifetime history → parts inventory → budget analysis.",
+  "title": "The fan-maker advantage (AI Predictive-Warning System)",
+  "sub": "Plant overview → continuous RMS monitoring → spectrum & time waveform → alerts (preliminary damage diagnosis by our fan-manufacturing team) → work orders (serviced by the same team) → lifetime history (manufacturer-grade criteria) → parts inventory (supplied promptly from our own stock) → budget analysis.",
   "img_alt": "Illustrative virtual plant: rooftop fan system FAN-01 to FAN-07",
   "c1": {
    "t": "Plant overview",
@@ -336,17 +338,18 @@
   },
   "c3": {
    "t": "Spectrum & time waveform",
-   "chip": "FFT·waveform",
-   "cap": "The spectrum finds the fault frequency; the waveform confirms the impacts",
-   "eyebrow": "SPECTRUM · mm/s",
-   "warn": "↗ Bearing frequency rising",
-   "ago": "Spectrum (Hz)",
-   "today": "Time waveform (ms)"
+   "chip": "Oil loss·4 stages",
+   "cap": "A time series of spectra shows which stage of lubrication loss the bearing has reached",
+   "eyebrow": "WATERFALL · mm/s",
+   "warn": "↗ Entering stage 3",
+   "ago": "Frequency (Hz)",
+   "today": "Time →",
+   "stages": ["① Thin film", "② Poor lubrication", "③ Metal contact", "④ Severe wear"]
   },
   "c4": {
    "t": "Alert notifications",
    "chip": "Auto·push",
-   "cap": "Email / Line / SMS reach the on-call crew",
+   "cap": "Email / LINE / SMS reach the on-call crew",
    "open": "3 open",
    "faults": [
     "Bearing fault",
@@ -478,8 +481,8 @@
  },
  "ja": {
   "aria": "8つの画面",
-  "title": "設備管理で監視できる8つの画面（AI 予兆警報システム）",
-  "sub": "全体俯瞰 → RMS振動総量の常時監視 → 振動値の時系列分析 → 警報通知 → 保全指示書 → 設備履歴 → 部品在庫 → 予算分析。",
+  "title": "ファン製造チームならではの強み（AI 予兆警報システム）",
+  "sub": "全体俯瞰 → RMS振動総量の常時監視 → スペクトル・時間波形分析 → 警報通知（当社製造チームが損傷原因を一次判定）→ 保全指示書（当社チームによるサービス）→ 設備履歴（製造メーカー基準で判定）→ 部品在庫（当社から即時供給）→ 予算分析。",
   "img_alt": "仮想プラントのイメージ：屋上ファン設備 FAN-01〜FAN-07",
   "c1": {
    "t": "全体俯瞰",
@@ -495,12 +498,13 @@
   },
   "c3": {
    "t": "スペクトル・時間波形分析",
-   "chip": "FFT·波形",
-   "cap": "スペクトルで異常周波数を特定し、時間波形で衝撃を確認",
-   "eyebrow": "SPECTRUM · mm/s",
-   "warn": "↗ 軸受周波数が上昇",
-   "ago": "スペクトル（Hz）",
-   "today": "時間波形（ms）"
+   "chip": "油切れ·4段階",
+   "cap": "時系列スペクトルで、軸受の油切れがどの段階にあるかを把握",
+   "eyebrow": "WATERFALL · mm/s",
+   "warn": "↗ 第 3 段階に移行",
+   "ago": "周波数（Hz）",
+   "today": "時間 →",
+   "stages": ["① 油膜の薄化", "② 潤滑不足", "③ 金属接触", "④ 重度摩耗"]
   },
   "c4": {
    "t": "警報通知",
@@ -618,7 +622,7 @@
     },
     {
      "head": "停止点検",
-     "body": "排気 4 号ライン · 約 6 hr"
+     "body": "排気 4 号ライン · 約 6 時間"
     },
     {
      "head": "軸受交換完了",

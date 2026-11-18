@@ -18,9 +18,9 @@
     "tag_unread": "没人读得懂的前兆",
     "card_tag": "读懂了",
     "card_body": "轴承内圈早期磨损 · 建议 3 周内安排更换 · 已备好对应备件",
-    "caption": "前兆都在振动里 — ",
+    "caption": "前兆都在振动里 —— ",
     "caption_bold": "直到有人读得懂它。",
-    "closing": "智圣读懂振动，也守护每一台风机。",
+    "closing": "智圣科技读懂振动，也守护每一台风机。",
     "chart_label": "振动趋势曲线，在波峰处标示出轴承早期磨损的前兆"
   },
   "en": {
@@ -32,7 +32,7 @@
     "card_body": "Early inner-race bearing wear · replace within 3 weeks · spare part reserved",
     "caption": "The precursor was always in the vibration — ",
     "caption_bold": "until someone could read it.",
-    "closing": "D-SENG reads the vibration, and keeps every fan running.",
+    "closing": "D-SENG Technology reads the vibration, and keeps every fan running.",
     "chart_label": "Vibration trend with the early bearing-wear precursor marked at the peak"
   },
   "ja": {
@@ -44,7 +44,7 @@
     "card_body": "ベアリング内輪の初期摩耗 · 3週間以内の交換を推奨 · 対応する予備品を手配済み",
     "caption": "兆候は振動の中にありました — ",
     "caption_bold": "それを読み解ける人が現れるまでは。",
-    "closing": "智聖(D-SENG)は振動を読み解き、すべての送風機を守ります。",
+    "closing": "智聖科技(D-SENG)は振動を読み解き、すべての送風機を守ります。",
     "chart_label": "振動トレンド曲線。ピーク位置にベアリング初期摩耗の兆候を表示"
   }
 }

@@ -1,7 +1,7 @@
 {
   "meta": {
     "site_name": "D-SENG Technology",
-    "default_description": "D-SENG Technology serves the semiconductor industry with efficient, reliable, and intelligent equipment and services, including maintenance of facility rotating equipment, AI early-warning monitoring, air compressors, smart welding, and semiconductor materials.",
+    "default_description": "D-SENG Technology serves the semiconductor industry with efficient, reliable, and intelligent equipment and services, including AI early warning and monitoring, air compressors, smart vision robotic arms, semiconductor materials, monitoring engineering, and equipment maintenance.",
     "og_description": "Smart-Driven, Innovating the Future. Smart equipment × AI technology × green sustainability, creating new value for the semiconductor industry."
   },
   "common": {
@@ -41,8 +41,8 @@
     "headline_a": "Smart-Driven, ",
     "headline_b": "Innovating the Future",
     "lead": "Smart Equipment × AI Technology × Green Sustainability<br>Creating New Value for the Semiconductor Industry",
-    "cta": "Explore Our Business",
-    "image_alt": "D-SENG Technology products and equipment: fan equipment, vision-guided robotic arm, air compressor, and nano super-crystal conductive compound",
+    "cta": "Innovative Business Areas",
+    "image_alt": "D-SENG Technology products and equipment: fan equipment, smart vision robotic arm, air compressor, and nano super-crystal conductive compound",
     "intro_title": "About D-SENG",
     "intro": "D-SENG Technology serves the semiconductor industry with efficient, reliable, and intelligent equipment and services, aiming to be your trusted partner.",
     "values": [
@@ -66,11 +66,11 @@
     "business_title": "Business",
     "business_more": "View all business areas",
     "story_title": "Our Story",
-    "story_teaser": "D-SENG Technology combines rotating equipment maintenance and AI monitoring with the semiconductor facility and materials experience of its affiliated company, Gold Stone, as a one-stop source of equipment and services.",
+    "story_teaser": "D-SENG Technology Co., Ltd. is an affiliate invested in by Gold Stone. Drawing on the group's extensive experience and expertise in semiconductor facility engineering and materials applications, it is committed to providing innovative, efficient, and integrated one-stop equipment and technical services.\n\nThe company focuses on AI early warning and monitoring and the integrated application of intelligent equipment. Combining advanced technology with practical industry experience, it helps customers improve equipment operating efficiency, optimize process management, and move the industry toward intelligent, automated, and sustainable (ESG) development.",
     "story_more": "About D-SENG Technology",
     "affiliate_eyebrow": "Affiliated Company",
     "affiliate_title": "Gold Stone",
-    "affiliate_text": "In 1981, Gold Stone Development began by supplying piping materials to semiconductor and optoelectronics fabs. Over the past 45 years, from a single stainless steel tube or valve to complete gas and chemical system piping, Gold Stone has supported facility teams through fab construction projects and emergency repairs with a complete product line and ample inventory. Today, Gold Stone has opened a new warehouse center in Zhubei and works alongside D-SENG to extend its understanding of fab facility operations into equipment services and new materials.",
+    "affiliate_text": "Since its founding in 1981, <strong>Gold Stone Development</strong> has been deeply rooted in the semiconductor and optoelectronics industries, starting with the supply of piping materials and gradually expanding into stainless steel tubing, precision valves, and piping for high-purity gas and chemical delivery systems.\n\nWith 45 years of industry experience, a complete product line, and ample inventory, Gold Stone continues to provide customers with stable, efficient, and reliable supply, making it a key partner to semiconductor facility teams for new fab construction, equipment installation and maintenance, and emergency response.\n\nAs the industry continues to advance, Gold Stone opened a brand-new warehouse center in Zhubei, Hsinchu, in January 2026, further strengthening its supply chain efficiency and service capacity. At the same time, together with its affiliate <strong>D-SENG Technology</strong>, it is extending its deep hands-on facility experience into equipment integration, technical services, and new material applications, jointly building more comprehensive and innovative industry solutions.",
     "affiliate_more": "About Gold Stone",
     "contact_title": "Have an equipment or project need?",
     "contact_text": "Get in touch and our team will walk you through it.",
@@ -85,16 +85,16 @@
   "about": {
     "title": "About Us",
     "description": "Get to know D-SENG Technology: our history, affiliated companies, and organization.",
-    "lead": "Founded in 2026 and based in Zhubei, Hsinchu, D-SENG Technology focuses on maintenance of semiconductor facility rotating equipment, AI early-warning monitoring, and semiconductor materials. We combine hands-on rotating equipment maintenance experience with the deep semiconductor facility expertise of our affiliated company, Gold Stone, to provide one-stop facility equipment services.",
+    "lead": "Founded in 2026 and based in Zhubei, Hsinchu, D-SENG Technology focuses on semiconductor facility equipment maintenance, AI early warning and monitoring, and semiconductor materials. We combine hands-on rotating equipment maintenance experience with the deep semiconductor facility expertise of our affiliated company, Gold Stone, to provide one-stop facility equipment services.",
     "story_title": "Our Story",
     "office_alt": "Exterior of the D-SENG Technology office in Zhubei, Hsinchu",
     "office_caption": "D-SENG Technology office | Zhubei, Hsinchu",
     "story": [
       {
         "year": "2026",
-        "title": "Founding D-SENG in Zhubei",
+        "title": "Founding D-SENG Technology in Zhubei",
         "subtitle": "Rooted in Industry, Leading the Future with Intelligence",
-        "text": "In 2026, D-SENG Technology was founded in Zhubei, Hsinchu, bringing together our affiliate Gold Stone's deep roots in semiconductor facility systems and materials with our team's hands-on experience in rotating equipment maintenance and AI monitoring. We provide rotating equipment maintenance, AI early-warning monitoring, air compressors, AI vision-guided smart welding, semiconductor materials, and monitoring engineering. Guided by practical innovation, AI-led technology, sustainable development, and integrity, we help customers keep every facility running with greater confidence and longevity."
+        "text": "<strong>D-SENG TECHNOLOGY CO., LTD.</strong> was founded in 2026 in Zhubei, Hsinchu, as an affiliate invested in by Gold Stone. Building on Gold Stone's 45 years of expertise in the semiconductor and optoelectronics industries, and combining our team's hands-on experience in facility engineering, equipment maintenance, and intelligent monitoring, we are committed to providing innovative, efficient, and integrated one-stop equipment and technical services.\n\nAs the semiconductor industry moves toward intelligent, automated, and high-performance operations, D-SENG Technology actively integrates traditional equipment technology with innovative AI applications. Our services cover <strong>AI early warning and monitoring, air compressor equipment, smart vision robotic arms, semiconductor materials, integrated systems engineering, and equipment maintenance</strong>, helping customers improve equipment performance, strengthen preventive maintenance management, lower the risk of unplanned downtime, and reduce production losses.\n\nGuided by four core values, <strong>practical innovation, AI-led technology, sustainable development, and integrity</strong>, D-SENG Technology not only supplies equipment and technology but also cares about customers' long-term operational needs. With expertise as our foundation and innovation as our driving force, we continue to advance smart manufacturing and sustainable development (ESG), striving to be a trusted long-term partner and to build safer, more stable, and more efficient smart facility environments together with our customers."
       }
     ],
     "affiliates_title": "Affiliated Companies",
@@ -103,27 +103,27 @@
         "name": "Gold Stone",
         "name_full": "Gold Stone Development Co., Ltd.",
         "url": null,
-        "text": "Founded in 1981, Gold Stone specializes in equipment for semiconductor and optoelectronics fabs and piping materials for gas and chemical systems, offering one-stop supply of tubing, fittings, valves, and pressure instruments. With offices in Taipei, Hsinchu, and Shanghai, it supports fab construction projects and urgent requests with ample inventory at its Zhubei warehouse.",
+        "text": "Founded in 1981, Gold Stone specializes in equipment for semiconductor and optoelectronics fabs and piping materials for gas and chemical systems, offering one-stop supply of tubing, fittings, valves, and pressure instruments. With locations in Taipei, Hsinchu, Shanghai, and Taicang, it supports fab construction projects and urgent requests with ample inventory at its Zhubei (Hsinchu) warehouse center.",
         "story": [
           {
             "year": "1981",
             "title": "Origins: Starting with Piping Materials",
-            "text": "Gold Stone Development was founded in 1981 in a field that is easy to overlook yet critical: equipment for semiconductor and optoelectronics fabs, and piping materials for gas and chemical systems. Every gas and chemical flowing through a cleanroom process passes through tubing, fittings, valves, and pressure instruments; if any one of them is unreliable, the production line can come to a halt. Gold Stone started here and has stayed with it for 45 years."
+            "text": "Gold Stone Development was founded in 1981 in a precision materials field: equipment for semiconductor and optoelectronics fabs, and piping materials for gas and chemical systems. Every gas and chemical flowing through a cleanroom process passes through tubing, fittings, valves, and pressure instruments; if any one of them is unreliable, the production line can come to a halt. Gold Stone started here and has stayed with it for 45 years."
           },
           {
             "year": null,
-            "title": "Depth: Complete Piping Supply from One Source",
-            "text": "Over the years, Gold Stone has steadily built out its product line: stainless steel tubing from 1/16 in. to 600A, a wide range of fittings, VCR and compression fittings, bellows valves and diaphragm valves, regulators, pressure gauges and transducers, and filters, extending to PTFE tubing, PFA fittings and valves, and fire suppression systems. All products come from renowned manufacturers in Japan, the United States, Germany, and Korea, allowing customers to source all the piping materials needed for gas and chemical systems through a single point of contact."
+            "title": "Depth: Complete Piping Supply at the Zhubei Warehouse Center",
+            "text": "Over the years, Gold Stone has steadily built out its product line to nearly 20,000 items: stainless steel tubing from 1/16 in. to 600A, a wide range of fittings, VCR and compression fittings, bellows valves and diaphragm valves, pressure regulators, pressure gauges and pressure transducers, and filters, extending to fluoropolymer tubing, PFA fittings and valves, and fire suppression systems. All products come from renowned manufacturers in Japan, the United States, Germany, and Korea, allowing customers to source all the piping materials needed for gas and chemical systems through a single point of contact."
           },
           {
             "year": null,
-            "title": "Support: Backing Fab Construction and Urgent Needs",
-            "text": "Waiting on materials is what facility teams dread most. Gold Stone maintains ample inventory to handle customers' urgent needs and shorten material lead times for fab construction projects; it stocks materials in advance according to project schedules and even serves as customers' spare parts warehouse. From its Taipei and Hsinchu offices and Hsinchu warehouse center to its Shanghai office and Taicang warehouse, Gold Stone has grown alongside the facility teams of the semiconductor and optoelectronics industries with responsive service."
+            "title": "Reliable Supply: Solid Backing for Fab Construction and Urgent Needs",
+            "text": "In the semiconductor and optoelectronics industries, timely and stable material supply is key to keeping fab construction on schedule and equipment running without interruption.\n\nWith sound inventory management, ample stock, and flexible supply scheduling, Gold Stone not only responds quickly to customers' urgent material needs but also plans stock in advance according to project schedules, effectively shortening material lead times and improving the efficiency of fab construction and equipment maintenance. Through customized spare parts inventory management, it also helps customers ease their stocking burden and ensures a secure supply of critical materials.\n\nFrom its Taipei and Hsinchu offices to its Zhubei (Hsinchu) warehouse center, Shanghai Shangmao office, and Taicang warehouse, Gold Stone continues to strengthen its cross-regional supply and service capacity. With consistent supply quality, rapid response, and a professional service team, it has become a trusted long-term partner to the semiconductor and optoelectronics industries."
           },
           {
             "year": "2026",
             "title": "Extension: A New Warehouse and Partnership with D-SENG",
-            "text": "In January 2026, Gold Stone opened its new warehouse center in Zhubei, preparing for its next stage. In the same year, its affiliated company D-SENG Technology was established in Zhubei. Gold Stone's familiarity with fab facilities and materials complements D-SENG's capabilities in rotating equipment maintenance and AI-based monitoring; through the collaboration between the two companies, new materials such as butyl rubber duct gaskets and nano conductive composite super-crystal are reaching more fabs."
+            "text": "In January 2026, Gold Stone opened its new warehouse center in Zhubei, preparing for the next peak in semiconductor fab construction. In the same year, its affiliated company D-SENG Technology was established in Zhubei. Gold Stone's familiarity with fab facilities and materials and D-SENG Technology's professional capabilities complement each other, and through their collaboration the two companies are reaching into a broader range of semiconductor fields."
           }
         ],
         "facts": [
@@ -133,11 +133,11 @@
           },
           {
             "label": "Locations",
-            "value": "Taipei office, Hsinchu office, Hsinchu (Zhubei) warehouse center; Shanghai office, Taicang warehouse"
+            "value": "Taipei office, Hsinchu office, Hsinchu (Zhubei) warehouse center; Shanghai Shangmao office, Taicang warehouse"
           },
           {
             "label": "Products & Services",
-            "value": "Equipment for semiconductor and optoelectronics fabs; piping materials for gas and chemical systems (stainless steel tubing, fittings, valves, regulators, pressure instruments, filters, PTFE tubing, PFA fittings and valves); fire suppression systems"
+            "value": "Equipment for semiconductor and optoelectronics fabs; piping materials for gas and chemical systems (stainless steel tubing, fittings, valves, pressure regulators, pressure instruments, filters, fluoropolymer tubing, PFA fittings and valves); fire suppression systems"
           },
           {
             "label": "Service Strengths",
@@ -364,8 +364,8 @@
   },
   "business": {
     "title": "Business",
-    "description": "D-SENG Technology business areas: rotating equipment maintenance, AI early warning and monitoring, air compressors, smart auto-focus tracking welding, semiconductor materials and engineering, and monitoring engineering.",
-    "lead": "Centered on semiconductor and high-tech facility systems, D-SENG Technology provides rotating equipment maintenance, AI early-warning monitoring, compressed air systems, smart welding, semiconductor materials, and monitoring engineering. By combining partner-brand products with field engineering experience, we help customers improve equipment reliability and reduce downtime risk.",
+    "description": "D-SENG Technology business areas: equipment maintenance, AI early warning and monitoring, air compressors, smart vision robotic arms, semiconductor materials and engineering, and monitoring engineering.",
+    "lead": "Centered on semiconductor and high-tech facility systems, D-SENG Technology provides equipment maintenance, AI early warning and monitoring, compressed air systems, smart vision robotic arms, semiconductor materials, and monitoring engineering. By combining partner-brand products with field engineering experience, we help customers improve equipment reliability and reduce downtime risk.",
     "brands_label": "Brands / Partners",
     "others_title": "Other Business Areas",
     "back": "Back to Business",
@@ -374,9 +374,9 @@
         "id": "ai_monitoring",
         "title": "AI Early Warning & Monitoring",
         "nav": "AI Monitoring System",
-        "summary": "Wireless vibration and temperature sensors installed on fan bearing housings and motors, with AI interpreting abnormal trends, sending push notifications, and automatically creating work orders for early maintenance.",
+        "summary": "Backed by a team with 40 years of manufacturing, repair, and maintenance experience, D-SENG Technology installs high-frequency wireless vibration and temperature sensors on fan bearing housings and motors, with AI interpreting abnormal trends, sending push notifications, and automatically creating work orders so that our own fan-manufacturing team can arrange repair early.",
         "body": [
-          "Fan bearing faults, misalignment, impeller imbalance, and belt slack rarely occur suddenly; they gradually emerge in vibration signals. D-SENG Technology's AI early-warning system continuously monitors the vibration and temperature of facility fans, comparing them against international vibration standards and each unit's own operating baseline, and issues warnings before deterioration escalates, so facility staff can schedule maintenance in advance rather than reacting after a shutdown.",
+          "Fan bearing faults, misalignment, impeller imbalance, and belt slack rarely occur suddenly; they gradually emerge in vibration signals. D-SENG Technology's AI Predictive-Warning System continuously monitors the vibration and temperature of facility fans, comparing them against international vibration standards and each unit's own operating baseline, and issues warnings before deterioration escalates, so facility staff can schedule maintenance in advance rather than reacting after a shutdown.",
           "The system does more than display values; it focuses on explaining what the data means. When an anomaly is detected, the system analyzes its likely source, suggests corrective actions, and automatically creates a maintenance work order. Our team has hands-on experience in fan design, manufacturing, and repair, and engineers can help interpret data and provide on-site service when needed, closing the loop between monitoring and maintenance.",
           "The system is designed not to interfere with existing facility operations: sensors are mounted magnetically, with no downtime from installation through acceptance; data travels over a dedicated wireless network to an on-site server that is physically isolated from office and process networks; and the system is read-only, issuing no control commands and making no changes to fan or VFD settings."
         ],
@@ -444,10 +444,10 @@
         "id": "air_compressor",
         "title": "Air Compressors",
         "nav": "Compressors",
-        "summary": "In partnership with Ingersoll Rand, we provide Class 0 oil-free rotary screw compressors, air treatment equipment, and compressor room planning.",
+        "summary": "In partnership with leading U.S. manufacturer Ingersoll Rand, we provide Class 0 oil-free rotary screw compressors, air treatment equipment such as dryers, and compressor room planning.",
         "body": [
-          "Compressed dry air (CDA) is a fundamental utility in semiconductor and electronics fabs, used for pneumatic valves, instrument control, and driving process equipment. Oil, moisture, or particles in the air can affect processes and downstream equipment. D-SENG Technology partners with Ingersoll Rand to provide oil-free rotary screw compressors along with air treatment equipment such as dryers and filters, helping customers obtain stable, clean compressed air.",
-          "With a history of more than 165 years, Ingersoll Rand offers oil-free rotary screw compressors that are TÜV-certified to ISO 8573-1 Class 0 oil-free air. The product line covers oil-free rotary screw models from 37 kW to 355 kW, available in fixed-speed and variable speed drive (VSD), air-cooled and water-cooled configurations, to suit varying air demand and site conditions.",
+          "Compressed dry air (CDA) is a fundamental utility in semiconductor and electronics fabs that must run 24 hours a day, year-round, without interruption. It is used for pneumatic valves, instrument control, and driving process equipment. Oil, moisture, or particles in the air can affect processes and downstream equipment. D-SENG Technology partners with Ingersoll Rand to provide oil-free rotary screw compressors along with air treatment equipment such as dryers and filters, helping customers obtain stable, clean compressed air.",
+          "With a history of more than 165 years, Ingersoll Rand offers oil-free rotary screw compressors that are TÜV-certified to ISO 8573-1 Class 0 oil-free air. The product line covers oil-free rotary screw models from 37 kW to 500 kW, available in fixed-speed and variable speed drive (VSD), air-cooled and water-cooled configurations, to suit varying air demand and site conditions.",
           "Beyond the equipment itself, we take a system-level approach to help customers evaluate air demand, pressure settings, and compressor combinations, plan compressor room layout, drying, filtration, and piping, and combine genuine parts with regular maintenance to reduce energy consumption and downtime risk across the compressed air system's life cycle."
         ],
         "sections": [
@@ -495,7 +495,7 @@
           },
           {
             "title": "Maintenance Support",
-            "text": "Air compressors run under high temperature and pressure for long periods, and components gradually wear. Together with our rotating equipment maintenance service, we help customers schedule regular maintenance and consumable replacement based on operating hours.",
+            "text": "Air compressors run under high temperature and pressure for long periods, and components gradually wear. Together with our equipment maintenance service, we help customers schedule regular maintenance and consumable replacement based on operating hours.",
             "list": [
               "Maintenance at 2000 / 4000 / 8000 / 16000 hours",
               "Genuine OEM maintenance kits and parts",
@@ -506,7 +506,7 @@
         ],
         "points": [
           "Class 0 oil-free compressed air",
-          "37–355 kW oil-free rotary screw models",
+          "37–500 kW oil-free rotary screw models",
           "Fixed-speed or VSD, air- or water-cooled",
           "Air treatment equipment including dryers and filters",
           "Compressor room layout planning",
@@ -521,11 +521,11 @@
       },
       {
         "id": "smart_welding",
-        "title": "Smart Seam-Tracking Welding",
-        "nav": "Smart Welding",
-        "summary": "In partnership with BOSCHDA, we use line laser sensors and weld pool cameras to guide welding, automatically generating weld paths and correcting seam deviations in real time.",
+        "title": "Smart Vision Robotic Arm",
+        "nav": "Smart Vision Arm",
+        "summary": "In partnership with BOSCHDA, we use high-performance line laser sensors and weld pool cameras to guide welding, automatically generating weld paths and correcting seam deviations in real time, with a yield rate of 99% or higher.",
         "body": [
-          "D-SENG Technology partners with BOSCHDA, a specialist in visual weld seam tracking, to offer vision-guided automated welding solutions. BOSCHDA focuses on welding vision guidance, motion control, process control, and production line automation. Its seam tracking systems provide automatic vision guidance for straight seams, circumferential seams, and 3D curved seams, and support TIG, laser, plasma, gas-shielded, and submerged arc welding, with applications in industrial pipe manufacturing, steel structures, pressure vessels, ventilation ducts, and shipbuilding.",
+          "D-SENG Technology partners with BOSCHDA, a specialist in visual weld seam tracking, introducing its vision-guided automated welding solutions. BOSCHDA focuses on welding vision guidance, motion control, process control, and production line automation. Its seam tracking systems provide automatic vision guidance for straight seams, circumferential seams, and 3D curved seams, and support TIG, laser, plasma, gas-shielded, and submerged arc welding, with applications in industrial pipe manufacturing, steel structures, pressure vessels, ventilation ducts, and shipbuilding.",
           "The system scans the seam profile with a line laser sensor and observes the weld pool in real time with a weld pool camera; the control system then calculates the offset and drives an electric slide, dedicated welding machine, or robot to correct the torch position, tracking both lateral and vertical directions simultaneously. Depending on the model, lateral detection accuracy reaches ±0.02 mm, handling workpiece fit-up errors, thermal distortion, and interference from arc light and spatter in gas-shielded welding.",
           "For pipe fitting manufacturing, the fully automated elbow and tee welding station handles workpieces 100–500 mm in diameter. After the workpiece is positioned in a pneumatic fixture, a single button starts the process: the system first generates the weld path and torch orientation through vision scanning, then the weld pool camera corrects the position in real time during welding, with no manual teaching required. D-SENG Technology helps customers evaluate implementation options and equipment configurations based on workpiece specifications, welding power sources, and on-site workflow."
         ],
@@ -630,7 +630,7 @@
         "id": "materials",
         "title": "Semiconductor Materials & Engineering",
         "nav": "Materials",
-        "summary": "Fully encapsulated butyl rubber duct gaskets, nano conductive composite super-crystal, and high-purity tubing and fittings, with integrated service from material selection to on-site installation.",
+        "summary": "Fully encapsulated butyl rubber duct gaskets, nano conductive composite super-crystal, high-purity tubing and fittings, and a range of innovative materials, with system integration service from material selection to on-site installation.",
         "body": [
           "Where facility exhaust ducts connect to tanks, components are exposed to acidic and alkaline gases and liquids over long periods. Once a flange joint leaks, corrosive crystallization forms, and drips can even endanger equipment and personnel below, or become a source of cleanroom contamination. D-SENG Technology supplies fully encapsulated butyl rubber (IIR) gaskets that improve the airtightness and corrosion resistance of duct flanges through both material properties and installation method.",
           "For power systems, we supply nano conductive composite super-crystal (conductive gel), applied to metal contact interfaces such as switchboards, busbars, and terminals to block moisture and contaminants and slow oxidation and corrosion of contacts. We also supply the stainless steel, plastic tubing, and rubber materials commonly used in semiconductor fabs, and undertake installation of gas and liquid delivery piping and ductwork."
@@ -791,11 +791,11 @@
       },
       {
         "id": "rotating",
-        "title": "Rotating Equipment Maintenance",
-        "nav": "Rotating Equipment Service",
-        "summary": "Scheduled maintenance, vibration measurement, troubleshooting, and maintenance records for rotating equipment such as facility exhaust fans, blowers, and air compressors, reducing the risk of unplanned downtime.",
+        "title": "Equipment Maintenance (One-Stop Service)",
+        "nav": "Maintenance",
+        "summary": "Scheduled maintenance, vibration measurement, troubleshooting, and maintenance records for rotating equipment such as facility exhaust fans, blowers, pumps, and air compressors, reducing the risk of unplanned downtime.",
         "body": [
-          "Exhaust fans, blowers, and air compressors run continuously for long periods in the facility systems of semiconductor and high-tech fabs, and the condition of their bearings, couplings, belts, and vibration isolators directly affects equipment availability and site safety. The D-SENG Technology team has hands-on experience in fan design, manufacturing, and repair; we plan scheduled maintenance based on equipment type and operating conditions, carried out on site by professional maintenance technicians.",
+          "Exhaust fans, blowers, and air compressors run continuously for long periods in the facility systems of semiconductor and high-tech fabs, and the condition of their bearings, couplings, belts, and vibration isolators directly affects equipment availability and site safety. The D-SENG Technology team has 40 years of hands-on experience in fan design, manufacturing, and repair; we plan scheduled maintenance based on equipment type and operating conditions, carried out on site by professional maintenance technicians.",
           "Equipment can still develop faults after routine maintenance. Common causes include poor bearing housing mounting, wear on shaft surfaces, and misalignment after bearing replacement; faults and damage are often linked to a lack of long-term monitoring and maintenance that is not properly carried out, rather than component life alone. That is why our maintenance goes beyond lubrication and replacement, tying inspection, measurement, and record-keeping into a traceable process.",
           "Each unit has its own maintenance card and inspection records, documenting lubricant changes, grease quantities, vibration measurements, and corrective actions. Maintenance data can be uploaded to the cloud for trend comparison and predictive analysis; combined with our AI early-warning and monitoring service, planned maintenance shutdowns can be scheduled based on actual equipment condition, preventing damage from escalating."
         ],
@@ -832,7 +832,7 @@
               "Scheduled maintenance by operating hours (2,000 / 4,000 / 8,000 / 16,000 hours for Ingersoll Rand models)",
               "Genuine OEM maintenance kits and parts",
               "Maintenance and replacement records added to the equipment history",
-              "Optional AI early-warning monitoring for preventive maintenance"
+              "Optional AI early warning and monitoring for preventive maintenance"
             ]
           },
           {
@@ -862,7 +862,7 @@
           "Vibration measurement about every 120 days",
           "Written measurement reports",
           "Dedicated maintenance cards and inspection records",
-          "Optional AI early-warning monitoring"
+          "Optional AI early warning and monitoring"
         ],
         "brands": [],
         "image": null,
@@ -879,7 +879,7 @@
       {
         "name": "BOSCHDA",
         "url": "http://www.boschda.com",
-        "note": "Ningbo BOSCHDA welding robots, specializing in weld seam vision tracking and automatic welding stations."
+        "note": "Ningbo-based BOSCHDA specializes in weld seam vision tracking and automatic welding stations."
       }
     ],
     "ops_title": "Scope of Operations",
@@ -889,7 +889,7 @@
       "Sales and installation of semiconductor steel piping, plastic piping, and rubber materials",
       "Facility equipment repair and maintenance",
       "Design, engineering, and installation of facility systems and cleanroom MEP",
-      "Sales of equipment electrical control hardware and software, and nano power-transistor coatings",
+      "Sales of equipment electrical control hardware and software, and nano power super-crystal coatings",
       "Installation of gas and liquid delivery systems and piping",
       "Process equipment monitoring and measurement systems",
       "ESG energy-saving and carbon-reduction consulting and design"
@@ -904,7 +904,7 @@
     "why": [
       {
         "title": "Hands-On Technical Work",
-        "text": "Work directly on projects involving semiconductor facility equipment, AI monitoring, and smart welding, and gain front-line experience."
+        "text": "Work directly on projects involving semiconductor facility equipment, AI monitoring, and smart vision robotic arms, and gain front-line experience."
       },
       {
         "title": "A Cross-Disciplinary Team",
@@ -916,6 +916,70 @@
       }
     ],
     "openings_title": "Current Openings",
+    "openings": [
+      {
+        "title": "Sales & Manager, Smart Equipment Division",
+        "count": "1 opening",
+        "note": "No experience required",
+        "label": "Nice to have",
+        "items": [
+          "Experience with precision rotating equipment, facility equipment, or electromechanical systems in semiconductor fabs",
+          "Able to read mechanical drawings; comfortable with tools and computers",
+          "Able to work independently at customer sites and report technical matters and progress to customer contacts",
+          "Able to work around customer schedules",
+          "Passenger car driver's license; able to drive a company vehicle to semiconductor customer sites",
+          "Strong enthusiasm for sales work"
+        ]
+      },
+      {
+        "title": "Sales & Manager, Air Compressors",
+        "count": "1 opening",
+        "note": "",
+        "label": "Requirements",
+        "items": [
+          "Experience with precision rotating equipment, facility equipment, or electromechanical systems in semiconductor fabs",
+          "Able to read mechanical drawings; comfortable with tools and computers",
+          "Able to work independently at customer sites and report technical matters and progress to customer contacts",
+          "Able to work around customer schedules",
+          "Passenger car driver's license; able to drive a company vehicle to semiconductor customer sites",
+          "Strong enthusiasm for sales work"
+        ]
+      },
+      {
+        "title": "Maintenance Engineer",
+        "count": "4 openings",
+        "note": "",
+        "label": "Requirements",
+        "items": [
+          "Maintenance experience with precision rotating equipment, facility equipment, or electromechanical systems in semiconductor fabs",
+          "Able to read mechanical drawings; comfortable with maintenance tools and computers",
+          "Able to work independently at customer sites and report technical matters and progress to customer contacts",
+          "Able to work around customer schedules",
+          "Passenger car driver's license; able to drive a company vehicle to semiconductor customer sites",
+          "Experience with AI systems is a plus"
+        ]
+      },
+      {
+        "title": "Materials Sales Engineer & Manager",
+        "count": "1 opening",
+        "note": "",
+        "label": "Requirements",
+        "items": [
+          "Experience with precision rotating equipment, facility equipment, or electromechanical systems in semiconductor fabs",
+          "Able to read mechanical drawings; comfortable with tools and computers",
+          "Able to work independently at customer sites and report technical matters and progress to customer contacts",
+          "Able to work around customer schedules",
+          "Passenger car driver's license; able to drive a company vehicle to semiconductor customer sites",
+          "Strong enthusiasm for sales work"
+        ]
+      }
+    ],
+    "terms_title": "For all positions",
+    "terms": [
+      "Start date after Lunar New Year is possible",
+      "Guaranteed 14 months of salary per year",
+      "Salary: negotiable"
+    ],
     "openings_empty": "Job openings are being finalized and will be posted on 104 Job Bank and 1111 Job Bank (Taiwan).",
     "apply_title": "How to Apply",
     "apply_text": "Please send your résumé to the email address below, with the position you are applying for in the subject line. Our team will contact you after receiving it.",
@@ -923,8 +987,8 @@
   },
   "downloads": {
     "title": "Downloads",
-    "description": "View the D-SENG Technology company profile and find links to partner-brand product information.",
-    "lead": "The company profile can be viewed online or printed directly. For the latest partner-brand catalogs, please visit the manufacturers' websites.",
+    "description": "View the D-SENG Technology company profile and find links to product information from our partner and distributed brands.",
+    "lead": "The company profile can be viewed online or printed directly. For the latest catalogs from our partner and distributed brands, please visit the manufacturers' websites.",
     "company_title": "Company Information",
     "files": [
       {
@@ -934,7 +998,7 @@
         "note": "View online; print or save as PDF"
       }
     ],
-    "brands_title": "Partner Brand Information",
+    "brands_title": "Partner and Distributed Brand Information",
     "brands_text": "The links below open the manufacturers' official websites; their latest versions take precedence."
   },
   "profile": {
@@ -951,7 +1015,7 @@
       "affiliate": "Affiliated Companies",
       "contact": "Contact Us"
     },
-    "business_lead": "Six business areas covering facility equipment maintenance, monitoring and early warning, compressed air systems, smart welding, and semiconductor materials and engineering.",
+    "business_lead": "Six business areas covering AI early warning and monitoring, compressed air systems, smart vision robotic arms, semiconductor materials and engineering, monitoring engineering, and facility equipment maintenance.",
     "affiliate_products": "Main products",
     "contact_lead": "If you have equipment or project needs, please get in touch and one of our specialists will walk you through the details.",
     "web_note": "For the latest version, visit"
@@ -969,7 +1033,7 @@
   },
   "product_animation": {
     "title": "Product Animations",
-    "description": "Real-time 3D animations of D-SENG's AI monitoring system, oil-free rotary screw air compressor, smart seam-tracking welding, wrap-around butyl rubber duct gasket and nano super-crystal coating.",
+    "description": "Real-time 3D animations of D-SENG's AI monitoring system, oil-free rotary screw air compressor, smart vision robotic arm, wrap-around butyl rubber duct gasket and nano super-crystal coating.",
     "eyebrow": "D-SENG TECHNOLOGY",
     "heading": "Smart-Driven, ",
     "heading_em": "Innovating the Future",
@@ -992,7 +1056,7 @@
       {
         "id": "welding",
         "business": "smart-welding",
-        "title": "Smart Seam-Tracking Welding",
+        "title": "Smart Vision Robotic Arm",
         "text": "A vision camera tracks the seam in real time while the robot welds pipe branch joints and duct girth seams with consistent quality."
       },
       {

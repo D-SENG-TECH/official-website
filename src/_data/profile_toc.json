@@ -29,30 +29,30 @@
   },
   "en": {
     "pf-about": 3,
-    "pf-values": 3,
-    "pf-business": 4,
-    "pf-org": 4,
-    "pf-biz-ai-monitoring": 5,
+    "pf-values": 4,
+    "pf-business": 5,
+    "pf-org": 5,
+    "pf-biz-ai-monitoring": 6,
+    "pf-biz-air-compressor": 10,
+    "pf-biz-smart-welding": 12,
+    "pf-biz-materials": 14,
+    "pf-biz-monitoring-eng": 16,
+    "pf-biz-rotating": 17,
+    "pf-affiliate": 20,
+    "pf-contact": 21
+  },
+  "ja": {
+    "pf-about": 3,
+    "pf-values": 4,
+    "pf-business": 5,
+    "pf-org": 5,
+    "pf-biz-ai-monitoring": 6,
     "pf-biz-air-compressor": 9,
     "pf-biz-smart-welding": 11,
     "pf-biz-materials": 13,
     "pf-biz-monitoring-eng": 15,
     "pf-biz-rotating": 16,
-    "pf-affiliate": 19,
-    "pf-contact": 20
-  },
-  "ja": {
-    "pf-about": 3,
-    "pf-values": 3,
-    "pf-business": 4,
-    "pf-org": 4,
-    "pf-biz-ai-monitoring": 5,
-    "pf-biz-air-compressor": 8,
-    "pf-biz-smart-welding": 10,
-    "pf-biz-materials": 12,
-    "pf-biz-monitoring-eng": 13,
-    "pf-biz-rotating": 14,
-    "pf-affiliate": 17,
-    "pf-contact": 18
+    "pf-affiliate": 18,
+    "pf-contact": 19
   }
 }

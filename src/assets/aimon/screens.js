@@ -61,42 +61,48 @@
     })();
 
     // ---------------------------------------------------------------
-    // 03 Spectrum & time waveform — the spectrum breathes (the bearing
-    // frequency swells), the waveform scrolls with its impacts
+    // 03 Waterfall: four spectra in time order, one per stage of bearing
+    // oil loss. They appear one after another (front = earliest), hold,
+    // then the sequence starts over. Geometry matches the static SVG.
     // ---------------------------------------------------------------
-    (function spectrumChart() {
-      var specLine = $("specLine"), waveLine = $("waveLine");
-      if (!specLine || !waveLine || reduceMotion) return;
+    (function waterfallChart() {
+      var groups = [0, 1, 2, 3].map(function (k) { return root.querySelector('.pv-wf[data-wf="' + k + '"]'); });
+      if (groups.indexOf(null) !== -1 || reduceMotion) return;
+      var lines = groups.map(function (g) { return g.querySelector(".pv-wf-line"); });
+      var fills = groups.map(function (g) { return g.querySelector(".pv-wf-fill"); });
 
-      var X0 = 30, X1 = 350, SB = 112, ST = 26, WM = 168, WA = 24;
-      // [frequency Hz, amplitude]; index 3 is the bearing outer-race frequency, the one that grows
-      var PEAKS = [[24.7, 0.42], [49.4, 0.20], [74.1, 0.10], [89, 0.62], [178, 0.30], [296, 0.24]];
-      var tick = 0;
+      var X0 = 70, Y0 = 150, FW = 170, FS = 34, DX = 28, DY = -27, AH = 54, N = 120;
+      var FLOOR = [0.020, 0.030, 0.045, 0.11];
+      var P1 = [0.30, 0.31, 0.34, 0.50], P2 = [0.12, 0.12, 0.14, 0.22];
+      var HA = [0.07, 0.24, 0.30, 0.20], HW = [0.05, 0.07, 0.08, 0.16];
+      var DEF = [[0.36, 0.30], [0.22, 0.24], [0.14, 0.18]];
+      function g(f, c, a, w) { var d = (f - c) / w; return a * Math.exp(-d * d); }
+      function amp(k, f) {
+        var v = FLOOR[k] * (0.8 + rand(0, 0.4));
+        v += g(f, 0.03, P1[k], 0.010) + g(f, 0.06, P2[k], 0.010) + g(f, 0.82, HA[k] * (0.9 + rand(0, 0.2)), HW[k]);
+        if (k >= 2) for (var n = 0; n < 3; n++) v += g(f, 0.14 * (n + 1), DEF[n][k - 2] * (0.9 + rand(0, 0.2)), k === 2 ? 0.011 : 0.022);
+        if (k === 3) v += 0.05 * Math.abs(Math.sin(f * 61) * Math.sin(f * 23)) + rand(0, 0.03);
+        return Math.min(v, 1);
+      }
 
+      var tick = 0, STEP = 14, HOLD = 34, CYCLE = STEP * 4 + HOLD; // 120 ms ticks: ~1.7 s per stage, ~4 s hold
       function render() {
+        var phase = tick % CYCLE;
         tick++;
-        var swell = 0.78 + 0.22 * Math.sin(tick * 0.16);
-        var pts = [], k, f, v, i, d;
-        for (k = 0; k <= 200; k++) {
-          f = k * 2;
-          v = 0.035 + 0.02 * Math.sin(f * 0.37) * Math.sin(f * 0.11) + rand(0, 0.012);
-          for (i = 0; i < PEAKS.length; i++) {
-            d = (f - PEAKS[i][0]) / 2.6;
-            v += PEAKS[i][1] * (i === 3 || i === 4 ? swell : 0.94 + rand(0, 0.08)) * Math.exp(-d * d);
+        for (var k = 0; k < 4; k++) {
+          var show = Math.max(0, Math.min(1, (phase - k * STEP) / 5));
+          groups[k].style.opacity = show.toFixed(2);
+          if (!show) continue;
+          var pts = [], f, x, y;
+          for (var i = 0; i <= N; i++) {
+            f = i / N;
+            x = X0 + f * FW + k * DX; y = Y0 + f * FS + k * DY - amp(k, f) * AH * show;
+            pts.push(x.toFixed(1) + "," + y.toFixed(1));
           }
-          pts.push((X0 + (f / 400) * (X1 - X0)).toFixed(1) + "," + (SB - Math.min(v, 0.75) / 0.75 * (SB - ST)).toFixed(1));
+          var line = pts.join(" ");
+          lines[k].setAttribute("points", line);
+          fills[k].setAttribute("points", line + " " + (X0 + FW + k * DX) + "," + (Y0 + FS + k * DY) + " " + (X0 + k * DX) + "," + (Y0 + k * DY));
         }
-        specLine.setAttribute("points", pts.join(" "));
-
-        var w = [], t, ph;
-        for (k = 0; k <= 240; k++) {
-          t = k * 80 / 240 + tick * 1.6;
-          v = 0.5 * Math.sin(2 * Math.PI * t / 40) + 0.2 * Math.sin(2 * Math.PI * t / 20 + 1);
-          ph = (t % 11.2) / 11.2;
-          v += 0.75 * swell * Math.exp(-ph * 9) * Math.sin(2 * Math.PI * ph * 7);
-          w.push((X0 + k * (X1 - X0) / 240).toFixed(1) + "," + (WM - v * WA / 1.3).toFixed(1));
-        }
-        waveLine.setAttribute("points", w.join(" "));
       }
 
       setInterval(render, 120);

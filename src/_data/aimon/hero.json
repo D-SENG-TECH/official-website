@@ -50,7 +50,7 @@
     "h1a": "从读懂振动",
     "h1b": "到守护风机",
     "sub": "AI 智能预警系统 · 风机全生命周期管理方案",
-    "desc": "结合振动传感、AI 诊断与现场维修经验，从检测、诊断到派工与复测一条龙。风机、泵、压缩机等 24 小时运转的旋转设备都适用。",
+    "desc": "结合振动传感、AI 诊断与现场维修经验，从检测、诊断到派工与复测一条龙。风机、泵、空压机等 24 小时运转的旋转设备都适用。",
     "bottom": "AI-DRIVEN MONITORING · D-SENG TECHNOLOGY",
     "cue": "继续阅读",
     "step": "STEP",
@@ -82,7 +82,7 @@
       },
       {
         "n": "06",
-        "head": "复测验收",
+        "head": "原厂系统复测完工",
         "body": "维修后振动复测合格，回填履历并结案"
       }
     ]
@@ -94,7 +94,7 @@
     "h1a": "From reading vibration",
     "h1b": "to guarding fans",
     "sub": "AI Predictive Warning System · Full-lifecycle fan management",
-    "desc": "Combining vibration sensing, AI diagnosis and field maintenance experience, we cover detection, diagnosis, dispatch and recheck end to end. Fans, pumps, compressors and any other rotating equipment that runs 24/7.",
+    "desc": "Combining vibration sensing, AI diagnosis and field maintenance experience, we cover detection, diagnosis, dispatch and recheck end to end. Fans, pumps, air compressors and any other rotating equipment that runs 24/7.",
     "bottom": "AI-DRIVEN MONITORING · D-SENG TECHNOLOGY",
     "cue": "Keep reading",
     "step": "STEP",
@@ -126,7 +126,7 @@
       },
       {
         "n": "06",
-        "head": "Verify & close",
+        "head": "Maker-team recheck & close",
         "body": "Vibration rechecked after repair, history updated, ticket closed"
       }
     ]
@@ -138,7 +138,7 @@
     "h1a": "振動を読み解くことから",
     "h1b": "ファンを守ることまで",
     "sub": "AI 予兆警報システム · ファン全ライフサイクル管理ソリューション",
-    "desc": "振動センシング、AI診断、現場の保全ノウハウを組み合わせ、検知・診断から作業手配、再測定までを一貫して対応。ファン、ポンプ、コンプレッサーなど24時間稼働の回転機器に対応します。",
+    "desc": "振動センシング、AI診断、現場の保全ノウハウを組み合わせ、検知・診断から作業手配、再測定までを一貫して対応。ファン、ポンプ、エアコンプレッサーなど24時間稼働の回転機器に対応します。",
     "bottom": "AI-DRIVEN MONITORING · D-SENG TECHNOLOGY",
     "cue": "続きを読む",
     "step": "STEP",
@@ -170,7 +170,7 @@
       },
       {
         "n": "06",
-        "head": "再測定・検収",
+        "head": "当社製造チームによる再測定・完了",
         "body": "修理後に振動を再測定して合格を確認、履歴を更新して完了"
       }
     ]

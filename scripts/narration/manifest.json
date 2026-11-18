@@ -11,7 +11,7 @@
   "intro": 1.75,
   "aimon": 8.42,
   "compressor": 10.01,
-  "welding": 11.71,
+  "welding": 11.9,
   "gasket": 10.68,
   "nano": 9.12
  },
@@ -19,7 +19,7 @@
   "intro": 1.34,
   "aimon": 6.53,
   "compressor": 7.61,
-  "welding": 11.04,
+  "welding": 11.35,
   "gasket": 9.29,
   "nano": 8.9
  },
@@ -27,7 +27,7 @@
   "intro": 1.54,
   "aimon": 7.75,
   "compressor": 8.74,
-  "welding": 12.41,
+  "welding": 11.83,
   "gasket": 9.86,
   "nano": 9.77
  }

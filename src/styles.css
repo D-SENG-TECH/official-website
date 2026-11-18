@@ -818,3 +818,16 @@ a { color: inherit; }
 @media (max-width: 900px) {
   .affiliate-show__cols { grid-template-columns: 1fr; gap: 28px; margin-top: 36px; }
 }
+
+/* Careers: openings */
+.jobs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 28px; }
+.job { padding: 28px; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--orange); border-radius: 8px; }
+.job__head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+.job__head h3 { font-size: 22px; color: var(--navy); }
+.job__meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.job__label { margin-top: 18px; color: var(--muted); font-size: 14px; font-weight: 700; }
+.job .points { margin-top: 8px; }
+.job-terms { margin-top: 28px; padding: 20px 28px; background: #fff; border: 1px solid var(--line); border-radius: 8px; }
+.job-terms h3 { font-size: 18px; color: var(--navy); }
+.job-terms ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 10px; padding: 0; font-weight: 500; }
+@media (max-width: 860px) { .jobs { grid-template-columns: 1fr; } .job { padding: 22px; } }

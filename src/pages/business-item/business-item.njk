@@ -1,5 +1,7 @@
 {%- set t = i18n[lang.code] -%}
 {%- set item = bp.item -%}
+{#- Business items whose main picture is a live 3D scene from the product animation: item id -> scene id. -#}
+{%- set stage_scene = { "smart_welding": "welding", "materials": "gasket" }[item.id] -%}
 <section class="page-head">
   <div class="wrap">
     <p class="page-head__eyebrow"><a href="{{ lang.prefix }}business/">{{ t.business.title }}</a> / {{ "0" + (bp.index + 1) }}</p>
@@ -27,8 +29,8 @@
       <p class="brands"><span>{{ t.business.brands_label }}</span>{{ item.brands | join("・") }}</p>
       {%- endif %}
     </div>
-    {%- if item.id == "smart_welding" %}
-    {#- Live 3D welding scene (the one from the product animation). The photo stays underneath as the fallback
+    {%- if stage_scene %}
+    {#- Live 3D scene (the one from the product animation). The photo stays underneath as the fallback
         when WebGL or JavaScript is unavailable. -#}
     <div class="biz__image biz__stage" id="biz-stage" role="img" aria-label="{{ item.image_alt }}">
       <img src="/assets/business/{{ item.image }}" alt="">
@@ -133,13 +135,13 @@
   </div>
 </section>
 
-{%- if item.id == "smart_welding" %}
+{%- if stage_scene %}
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
 <script type="module">
   const stage = document.getElementById("biz-stage");
   try {
     const { startHero } = await import("/assets/product-animation/main.js");
-    await startHero(stage, ["welding"], { base: "/assets/product-animation/", auto: false });
+    await startHero(stage, ["{{ stage_scene }}"], { base: "/assets/product-animation/", auto: false });
     stage.classList.add("is-live");
   } catch (e) { /* keep the photo */ }
 </script>

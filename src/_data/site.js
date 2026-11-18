@@ -2,7 +2,7 @@
 export default {
   url: "https://d-seng.com.tw",
   email_info: "service@d-seng.com.tw",
-  email_hr: "hr@d-seng.com.tw",
+  email_hr: "service@d-seng.com.tw",
   phone: "03-5550718",
   phone_intl: "+886-3-5550718",
   phone_tel: "+88635550718",
