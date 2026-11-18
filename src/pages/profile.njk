@@ -116,7 +116,9 @@ page_path: profile/
         <div class="pf-story">
           <p class="pf-story__year">{{ ch.year or "2026" }}</p>
           <h3>{{ ch.title }}</h3>
-          <p>{{ ch.text }}</p>
+          {%- for para in ch.text.split("\n\n") %}
+          <p>{{ para | safe }}</p>
+          {%- endfor %}
         </div>
       </div>
       <figure class="pf-photo">

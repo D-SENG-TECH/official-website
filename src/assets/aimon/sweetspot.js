@@ -4,6 +4,7 @@
   if (!root) return;
   var q = function (s) { return root.querySelector(s); };
   var curve = q("[data-ss-curve]");
+  var fan = q("[data-ss-fan]"), fanBox = fan && fan.parentNode;
   var el = {
     dot: q("[data-ss-dot]"), ring: q("[data-ss-ring]"), line: q("[data-ss-margin-line]"),
     chip1: q("[data-ss-chip1]"), chip2: q("[data-ss-chip2]"),
@@ -34,6 +35,12 @@
     el.bep.textContent = "−" + dist;
     el.margin.textContent = m;
     el.badge.classList.toggle("warn", m < 10);
+    /* The fan picture follows the reading. The point walks between about 3.8 mm/s (near the sweet spot: almost still) and 7.2 mm/s (near surge: shakes hard and glows). */
+    if (fanBox) {
+      var k = Math.max(0, Math.min(1, (parseFloat(vib) - 3.6) / 3.6));
+      fanBox.style.setProperty("--ss-amp", (0.25 + 3.2 * k * k).toFixed(2) + "px");
+      fanBox.style.setProperty("--ss-heat", (k * 0.9).toFixed(2));
+    }
   }
 
   function staticState() { render(236, 150, 8, 12, 78, "3.0"); }

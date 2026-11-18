@@ -9,8 +9,7 @@ export default [
     { src: "pipe-grades.jpg", label: "AP / BA / MP / EP", fit: "contain" },
   ] },
   { cover: "fit-bend.jpg", photos: [
-    { src: "fit-bend.jpg", label: "Bend" },
-    { src: "fit-forged.jpg", label: "Forged & Micro" },
+    { src: "fit-bend.jpg", label: "Elbow and Fittings" },
     { src: "fit-vcr.jpg", label: "VCR" },
     { src: "fit-compression.jpg", label: "Compression" },
     { src: "fit-cylinder.jpg", label: "Cylinder" },

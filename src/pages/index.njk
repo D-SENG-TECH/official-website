@@ -3,17 +3,7 @@ page_key: home
 page_path: ""
 ---
 {%- set t = i18n[lang.code] -%}
-<section class="hero">
-  <div class="wrap hero__inner">
-    <div>
-      <p class="hero__eyebrow">{{ t.home.eyebrow }}</p>
-      <h1>{{ t.home.headline_a }}<em>{{ t.home.headline_b }}</em></h1>
-      <p class="hero__lead">{{ t.home.lead | safe }}</p>
-      <a class="button" href="{{ lang.prefix }}business/">{{ t.home.cta }}</a>
-    </div>
-    <img class="hero__image" src="/assets/equipment.jpg" width="683" height="452" alt="{{ t.home.image_alt }}">
-  </div>
-</section>
+{% include "hero3d.njk" %}
 
 <section class="section">
   <div class="wrap">
@@ -46,16 +36,15 @@ page_path: ""
   <div class="wrap split">
     <div>
       <h2>{{ t.home.story_title }}</h2>
-      <p class="lead">{{ t.home.story_teaser }}</p>
+      {%- for para in t.home.story_teaser.split("\n\n") %}
+      <p class="lead">{{ para }}</p>
+      {%- endfor %}
       <p class="more"><a href="{{ lang.prefix }}about/">{{ t.home.story_more }} →</a></p>
     </div>
-    {%- if t.about.story.length > 1 %}
-    <ol class="mini-timeline">
-      {%- for ch in t.about.story %}
-      <li><span>{{ ch.year or "—" }}</span>{{ ch.title }}</li>
-      {%- endfor %}
-    </ol>
-    {%- endif %}
+    <figure class="home-story__photo">
+      <img src="/assets/office.jpg" width="896" height="1200" alt="{{ t.about.office_alt }}" loading="lazy">
+      <figcaption>{{ t.about.office_caption }}</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -66,7 +55,9 @@ page_path: ""
       <h2>{{ t.home.affiliate_title }}</h2>
     </div>
     <div>
-      <p class="lead">{{ t.home.affiliate_text }}</p>
+      {%- for para in t.home.affiliate_text.split("\n\n") %}
+      <p class="lead">{{ para | safe }}</p>
+      {%- endfor %}
       <p class="more"><a href="{{ lang.prefix }}about/#affiliates">{{ t.home.affiliate_more }} →</a></p>
     </div>
   </div>

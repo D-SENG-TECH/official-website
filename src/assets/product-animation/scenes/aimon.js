@@ -165,6 +165,9 @@ export default async function create(ctx) {
     });
     return { ...s, p: s.g.position, tip: s.g.position.clone().add(V(0, 0, 0.13)), rings, phase: i * 0.29 };
   });
+  // The showroom shows the fan without the sensor hardware: hide the three sensors and their pulse rings.
+  // The alarm (glowing bearing housing, waveform panel, leader line) still plays.
+  if (ctx.noSensors) for (const s of sensors) { s.g.visible = false; s.rings.forEach((r) => (r.visible = false)); }
   const ALARM = 1; // motor-side bearing
   const alarm = sensors[ALARM];
   const sensorsC = sensors.reduce((a, s) => a.add(s.p), V()).multiplyScalar(1 / 3);

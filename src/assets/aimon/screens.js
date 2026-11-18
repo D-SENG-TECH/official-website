@@ -61,60 +61,45 @@
     })();
 
     // ---------------------------------------------------------------
-    // 03 Vibration time-series — scrolling trend line
+    // 03 Spectrum & time waveform — the spectrum breathes (the bearing
+    // frequency swells), the waveform scrolls with its impacts
     // ---------------------------------------------------------------
-    (function trendChart() {
-      var line = $("trendLine");
-      var dot = $("trendDot");
-      if (!line || reduceMotion) return;
+    (function spectrumChart() {
+      var specLine = $("specLine"), waveLine = $("waveLine");
+      if (!specLine || !waveLine || reduceMotion) return;
 
-      var W = 360, H = 220;
-      var padL = 30, padR = 10, padT = 30, padB = 24;
-      var innerW = W - padL - padR, innerH = H - padT - padB;
-      var yMax = 7.5;
-      var N = 30;
-
-      function xPos(i) { return padL + (i / (N - 1)) * innerW; }
-      function yPos(v) { return padT + innerH - (Math.min(v, yMax) / yMax) * innerH; }
-
-      // Seed from the current polyline points so the first tick continues smoothly.
-      var values = [];
-      var raw = line.getAttribute("points");
-      if (raw) {
-        raw.trim().split(/\s+/).forEach(function (pair) {
-          var parts = pair.split(",");
-          var y = parseFloat(parts[1]);
-          if (!isNaN(y)) {
-            // invert yPos to recover the underlying value
-            var v = ((padT + innerH - y) / innerH) * yMax;
-            values.push(v);
-          }
-        });
-      }
-      if (values.length !== N) {
-        values = [];
-        for (var i = 0; i < N; i++) values.push(3.0);
-      }
+      var X0 = 30, X1 = 350, SB = 112, ST = 26, WM = 168, WA = 24;
+      // [frequency Hz, amplitude]; index 3 is the bearing outer-race frequency, the one that grows
+      var PEAKS = [[24.7, 0.42], [49.4, 0.20], [74.1, 0.10], [89, 0.62], [178, 0.30], [296, 0.24]];
+      var tick = 0;
 
       function render() {
-        var pts = values.map(function (v, i) {
-          return xPos(i).toFixed(1) + "," + yPos(v).toFixed(1);
-        }).join(" ");
-        line.setAttribute("points", pts);
-        var lastV = values[values.length - 1];
-        if (dot) {
-          dot.setAttribute("cx", xPos(N - 1).toFixed(1));
-          dot.setAttribute("cy", yPos(lastV).toFixed(1));
+        tick++;
+        var swell = 0.78 + 0.22 * Math.sin(tick * 0.16);
+        var pts = [], k, f, v, i, d;
+        for (k = 0; k <= 200; k++) {
+          f = k * 2;
+          v = 0.035 + 0.02 * Math.sin(f * 0.37) * Math.sin(f * 0.11) + rand(0, 0.012);
+          for (i = 0; i < PEAKS.length; i++) {
+            d = (f - PEAKS[i][0]) / 2.6;
+            v += PEAKS[i][1] * (i === 3 || i === 4 ? swell : 0.94 + rand(0, 0.08)) * Math.exp(-d * d);
+          }
+          pts.push((X0 + (f / 400) * (X1 - X0)).toFixed(1) + "," + (SB - Math.min(v, 0.75) / 0.75 * (SB - ST)).toFixed(1));
         }
+        specLine.setAttribute("points", pts.join(" "));
+
+        var w = [], t, ph;
+        for (k = 0; k <= 240; k++) {
+          t = k * 80 / 240 + tick * 1.6;
+          v = 0.5 * Math.sin(2 * Math.PI * t / 40) + 0.2 * Math.sin(2 * Math.PI * t / 20 + 1);
+          ph = (t % 11.2) / 11.2;
+          v += 0.75 * swell * Math.exp(-ph * 9) * Math.sin(2 * Math.PI * ph * 7);
+          w.push((X0 + k * (X1 - X0) / 240).toFixed(1) + "," + (WM - v * WA / 1.3).toFixed(1));
+        }
+        waveLine.setAttribute("points", w.join(" "));
       }
 
-      setInterval(function () {
-        values.shift();
-        var prev = values[values.length - 1];
-        var next = clamp(prev + rand(-0.35, 0.35), 1.6, 6.8);
-        values.push(next);
-        render();
-      }, 650);
+      setInterval(render, 120);
     })();
 
 

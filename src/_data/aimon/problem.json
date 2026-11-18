@@ -2,7 +2,7 @@
   "zh-tw": {
     "eyebrow": "客戶痛點",
     "aside": "The problem we solve",
-    "title": "風機維護的硬骨頭，不在偵測 — 而在偵測之後。",
+    "title": "風機維護的硬骨頭，不在偵測 —— 而在偵測之後。",
     "subtitle": "The hard part isn't detection — it's what happens next.",
     "head_now": "Current practice · 現狀",
     "head_pain": "Pain point · 痛點",
@@ -32,7 +32,7 @@
         "pain_en": "Handoff gaps after detection"
       }
     ],
-    "closing": "智聖不只做監測 —— 從感測到派工、從備品到複測結案，所有環節由同一個團隊負責。"
+    "closing": "智聖科技不只做監測 —— 從感測到派工、從備品到複測結案，所有環節由同一個團隊負責。"
   },
   "zh-cn": {
     "eyebrow": "客户痛点",

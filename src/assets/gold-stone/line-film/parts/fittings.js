@@ -273,7 +273,7 @@ const DEG = Math.PI / 180;
 export const items = [
   // ------------------------------------------------------------------------------------------------ 1
   {
-    id: "bend_fittings", title: "彎頭管件",
+    id: "bend_fittings", title: "彎頭與管配件",
     build(THREE, M) {
       const K = makeKit(THREE), B = K.batch(), inner = new THREE.Group(), EP = M.ss_ep;
       // [outer radius, wall]

@@ -25,7 +25,12 @@ page_path: about/
         <p class="timeline__year">{{ ch.year or "" }}</p>
         <div>
           <h3>{{ ch.title }}</h3>
-          <p>{{ ch.text }}</p>
+          {%- if ch.subtitle %}
+          <p class="timeline__subtitle">{{ ch.subtitle }}</p>
+          {%- endif %}
+          {%- for para in ch.text.split("\n\n") %}
+          <p>{{ para | safe }}</p>
+          {%- endfor %}
         </div>
       </li>
       {%- endfor %}
@@ -77,7 +82,9 @@ page_path: about/
             <p class="timeline__year">{{ ch.year or "" }}</p>
             <div>
               <h4>{{ ch.title }}</h4>
-              <p>{{ ch.text }}</p>
+              {%- for para in ch.text.split("\n\n") %}
+              <p>{{ para | safe }}</p>
+              {%- endfor %}
             </div>
           </li>
           {%- endfor %}

@@ -1,8 +1,8 @@
 {
  "zh-tw": {
   "aria": "八個畫面",
-  "title": "廠務可以監測的八個畫面（AI 智能預警系統）",
-  "sub": "整廠俯瞰 → RMS振動總量連續監測 → 振動值的時間序列分析 → 警報通知 → 維修工單 → 生產履歷 → 零件庫存 → 預算分析。",
+  "title": "原廠優勢（AI 智能預警系統）",
+  "sub": "整廠俯瞰 → RMS 振動總量連續監測 → 頻譜時幅分析 → 警報通知（原廠初步判定損壞原因）→ 維修工單（原廠服務）→ 生產履歷（原廠判定標準）→ 零件庫存（原廠即時提供）→ 預算分析。",
   "img_alt": "虛擬廠房示意：樓頂風機系統 FAN-01 至 FAN-07",
   "c1": {
    "t": "整廠俯瞰",
@@ -10,25 +10,25 @@
    "cap": "您廠裡每一台風機都在系統裡"
   },
   "c2": {
-   "t": "RMS振動總量連續監測",
+   "t": "RMS 振動總量連續監測",
    "chip": "全廠·連續",
    "cap": "看板式連續監測每一台風機",
    "eyebrow": "LIVE · 全廠看板",
    "live": "● 連續監測"
   },
   "c3": {
-   "t": "振動值的時間序列分析",
-   "chip": "30日·演變",
-   "cap": "ISO 10816-3 三區門檻自動標示",
-   "eyebrow": "30 DAY TREND · RMS mm/s",
-   "warn": "↗ Zone B 接近",
-   "ago": "30 日前",
-   "today": "今日"
+   "t": "頻譜時幅分析",
+   "chip": "FFT·波形",
+   "cap": "頻譜找出異常頻率，時域波形確認衝擊",
+   "eyebrow": "SPECTRUM · mm/s",
+   "warn": "↗ 軸承頻率升高",
+   "ago": "頻譜（Hz）",
+   "today": "時域波形（ms）"
   },
   "c4": {
    "t": "警報通知",
    "chip": "自動·推播",
-   "cap": "Email / Line / SMS 多管道通知值班",
+   "cap": "Email、LINE、簡訊多管道通知值班",
    "open": "3 件未處理",
    "faults": [
     "軸承異常",
@@ -44,7 +44,7 @@
   "c5": {
    "t": "維修工單",
    "chip": "派工·記錄",
-   "cap": "團隊 / 預定日 / 故障描述全部帶入",
+   "cap": "團隊、預定日、故障描述全部帶入",
    "ticket": "維修工單 · WO-2026-0001",
    "pill": "派工中",
    "fault": "軸承異常",
@@ -59,7 +59,7 @@
   "c6": {
    "t": "生產履歷",
    "chip": "履歷·全週期",
-   "cap": "出廠 / 安裝 / 保養 / 故障 / 換件",
+   "cap": "出廠、安裝、保養、故障、換件",
    "eyebrow": "FAN-03 · 8 年履歷",
    "eyebrow2": "12 次保養 · 2 次故障",
    "ev": [
@@ -89,13 +89,13 @@
    "items": [
     "馬達端軸承",
     "皮帶 B-86",
-    "風葉輪"
+    "葉輪"
    ]
   },
   "c8": {
    "t": "預算分析",
-   "chip": "ROI·12月",
-   "cap": "12 月預算曲線、ROI 計算",
+   "chip": "ROI·12 個月",
+   "cap": "12 個月預算曲線、ROI 計算",
    "eyebrow": "12 個月支出趨勢",
    "l_month": "本月",
    "l_saved": "累計節省"
@@ -136,12 +136,12 @@
    ],
    "tl": [
     {
-     "head": "備件到貨",
+     "head": "備品到貨",
      "body": "SKF 6310-2RS ×2"
     },
     {
      "head": "停機檢修",
-     "body": "排氣 4 號線 · 預計 6 hr"
+     "body": "排氣 4 號線 · 預計 6 小時"
     },
     {
      "head": "軸承更換完成",
@@ -176,13 +176,13 @@
    "live": "● 连续监测"
   },
   "c3": {
-   "t": "振动值的时间序列分析",
-   "chip": "30日·演变",
-   "cap": "ISO 10816-3 三区阈值自动标示",
-   "eyebrow": "30 DAY TREND · RMS mm/s",
-   "warn": "↗ Zone B 接近",
-   "ago": "30 日前",
-   "today": "今日"
+   "t": "频谱时域分析",
+   "chip": "FFT·波形",
+   "cap": "频谱找出异常频率，时域波形确认冲击",
+   "eyebrow": "SPECTRUM · mm/s",
+   "warn": "↗ 轴承频率升高",
+   "ago": "频谱（Hz）",
+   "today": "时域波形（ms）"
   },
   "c4": {
    "t": "报警通知",
@@ -335,13 +335,13 @@
    "live": "● Continuous"
   },
   "c3": {
-   "t": "Vibration time-series",
-   "chip": "30 days·trend",
-   "cap": "ISO 10816-3 zones marked automatically",
-   "eyebrow": "30 DAY TREND · RMS mm/s",
-   "warn": "↗ Nearing Zone B",
-   "ago": "30 days ago",
-   "today": "today"
+   "t": "Spectrum & time waveform",
+   "chip": "FFT·waveform",
+   "cap": "The spectrum finds the fault frequency; the waveform confirms the impacts",
+   "eyebrow": "SPECTRUM · mm/s",
+   "warn": "↗ Bearing frequency rising",
+   "ago": "Spectrum (Hz)",
+   "today": "Time waveform (ms)"
   },
   "c4": {
    "t": "Alert notifications",
@@ -494,13 +494,13 @@
    "live": "● 常時監視"
   },
   "c3": {
-   "t": "振動値の時系列分析",
-   "chip": "30日·推移",
-   "cap": "ISO 10816-3 の3ゾーンしきい値を自動表示",
-   "eyebrow": "30 DAY TREND · RMS mm/s",
-   "warn": "↗ Zone B に接近",
-   "ago": "30 日前",
-   "today": "本日"
+   "t": "スペクトル・時間波形分析",
+   "chip": "FFT·波形",
+   "cap": "スペクトルで異常周波数を特定し、時間波形で衝撃を確認",
+   "eyebrow": "SPECTRUM · mm/s",
+   "warn": "↗ 軸受周波数が上昇",
+   "ago": "スペクトル（Hz）",
+   "today": "時間波形（ms）"
   },
   "c4": {
    "t": "警報通知",

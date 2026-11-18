@@ -93,6 +93,7 @@
       {
         "year": "2026",
         "title": "Founding D-SENG in Zhubei",
+        "subtitle": "Rooted in Industry, Leading the Future with Intelligence",
         "text": "In 2026, D-SENG Technology was founded in Zhubei, Hsinchu, bringing together our affiliate Gold Stone's deep roots in semiconductor facility systems and materials with our team's hands-on experience in rotating equipment maintenance and AI monitoring. We provide rotating equipment maintenance, AI early-warning monitoring, air compressors, AI vision-guided smart welding, semiconductor materials, and monitoring engineering. Guided by practical innovation, AI-led technology, sustainable development, and integrity, we help customers keep every facility running with greater confidence and longevity."
       }
     ],
@@ -148,12 +149,10 @@
     "org_title": "Organization",
     "org": {
       "t": "President",
-      "n": "Yu Ting-Wei",
       "k": "top",
       "c": [
         {
           "t": "Vice President",
-          "n": "Hung Kuo-Che",
           "k": "top",
           "c": [
             {
@@ -290,10 +289,9 @@
       },
       {
         "title": "Stainless Steel Fittings",
-        "text": "From bend, forged, and micro fittings to VCR, compression, and cylinder fittings, we represent multiple brands from Japan, the U.S., and Korea to meet every connection need in gas and chemical system piping.",
+        "text": "From elbows and fittings to VCR, compression, and cylinder fittings, we represent multiple brands from Japan, the U.S., and Korea to meet every connection need in gas and chemical system piping.",
         "items": [
-          "Bend Fittings",
-          "Forged & Micro Fittings",
+          "Elbow and Fittings",
           "VCR Fittings & Compression Fittings",
           "Cylinder Fittings",
           "Presslok Press Fittings"
@@ -372,86 +370,6 @@
     "others_title": "Other Business Areas",
     "back": "Back to Business",
     "items": [
-      {
-        "id": "rotating",
-        "title": "Rotating Equipment Maintenance",
-        "nav": "Rotating Equipment Service",
-        "summary": "Scheduled maintenance, vibration measurement, troubleshooting, and maintenance records for rotating equipment such as facility exhaust fans, blowers, and air compressors, reducing the risk of unplanned downtime.",
-        "body": [
-          "Exhaust fans, blowers, and air compressors run continuously for long periods in the facility systems of semiconductor and high-tech fabs, and the condition of their bearings, couplings, belts, and vibration isolators directly affects equipment availability and site safety. The D-SENG Technology team has hands-on experience in fan design, manufacturing, and repair; we plan scheduled maintenance based on equipment type and operating conditions, carried out on site by professional maintenance technicians.",
-          "Equipment can still develop faults after routine maintenance. Common causes include poor bearing housing mounting, wear on shaft surfaces, and misalignment after bearing replacement; faults and damage are often linked to a lack of long-term monitoring and maintenance that is not properly carried out, rather than component life alone. That is why our maintenance goes beyond lubrication and replacement, tying inspection, measurement, and record-keeping into a traceable process.",
-          "Each unit has its own maintenance card and inspection records, documenting lubricant changes, grease quantities, vibration measurements, and corrective actions. Maintenance data can be uploaded to the cloud for trend comparison and predictive analysis; combined with our AI early-warning and monitoring service, planned maintenance shutdowns can be scheduled based on actual equipment condition, preventing damage from escalating."
-        ],
-        "sections": [
-          {
-            "title": "Routine Maintenance | Every 40 Days",
-            "text": "The year is divided into 9 maintenance cycles. Each cycle renews the bearing lubricant and completes basic operating checks.",
-            "list": [
-              "Metered bearing lubrication with an electronic grease gun",
-              "Vibration and abnormal noise checks",
-              "Fan level check",
-              "Vibration isolator check",
-              "Visual inspection of couplings or belts"
-            ]
-          },
-          {
-            "title": "Cycle 9 | Full Static and Dynamic Inspection",
-            "text": "The final cycle of the year is upgraded to a full inspection and maintenance, with worn parts replaced as needed.",
-            "list": [
-              "Complete replacement of lubricant inside bearings",
-              "Inspect shaft seals for damage and replace as needed",
-              "Check coupling lubricant and top up if low",
-              "Inspect inlet and outlet flexible connectors for damage or misalignment",
-              "Check vibration isolators for level and corrosion",
-              "Check bearing grease nipple ball springs for failure",
-              "Inspect belts for cracks or slack",
-              "Lubricate bearings, motor, and adjustment screws"
-            ]
-          },
-          {
-            "title": "Scheduled Air Compressor Maintenance",
-            "text": "Air compressors operate under high temperature and pressure for long periods, and their components wear over time. We schedule regular maintenance and consumable replacement based on model and operating hours, and manage it in the equipment maintenance history just as we do for fans.",
-            "list": [
-              "Scheduled maintenance by operating hours (2,000 / 4,000 / 8,000 / 16,000 hours for Ingersoll Rand models)",
-              "Genuine OEM maintenance kits and parts",
-              "Maintenance and replacement records added to the equipment history",
-              "Optional AI early-warning monitoring for preventive maintenance"
-            ]
-          },
-          {
-            "title": "Vibration Measurement & Written Reports",
-            "text": "Vibration is measured every 3 maintenance visits (about every 120 days), with results compiled into a written report.",
-            "list": [
-              "Record vibration values and bearing temperatures",
-              "Compare with historical data to show changes in equipment condition",
-              "Explain causes of anomalies and recommend part replacements",
-              "Measured with a spectrum analyzer and electronic stethoscope"
-            ]
-          },
-          {
-            "title": "Troubleshooting & Maintenance History",
-            "text": "When equipment malfunctions, we follow a fault diagnosis, root cause analysis, and troubleshooting process, and add the maintenance and corrective action details to the equipment history.",
-            "list": [
-              "Fan maintenance checklist: 9-cycle maintenance with sign-off fields",
-              "Maintenance cards record unit and motor numbers and bearing models",
-              "Dedicated maintenance record file for each unit",
-              "Maintenance data uploaded to the cloud for trend and predictive analysis"
-            ]
-          }
-        ],
-        "points": [
-          "Scheduled maintenance for fans and air compressors",
-          "Fan maintenance cycle every 40 days",
-          "Vibration measurement about every 120 days",
-          "Written measurement reports",
-          "Dedicated maintenance cards and inspection records",
-          "Optional AI early-warning monitoring"
-        ],
-        "brands": [],
-        "image": null,
-        "image_alt": null,
-        "gallery": []
-      },
       {
         "id": "ai_monitoring",
         "title": "AI Early Warning & Monitoring",
@@ -537,14 +455,18 @@
             "title": "Oil-Free Rotary Screw Compressor Range",
             "text": "We offer multiple series of Ingersoll Rand oil-free rotary screw compressors by power rating and operating requirements, each available as fixed-speed or VSD models with air-cooled or water-cooled configurations.",
             "list": [
-              "Nirvana 37–75 kW: hybrid permanent magnet motor VSD models",
+              "Nirvana 37–45 kW: hybrid permanent magnet motor VSD models",
+              "Nirvana 55–75 kW: hybrid permanent magnet motor VSD models",
               "E-Series 90–160 kW: IE5 ultra-premium efficiency VSD motor",
-              "E-Series 185–355 kW: modular airend, high-flow design"
+              "E-Series 185–355 kW: modular airend, high-flow design",
+              "E-Series 355–500 kW: high-power models for large air demand"
             ],
             "links": [
-              "https://www.ingersollrand.com/en-apac/products/air-compressors/oil-free-air-compressors/nirvana-37-45-kw-50-60-hp/",
-              "https://www.ingersollrand.com/en-apac/products/air-compressors/oil-free-air-compressors/e-series-90-160-kw/",
-              "https://www.ingersollrand.com/en-apac/products/air-compressors/oil-free-air-compressors/e-series-185-355-kw/"
+              "https://www.ingersollrand.com/zh-apac/products/air-compressors/",
+              "https://www.ingersollrand.com/zh-apac/products/air-compressors/",
+              "https://www.ingersollrand.com/zh-apac/products/air-compressors/",
+              "https://www.ingersollrand.com/zh-apac/products/air-compressors/",
+              "https://www.ingersollrand.com/zh-apac/products/air-compressors/"
             ]
           },
           {
@@ -695,12 +617,12 @@
             "caption": "Automated welding in progress"
           },
           {
-            "src": "welding/elbow_seam",
-            "caption": "Weld seam on an automatically welded elbow"
+            "src": "welding/tee_seam",
+            "caption": "Weld seam on an automatically welded tee"
           },
           {
-            "src": "welding/workcell_layout",
-            "caption": "Layout of a fully automated elbow welding cell"
+            "src": "welding/elbow_seam",
+            "caption": "Weld seams on automatically welded elbows"
           }
         ]
       },
@@ -762,12 +684,15 @@
           }
         ],
         "points": [
-          "Encapsulated butyl rubber duct gaskets",
-          "Acid- and alkali-resistant, airtight, no sagging",
-          "Ground-level assembly reduces work at height",
-          "Nano conductive gel protects electrical contacts",
-          "High-purity stainless steel tubing and valves",
-          "Gas and liquid piping and ductwork engineering"
+          "Safety first: installed at ground level, no more work at height",
+          "Lower cost: fewer annual-shutdown and emergency duct replacements",
+          "Less hazard: fewer liquid and gas leaks, less risk to tools and people",
+          "Chemical filter savings: less chemical gas and liquid contamination, fewer filter changes",
+          "More capacity: fewer duct replacements, production equipment keeps running",
+          "Higher yield: fewer cleanroom duct leaks and airborne contamination sources",
+          "Best airtightness: ducts measured at 5 kg/cm²",
+          "Best acid and alkali resistance: verified by a national-level laboratory",
+          "Best aging resistance: verified by a rubber laboratory"
         ],
         "brands": [],
         "image": "materials.jpg",
@@ -858,6 +783,86 @@
           "Monitoring item and point planning",
           "System installation and construction",
           "Testing and acceptance to specifications"
+        ],
+        "brands": [],
+        "image": null,
+        "image_alt": null,
+        "gallery": []
+      },
+      {
+        "id": "rotating",
+        "title": "Rotating Equipment Maintenance",
+        "nav": "Rotating Equipment Service",
+        "summary": "Scheduled maintenance, vibration measurement, troubleshooting, and maintenance records for rotating equipment such as facility exhaust fans, blowers, and air compressors, reducing the risk of unplanned downtime.",
+        "body": [
+          "Exhaust fans, blowers, and air compressors run continuously for long periods in the facility systems of semiconductor and high-tech fabs, and the condition of their bearings, couplings, belts, and vibration isolators directly affects equipment availability and site safety. The D-SENG Technology team has hands-on experience in fan design, manufacturing, and repair; we plan scheduled maintenance based on equipment type and operating conditions, carried out on site by professional maintenance technicians.",
+          "Equipment can still develop faults after routine maintenance. Common causes include poor bearing housing mounting, wear on shaft surfaces, and misalignment after bearing replacement; faults and damage are often linked to a lack of long-term monitoring and maintenance that is not properly carried out, rather than component life alone. That is why our maintenance goes beyond lubrication and replacement, tying inspection, measurement, and record-keeping into a traceable process.",
+          "Each unit has its own maintenance card and inspection records, documenting lubricant changes, grease quantities, vibration measurements, and corrective actions. Maintenance data can be uploaded to the cloud for trend comparison and predictive analysis; combined with our AI early-warning and monitoring service, planned maintenance shutdowns can be scheduled based on actual equipment condition, preventing damage from escalating."
+        ],
+        "sections": [
+          {
+            "title": "Routine Maintenance | Every 40 Days",
+            "text": "The year is divided into 9 maintenance cycles. Each cycle renews the bearing lubricant and completes basic operating checks.",
+            "list": [
+              "Metered bearing lubrication with an electronic grease gun",
+              "Vibration and abnormal noise checks",
+              "Fan level check",
+              "Vibration isolator check",
+              "Visual inspection of couplings or belts"
+            ]
+          },
+          {
+            "title": "Cycle 9 | Full Static and Dynamic Inspection",
+            "text": "The final cycle of the year is upgraded to a full inspection and maintenance, with worn parts replaced as needed.",
+            "list": [
+              "Complete replacement of lubricant inside bearings",
+              "Inspect shaft seals for damage and replace as needed",
+              "Check coupling lubricant and top up if low",
+              "Inspect inlet and outlet flexible connectors for damage or misalignment",
+              "Check vibration isolators for level and corrosion",
+              "Check bearing grease nipple ball springs for failure",
+              "Inspect belts for cracks or slack",
+              "Lubricate bearings, motor, and adjustment screws"
+            ]
+          },
+          {
+            "title": "Scheduled Air Compressor Maintenance",
+            "text": "Air compressors operate under high temperature and pressure for long periods, and their components wear over time. We schedule regular maintenance and consumable replacement based on model and operating hours, and manage it in the equipment maintenance history just as we do for fans.",
+            "list": [
+              "Scheduled maintenance by operating hours (2,000 / 4,000 / 8,000 / 16,000 hours for Ingersoll Rand models)",
+              "Genuine OEM maintenance kits and parts",
+              "Maintenance and replacement records added to the equipment history",
+              "Optional AI early-warning monitoring for preventive maintenance"
+            ]
+          },
+          {
+            "title": "Vibration Measurement & Written Reports",
+            "text": "Vibration is measured every 3 maintenance visits (about every 120 days), with results compiled into a written report.",
+            "list": [
+              "Record vibration values and bearing temperatures",
+              "Compare with historical data to show changes in equipment condition",
+              "Explain causes of anomalies and recommend part replacements",
+              "Measured with a spectrum analyzer and electronic stethoscope"
+            ]
+          },
+          {
+            "title": "Troubleshooting & Maintenance History",
+            "text": "When equipment malfunctions, we follow a fault diagnosis, root cause analysis, and troubleshooting process, and add the maintenance and corrective action details to the equipment history.",
+            "list": [
+              "Fan maintenance checklist: 9-cycle maintenance with sign-off fields",
+              "Maintenance cards record unit and motor numbers and bearing models",
+              "Dedicated maintenance record file for each unit",
+              "Maintenance data uploaded to the cloud for trend and predictive analysis"
+            ]
+          }
+        ],
+        "points": [
+          "Scheduled maintenance for fans and air compressors",
+          "Fan maintenance cycle every 40 days",
+          "Vibration measurement about every 120 days",
+          "Written measurement reports",
+          "Dedicated maintenance cards and inspection records",
+          "Optional AI early-warning monitoring"
         ],
         "brands": [],
         "image": null,

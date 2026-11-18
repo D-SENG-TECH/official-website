@@ -49,6 +49,20 @@
 }
 .aimon .am-sweetspot-fan3d img {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block;
+  /* Linked to the chart: sweetspot.js sets --ss-amp (px) from the vibration reading. Scaled up a touch so the shake never shows an edge. */
+  transform: scale(1.03); animation: am-sweetspot-shake .11s linear infinite; will-change: transform;
+}
+/* Heat on the bearing housing (the red block in the render); --ss-heat runs 0 to 1 with the same reading. */
+.aimon .am-sweetspot-fan3d::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
+  background: radial-gradient(circle at 62% 60%, rgba(255,120,60,.85), rgba(255,80,40,.35) 9%, transparent 22%);
+  opacity: var(--ss-heat, 0);
+}
+@keyframes am-sweetspot-shake {
+  0%, 100% { transform: scale(1.03) translate(0, 0); }
+  25% { transform: scale(1.03) translate(calc(var(--ss-amp, 0px) * -1), calc(var(--ss-amp, 0px) * .6)); }
+  50% { transform: scale(1.03) translate(calc(var(--ss-amp, 0px) * .8), calc(var(--ss-amp, 0px) * -.7)); }
+  75% { transform: scale(1.03) translate(calc(var(--ss-amp, 0px) * -.5), calc(var(--ss-amp, 0px) * -.4)); }
 }
 .aimon .am-sweetspot-chart-foot { font-size: clamp(11.5px, 1.2vw, 14px); color: #9fa89f; line-height: 1.5; }
 .aimon .am-sweetspot-chart-foot b { color: #e8b4aa; }
@@ -139,4 +153,5 @@
 @media (prefers-reduced-motion: reduce) {
   .aimon .am-sweetspot.is-armed .am-sweetspot-reveal { opacity: 1; transform: none; transition: none; }
   .aimon .am-sweetspot-op-ring { animation: none; opacity: 0; }
+  .aimon .am-sweetspot-fan3d img { animation: none; }
 }

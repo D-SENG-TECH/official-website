@@ -278,6 +278,9 @@ a { color: inherit; }
 .card__link a { color: var(--blue); font-weight: 500; }
 
 .split { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
+.home-story__photo { justify-self: end; width: 100%; max-width: 420px; margin: 0; }
+.home-story__photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; border-radius: 8px; }
+.home-story__photo figcaption { margin-top: 10px; color: var(--muted); font-size: 14px; }
 .mini-timeline { list-style: none; border-left: 2px solid var(--line); }
 .mini-timeline li { position: relative; padding: 0 0 18px 24px; font-weight: 500; }
 .mini-timeline li::before {
@@ -307,6 +310,7 @@ a { color: inherit; }
 }
 .timeline__year { color: var(--orange-ink); font-size: 28px; font-weight: 700; line-height: 1.2; }
 .timeline__item h3 { font-size: 22px; color: var(--navy); }
+.timeline__item .timeline__subtitle { margin-top: 6px; color: var(--orange-ink); font-size: 18px; font-weight: 700; }
 .timeline__item p { margin-top: 10px; max-width: 44em; }
 .timeline__item h4 { font-size: 20px; color: var(--navy); }
 .story { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(40px, 5vw, 80px); align-items: start; }
@@ -381,6 +385,9 @@ a { color: inherit; }
 .biz__text h2 { margin-bottom: 16px; }
 .biz__text > p + p { margin-top: 14px; }
 .biz__image { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+.biz__stage { position: relative; overflow: hidden; background: #061426; touch-action: pan-y; cursor: grab; }
+.biz__stage > img, .biz__stage > canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+.biz__stage.is-live > img { display: none; }
 .points { margin-top: 22px; display: grid; gap: 8px; }
 .points li { position: relative; padding-left: 22px; font-weight: 500; }
 .points li::before { content: ""; position: absolute; left: 2px; top: 0.62em; width: 10px; height: 3px; background: var(--orange); }
@@ -705,6 +712,7 @@ a { color: inherit; }
   .biz__inner { grid-template-columns: 1fr; gap: 32px; }
   .hero__inner { padding-block: 48px; }
   .story__photo { position: static; order: -1; max-width: 560px; }
+  .home-story__photo { justify-self: start; }
   .cards { grid-template-columns: repeat(2, 1fr); }
   .product, .product--main { grid-column: span 3; }
   .gs-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }

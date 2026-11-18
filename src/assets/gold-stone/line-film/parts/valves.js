@@ -160,7 +160,7 @@ function lobes(n, R, e, p, N = 280) {
   return out;
 }
 
-/* ------------------------------------------------------------------ 伸縮囊閥 */
+/* ------------------------------------------------------------------ 波紋管閥 */
 // Hero: Y-pattern weld-end bellows valve with black spoked handwheel (bonnet at 45°).
 // Variant: slim angled valve with tube stubs and a white lobed knob.
 // A window in the back of the hero bonnet (not visible from the front) shows the bellows.
@@ -402,7 +402,7 @@ function buildCheck(THREE, M) {
 }
 
 export const items = [
-  { id: "bellows_valve", title: "伸縮囊閥", build: buildBellows },
+  { id: "bellows_valve", title: "波紋管閥", build: buildBellows },
   { id: "diaphragm_valve", title: "隔膜閥", build: buildDiaphragm },
   { id: "ball_valve", title: "球閥", build: buildBall },
   { id: "check_valve", title: "逆止閥", build: buildCheck },
