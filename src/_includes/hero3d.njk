@@ -1,10 +1,12 @@
 {#- 3D showroom hero: shared by the home page and /temp/showroom/. Expects `t` (the language's strings). -#}
 {%- set pa = t.product_animation -%}
 {#- Full-bleed 3D showroom: all five products in one scene. Idle shows the headline and a Play button;
-    playing hides them and shows a caption per product. Without WebGL the photo stays as the backdrop. -#}
+    playing hides them and shows a caption per product. The photo is shown only without WebGL or if loading fails. -#}
 <section class="hero hero--3d" id="hero3d" aria-label="{{ t.home.stage_label }}">
   <div class="hero3d__stage" id="hero3d-stage"></div>
   <img class="hero3d__fallback" src="/assets/equipment.jpg" width="683" height="452" alt="{{ t.home.image_alt }}">
+  {#- While the 3D scene loads, the photo stays hidden (it is only the fallback for no WebGL / load failure). -#}
+  <script>try { if (document.createElement("canvas").getContext("webgl2")) document.getElementById("hero3d").classList.add("is-loading"); } catch (e) {}</script>
   <div class="hero3d__shade"></div>
   <div class="hero3d__intro">
     <p class="hero__eyebrow">{{ t.home.eyebrow }}</p>
@@ -75,6 +77,7 @@
         // keep the subject clear of the text: desktop -> right of the text column, portrait -> above the text
         shift: (aspect, playing) => (aspect >= 1.2 ? [0.17 - 0.03 * playing, 0.12 - 0.1 * playing] : aspect < 0.8 ? [0, 0.27 - 0.11 * playing] : [0, 0.14]),
       });
+      el.classList.remove("is-loading");
       el.classList.add("is-ready");
       el.querySelectorAll("[hidden]").forEach((n) => (n.hidden = false));
       document.getElementById("hero3d-play").addEventListener("click", () => { narr.start(); hero.play(); });
@@ -83,6 +86,7 @@
       document.getElementById("hero3d-mute").addEventListener("click", () => narr.toggleMute());
     } catch (err) {
       console.warn("3D hero unavailable", err);
+      el.classList.remove("is-loading"); // show the photo instead
     }
   }
 </script>

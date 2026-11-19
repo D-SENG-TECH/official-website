@@ -30,11 +30,12 @@
       {%- endif %}
     </div>
     {%- if stage_scene %}
-    {#- Live 3D scene (the one from the product animation). The photo stays underneath as the fallback
-        when WebGL or JavaScript is unavailable. -#}
+    {#- Live 3D scene (the one from the product animation). The photo is the fallback when WebGL or
+        JavaScript is unavailable or loading fails; it stays hidden while the scene loads. -#}
     <div class="biz__image biz__stage" id="biz-stage" role="img" aria-label="{{ item.image_alt }}">
       <img src="/assets/business/{{ item.image }}" alt="">
     </div>
+    <script>try { if (document.createElement("canvas").getContext("webgl2")) document.getElementById("biz-stage").classList.add("is-loading"); } catch (e) {}</script>
     {%- elif item.image %}
     <img class="biz__image" src="/assets/business/{{ item.image }}" alt="{{ item.image_alt }}">
     {%- endif %}
@@ -142,7 +143,8 @@
   try {
     const { startHero } = await import("/assets/product-animation/main.js");
     await startHero(stage, ["{{ stage_scene }}"], { base: "/assets/product-animation/", auto: false });
+    stage.classList.remove("is-loading");
     stage.classList.add("is-live");
-  } catch (e) { /* keep the photo */ }
+  } catch (e) { stage.classList.remove("is-loading"); /* show the photo */ }
 </script>
 {%- endif %}

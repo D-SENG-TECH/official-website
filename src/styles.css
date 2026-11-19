@@ -152,6 +152,14 @@ a { color: inherit; }
 .hero--3d.is-ready .hero3d__stage canvas { opacity: 1; }
 .hero3d__fallback { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; transition: opacity 1.2s; }
 .hero--3d.is-ready .hero3d__fallback { opacity: 0; }
+.hero--3d.is-loading .hero3d__fallback { opacity: 0; transition: none; }
+.hero--3d.is-loading .hero3d__stage::after, .biz__stage.is-loading::after {
+  content: ""; position: absolute; top: 50%; left: 50%; width: 36px; height: 36px; margin: -18px 0 0 -18px;
+  border: 3px solid rgb(255 255 255 / .18); border-top-color: var(--orange); border-radius: 50%;
+  animation: stage-spin .9s linear infinite;
+}
+@keyframes stage-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .hero--3d.is-loading .hero3d__stage::after, .biz__stage.is-loading::after { animation: none; } }
 .hero3d__shade { position: absolute; inset: 0; z-index: 2; pointer-events: none;
   background: linear-gradient(90deg, rgb(6 20 38 / .75) 0%, rgb(6 20 38 / .25) 38%, transparent 58%),
               linear-gradient(0deg, rgb(6 20 38 / .75) 0%, transparent 32%); }
@@ -358,7 +366,7 @@ a { color: inherit; }
 .biz__image { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
 .biz__stage { position: relative; overflow: hidden; background: #061426; touch-action: pan-y; cursor: grab; }
 .biz__stage > img, .biz__stage > canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
-.biz__stage.is-live > img { display: none; }
+.biz__stage.is-live > img, .biz__stage.is-loading > img { display: none; }
 .points { margin-top: 22px; display: grid; gap: 8px; }
 .points li { position: relative; padding-left: 22px; font-weight: 500; }
 .points li::before { content: ""; position: absolute; left: 2px; top: 0.62em; width: 10px; height: 3px; background: var(--orange); }
