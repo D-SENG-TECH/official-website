@@ -25,6 +25,10 @@ page_path: profile/
       <img class="pf-cover__logo pf-cover__logo--print" src="/assets/logo.svg" width="2246" height="512" alt="">
       <div class="pf-cover__main">
         <p class="pf-eyebrow">{{ p.cover_eyebrow }}</p>
+        {#- Document name on the cover; skipped where the eyebrow already says it (English). -#}
+        {%- if (p.title | upper) not in (p.cover_eyebrow | upper) %}
+        <p class="pf-cover__doc">{{ p.title }}</p>
+        {%- endif %}
         <h1 class="pf-cover__title"><span>{{ t.home.headline_a | replace("・", "") }}</span><span class="pf-gold">{{ t.home.headline_b }}</span></h1>
         <p class="pf-cover__desc">{{ t.meta.og_description }}</p>
       </div>

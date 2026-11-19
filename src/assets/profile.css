@@ -38,6 +38,7 @@
 .pf-eyebrow { font-size: 14px; letter-spacing: .24em; color: var(--pf-gold); font-weight: 700; margin-bottom: 24px; }
 .pf-cover__title { font-size: clamp(38px, 7vw, 96px); line-height: 1.12; font-weight: 700; letter-spacing: .02em; }
 .pf-cover__title span { display: block; }
+.pf-cover__doc { margin: 14px 0 18px; font-size: clamp(22px, 2.6vw, 34px); font-weight: 700; letter-spacing: .3em; }
 .pf-cover__desc { margin-top: 28px; max-width: 40em; font-size: clamp(16px, 1.5vw, 20px); line-height: 1.8; color: rgba(255,255,255,.78); }
 .pf-cover__foot { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; border-top: 1px solid rgba(255,255,255,.2); padding-top: 24px; }
 .pf-cover__names strong { display: block; font-size: 20px; letter-spacing: .06em; }
@@ -272,6 +273,7 @@
   .pf-cover__inner { width: 100%; min-height: 0; height: 100%; padding: 12mm 4mm 6mm; }
   .pf-cover__logo { width: 62mm; }
   .pf-cover__title { font-size: 44pt; }
+  .pf-cover__doc { font-size: 20pt; color: var(--pf-navy); margin: 5mm 0 7mm; }
   .pf-cover__desc { font-size: 12pt; }
   .pf-cover__names strong { font-size: 14pt; }
 
