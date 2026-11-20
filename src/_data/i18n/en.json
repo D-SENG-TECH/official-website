@@ -219,6 +219,86 @@
     "back": "Back to Business",
     "items": [
       {
+        "id": "rotating",
+        "title": "Air Compressor & Fan Maintenance (One-Stop)",
+        "nav": "Maintenance",
+        "summary": "As semiconductor capacity expands rapidly, demand for air compressor and fan maintenance is growing with it. D-SENG brings together the technical teams of Ingersoll Rand and the fan's original manufacturer to provide one-stop professional maintenance and repair for air compressors and fans.",
+        "body": [
+          "Exhaust fans, blowers, and air compressors run continuously for long periods in the facility systems of semiconductor and high-tech fabs, and the condition of their bearings, couplings, belts, and vibration isolators directly affects equipment availability and site safety. The D-SENG Technology team has 40 years of hands-on experience in fan design, manufacturing, and repair; we plan scheduled maintenance based on equipment type and operating conditions, carried out on site by professional maintenance technicians.",
+          "Equipment can still develop faults after routine maintenance. Common causes include poor bearing housing mounting, wear on shaft surfaces, and misalignment after bearing replacement; faults and damage are often linked to a lack of long-term monitoring and maintenance that is not properly carried out, rather than component life alone. That is why our maintenance goes beyond lubrication and replacement, tying inspection, measurement, and record-keeping into a traceable process.",
+          "Each unit has its own maintenance card and inspection records, documenting lubricant changes, grease quantities, vibration measurements, and corrective actions. Maintenance data can be uploaded to the cloud for trend comparison and predictive analysis; combined with our AI early-warning and monitoring service, planned maintenance shutdowns can be scheduled based on actual equipment condition, preventing damage from escalating."
+        ],
+        "sections": [
+          {
+            "title": "Routine Maintenance | Every 40 Days",
+            "text": "The year is divided into 9 maintenance cycles. Each cycle renews the bearing lubricant and completes basic operating checks.",
+            "list": [
+              "Metered bearing lubrication with an electronic grease gun",
+              "Vibration and abnormal noise checks",
+              "Fan level check",
+              "Vibration isolator check",
+              "Visual inspection of couplings or belts"
+            ]
+          },
+          {
+            "title": "Cycle 9 | Full Static and Dynamic Inspection",
+            "text": "The final cycle of the year is upgraded to a full inspection and maintenance, with worn parts replaced as needed.",
+            "list": [
+              "Complete replacement of lubricant inside bearings",
+              "Inspect shaft seals for damage and replace as needed",
+              "Check coupling lubricant and top up if low",
+              "Inspect inlet and outlet flexible connectors for damage or misalignment",
+              "Check vibration isolators for level and corrosion",
+              "Check bearing grease nipple ball springs for failure",
+              "Inspect belts for cracks or slack",
+              "Lubricate bearings, motor, and adjustment screws"
+            ]
+          },
+          {
+            "title": "Scheduled Air Compressor Maintenance",
+            "text": "Air compressors operate under high temperature and pressure for long periods, and their components wear over time. We schedule regular maintenance and consumable replacement based on model and operating hours, and manage it in the equipment maintenance history just as we do for fans.",
+            "list": [
+              "Scheduled maintenance by operating hours (2,000 / 4,000 / 8,000 / 16,000 hours for Ingersoll Rand models)",
+              "Genuine OEM maintenance kits and parts",
+              "Maintenance and replacement records added to the equipment history",
+              "Optional AI early warning and monitoring for preventive maintenance"
+            ]
+          },
+          {
+            "title": "Vibration Measurement & Written Reports",
+            "text": "Vibration is measured every 3 maintenance visits (about every 120 days), with results compiled into a written report.",
+            "list": [
+              "Record vibration values and bearing temperatures",
+              "Compare with historical data to show changes in equipment condition",
+              "Explain causes of anomalies and recommend part replacements",
+              "Measured with a spectrum analyzer and electronic stethoscope"
+            ]
+          },
+          {
+            "title": "Troubleshooting & Maintenance History",
+            "text": "When equipment malfunctions, we follow a fault diagnosis, root cause analysis, and troubleshooting process, and add the maintenance and corrective action details to the equipment history.",
+            "list": [
+              "Fan maintenance checklist: 9-cycle maintenance with sign-off fields",
+              "Maintenance cards record unit and motor numbers and bearing models",
+              "Dedicated maintenance record file for each unit",
+              "Maintenance data uploaded to the cloud for trend and predictive analysis"
+            ]
+          }
+        ],
+        "points": [
+          "Scheduled maintenance for fans and air compressors",
+          "Fan maintenance cycle every 40 days",
+          "Vibration measurement about every 120 days",
+          "Written measurement reports",
+          "Dedicated maintenance cards and inspection records",
+          "Optional AI early warning and monitoring"
+        ],
+        "brands": [],
+        "image": null,
+        "image_alt": null,
+        "gallery": []
+      },
+      {
         "id": "ai_monitoring",
         "title": "AI Early Warning & Monitoring",
         "nav": "AI Monitoring System",
@@ -631,86 +711,6 @@
           "Monitoring item and point planning",
           "System installation and construction",
           "Testing and acceptance to specifications"
-        ],
-        "brands": [],
-        "image": null,
-        "image_alt": null,
-        "gallery": []
-      },
-      {
-        "id": "rotating",
-        "title": "Equipment Maintenance (One-Stop Service)",
-        "nav": "Maintenance",
-        "summary": "Scheduled maintenance, vibration measurement, troubleshooting, and maintenance records for rotating equipment such as facility exhaust fans, blowers, pumps, and air compressors, reducing the risk of unplanned downtime.",
-        "body": [
-          "Exhaust fans, blowers, and air compressors run continuously for long periods in the facility systems of semiconductor and high-tech fabs, and the condition of their bearings, couplings, belts, and vibration isolators directly affects equipment availability and site safety. The D-SENG Technology team has 40 years of hands-on experience in fan design, manufacturing, and repair; we plan scheduled maintenance based on equipment type and operating conditions, carried out on site by professional maintenance technicians.",
-          "Equipment can still develop faults after routine maintenance. Common causes include poor bearing housing mounting, wear on shaft surfaces, and misalignment after bearing replacement; faults and damage are often linked to a lack of long-term monitoring and maintenance that is not properly carried out, rather than component life alone. That is why our maintenance goes beyond lubrication and replacement, tying inspection, measurement, and record-keeping into a traceable process.",
-          "Each unit has its own maintenance card and inspection records, documenting lubricant changes, grease quantities, vibration measurements, and corrective actions. Maintenance data can be uploaded to the cloud for trend comparison and predictive analysis; combined with our AI early-warning and monitoring service, planned maintenance shutdowns can be scheduled based on actual equipment condition, preventing damage from escalating."
-        ],
-        "sections": [
-          {
-            "title": "Routine Maintenance | Every 40 Days",
-            "text": "The year is divided into 9 maintenance cycles. Each cycle renews the bearing lubricant and completes basic operating checks.",
-            "list": [
-              "Metered bearing lubrication with an electronic grease gun",
-              "Vibration and abnormal noise checks",
-              "Fan level check",
-              "Vibration isolator check",
-              "Visual inspection of couplings or belts"
-            ]
-          },
-          {
-            "title": "Cycle 9 | Full Static and Dynamic Inspection",
-            "text": "The final cycle of the year is upgraded to a full inspection and maintenance, with worn parts replaced as needed.",
-            "list": [
-              "Complete replacement of lubricant inside bearings",
-              "Inspect shaft seals for damage and replace as needed",
-              "Check coupling lubricant and top up if low",
-              "Inspect inlet and outlet flexible connectors for damage or misalignment",
-              "Check vibration isolators for level and corrosion",
-              "Check bearing grease nipple ball springs for failure",
-              "Inspect belts for cracks or slack",
-              "Lubricate bearings, motor, and adjustment screws"
-            ]
-          },
-          {
-            "title": "Scheduled Air Compressor Maintenance",
-            "text": "Air compressors operate under high temperature and pressure for long periods, and their components wear over time. We schedule regular maintenance and consumable replacement based on model and operating hours, and manage it in the equipment maintenance history just as we do for fans.",
-            "list": [
-              "Scheduled maintenance by operating hours (2,000 / 4,000 / 8,000 / 16,000 hours for Ingersoll Rand models)",
-              "Genuine OEM maintenance kits and parts",
-              "Maintenance and replacement records added to the equipment history",
-              "Optional AI early warning and monitoring for preventive maintenance"
-            ]
-          },
-          {
-            "title": "Vibration Measurement & Written Reports",
-            "text": "Vibration is measured every 3 maintenance visits (about every 120 days), with results compiled into a written report.",
-            "list": [
-              "Record vibration values and bearing temperatures",
-              "Compare with historical data to show changes in equipment condition",
-              "Explain causes of anomalies and recommend part replacements",
-              "Measured with a spectrum analyzer and electronic stethoscope"
-            ]
-          },
-          {
-            "title": "Troubleshooting & Maintenance History",
-            "text": "When equipment malfunctions, we follow a fault diagnosis, root cause analysis, and troubleshooting process, and add the maintenance and corrective action details to the equipment history.",
-            "list": [
-              "Fan maintenance checklist: 9-cycle maintenance with sign-off fields",
-              "Maintenance cards record unit and motor numbers and bearing models",
-              "Dedicated maintenance record file for each unit",
-              "Maintenance data uploaded to the cloud for trend and predictive analysis"
-            ]
-          }
-        ],
-        "points": [
-          "Scheduled maintenance for fans and air compressors",
-          "Fan maintenance cycle every 40 days",
-          "Vibration measurement about every 120 days",
-          "Written measurement reports",
-          "Dedicated maintenance cards and inspection records",
-          "Optional AI early warning and monitoring"
         ],
         "brands": [],
         "image": null,
