@@ -33,7 +33,7 @@
   display: flex; flex-direction: column; justify-content: space-between;
   gap: 48px; padding-block: clamp(32px, 5vw, 64px);
 }
-.pf-cover__logo { width: clamp(180px, 22vw, 300px); height: auto; }
+.pf-cover__logo { width: clamp(120px, 13vw, 190px); height: auto; }
 .profile .pf-cover__logo--print { display: none; }
 .pf-eyebrow { font-size: 14px; letter-spacing: .24em; color: var(--pf-gold); font-weight: 700; margin-bottom: 24px; }
 .pf-cover__title { font-size: clamp(38px, 7vw, 96px); line-height: 1.12; font-weight: 700; letter-spacing: .02em; }
@@ -195,7 +195,7 @@
 .pf-contact__list dt { color: var(--pf-gold-ink); font-weight: 700; font-size: 14px; }
 .pf-contact__list dd { overflow-wrap: anywhere; }
 .pf-contact__list a { text-decoration: none; }
-.pf-contact__logo img { width: min(260px, 70%); margin-inline: auto; }
+.pf-contact__logo img { width: min(200px, 60%); margin-inline: auto; }
 .pf-webnote { margin-top: 48px; font-size: 13px; color: var(--pf-muted); }
 .pf-webnote a { text-decoration: none; font-weight: 700; color: var(--pf-navy); overflow-wrap: anywhere; }
 
@@ -263,7 +263,7 @@
   .pf-cover__foot { border-top: 0.4mm solid var(--pf-gold); }
   .pf-cover__names span { color: var(--pf-muted); }
   .pf-cover__inner { width: 100%; min-height: 0; height: 100%; padding: 12mm 4mm 6mm; }
-  .pf-cover__logo { width: 62mm; }
+  .pf-cover__logo { width: 42mm; }
   .pf-cover__title { font-size: 44pt; }
   .pf-cover__doc { font-size: 20pt; color: var(--pf-navy); margin: 5mm 0 7mm; }
   .pf-cover__desc { font-size: 12pt; }
@@ -372,6 +372,6 @@
 
   .pf-contact__grid { grid-template-columns: 1fr 55mm; gap: 12mm; }
   .pf-contact__list div { break-inside: avoid; }
-  .pf-contact__logo img { width: 48mm; }
+  .pf-contact__logo img { width: 42mm; }
   .pf-webnote { margin-top: 14mm; font-size: 9pt; }
 }
