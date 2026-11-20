@@ -1,7 +1,7 @@
 {
   "meta": {
     "site_name": "D-SENG Technology",
-    "default_description": "D-SENG Technology serves the semiconductor industry with efficient, reliable, and intelligent equipment and services, including equipment maintenance, AI early warning and monitoring, air compressors, smart vision robotic arms, semiconductor materials, and monitoring engineering.",
+    "default_description": "D-SENG Technology serves the semiconductor industry with efficient, reliable, and intelligent equipment and services, including air compressor and fan maintenance, AI early warning and monitoring, air compressors, smart vision robotic arms, semiconductor materials, and monitoring engineering.",
     "og_description": "Smart-Driven, Innovating the Future. Smart equipment × AI technology × green sustainability, creating new value for the semiconductor industry."
   },
   "common": {
@@ -90,7 +90,7 @@
         "year": "2026",
         "title": "Founding D-SENG Technology in Zhubei",
         "subtitle": "Rooted in Industry, Leading the Future with Intelligence",
-        "text": "<strong>D-SENG TECHNOLOGY CO., LTD.</strong> was founded in 2026 in Zhubei, Hsinchu, with investment from a team at a leading semiconductor supply chain company. Building on that team's many years in the semiconductor and optoelectronics industries, and combining hands-on experience in facility engineering, equipment maintenance, and intelligent monitoring, we are committed to providing innovative, efficient, and integrated one-stop equipment and technical services.\n\nAs the semiconductor industry moves toward intelligent, automated, and high-performance operations, D-SENG Technology actively integrates traditional equipment technology with innovative AI applications. Our services cover <strong>equipment maintenance, AI early warning and monitoring, air compressor equipment, smart vision robotic arms, semiconductor materials, and integrated systems engineering</strong>, helping customers improve equipment performance, strengthen preventive maintenance management, lower the risk of unplanned downtime, and reduce production losses.\n\nGuided by four core values, <strong>practical innovation, AI-led technology, sustainable development, and integrity</strong>, D-SENG Technology not only supplies equipment and technology but also cares about customers' long-term operational needs. With expertise as our foundation and innovation as our driving force, we continue to advance smart manufacturing and sustainable development (ESG), striving to be a trusted long-term partner and to build safer, more stable, and more efficient smart facility environments together with our customers."
+        "text": "<strong>D-SENG TECHNOLOGY CO., LTD.</strong> was founded in 2026 in Zhubei, Hsinchu, with investment from a team at a leading semiconductor supply chain company. Building on that team's many years in the semiconductor and optoelectronics industries, and combining hands-on experience in facility engineering, equipment maintenance, and intelligent monitoring, we are committed to providing innovative, efficient, and integrated one-stop equipment and technical services.\n\nAs the semiconductor industry moves toward intelligent, automated, and high-performance operations, D-SENG Technology actively integrates traditional equipment technology with innovative AI applications. Our services cover <strong>air compressor and fan maintenance, AI early warning and monitoring, air compressor equipment, smart vision robotic arms, semiconductor materials, and integrated systems engineering</strong>, helping customers improve equipment performance, strengthen preventive maintenance management, lower the risk of unplanned downtime, and reduce production losses.\n\nGuided by four core values, <strong>practical innovation, AI-led technology, sustainable development, and integrity</strong>, D-SENG Technology not only supplies equipment and technology but also cares about customers' long-term operational needs. With expertise as our foundation and innovation as our driving force, we continue to advance smart manufacturing and sustainable development (ESG), striving to be a trusted long-term partner and to build safer, more stable, and more efficient smart facility environments together with our customers."
       }
     ],
     "org_title": "Organization",
@@ -212,8 +212,8 @@
   },
   "business": {
     "title": "Business",
-    "description": "D-SENG Technology business areas: equipment maintenance, AI early warning and monitoring, air compressors, smart vision robotic arms, semiconductor materials and engineering, and monitoring engineering.",
-    "lead": "Centered on semiconductor and high-tech facility systems, D-SENG Technology provides equipment maintenance, AI early warning and monitoring, compressed air systems, smart vision robotic arms, semiconductor materials, and monitoring engineering. By combining partner-brand products with field engineering experience, we help customers improve equipment reliability and reduce downtime risk.",
+    "description": "D-SENG Technology business areas: air compressor and fan maintenance, AI early warning and monitoring, air compressors, smart vision robotic arms, semiconductor materials and engineering, and monitoring engineering.",
+    "lead": "Centered on semiconductor and high-tech facility systems, D-SENG Technology provides air compressor and fan maintenance, AI early warning and monitoring, compressed air systems, smart vision robotic arms, semiconductor materials, and monitoring engineering. By combining partner-brand products with field engineering experience, we help customers improve equipment reliability and reduce downtime risk.",
     "brands_label": "Brands / Partners",
     "others_title": "Other Business Areas",
     "back": "Back to Business",
@@ -862,7 +862,7 @@
       "business": "Business",
       "contact": "Contact Us"
     },
-    "business_lead": "Six business areas covering AI early warning and monitoring, compressed air systems, smart vision robotic arms, semiconductor materials and engineering, monitoring engineering, and facility equipment maintenance.",
+    "business_lead": "Six business areas covering air compressor and fan maintenance, AI early warning and monitoring, compressed air systems, smart vision robotic arms, semiconductor materials and engineering, and monitoring engineering.",
     "contact_lead": "If you have equipment or project needs, please get in touch and one of our specialists will walk you through the details.",
     "web_note": "For the latest version, visit"
   },
