@@ -67,8 +67,8 @@
   } %}
   {{ org | dump | safe }}
   </script>
-  {%- if page_key == "business_item" or page_key == "gold_stone" %}
-  {%- set crumb_parent = ({ "name": t.business.title, "path": "business/" }) if page_key == "business_item" else ({ "name": t.about.title, "path": "about/" }) %}
+  {%- if page_key == "business_item" %}
+  {%- set crumb_parent = { "name": t.business.title, "path": "business/" } %}
   <script type="application/ld+json">
   {%- set crumbs = {
     "@context": "https://schema.org",

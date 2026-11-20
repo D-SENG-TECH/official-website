@@ -48,21 +48,6 @@ page_path: ""
   </div>
 </section>
 
-<section class="section section--tint">
-  <div class="wrap split">
-    <div>
-      <p class="hero__eyebrow eyebrow--ink">{{ t.home.affiliate_eyebrow }}</p>
-      <h2>{{ t.home.affiliate_title }}</h2>
-    </div>
-    <div>
-      {%- for para in t.home.affiliate_text.split("\n\n") %}
-      <p class="lead">{{ para | safe }}</p>
-      {%- endfor %}
-      <p class="more"><a href="{{ lang.prefix }}about/#affiliates">{{ t.home.affiliate_more }} →</a></p>
-    </div>
-  </div>
-</section>
-
 <section class="section section--dark">
   <div class="wrap cta-band">
     <div>

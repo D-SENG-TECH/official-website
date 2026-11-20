@@ -51,7 +51,7 @@
 
 - **OG 圖**：每個語言一張 1200×630（`assets/og/og-<lang>.jpg`），左側深藍底 + logo + 標語 + 六項事業，右側台元園區大樓實景；用 Playwright 把 HTML 版型截圖產生（腳本未進 repo，版型簡單，需要時重做即可）。日文標題在「、」後強制換行，避免「革新」被拆開。
 - **meta**：首頁 og:description 用品牌標語，其餘頁用該頁 description；加 og:locale / alternate、og:image 尺寸與 alt、twitter:summary_large_image、theme-color。
-- **JSON-LD**：每頁一份 Organization（地址拆成 PostalAddress、座標、電話、傳真、email、512px 方形 logo）；事業細頁與彰京產品頁加 BreadcrumbList。字串一律經 Nunjucks `dump`，避免多語文字破壞 JSON。
+- **JSON-LD**：每頁一份 Organization（地址拆成 PostalAddress、座標、電話、傳真、email、512px 方形 logo）；事業細頁與關係企業產品頁加 BreadcrumbList。字串一律經 Nunjucks `dump`，避免多語文字破壞 JSON。
 - **sitemap.xml**：13 個路徑 × 4 語言，每筆帶 xhtml:link hreflang 與 x-default。**robots.txt**：正式站允許全部並指向 sitemap；預覽站沿用部署流程覆寫成 Disallow。
 - **og:image 指向正式網域**：預覽站分享時會抓不到圖，直到正式站上線——刻意如此，canonical 本來就指向正式站。
 

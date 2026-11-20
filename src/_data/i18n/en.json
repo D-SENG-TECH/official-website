@@ -66,12 +66,8 @@
     "business_title": "Business",
     "business_more": "View all business areas",
     "story_title": "Our Story",
-    "story_teaser": "D-SENG Technology Co., Ltd. is an affiliate invested in by Gold Stone. Drawing on the group's extensive experience and expertise in semiconductor facility engineering and materials applications, it is committed to providing innovative, efficient, and integrated one-stop equipment and technical services.\n\nThe company focuses on AI early warning and monitoring and the integrated application of intelligent equipment. Combining advanced technology with practical industry experience, it helps customers improve equipment operating efficiency, optimize process management, and move the industry toward intelligent, automated, and sustainable (ESG) development.",
+    "story_teaser": "D-SENG Technology Co., Ltd. was established with investment from a team at a leading semiconductor supply chain company. It draws on that team's extensive experience and expertise in semiconductor facility engineering and materials applications, and is committed to providing innovative, efficient, and integrated one-stop equipment and technical services.\n\nThe company focuses on AI early warning and monitoring and the integrated application of intelligent equipment. Combining advanced technology with practical industry experience, it helps customers improve equipment operating efficiency, optimize process management, and move the industry toward intelligent, automated, and sustainable (ESG) development.",
     "story_more": "About D-SENG Technology",
-    "affiliate_eyebrow": "Affiliated Company",
-    "affiliate_title": "Gold Stone",
-    "affiliate_text": "Since its founding in 1981, <strong>Gold Stone Development</strong> has been deeply rooted in the semiconductor and optoelectronics industries, starting with the supply of piping materials and gradually expanding into stainless steel tubing, precision valves, and piping for high-purity gas and chemical delivery systems.\n\nWith 45 years of industry experience, a complete product line, and ample inventory, Gold Stone continues to provide customers with stable, efficient, and reliable supply, making it a key partner to semiconductor facility teams for new fab construction, equipment installation and maintenance, and emergency response.\n\nAs the industry continues to advance, Gold Stone opened a brand-new warehouse center in Zhubei, Hsinchu, in January 2026, further strengthening its supply chain efficiency and service capacity. At the same time, together with its affiliate <strong>D-SENG Technology</strong>, it is extending its deep hands-on facility experience into equipment integration, technical services, and new material applications, jointly building more comprehensive and innovative industry solutions.",
-    "affiliate_more": "About Gold Stone",
     "contact_title": "Have an equipment or project need?",
     "contact_text": "Get in touch and our team will walk you through it.",
     "play": "Play product tour",
@@ -84,8 +80,8 @@
   },
   "about": {
     "title": "About Us",
-    "description": "Get to know D-SENG Technology: our history, affiliated companies, and organization.",
-    "lead": "Founded in 2026 and based in Zhubei, Hsinchu, D-SENG Technology focuses on semiconductor facility equipment maintenance, AI early warning and monitoring, and semiconductor materials. We combine hands-on rotating equipment maintenance experience with the deep semiconductor facility expertise of our affiliated company, Gold Stone, to provide one-stop facility equipment services.",
+    "description": "Get to know D-SENG Technology: our history and organization.",
+    "lead": "Founded in 2026 and based in Zhubei, Hsinchu, D-SENG Technology focuses on semiconductor facility equipment maintenance, AI early warning and monitoring, and semiconductor materials. We combine hands-on rotating equipment maintenance experience with the deep semiconductor facility expertise of a team from a leading semiconductor supply chain company to provide one-stop facility equipment services.",
     "story_title": "Our Story",
     "office_alt": "Exterior of the D-SENG Technology office in Zhubei, Hsinchu",
     "office_caption": "D-SENG Technology office | Zhubei, Hsinchu",
@@ -94,56 +90,7 @@
         "year": "2026",
         "title": "Founding D-SENG Technology in Zhubei",
         "subtitle": "Rooted in Industry, Leading the Future with Intelligence",
-        "text": "<strong>D-SENG TECHNOLOGY CO., LTD.</strong> was founded in 2026 in Zhubei, Hsinchu, as an affiliate invested in by Gold Stone. Building on Gold Stone's 45 years of expertise in the semiconductor and optoelectronics industries, and combining our team's hands-on experience in facility engineering, equipment maintenance, and intelligent monitoring, we are committed to providing innovative, efficient, and integrated one-stop equipment and technical services.\n\nAs the semiconductor industry moves toward intelligent, automated, and high-performance operations, D-SENG Technology actively integrates traditional equipment technology with innovative AI applications. Our services cover <strong>AI early warning and monitoring, air compressor equipment, smart vision robotic arms, semiconductor materials, integrated systems engineering, and equipment maintenance</strong>, helping customers improve equipment performance, strengthen preventive maintenance management, lower the risk of unplanned downtime, and reduce production losses.\n\nGuided by four core values, <strong>practical innovation, AI-led technology, sustainable development, and integrity</strong>, D-SENG Technology not only supplies equipment and technology but also cares about customers' long-term operational needs. With expertise as our foundation and innovation as our driving force, we continue to advance smart manufacturing and sustainable development (ESG), striving to be a trusted long-term partner and to build safer, more stable, and more efficient smart facility environments together with our customers."
-      }
-    ],
-    "affiliates_title": "Affiliated Companies",
-    "affiliates": [
-      {
-        "name": "Gold Stone",
-        "name_full": "Gold Stone Development Co., Ltd.",
-        "url": null,
-        "text": "Founded in 1981, Gold Stone specializes in equipment for semiconductor and optoelectronics fabs and piping materials for gas and chemical systems, offering one-stop supply of tubing, fittings, valves, and pressure instruments. With locations in Taipei, Hsinchu, Shanghai, and Taicang, it supports fab construction projects and urgent requests with ample inventory at its Zhubei (Hsinchu) warehouse center.",
-        "story": [
-          {
-            "year": "1981",
-            "title": "Origins: Starting with Piping Materials",
-            "text": "Gold Stone Development was founded in 1981 in a precision materials field: equipment for semiconductor and optoelectronics fabs, and piping materials for gas and chemical systems. Every gas and chemical flowing through a cleanroom process passes through tubing, fittings, valves, and pressure instruments; if any one of them is unreliable, the production line can come to a halt. Gold Stone started here and has stayed with it for 45 years."
-          },
-          {
-            "year": null,
-            "title": "Depth: Complete Piping Supply at the Zhubei Warehouse Center",
-            "text": "Over the years, Gold Stone has steadily built out its product line to nearly 20,000 items: stainless steel tubing from 1/16 in. to 600A, a wide range of fittings, VCR and compression fittings, bellows valves and diaphragm valves, pressure regulators, pressure gauges and pressure transducers, and filters, extending to fluoropolymer tubing, PFA fittings and valves, and fire suppression systems. All products come from renowned manufacturers in Japan, the United States, Germany, and Korea, allowing customers to source all the piping materials needed for gas and chemical systems through a single point of contact."
-          },
-          {
-            "year": null,
-            "title": "Reliable Supply: Solid Backing for Fab Construction and Urgent Needs",
-            "text": "In the semiconductor and optoelectronics industries, timely and stable material supply is key to keeping fab construction on schedule and equipment running without interruption.\n\nWith sound inventory management, ample stock, and flexible supply scheduling, Gold Stone not only responds quickly to customers' urgent material needs but also plans stock in advance according to project schedules, effectively shortening material lead times and improving the efficiency of fab construction and equipment maintenance. Through customized spare parts inventory management, it also helps customers ease their stocking burden and ensures a secure supply of critical materials.\n\nFrom its Taipei and Hsinchu offices to its Zhubei (Hsinchu) warehouse center, Shanghai Shangmao office, and Taicang warehouse, Gold Stone continues to strengthen its cross-regional supply and service capacity. With consistent supply quality, rapid response, and a professional service team, it has become a trusted long-term partner to the semiconductor and optoelectronics industries."
-          },
-          {
-            "year": "2026",
-            "title": "Extension: A New Warehouse and Partnership with D-SENG",
-            "text": "In January 2026, Gold Stone opened its new warehouse center in Zhubei, preparing for the next peak in semiconductor fab construction. In the same year, its affiliated company D-SENG Technology was established in Zhubei. Gold Stone's familiarity with fab facilities and materials and D-SENG Technology's professional capabilities complement each other, and through their collaboration the two companies are reaching into a broader range of semiconductor fields."
-          }
-        ],
-        "facts": [
-          {
-            "label": "Founded",
-            "value": "1981"
-          },
-          {
-            "label": "Locations",
-            "value": "Taipei office, Hsinchu office, Hsinchu (Zhubei) warehouse center; Shanghai Shangmao office, Taicang warehouse"
-          },
-          {
-            "label": "Products & Services",
-            "value": "Equipment for semiconductor and optoelectronics fabs; piping materials for gas and chemical systems (stainless steel tubing, fittings, valves, pressure regulators, pressure instruments, filters, fluoropolymer tubing, PFA fittings and valves); fire suppression systems"
-          },
-          {
-            "label": "Service Strengths",
-            "value": "Complete one-stop supply, quality from renowned international brands, ample inventory, responsive service, advance stocking for projects, and spare parts warehouse support"
-          }
-        ]
+        "text": "<strong>D-SENG TECHNOLOGY CO., LTD.</strong> was founded in 2026 in Zhubei, Hsinchu, with investment from a team at a leading semiconductor supply chain company. Building on that team's many years in the semiconductor and optoelectronics industries, and combining hands-on experience in facility engineering, equipment maintenance, and intelligent monitoring, we are committed to providing innovative, efficient, and integrated one-stop equipment and technical services.\n\nAs the semiconductor industry moves toward intelligent, automated, and high-performance operations, D-SENG Technology actively integrates traditional equipment technology with innovative AI applications. Our services cover <strong>AI early warning and monitoring, air compressor equipment, smart vision robotic arms, semiconductor materials, integrated systems engineering, and equipment maintenance</strong>, helping customers improve equipment performance, strengthen preventive maintenance management, lower the risk of unplanned downtime, and reduce production losses.\n\nGuided by four core values, <strong>practical innovation, AI-led technology, sustainable development, and integrity</strong>, D-SENG Technology not only supplies equipment and technology but also cares about customers' long-term operational needs. With expertise as our foundation and innovation as our driving force, we continue to advance smart manufacturing and sustainable development (ESG), striving to be a trusted long-term partner and to build safer, more stable, and more efficient smart facility environments together with our customers."
       }
     ],
     "org_title": "Organization",
@@ -262,105 +209,6 @@
         }
       ]
     }
-  },
-  "gold_stone": {
-    "title": "Gold Stone Products & Represented Brands",
-    "description": "Gold Stone represents brands from Japan, the U.S., Korea, and Germany, supplying stainless steel tube and pipe, fittings, valves, pressure regulators and gauges, filters, and fluoropolymer tubing and fittings for gas and chemical system piping in semiconductor and optoelectronics fabs.",
-    "lead": "Founded in 1981, Gold Stone supplies equipment and gas and chemical system piping materials to semiconductor and optoelectronics fabs. Centered on stainless steel tube, pipe, and fittings, its represented product lines also cover valves, pressure regulators, pressure gauges, filters, and fluoropolymer tubing and fittings. All products come from leading international manufacturers, providing one-stop supply of piping materials.",
-    "more": "Gold Stone Products & Represented Brands",
-    "brands_label": "Represented Brands",
-    "note": "Brand names and trademarks are the property of their respective owners.",
-    "back": "Back to Affiliated Companies",
-    "groups": [
-      {
-        "title": "Stainless Steel Tube & Pipe",
-        "text": "Stainless steel pipe and tube from Japanese brands, in sizes from 1/16\" to 600A, available in AP, BA, MP, and EP grades by surface finish.",
-        "items": [
-          "Stainless steel tube and pipe from 1/16\" to 600A",
-          "AP grade: annealed & pickled (A&P)",
-          "BA grade: bright annealed",
-          "MP grade: mechanically polished (ID/OD)",
-          "EP grade: electropolished ID"
-        ],
-        "brands": [
-          "KUZE",
-          "SUMIKIN"
-        ]
-      },
-      {
-        "title": "Stainless Steel Fittings",
-        "text": "From elbows and fittings to VCR, compression, and cylinder fittings, we represent multiple brands from Japan, the U.S., and Korea to meet every connection need in gas and chemical system piping.",
-        "items": [
-          "Elbow and Fittings",
-          "VCR Fittings & Compression Fittings",
-          "Cylinder Fittings",
-          "Presslok Press Fittings"
-        ],
-        "brands": [
-          "KUZE",
-          "JSK",
-          "FUJIKIN",
-          "TK FUJIKIN",
-          "PARKER",
-          "BMT",
-          "Evans"
-        ]
-      },
-      {
-        "title": "Stainless Steel Valves",
-        "text": "Stainless steel bellows valves, diaphragm valves, ball valves, and check valves from multiple Japanese, U.S., and Korean brands for gas and chemical system piping.",
-        "items": [
-          "Bellows Valve",
-          "Diaphragm Valve",
-          "Ball Valve",
-          "Check Valve"
-        ],
-        "brands": [
-          "FUJIKIN",
-          "PARKER VERIFLO",
-          "CARTEN",
-          "TK FUJIKIN",
-          "OHNO",
-          "OHNO BELLOWS",
-          "PARKER",
-          "Evans"
-        ]
-      },
-      {
-        "title": "Pressure Regulators, Gauges & Filters",
-        "text": "Covers gas line pressure regulators, pressure gauges, and pressure transducers, as well as line filters, from multiple Japanese, U.S., and German instrumentation and filtration brands.",
-        "items": [
-          "Pressure Regulator",
-          "Pressure Gauge",
-          "Pressure Transducer",
-          "Filter"
-        ],
-        "brands": [
-          "PARKER VERIFLO",
-          "YUTAKA CROWN",
-          "NKS",
-          "WIKA",
-          "PURERON",
-          "PARKER",
-          "PALL"
-        ]
-      },
-      {
-        "title": "Fluoropolymer Tubing & Fittings",
-        "text": "PFA, FEP, and NE fluoropolymer tubing, along with PFA fittings and PFA valves, for chemical system piping.",
-        "items": [
-          "Fluoropolymer tubing (PFA/FEP/NE)",
-          "PFA Fittings",
-          "PFA Valve"
-        ],
-        "brands": [
-          "NICHIAS",
-          "PARKER",
-          "FIT-LINE",
-          "ADVANCE"
-        ]
-      }
-    ]
   },
   "business": {
     "title": "Business",
@@ -732,7 +580,7 @@
         "body": [
           "Semiconductor and optoelectronics processes are highly sensitive to the cleanliness of their environment. Beyond airborne particles, airborne molecular contamination (AMC) can also affect process stability and product yield. D-SENG Technology provides cleanroom environmental monitoring, AMC monitoring, and related monitoring engineering, helping customers continuously track site environmental conditions and identify potential contamination sources early.",
           "For a monitoring system to be effective, the key is whether point placement, alarm conditions, and follow-up procedures fit the site. D-SENG Technology's scope of services covers process equipment monitoring and measurement systems as well as piping installation for gas and liquid delivery systems. We help plan monitoring items and points based on site requirements and handle system installation and construction.",
-          "Our affiliated company Gold Stone has long supplied piping materials for gas and chemical systems to semiconductor and optoelectronics fabs. When planning monitoring projects, D-SENG Technology can take monitoring equipment together with the related piping, fittings, and valves into account, so that monitoring data feeds reliably into facility management as a basis for environmental improvement and incident handling."
+          "D-SENG Technology's team comes from a leading semiconductor supply chain company and has long worked with piping materials for gas and chemical systems in semiconductor and optoelectronics fabs. When planning monitoring projects, we can take monitoring equipment together with the related piping, fittings, and valves into account, so that monitoring data feeds reliably into facility management as a basis for environmental improvement and incident handling."
         ],
         "sections": [
           {
@@ -908,7 +756,7 @@
       },
       {
         "title": "A Cross-Disciplinary Team",
-        "text": "Combine mechanical, electrical control, software, and materials expertise, and grow alongside experienced teams from our affiliated companies."
+        "text": "Combine mechanical, electrical control, software, and materials expertise, and grow alongside an experienced team from a leading semiconductor supply chain company."
       },
       {
         "title": "Grow with the Company",
@@ -1003,7 +851,7 @@
   },
   "profile": {
     "title": "Company Profile",
-    "description": "D-SENG Technology company profile: about us, core values, six business areas, affiliated companies, and contact information. Ready to print or save as PDF.",
+    "description": "D-SENG Technology company profile: about us, core values, six business areas, and contact information. Ready to print or save as PDF.",
     "cover_eyebrow": "COMPANY PROFILE 2026",
     "print": "Print / Save as PDF",
     "print_hint": "A4 layout is applied automatically when printing",
@@ -1012,11 +860,9 @@
       "about": "About D-SENG",
       "values": "Core Values",
       "business": "Business",
-      "affiliate": "Affiliated Companies",
       "contact": "Contact Us"
     },
     "business_lead": "Six business areas covering AI early warning and monitoring, compressed air systems, smart vision robotic arms, semiconductor materials and engineering, monitoring engineering, and facility equipment maintenance.",
-    "affiliate_products": "Main products",
     "contact_lead": "If you have equipment or project needs, please get in touch and one of our specialists will walk you through the details.",
     "web_note": "For the latest version, visit"
   },

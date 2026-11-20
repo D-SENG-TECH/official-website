@@ -10,8 +10,7 @@
     "pf-biz-materials": 10,
     "pf-biz-monitoring-eng": 11,
     "pf-biz-rotating": 12,
-    "pf-affiliate": 14,
-    "pf-contact": 15
+    "pf-contact": 14
   },
   "zh-cn": {
     "pf-about": 3,
@@ -24,8 +23,7 @@
     "pf-biz-materials": 10,
     "pf-biz-monitoring-eng": 11,
     "pf-biz-rotating": 12,
-    "pf-affiliate": 14,
-    "pf-contact": 15
+    "pf-contact": 14
   },
   "en": {
     "pf-about": 3,
@@ -38,8 +36,7 @@
     "pf-biz-materials": 14,
     "pf-biz-monitoring-eng": 16,
     "pf-biz-rotating": 17,
-    "pf-affiliate": 20,
-    "pf-contact": 21
+    "pf-contact": 20
   },
   "ja": {
     "pf-about": 3,
@@ -52,7 +49,6 @@
     "pf-biz-materials": 13,
     "pf-biz-monitoring-eng": 15,
     "pf-biz-rotating": 16,
-    "pf-affiliate": 18,
-    "pf-contact": 19
+    "pf-contact": 18
   }
 }

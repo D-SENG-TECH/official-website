@@ -4,7 +4,6 @@ page_path: profile/
 ---
 {%- set t = i18n[lang.code] -%}
 {%- set p = t.profile -%}
-{%- set aff = t.about.affiliates[0] -%}
 {%- set local_fmt = (lang.code == "zh-tw") -%}
 {%- macro org_node(node) -%}
 <li>
@@ -47,7 +46,7 @@ page_path: profile/
     <h2>{{ p.contents }}</h2>
     {%- set pg = (profile_toc[lang.code] if profile_toc else {}) or {} %}
     <ol class="pf-printtoc__list">
-      {%- for key in ["about", "values", "org", "business", "affiliate", "contact"] %}
+      {%- for key in ["about", "values", "org", "business", "contact"] %}
       <li>
         <a href="#pf-{{ key }}"><b>{{ "0" + loop.index }}</b><span>{{ t.about.org_title if key == "org" else p.sections[key] }}</span><i>{{ pg["pf-" + key] }}</i></a>
         {%- if key == "business" %}
@@ -67,7 +66,7 @@ page_path: profile/
     <div class="wrap pf-toc__inner">
       <span class="pf-toc__label">{{ p.contents }}</span>
       <ol>
-        {%- for key in ["about", "values", "org", "business", "affiliate", "contact"] %}
+        {%- for key in ["about", "values", "org", "business", "contact"] %}
         <li><a href="#pf-{{ key }}"><b>{{ loop.index }}</b>{{ t.about.org_title if key == "org" else p.sections[key] }}</a></li>
         {%- endfor %}
       </ol>
@@ -228,33 +227,10 @@ page_path: profile/
     {%- endfor %}
   </section>
 
-  <section class="pf-section pf-affiliate" id="pf-affiliate">
-    <div class="wrap">
-      <p class="pf-kicker">05</p>
-      <h2>{{ p.sections.affiliate }}</h2>
-      <h3 class="pf-aff__name">{{ aff.name_full }}</h3>
-      <p class="pf-lead">{{ aff.text }}</p>
-      <dl class="pf-facts">
-        {%- for f in aff.facts %}
-        <div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>
-        {%- endfor %}
-      </dl>
-      <h3 class="pf-sub">{{ p.affiliate_products }}</h3>
-      <ul class="pf-gs">
-        {%- for g in t.gold_stone.groups %}
-        <li>
-          <img src="/assets/gold-stone/{{ gs_media[loop.index0].cover }}" alt="">
-          <div><strong>{{ g.title }}</strong><span>{{ g.brands | join(" · ") }}</span></div>
-        </li>
-        {%- endfor %}
-      </ul>
-    </div>
-  </section>
-
   <section class="pf-section pf-contact" id="pf-contact">
     <div class="wrap pf-contact__grid">
       <div>
-        <p class="pf-kicker">06</p>
+        <p class="pf-kicker">05</p>
         <h2>{{ p.sections.contact }}</h2>
         <p class="pf-lead">{{ p.contact_lead }}</p>
         <dl class="pf-contact__list">

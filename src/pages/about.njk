@@ -43,63 +43,6 @@ page_path: about/
   </div>
 </section>
 
-{#- Affiliate showcase: intro, then the 3D line film edge to edge (viewport height minus the header),
-    then the product families, the story and the facts. -#}
-<section class="section section--tint affiliates">
-  <div class="wrap">
-    <h2 id="affiliates">{{ t.about.affiliates_title }}</h2>
-  </div>
-  {%- for a in t.about.affiliates %}
-  <article class="affiliate-show">
-    <div class="wrap affiliate-show__head">
-      <h3>{{ a.name_full }}</h3>
-      <p class="lead">{{ a.text }}</p>
-      {%- if a.url %}
-      <p class="card__link"><a href="{{ a.url }}" rel="noopener" target="_blank">{{ a.url | replace("https://", "") | replace("www.", "") }}<span class="visually-hidden">{{ t.common.external_link }}</span></a></p>
-      {%- endif %}
-    </div>
-    {%- if loop.first %}
-    <div class="line-film line-film--bleed" id="line-film" aria-label="{{ t.gold_stone.title }}"></div>
-    {%- endif %}
-    <div class="wrap affiliate-show__body">
-      <h4 class="affiliate__sub">{{ t.gold_stone.more }}</h4>
-      <ul class="gs-strip">
-        {%- for g in t.gold_stone.groups %}
-        <li>
-          <a href="{{ lang.prefix }}about/gold-stone/#p{{ loop.index }}">
-            <img src="/assets/gold-stone/{{ gs_media[loop.index0].cover }}" alt="" loading="lazy">
-            <span class="gs-strip__title">{{ g.title }}</span>
-            <span class="gs-strip__brands">{{ g.brands | join(" · ") }}</span>
-          </a>
-        </li>
-        {%- endfor %}
-      </ul>
-      <p class="affiliate__more"><a href="{{ lang.prefix }}about/gold-stone/">{{ t.gold_stone.more }} →</a></p>
-      <div class="affiliate-show__cols">
-        <ol class="timeline timeline--compact">
-          {%- for ch in a.story %}
-          <li class="timeline__item">
-            <p class="timeline__year">{{ ch.year or "" }}</p>
-            <div>
-              <h4>{{ ch.title }}</h4>
-              {%- for para in ch.text.split("\n\n") %}
-              <p>{{ para | safe }}</p>
-              {%- endfor %}
-            </div>
-          </li>
-          {%- endfor %}
-        </ol>
-        <dl class="facts">
-          {%- for f in a.facts %}
-          <div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>
-          {%- endfor %}
-        </dl>
-      </div>
-    </div>
-  </article>
-  {%- endfor %}
-</section>
-
 <section id="org" class="section">
   <div class="wrap"><h2>{{ t.about.org_title }}</h2></div>
   <div class="wrap wrap--wide">
@@ -108,6 +51,3 @@ page_path: about/
     </div>
   </div>
 </section>
-
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
-<script type="module" src="/assets/gold-stone/line-film/mount.js" data-lang="{{ lang.code }}"></script>
