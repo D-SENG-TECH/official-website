@@ -213,6 +213,26 @@ a { color: inherit; }
   .hero3d__seg-label { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .hero3d__intro, .hero3d__stage canvas, .hero3d__fallback { transition: none; } }
+/* light variant: white studio with the concrete floor; text and controls turn navy */
+.hero--3d-light { background: #fff; }
+.hero--3d-light .hero3d__shade { background: linear-gradient(90deg, rgb(255 255 255 / .75) 0%, rgb(255 255 255 / .3) 30%, transparent 46%),
+                                             linear-gradient(0deg, rgb(255 255 255 / .85) 0%, transparent 30%); }
+.hero--3d-light h1, .hero--3d-light .hero3d__caption h2 { color: #0b1d31; }
+.hero--3d-light .hero__eyebrow { color: #1f5488; }
+.hero--3d-light .hero__lead, .hero--3d-light .hero3d__caption p:last-child { color: #33475b; }
+.hero--3d-light .hero3d__hint { color: #5b7187; }
+.hero--3d-light .hero3d__actions .button { border-color: rgb(11 29 49 / .4); background: rgb(255 255 255 / .6); color: #0b1d31; }
+.hero--3d-light .hero3d__actions .button:hover { border-color: var(--orange); color: var(--orange); background: rgb(255 255 255 / .6); }
+.hero--3d-light .hero3d__pause, .hero--3d-light .hero3d__mute { border-color: rgb(11 29 49 / .4); background: rgb(255 255 255 / .6); }
+.hero--3d-light .hero3d__pause::before { border-left-color: #0b1d31; border-right-color: #0b1d31; }
+.hero--3d-light .hero3d__mute svg { stroke: #0b1d31; }
+.hero--3d-light .hero3d__mute svg path[fill] { fill: #0b1d31; }
+.hero--3d-light .hero3d__seg-label { color: rgb(11 29 49 / .6); }
+.hero--3d-light .hero3d__seg-bar { background: rgb(11 29 49 / .16); }
+.hero--3d-light .hero3d__seg[aria-current="true"] .hero3d__seg-label, .hero--3d-light .hero3d__seg:hover .hero3d__seg-label { color: #0b1d31; }
+@media (max-width: 700px) {
+  .hero--3d-light .hero3d__shade { background: linear-gradient(0deg, rgb(255 255 255 / .95) 0%, rgb(255 255 255 / .7) 40%, transparent 64%); }
+}
 .button {
   display: inline-block;
   margin-top: 32px;

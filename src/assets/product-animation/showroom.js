@@ -105,8 +105,31 @@ function patchMaterial(m, U) {
   m.needsUpdate = true;
 }
 
+// Optional light concrete floor (floor: "concrete"): tileable mottled grey, generated once.
+function concreteTexture() {
+  const N = 512, c = document.createElement("canvas");
+  c.width = c.height = N;
+  const g = c.getContext("2d");
+  g.fillStyle = "#d6d9dc"; g.fillRect(0, 0, N, N);
+  let seed = 7;
+  const rnd = () => ((seed = (seed * 16807) % 2147483647) - 1) / 2147483646;
+  const blob = (x, y, r, col) => { // drawn at the nine wrapped positions so the tile has no seams
+    for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) {
+      const q = g.createRadialGradient(x + i * N, y + j * N, 0, x + i * N, y + j * N, r);
+      q.addColorStop(0, col); q.addColorStop(1, "rgba(0,0,0,0)");
+      g.fillStyle = q; g.fillRect(x + i * N - r, y + j * N - r, 2 * r, 2 * r);
+    }
+  };
+  for (let i = 0; i < 90; i++) blob(rnd() * N, rnd() * N, 30 + rnd() * 90, rnd() < 0.5 ? "rgba(255,255,255,0.03)" : "rgba(70,78,88,0.035)");
+  for (let i = 0; i < 2600; i++) blob(rnd() * N, rnd() * N, 0.6 + rnd() * 1.6, rnd() < 0.6 ? "rgba(60,66,74,0.16)" : "rgba(255,255,255,0.2)");
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  return t;
+}
+
 export async function startShowroom(el, items, { base = "./", tier: forceTier, onUI, shift, reduced, floor: floorMode = "studio" } = {}) {
-  const useMirror = floorMode === "mirror";
+  const useMirror = floorMode === "mirror", useConcrete = floorMode === "concrete";
   const coarse = matchMedia("(pointer: coarse)").matches || el.clientWidth < 700;
   let tier = forceTier || (coarse ? "low" : "high");
   const reduce = reduced ?? matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -189,6 +212,29 @@ export async function startShowroom(el, items, { base = "./", tier: forceTier, o
     shadowFloor.renderOrder = -1;
     scene.add(mirror, shadowFloor);
   }
+  // optional light concrete floor: fixed in the world (so the texture never swims), fading out around the active stage
+  let concrete = null;
+  const cU = { uCenter: { value: new THREE.Vector3() }, uR: { value: new THREE.Vector2(4, 12) } };
+  if (useConcrete) {
+    floor.visible = false;
+    const map = concreteTexture();
+    map.repeat.setScalar(400 / 1.2);
+    map.anisotropy = renderer.capabilities.getMaxAnisotropy();
+    const mat = new THREE.MeshStandardMaterial({ map, roughness: 0.92, metalness: 0, transparent: true, depthWrite: false });
+    mat.onBeforeCompile = (sh) => {
+      Object.assign(sh.uniforms, cU);
+      sh.vertexShader = "varying vec3 vWp;\n" + sh.vertexShader.replace("#include <project_vertex>", "#include <project_vertex>\nvWp = (modelMatrix * vec4(transformed, 1.0)).xyz;");
+      sh.fragmentShader = "varying vec3 vWp; uniform vec3 uCenter; uniform vec2 uR;\n" + sh.fragmentShader.replace("#include <dithering_fragment>",
+        "gl_FragColor.a *= 1.0 - smoothstep(uR.x, uR.y, length(vWp.xz - uCenter.xz));\n#include <dithering_fragment>");
+    };
+    concrete = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), mat);
+    concrete.rotation.x = -Math.PI / 2;
+    concrete.receiveShadow = true;
+    concrete.renderOrder = -1;
+    concrete.position.y = -0.002; // just under the products' base faces, which sit at y = 0 (coplanar faces flicker)
+    scene.add(concrete);
+    scene.background = new THREE.Color(0xffffff); // white studio: the floor fades into it
+  }
 
   // ---------------------------------------------------------------- camera + post
   const camera = new THREE.PerspectiveCamera(30, 3 / 2, 0.01, 400);
@@ -202,6 +248,7 @@ export async function startShowroom(el, items, { base = "./", tier: forceTier, o
   composer.addPass(new OutputPass());
   const vignette = new ShaderPass(VignetteShader);
   composer.addPass(vignette);
+  if (useConcrete) vignette.uniforms.amount.value = 0; // no dark corners on the white studio
 
   const products = [];
   function resize() {
@@ -556,6 +603,10 @@ export async function startShowroom(el, items, { base = "./", tier: forceTier, o
       mirror.visible = shadowFloor.visible = floorOn;
       mU.uCenter.value.copy(pose.stageC);
       mU.uR.value.set(pose.stageS * 1.6, pose.stageS * 4.5);
+    } else if (concrete) {
+      concrete.visible = floorOn;
+      cU.uCenter.value.copy(pose.stageC);
+      cU.uR.value.set(pose.stageS * 2.2, pose.stageS * 6);
     } else floor.visible = floorOn;
     bokeh.uniforms.focus.value = camera.position.distanceTo(pose.focus);
     bokeh.uniforms.aperture.value = 0.0018 / pose.s;

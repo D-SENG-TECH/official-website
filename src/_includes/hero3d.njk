@@ -2,7 +2,7 @@
 {%- set pa = t.product_animation -%}
 {#- Full-bleed 3D showroom: all five products in one scene. Idle shows the headline and a Play button;
     playing hides them and shows a caption per product. The photo is shown only without WebGL or if loading fails. -#}
-<section class="hero hero--3d" id="hero3d" aria-label="{{ t.home.stage_label }}">
+<section class="hero hero--3d hero--3d-light" id="hero3d" aria-label="{{ t.home.stage_label }}">
   <div class="hero3d__stage" id="hero3d-stage"></div>
   <img class="hero3d__fallback" src="/assets/equipment.jpg" width="683" height="452" alt="{{ t.home.image_alt }}">
   {#- While the 3D scene loads, the photo stays hidden (it is only the fallback for no WebGL / load failure). -#}
@@ -72,7 +72,7 @@
       };
       const hero = await startShowroom(document.getElementById("hero3d-stage"), products, {
         base: "/assets/product-animation/",
-        floor: "mirror",
+        floor: "concrete",
         onUI,
         // keep the subject clear of the text: desktop -> right of the text column, portrait -> above the text
         shift: (aspect, playing) => (aspect >= 1.2 ? [0.17 - 0.03 * playing, 0.12 - 0.1 * playing] : aspect < 0.8 ? [0, 0.27 - 0.11 * playing] : [0, 0.14]),
