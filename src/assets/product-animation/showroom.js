@@ -40,7 +40,7 @@ const HAND = { camOut: 1.6, bIn: 1.35, aGo: 1.7, aGone: 4.1, camIn0: 4.8, arrive
 const TUNE = {
   aimon: { k: 0.86 },
   compressor: { k: 1.2 },
-  welding: { k: 1.1, tilt: [0, 1, 0, 0.95] }, // turned on display so the header no longer hides the arm
+  welding: { k: 1.1, floorY: -0.01, tilt: [0, 1, 0, 0.95] }, // turned on display so the header no longer hides the arm
   // a flat ring: tilted toward the viewer and lowered while on display; authored floor height so the
   // lower duct never reaches below the floor while it slides in
   gasket: { k: 0.93, floorY: -0.315, tilt: [1, 0, 0, 1.0], lineY: -0.62 },
@@ -58,13 +58,13 @@ const MirrorShader = {
   uniforms: {
     color: { value: null }, tDiffuse: { value: null }, textureMatrix: { value: null },
     uCenter: { value: new THREE.Vector3() }, uR: { value: new THREE.Vector2(4, 12) },
-    uStrength: { value: 0.5 }, uTexel: { value: new THREE.Vector2(1 / 512, 1 / 512) }, uBlur: { value: 2.0 },
+    uStrength: { value: 0.5 }, uMix: { value: 0 }, uTexel: { value: new THREE.Vector2(1 / 512, 1 / 512) }, uBlur: { value: 2.0 },
   },
   vertexShader: `uniform mat4 textureMatrix; varying vec4 vUv; varying vec3 vW;
     void main(){ vUv = textureMatrix * vec4(position, 1.0); vec4 w = modelMatrix * vec4(position, 1.0); vW = w.xyz;
       gl_Position = projectionMatrix * viewMatrix * w; }`,
   fragmentShader: `uniform vec3 color; uniform sampler2D tDiffuse; uniform vec3 uCenter; uniform vec2 uR, uTexel;
-    uniform float uStrength, uBlur; varying vec4 vUv; varying vec3 vW;
+    uniform float uStrength, uBlur, uMix; varying vec4 vUv; varying vec3 vW;
     void main(){
       float d = length(vW.xz - uCenter.xz);
       float fade = 1.0 - smoothstep(uR.x, uR.y, d);
@@ -79,7 +79,8 @@ const MirrorShader = {
       r /= wsum;
       vec3 V = normalize(cameraPosition - vW);
       float fres = 0.35 + 0.65 * pow(1.0 - clamp(V.y, 0.0, 1.0), 3.0);
-      gl_FragColor = vec4(color + r * uStrength * fres * (0.25 + 0.75 * fade), fade);
+      // uMix = 1: a sheen laid over a lit floor (polished concrete) instead of a self-contained black mirror
+      gl_FragColor = uMix > 0.5 ? vec4(r, uStrength * fres * fade) : vec4(color + r * uStrength * fres * (0.25 + 0.75 * fade), fade);
     }`,
 };
 
@@ -105,12 +106,12 @@ function patchMaterial(m, U) {
   m.needsUpdate = true;
 }
 
-// Optional light concrete floor (floor: "concrete"): tileable mottled grey, generated once.
+// Optional polished concrete floor (floor: "concrete"): fine tileable grain; the large trowel mottling is done in the shader.
 function concreteTexture() {
   const N = 512, c = document.createElement("canvas");
   c.width = c.height = N;
   const g = c.getContext("2d");
-  g.fillStyle = "#d6d9dc"; g.fillRect(0, 0, N, N);
+  g.fillStyle = "#b9bcbb"; g.fillRect(0, 0, N, N);
   let seed = 7;
   const rnd = () => ((seed = (seed * 16807) % 2147483647) - 1) / 2147483646;
   const blob = (x, y, r, col) => { // drawn at the nine wrapped positions so the tile has no seams
@@ -120,8 +121,7 @@ function concreteTexture() {
       g.fillStyle = q; g.fillRect(x + i * N - r, y + j * N - r, 2 * r, 2 * r);
     }
   };
-  for (let i = 0; i < 90; i++) blob(rnd() * N, rnd() * N, 30 + rnd() * 90, rnd() < 0.5 ? "rgba(255,255,255,0.03)" : "rgba(70,78,88,0.035)");
-  for (let i = 0; i < 2600; i++) blob(rnd() * N, rnd() * N, 0.6 + rnd() * 1.6, rnd() < 0.6 ? "rgba(60,66,74,0.16)" : "rgba(255,255,255,0.2)");
+  for (let i = 0; i < 2600; i++) blob(rnd() * N, rnd() * N, 0.6 + rnd() * 1.6, rnd() < 0.6 ? "rgba(40,44,48,0.2)" : "rgba(255,255,255,0.16)");
   const t = new THREE.CanvasTexture(c);
   t.colorSpace = THREE.SRGBColorSpace;
   t.wrapS = t.wrapT = THREE.RepeatWrapping;
@@ -212,7 +212,7 @@ export async function startShowroom(el, items, { base = "./", tier: forceTier, o
     shadowFloor.renderOrder = -1;
     scene.add(mirror, shadowFloor);
   }
-  // optional light concrete floor: fixed in the world (so the texture never swims), fading out around the active stage
+  // optional polished concrete floor: fixed in the world (so the texture never swims), fading out around the active stage
   let concrete = null;
   const cU = { uCenter: { value: new THREE.Vector3() }, uR: { value: new THREE.Vector2(4, 12) } };
   if (useConcrete) {
@@ -220,12 +220,22 @@ export async function startShowroom(el, items, { base = "./", tier: forceTier, o
     const map = concreteTexture();
     map.repeat.setScalar(400 / 1.2);
     map.anisotropy = renderer.capabilities.getMaxAnisotropy();
-    const mat = new THREE.MeshStandardMaterial({ map, roughness: 0.92, metalness: 0, transparent: true, depthWrite: false });
+    const mat = new THREE.MeshStandardMaterial({ map, roughness: 0.5, metalness: 0, transparent: true, depthWrite: false });
     mat.onBeforeCompile = (sh) => {
       Object.assign(sh.uniforms, cU);
       sh.vertexShader = "varying vec3 vWp;\n" + sh.vertexShader.replace("#include <project_vertex>", "#include <project_vertex>\nvWp = (modelMatrix * vec4(transformed, 1.0)).xyz;");
-      sh.fragmentShader = "varying vec3 vWp; uniform vec3 uCenter; uniform vec2 uR;\n" + sh.fragmentShader.replace("#include <dithering_fragment>",
-        "gl_FragColor.a *= 1.0 - smoothstep(uR.x, uR.y, length(vWp.xz - uCenter.xz));\n#include <dithering_fragment>");
+      // trowel-finished look: cloudy darker and lighter patches from world-space noise (never repeats), smoother where darker
+      const noise = `varying vec3 vWp; uniform vec3 uCenter; uniform vec2 uR;
+        float cHash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+        float cNoise(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f);
+          return mix(mix(cHash(i), cHash(i + vec2(1, 0)), f.x), mix(cHash(i + vec2(0, 1)), cHash(i + vec2(1, 1)), f.x), f.y); }
+        float cFbm(vec2 p){ float a = 0.5, v = 0.0; for (int i = 0; i < 5; i++) { v += a * cNoise(p); p = p * 2.03 + 11.7; a *= 0.5; } return v; }
+        float cCloud(){ vec2 q = vWp.xz * 0.55; return cFbm(q + 1.7 * vec2(cFbm(q + 3.1), cFbm(q - 5.2))); }
+`;
+      sh.fragmentShader = noise + sh.fragmentShader
+        .replace("#include <map_fragment>", "#include <map_fragment>\nfloat cl = cCloud(); diffuseColor.rgb *= 0.36 + 0.5 * smoothstep(0.22, 0.78, cl);")
+        .replace("#include <roughnessmap_fragment>", "#include <roughnessmap_fragment>\nroughnessFactor = 0.34 + 0.3 * cl;")
+        .replace("#include <dithering_fragment>", "gl_FragColor.a *= 1.0 - smoothstep(uR.x, uR.y, length(vWp.xz - uCenter.xz));\n#include <dithering_fragment>");
     };
     concrete = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), mat);
     concrete.rotation.x = -Math.PI / 2;
@@ -234,6 +244,18 @@ export async function startShowroom(el, items, { base = "./", tier: forceTier, o
     concrete.position.y = -0.002; // just under the products' base faces, which sit at y = 0 (coplanar faces flicker)
     scene.add(concrete);
     scene.background = new THREE.Color(0xffffff); // white studio: the floor fades into it
+    // polish: a soft, blurred reflection of the products and the studio laid over the lit concrete
+    mirror = new Reflector(new THREE.PlaneGeometry(400, 400), { color: 0x000000, textureWidth: 512, textureHeight: 512, shader: MirrorShader, multisample: tier === "high" ? 4 : 0 });
+    mirror.rotation.x = -Math.PI / 2;
+    mirror.position.y = -0.001;
+    mirror.material.transparent = true;
+    mirror.material.depthWrite = false;
+    mirror.renderOrder = -0.9;
+    mU = mirror.material.uniforms;
+    mU.uMix.value = 1; mU.uStrength.value = 0.26; mU.uBlur.value = 5;
+    const reflect = mirror.onBeforeRender;
+    mirror.onBeforeRender = function (r, sc, c, ...rest) { if (!sc.overrideMaterial) reflect.call(this, r, sc, c, ...rest); };
+    scene.add(mirror);
   }
 
   // ---------------------------------------------------------------- camera + post
@@ -241,6 +263,16 @@ export async function startShowroom(el, items, { base = "./", tier: forceTier, o
   const rt = new THREE.WebGLRenderTarget(1, 1, { type: THREE.HalfFloatType, samples: 4 });
   const composer = new EffectComposer(renderer, rt);
   composer.addPass(new RenderPass(scene, camera));
+  // Cap highlights before bloom: a polished edge catching an area light can land one pixel thousands of times
+  // brighter than its neighbours, which bloom turns into a square flash that pops in and out as the camera moves.
+  composer.addPass(new ShaderPass({
+    uniforms: { tDiffuse: { value: null }, uMax: { value: 3 } },
+    vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }",
+    fragmentShader: `uniform sampler2D tDiffuse; uniform float uMax; varying vec2 vUv;
+      void main(){ vec4 c = texture2D(tDiffuse, vUv);
+        if (any(isnan(c.rgb)) || any(isinf(c.rgb))) c.rgb = vec3(0.0);
+        gl_FragColor = vec4(min(c.rgb, vec3(uMax)), c.a); }`,
+  }));
   const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.3, 0.35, 1.3);
   composer.addPass(bloom);
   const bokeh = new BokehPass(scene, camera, { focus: 3, aperture: 0.0018, maxblur: 0.006 });
@@ -600,14 +632,16 @@ export async function startShowroom(el, items, { base = "./", tier: forceTier, o
     camera.updateMatrixWorld();
     placeStage(pose.stageC, pose.stageS);
     if (mirror) {
-      mirror.visible = shadowFloor.visible = floorOn;
+      mirror.visible = floorOn;
+      if (shadowFloor) shadowFloor.visible = floorOn;
       mU.uCenter.value.copy(pose.stageC);
-      mU.uR.value.set(pose.stageS * 1.6, pose.stageS * 4.5);
-    } else if (concrete) {
+      mU.uR.value.set(pose.stageS * (concrete ? 2.2 : 1.6), pose.stageS * (concrete ? 6 : 4.5));
+    }
+    if (concrete) {
       concrete.visible = floorOn;
       cU.uCenter.value.copy(pose.stageC);
       cU.uR.value.set(pose.stageS * 2.2, pose.stageS * 6);
-    } else floor.visible = floorOn;
+    } else if (!mirror) floor.visible = floorOn;
     bokeh.uniforms.focus.value = camera.position.distanceTo(pose.focus);
     bokeh.uniforms.aperture.value = 0.0018 / pose.s;
     vignette.uniforms.time.value = elapsed;

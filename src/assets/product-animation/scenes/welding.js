@@ -287,6 +287,12 @@ export default async function create(ctx) {
     if (base === "weld_bead") o.material = beadMat(Number(o.name.slice(-1)) || Number(o.parent.name.slice(-1)) || 0);
     else if (M[base]) o.material = M[base];
   });
+  // The floor fixtures (pipe supports, saddle pads, robot base) are flat faces: as polished metal each face mirrors
+  // one patch of the studio, so it flips between black and white as the camera orbits. Give them a matte finish.
+  const matteDark = new THREE.MeshStandardMaterial({ color: 0x2a3038, metalness: 0.2, roughness: 0.8 });
+  const mattePad = new THREE.MeshStandardMaterial({ color: 0x8e979f, metalness: 0.3, roughness: 0.7 });
+  for (const n of ["pipe_support_1", "pipe_support_2", "robot_pedestal", "pedestal_column", "robot_riser"]) named[n]?.traverse((o) => { if (o.isMesh) o.material = matteDark; });
+  for (const n of ["support_saddle_pad_1", "support_saddle_pad_2"]) named[n]?.traverse((o) => { if (o.isMesh) o.material = mattePad; });
   for (let k = 0; k < 3; k++) {
     named[`bead_${k}`].traverse((o) => {
       if (!o.isMesh) return;
